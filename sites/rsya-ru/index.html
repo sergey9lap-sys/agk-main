@@ -1,0 +1,455 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://api.tgtrack.ru/API/landing_script/v1/?linkID=5dd1eb9060a0ce&type=ya&counterID=109419914" type="text/javascript" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+    /* Светлая тема с профессиональным голубым акцентом */
+    .gst-landing-v5 {
+        font-family: 'Montserrat', sans-serif !important;
+        color: #1E293B !important;
+        background-color: #F8FAFC !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1.5 !important;
+        width: 100% !important;
+        -webkit-font-smoothing: antialiased !important;
+        box-sizing: border-box !important;
+    }
+
+    .gst-landing-v5 *, .gst-landing-v5 *::before, .gst-landing-v5 *::after {
+        box-sizing: border-box !important;
+    }
+
+    .gst-landing-v5 .main-container {
+        max-width: 850px !important;
+        margin: 0 auto !important;
+        padding: 60px 20px !important;
+    }
+
+    /* Гарантированный отступ через padding (защита от схлопывания в Тильде) */
+    .gst-landing-v5 .hero-section {
+        padding-bottom: 90px !important; 
+        margin-bottom: 20px !important;
+    }
+
+    .gst-landing-v5 h1 {
+        font-size: 38px !important;
+        font-weight: 800 !important;
+        margin: 0 0 35px 0 !important;
+        line-height: 1.25 !important;
+        color: #0F172A !important;
+        letter-spacing: -0.5px !important;
+    }
+
+    .gst-landing-v5 h2 {
+        font-size: 28px !important;
+        font-weight: 800 !important;
+        margin: 0 0 25px 0 !important;
+        color: #0F172A !important;
+    }
+
+    .gst-landing-v5 .blue-highlight {
+        color: #38BDF8 !important;
+    }
+
+    .gst-landing-v5 .main-btn {
+        display: block !important;
+        text-decoration: none !important;
+        padding: 22px 40px !important;
+        border-radius: 12px !important;
+        font-weight: 700 !important;
+        font-size: 19px !important;
+        text-align: center !important;
+        transition: all 0.3s ease !important;
+        border: none !important;
+        cursor: pointer !important;
+        color: #FFFFFF !important;
+        width: 100% !important;
+        max-width: 400px !important;
+    }
+
+    /* Стили для кнопки TG */
+    .gst-landing-v5 .btn-tg {
+        background-color: #38BDF8 !important;
+        box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25) !important;
+    }
+
+    .gst-landing-v5 .btn-tg:hover {
+        background-color: #0EA5E9 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 15px 30px rgba(56, 189, 248, 0.35) !important;
+    }
+
+    /* Группа кнопок */
+    .gst-landing-v5 .btn-group {
+        display: flex !important;
+        gap: 20px !important;
+        margin-top: 40px !important;
+        flex-wrap: wrap !important;
+    }
+
+    .gst-landing-v5 .btn-group .main-btn {
+        margin-top: 0 !important;
+        flex: 1 !important;
+        min-width: 260px !important;
+    }
+
+    .gst-landing-v5 ul {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .gst-landing-v5 li {
+        position: relative !important;
+        padding-left: 35px !important;
+        margin-bottom: 22px !important;
+        font-size: 18px !important;
+        color: #334155 !important;
+        line-height: 1.5 !important;
+    }
+
+    .gst-landing-v5 li::before {
+        content: '✓' !important;
+        position: absolute !important;
+        left: 0 !important;
+        color: #38BDF8 !important;
+        font-weight: 900 !important;
+        font-size: 20px !important;
+    }
+
+    .gst-landing-v5 .author-card {
+        background: #FFFFFF !important;
+        border-radius: 24px !important;
+        padding: 40px !important;
+        display: flex !important;
+        gap: 40px !important;
+        align-items: flex-start !important;
+        margin-bottom: 60px !important;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.04) !important;
+        border: 1px solid #F1F5F9 !important;
+    }
+
+    .gst-landing-v5 .author-info {
+        flex: 1.2 !important;
+    }
+
+    .gst-landing-v5 .author-tag {
+        font-size: 18px !important;
+        font-weight: 600 !important;
+        margin-bottom: 15px !important;
+        display: block !important;
+        color: #64748B !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+    }
+
+    .gst-landing-v5 .author-info > p {
+        margin-bottom: 25px !important;
+    }
+
+    /* Стили для списка регалий со звездочками */
+    .gst-landing-v5 .author-regalia li {
+        font-size: 15px !important;
+        margin-bottom: 15px !important;
+        padding-left: 30px !important;
+    }
+
+    .gst-landing-v5 .author-regalia li::before {
+        content: '★' !important;
+        color: #FBBF24 !important; /* Желтый цвет звездочки как на скрине */
+        font-size: 18px !important;
+        top: -1px !important;
+    }
+
+    .gst-landing-v5 .author-photo {
+        flex: 0.8 !important;
+        position: sticky !important;
+        top: 20px !important;
+    }
+
+    .gst-landing-v5 .author-photo img {
+        max-width: 100% !important;
+        height: auto !important;
+        border-radius: 20px !important;
+        display: block !important;
+    }
+
+    .gst-landing-v5 .steps-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 20px !important;
+        margin-bottom: 60px !important;
+    }
+
+    .gst-landing-v5 .step-box {
+        background: #FFFFFF !important;
+        padding: 30px !important;
+        border-radius: 20px !important;
+        border: 1px solid #F1F5F9 !important;
+        transition: transform 0.3s ease !important;
+    }
+
+    .gst-landing-v5 .step-box:hover {
+        transform: translateY(-5px) !important;
+        border-color: #38BDF8 !important;
+    }
+
+    .gst-landing-v5 .step-num {
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        color: #38BDF8 !important;
+        margin-bottom: 10px !important;
+        display: block !important;
+    }
+
+    .gst-landing-v5 .step-box h3 {
+        font-size: 19px !important;
+        font-weight: 700 !important;
+        margin: 0 0 10px 0 !important;
+        color: #0F172A !important;
+    }
+
+    .gst-landing-v5 .step-box p {
+        font-size: 15px !important;
+        margin: 0 !important;
+        color: #64748B !important;
+    }
+
+    .gst-landing-v5 .final-cta {
+        background: #0F172A !important;
+        color: #FFFFFF !important;
+        padding: 60px 40px !important;
+        border-radius: 30px !important;
+        text-align: center !important;
+    }
+
+    .gst-landing-v5 .final-cta h2 {
+        color: #FFFFFF !important;
+        font-size: 30px !important;
+        margin-bottom: 35px !important;
+    }
+
+    .gst-landing-v5 .final-cta .btn-group {
+        justify-content: center !important;
+        margin-top: 0 !important;
+    }
+
+    @media (max-width: 980px) {
+        .gst-landing-v5 .main-container {
+            max-width: none !important;
+            width: 100% !important;
+            padding: 54px 16px !important;
+        }
+
+        .gst-landing-v5 .hero-section {
+            padding-bottom: 72px !important;
+            margin-bottom: 10px !important;
+        }
+
+        .gst-landing-v5 h1 {
+            font-size: 38px !important;
+            line-height: 1.14 !important;
+            margin-bottom: 42px !important;
+            letter-spacing: 0 !important;
+        }
+
+        .gst-landing-v5 h2 {
+            font-size: 32px !important;
+            line-height: 1.2 !important;
+            margin-bottom: 28px !important;
+        }
+
+        .gst-landing-v5 li {
+            font-size: 23px !important;
+            line-height: 1.55 !important;
+            margin-bottom: 32px !important;
+            padding-left: 48px !important;
+            text-align: left !important;
+        }
+
+        .gst-landing-v5 li::before {
+            font-size: 26px !important;
+            top: 2px !important;
+        }
+
+        .gst-landing-v5 .btn-group {
+            gap: 16px !important;
+            margin-top: 44px !important;
+        }
+
+        .gst-landing-v5 .btn-group .main-btn,
+        .gst-landing-v5 .main-btn {
+            max-width: none !important;
+            min-width: 0 !important;
+            width: 100% !important;
+            padding: 27px 20px !important;
+            font-size: 24px !important;
+            border-radius: 14px !important;
+        }
+
+        .gst-landing-v5 .author-card {
+            flex-direction: column-reverse !important;
+            gap: 34px !important;
+            padding: 34px 22px !important;
+            margin-bottom: 58px !important;
+            border-radius: 24px !important;
+        }
+
+        .gst-landing-v5 .author-photo {
+            position: static !important;
+            width: 100% !important;
+        }
+
+        .gst-landing-v5 .author-photo img {
+            width: 100% !important;
+            border-radius: 20px !important;
+        }
+
+        .gst-landing-v5 .author-tag {
+            font-size: 18px !important;
+            margin-bottom: 18px !important;
+        }
+
+        .gst-landing-v5 .author-info > p {
+            font-size: 20px !important;
+            line-height: 1.55 !important;
+            margin-bottom: 30px !important;
+        }
+
+        .gst-landing-v5 .author-regalia li {
+            font-size: 18px !important;
+            line-height: 1.5 !important;
+            margin-bottom: 22px !important;
+            padding-left: 36px !important;
+        }
+
+        .gst-landing-v5 .steps-grid {
+            grid-template-columns: 1fr !important;
+            gap: 18px !important;
+            margin-bottom: 58px !important;
+        }
+
+        .gst-landing-v5 .step-box {
+            padding: 32px 24px !important;
+            border-radius: 20px !important;
+        }
+
+        .gst-landing-v5 .step-num {
+            font-size: 16px !important;
+        }
+
+        .gst-landing-v5 .step-box h3 {
+            font-size: 26px !important;
+            line-height: 1.25 !important;
+            margin-bottom: 14px !important;
+        }
+
+        .gst-landing-v5 .step-box p {
+            font-size: 20px !important;
+            line-height: 1.55 !important;
+        }
+
+        .gst-landing-v5 .final-cta {
+            padding: 50px 22px !important;
+            border-radius: 24px !important;
+        }
+
+        .gst-landing-v5 .final-cta h2 {
+            font-size: 32px !important;
+            line-height: 1.2 !important;
+            margin-bottom: 34px !important;
+        }
+    }
+
+    @media (max-width: 420px) {
+        .gst-landing-v5 .main-container {
+            padding-left: 12px !important;
+            padding-right: 12px !important;
+        }
+
+        .gst-landing-v5 h1 {
+            font-size: 36px !important;
+        }
+
+        .gst-landing-v5 li {
+            font-size: 22px !important;
+            padding-left: 42px !important;
+        }
+
+        .gst-landing-v5 .main-btn {
+            font-size: 22px !important;
+        }
+    }
+</style>
+
+<div class="gst-landing-v5">
+    <div class="main-container">
+        
+        <div class="hero-section">
+            <h1>Гайд: Как запустить свой онлайн-курс за <span class="blue-highlight">5 простых шагов</span></h1>
+            
+            <ul>
+                <li><b>Избавьтесь от хаоса:</b> пошаговый алгоритм упаковки ваших знаний в систему.</li>
+                <li><b>Проверьте спрос:</b> как понять, что ваш продукт купят, ещё до его создания.</li>
+                <li><b>Первые продажи:</b> быстрый путь от идеи до получения оплат без перфекционизма.</li>
+            </ul>
+            
+            <div class="btn-group">
+                <a href="https://t.me/agk_edu/2853" target="_blank" class="main-btn btn-tg">Забрать в Telegram</a>
+            </div>
+        </div>
+
+        <div class="author-card">
+            <div class="author-info">
+                <span class="author-tag">Автор методики</span>
+                <h2>Александра Горева-Куртышева</h2>
+                <p>Методолог с опытом более 15 лет. Помогаю экспертам перестать быть «вечными студентами» и наконец-то запустить продукты, которые приносят результат и деньги.</p>
+                
+                <ul class="author-regalia">
+                    <li>EdTech-предприниматель, основатель крупнейшей школы по методологии и методического агентства.</li>
+                    <li>Архитектор и генеральный продюсер крупнейшего акселератора для предпринимателей Бизнес 360 в Сбере (40 000 участников).</li>
+                    <li>3 высших образования в сфере педагогики и обучения, выпускница Сколково.</li>
+                    <li>С 2009 года в бизнес-обучении, с 2020 года в онлайн-образовании.</li>
+                    <li>Консультант и тренер СБЕР, РОСНЕФТЬ, Норникель, Nestle, X5, ВкусВилл и других компаний.</li>
+                    <li>Вице-президент Ассоциации Спикеров СНГ.</li>
+                    <li>5 премий за вклад в образование и победа в номинации «Лучшая школа методологии».</li>
+                </ul>
+            </div>
+            <div class="author-photo">
+                <img src="https://optim.tildacdn.com/tild3731-3939-4937-b634-336237646664/-/resize/900x/-/format/webp/image_3.png.webp" alt="Александра Горева-Куртышева">
+            </div>
+        </div>
+
+        <div class="steps-grid">
+            <div class="step-box">
+                <span class="step-num">ШАГ 1</span>
+                <h3>Тема и Аудитория</h3>
+                <p>Определяем прибыльную нишу и понимаем, кому именно нужен ваш продукт.</p>
+            </div>
+            <div class="step-box">
+                <span class="step-num">ШАГ 2</span>
+                <h3>Архитектура курса</h3>
+                <p>Выстраиваем структуру, которая гарантированно доведёт ученика до результата.</p>
+            </div>
+            <div class="step-box">
+                <span class="step-num">ШАГ 3</span>
+                <h3>Упаковка и Смыслы</h3>
+                <p>Создаем описание, после которого клиенты сами просят ссылку на оплату.</p>
+            </div>
+            <div class="step-box">
+                <span class="step-num">ШАГ 4</span>
+                <h3>Тест и Продажи</h3>
+                <p>Проверяем гипотезу на практике и получаем первые оплаты за 2-4 недели.</p>
+            </div>
+        </div>
+
+        <div class="final-cta">
+            <h2>Знаний много, а своего продукта всё нет? Забирайте систему и делайте первый шаг сегодня</h2>
+            <div class="btn-group">
+                <a href="https://t.me/agk_edu/2853" target="_blank" class="main-btn btn-tg">Скачать в Telegram</a>
+            </div>
+        </div>
+
+    </div>
+</div>

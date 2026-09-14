@@ -6,7 +6,8 @@ const registry = JSON.parse(await readFile(new URL('../sites.json', import.meta.
 for (const edition of ['com','ru']) {
   test(`${edition}: paths, widgets and thank-you aliases`, async () => {
     const root = resolve('dist', edition);
-    await assert.rejects(access(resolve(root, 'index.html')));
+    if (edition === 'com') await assert.rejects(access(resolve(root, 'index.html')));
+    else await access(resolve(root, 'index.html'));
     for (const [slug, site] of Object.entries(registry)) {
       const html = await readFile(resolve(root, slug, 'index.html'), 'utf8');
       const config = site.editions[edition];
@@ -40,3 +41,10 @@ for (const edition of ['com','ru']) {
     }
   });
 }
+test('RSYA archive is byte-identical in RU and absent from COM', async () => {
+  const files = ['index.html', '.htaccess', 'max/index.html', 'psy/index.html'];
+  for (const file of files) {
+    assert.deepEqual(await readFile(resolve('sites/rsya-ru', file)), await readFile(resolve('dist/ru', file)));
+    await assert.rejects(access(resolve('dist/com', file)));
+  }
+});

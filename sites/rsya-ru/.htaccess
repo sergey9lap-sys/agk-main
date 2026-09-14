@@ -1,0 +1,5 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+RewriteRule ^max/?$ max/index.html [L]
+RewriteRule ^psy/?$ psy/index.html [L]

@@ -1,5 +1,5 @@
 import { build } from 'vite';
-import { readFile, writeFile, mkdir, rm, access } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rm, access, readdir, copyFile } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -7,6 +7,19 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const edition = process.argv[2];
 if (!['com', 'ru'].includes(edition)) throw new Error('Use build:com or build:ru');
 const registry = JSON.parse(await readFile(resolve(root, 'sites.json'), 'utf8'));
+const staticRoots = JSON.parse(await readFile(resolve(root, 'static-roots.json'), 'utf8'));
+const staticSource = staticRoots[edition];
+if (staticSource && !/^sites\/[a-z0-9-]+$/.test(staticSource)) throw new Error('Invalid static root');
+async function staticFiles(directory, prefix = '') {
+  const files = [];
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const name = prefix + entry.name;
+    if (entry.isSymbolicLink()) throw new Error('Static roots cannot contain symlinks');
+    if (entry.isDirectory()) files.push(...await staticFiles(resolve(directory, entry.name), name + '/'));
+    else if (entry.isFile()) files.push(name);
+  }
+  return files;
+}
 const output = resolve(root, 'dist', edition);
 // The only recursive cleanup targets are these two generated output directories.
 if (![resolve(root, 'dist/com'), resolve(root, 'dist/ru')].includes(output)) throw new Error('Unsafe output');
@@ -19,6 +32,10 @@ for (const [slug, site] of Object.entries(registry)) {
     if (!/^[a-z0-9-]+$/.test(alias) || routes.has(alias)) throw new Error(`Duplicate or invalid route: ${alias}`);
     routes.add(alias);
   }
+}
+const importedFiles = staticSource ? await staticFiles(resolve(root, staticSource)) : [];
+for (const file of importedFiles) {
+  if (routes.has(file.split('/')[0])) throw new Error(`Static route conflicts with registered site: ${file}`);
 }
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
@@ -50,6 +67,14 @@ for (const [slug, site] of Object.entries(registry)) {
     await writeFile(resolve(output, slug, alias, 'index.html'), confirmation);
   }
 }
-// No fabricated homepage or redirect. The landing page is independently usable at /clients/.
-await writeFile(resolve(output, '404.html'), '<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Страница не найдена</title><h1>Страница не найдена</h1></html>');
+// Copy the archived RU site byte-for-byte, including its directory routing rules.
+for (const file of importedFiles) {
+  const target = resolve(output, file);
+  try { await access(target); throw new Error(`Output collision: ${file}`); }
+  catch (error) { if (error.code !== 'ENOENT') throw error; }
+  await mkdir(dirname(target), { recursive: true });
+  await copyFile(resolve(root, staticSource, file), target);
+}
+// COM still has no homepage. Preserve an imported 404 page if supplied later.
+if (!importedFiles.includes('404.html')) await writeFile(resolve(output, '404.html'), '<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Страница не найдена</title><h1>Страница не найдена</h1></html>');
 console.log(`AGK ${edition}: ${output}`);
