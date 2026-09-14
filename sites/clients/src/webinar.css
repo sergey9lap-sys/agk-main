@@ -85,14 +85,22 @@
 .webinar-takeaways li{position:relative;padding-left:1.2rem;line-height:1.4}
 .webinar-takeaways li::before{content:'—';position:absolute;left:0;color:var(--lime)}
 @media(max-width:540px){
- .webinar-page .hero{padding-top:1.25rem}
- .webinar-page .hero h1{font-size:clamp(1.9rem,8.3vw,2.8rem);margin:0;max-width:none;align-self:center}
- .webinar-page .webinar-speaker{grid-column:2;grid-row:1;align-self:start}
- .webinar-speaker .webinar-byline{font-size:.72rem;line-height:1.3}
- .webinar-speaker .webinar-byline span{font-size:.65rem}
- .webinar-page .webinar-topic{grid-column:1/-1;grid-row:2;margin-top:1rem;font-size:1.1rem;max-width:none}
- .webinar-page .hero-actions{grid-row:3;margin-top:1rem;grid-template-columns:1fr}
- .webinar-page .hero-actions .text-link--button{min-height:36px;height:36px;border:0;justify-content:center}
- .webinar-page .webinar-meta{grid-row:4;margin-top:.75rem}
- .webinar-page .hero-description{grid-row:5;margin-top:1rem;font-size:.95rem}
+ .webinar-page .hero{padding-top:3.5rem;overflow:hidden;isolation:isolate}
+ .webinar-page .hero-grid{position:relative;display:flex;flex-direction:column;align-items:stretch;gap:0}
+ .webinar-page .hero h1{font-size:clamp(2.2rem,10vw,3.35rem);margin:0;width:100%;max-width:none;align-self:start}
+ .webinar-page .webinar-title-line{display:block;white-space:nowrap}
+ .webinar-page .webinar-speaker{position:static;display:contents}
+ .webinar-page .webinar-speaker .hero-person{position:absolute;z-index:-1;top:-3rem;right:-35%;width:100%;height:36rem;pointer-events:none}
+ .webinar-page .hero-person img{width:100%;height:100%;max-width:none;aspect-ratio:auto;object-fit:cover;object-position:50% 0%;-webkit-mask-image:linear-gradient(to right,transparent,#000 35%),linear-gradient(to bottom,transparent,#000 9%,#000 68%,transparent 100%);mask-image:linear-gradient(to right,transparent,#000 35%),linear-gradient(to bottom,transparent,#000 9%,#000 68%,transparent 100%)}
+ .webinar-speaker .webinar-byline{position:relative;order:6;text-align:left;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--line-light);font-size:.85rem;line-height:1.4}
+ .webinar-speaker .webinar-byline span{font-size:.75rem}
+ .webinar-page .webinar-topic{position:relative;z-index:3;width:61%;margin-top:1.25rem;padding-right:.4rem;font-size:1rem;max-width:none}
+ .webinar-page .hero-actions{position:relative;margin-top:1rem;grid-template-columns:1fr}
+ .webinar-page .hero-actions .text-link--button{min-height:44px;height:44px;border:0;justify-content:center}
+ .webinar-page .webinar-meta{position:relative;margin-top:.75rem;overflow-wrap:anywhere}
+ .webinar-page .hero-description{position:relative;isolation:isolate;width:70%;margin-top:1.75rem;padding:0;font-size:1rem;line-height:1.45;background:none;border:0;border-radius:0;box-shadow:none}
+ .webinar-page .hero-description::before{content:"";position:absolute;z-index:-1;inset:-1.5rem -3rem -1.5rem -1rem;pointer-events:none;background:linear-gradient(90deg,var(--forest) 30%,rgba(10,35,66,.82) 65%,transparent);-webkit-mask-image:linear-gradient(transparent,#000 12%,#000 85%,transparent);mask-image:linear-gradient(transparent,#000 12%,#000 85%,transparent)}
+}
+@media(max-width:360px){
+ .webinar-page .hero-description{width:78%}
 }
