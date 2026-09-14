@@ -1,0 +1,2 @@
+# Preserve imported archive bytes, including original line endings on every host.
+sites/rsya-ru/** -text
