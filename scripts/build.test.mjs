@@ -20,6 +20,8 @@ for (const edition of ['com','ru']) {
       for (const alias of site.confirmationAliases) {
         const thanks = await readFile(resolve(root, alias, 'index.html'), 'utf8');
         assert.ok(thanks.includes('noindex,follow'));
+        for (const channel of ['tg', 'max', 'vk']) assert.ok(thanks.includes(`https://agkedu.getcourse.ru/${channel}_subscribe`));
+        assert.equal((thanks.match(/class="care-actions"/g) ?? []).length, 1);
         assert.equal(thanks, await readFile(resolve(root, slug, alias, 'index.html'), 'utf8'));
         pages.push(thanks);
       }
