@@ -1,0 +1,9 @@
+{
+  "clients": {
+    "editions": {
+      "com": { "widgetId": "1656005", "scriptId": "6e3ba3547aa87b1c73462d50079239ae23d9e3f8", "successPath": "/thanks/" },
+      "ru": { "widgetId": "1655985", "scriptId": "8cd8b04128bce11ae07184eb9d5eaf7952a66ae7", "successPath": "/spasibo/" }
+    },
+    "confirmationAliases": ["thanks", "spasibo"]
+  }
+}
