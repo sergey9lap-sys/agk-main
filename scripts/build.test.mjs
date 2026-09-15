@@ -26,6 +26,13 @@ for (const edition of ['com','ru']) {
         pages.push(thanks);
       }
       for (const page of pages) {
+        if (slug === 'clients') {
+          const counter = edition === 'com' ? '110484887' : '110484880';
+          assert.equal(page.split(`ym(${counter},'init'`).length - 1, 1);
+          assert.ok(!page.includes(edition === 'com' ? '110484880' : '110484887'));
+          assert.equal(page.split("fbq('init', '1923709794923109')").length - 1, edition === 'com' ? 1 : 0);
+          assert.equal(page.includes('facebook.com/tr'), edition === 'com');
+        }
         for (const [, url] of page.matchAll(/(?:src|href)=["'](\/(?!\/)[^"']+)["']/g)) {
           const path = url.split(/[?#]/)[0];
           assert.ok(path.startsWith(`/${slug}/`), `Unscoped asset: ${url}`);

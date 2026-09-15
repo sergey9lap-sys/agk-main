@@ -2,6 +2,7 @@ import { build } from 'vite';
 import { readFile, writeFile, mkdir, rm, access, readdir, copyFile } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { withAnalytics } from './analytics.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const edition = process.argv[2];
@@ -44,7 +45,8 @@ for (const [slug, site] of Object.entries(registry)) {
   const siteRoot = resolve(root, 'sites', slug);
   const base = `/${slug}/`;
   const assetPaths = html => html.replace(/((?:src|href)=["'])\/(?!\/)/g, `$1${base}`);
-  const confirmation = assetPaths(await readFile(resolve(siteRoot, 'src/thank-you.html'), 'utf8'));
+  const analytics = html => slug === 'clients' ? withAnalytics(html, edition) : html;
+  const confirmation = analytics(assetPaths(await readFile(resolve(siteRoot, 'src/thank-you.html'), 'utf8')));
   await build({
     configFile: false, root: siteRoot, base,
     build: { outDir: resolve(output, slug), emptyOutDir: true },
@@ -56,6 +58,8 @@ for (const [slug, site] of Object.entries(registry)) {
         .replaceAll('%%SUCCESS_PATH%%', config.successPath) },
     }],
   });
+  const landingPath = resolve(output, slug, 'index.html');
+  await writeFile(landingPath, analytics(await readFile(landingPath, 'utf8')));
   // Public CSS is copied as-is by Vite: scope its font URLs to this site too.
   const cssPath = resolve(output, slug, 'thank-you.css');
   const css = await readFile(cssPath, 'utf8');
