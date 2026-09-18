@@ -5,5 +5,11 @@
       "ru": { "widgetId": "1655985", "scriptId": "8cd8b04128bce11ae07184eb9d5eaf7952a66ae7", "successPath": "/spasibo/" }
     },
     "confirmationAliases": ["thanks", "spasibo"]
+  },
+  "mkclients": {
+    "editions": {
+      "com": {},
+      "ru": {}
+    }
   }
 }

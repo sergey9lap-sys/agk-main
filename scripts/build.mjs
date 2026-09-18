@@ -27,8 +27,11 @@ if (![resolve(root, 'dist/com'), resolve(root, 'dist/ru')].includes(output)) thr
 const routes = new Set(Object.keys(registry));
 for (const [slug, site] of Object.entries(registry)) {
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error('Invalid slug');
-  const config = site.editions[edition];
-  if (!config || !/^\d+$/.test(config.widgetId) || !/^[a-f0-9]+$/.test(config.scriptId) || !/^\/[a-z0-9/-]+\/$/.test(config.successPath)) throw new Error('Invalid edition config');
+  const config = site.editions?.[edition];
+  if (!config || typeof config !== 'object') throw new Error('Invalid edition config');
+  const hasWidgetConfig = ['widgetId', 'scriptId', 'successPath'].some(key => config[key] !== undefined);
+  if (hasWidgetConfig && (!/^\d+$/.test(config.widgetId) || !/^[a-f0-9]+$/.test(config.scriptId) || !/^\/[a-z0-9/-]+\/$/.test(config.successPath))) throw new Error('Invalid widget config');
+  if ((site.confirmationAliases?.length ?? 0) > 0 && !hasWidgetConfig) throw new Error('Confirmation aliases require widget config');
   for (const alias of site.confirmationAliases ?? []) {
     if (!/^[a-z0-9-]+$/.test(alias) || routes.has(alias)) throw new Error(`Duplicate or invalid route: ${alias}`);
     routes.add(alias);
@@ -46,25 +49,28 @@ for (const [slug, site] of Object.entries(registry)) {
   const base = `/${slug}/`;
   const assetPaths = html => html.replace(/((?:src|href)=["'])\/(?!\/)/g, `$1${base}`);
   const analytics = html => slug === 'clients' ? withAnalytics(html, edition) : html;
-  const confirmation = analytics(assetPaths(await readFile(resolve(siteRoot, 'src/thank-you.html'), 'utf8')));
+  const aliases = site.confirmationAliases ?? [];
+  const confirmation = aliases.length ? analytics(assetPaths(await readFile(resolve(siteRoot, 'src/thank-you.html'), 'utf8'))) : null;
   await build({
     configFile: false, root: siteRoot, base,
     build: { outDir: resolve(output, slug), emptyOutDir: true },
     plugins: [{
       name: 'agk-edition',
       transformIndexHtml: { order: 'pre', handler: html => html
-        .replaceAll('%%WIDGET_ID%%', config.widgetId)
-        .replaceAll('%%SCRIPT_ID%%', config.scriptId)
-        .replaceAll('%%SUCCESS_PATH%%', config.successPath) },
+        .replaceAll('%%WIDGET_ID%%', config.widgetId ?? '')
+        .replaceAll('%%SCRIPT_ID%%', config.scriptId ?? '')
+        .replaceAll('%%SUCCESS_PATH%%', config.successPath ?? '') },
     }],
   });
   const landingPath = resolve(output, slug, 'index.html');
   await writeFile(landingPath, analytics(await readFile(landingPath, 'utf8')));
-  // Public CSS is copied as-is by Vite: scope its font URLs to this site too.
-  const cssPath = resolve(output, slug, 'thank-you.css');
-  const css = await readFile(cssPath, 'utf8');
-  await writeFile(cssPath, css.replace(/url\((["'])\/(?!\/)/g, `url($1${base}`));
-  for (const alias of site.confirmationAliases ?? []) {
+  if (aliases.length) {
+    // Public CSS is copied as-is by Vite: scope its font URLs to this site too.
+    const cssPath = resolve(output, slug, 'thank-you.css');
+    const css = await readFile(cssPath, 'utf8');
+    await writeFile(cssPath, css.replace(/url\((["'])\/(?!\/)/g, `url($1${base}`));
+  }
+  for (const alias of aliases) {
     await mkdir(resolve(output, alias), { recursive: true });
     await writeFile(resolve(output, alias, 'index.html'), confirmation);
     await mkdir(resolve(output, slug, alias), { recursive: true });

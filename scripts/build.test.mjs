@@ -11,13 +11,15 @@ for (const edition of ['com','ru']) {
     for (const [slug, site] of Object.entries(registry)) {
       const html = await readFile(resolve(root, slug, 'index.html'), 'utf8');
       const config = site.editions[edition];
-      assert.ok(html.includes(`id=${config.widgetId}`));
-      assert.ok(html.includes(`id="${config.scriptId}"`));
-      assert.ok(html.includes(`data-success-path="${config.successPath}"`));
+      if (config.widgetId) {
+        assert.ok(html.includes(`id=${config.widgetId}`));
+        assert.ok(html.includes(`id="${config.scriptId}"`));
+        assert.ok(html.includes(`data-success-path="${config.successPath}"`));
+      }
       assert.ok(!html.includes('%%'));
       assert.ok(!html.includes('widget-fallback'));
       const pages = [html];
-      for (const alias of site.confirmationAliases) {
+      for (const alias of site.confirmationAliases ?? []) {
         const thanks = await readFile(resolve(root, alias, 'index.html'), 'utf8');
         assert.ok(thanks.includes('noindex,follow'));
         for (const channel of ['tg', 'max', 'vk']) assert.ok(thanks.includes(`https://agkedu.getcourse.ru/${channel}_subscribe`));
@@ -39,7 +41,8 @@ for (const edition of ['com','ru']) {
           await access(resolve(root, '.' + path));
         }
       }
-      const cssFiles = [resolve(root, slug, 'thank-you.css'), ...(await readdir(resolve(root, slug, 'assets'))).filter(f=>f.endsWith('.css')).map(f=>resolve(root, slug, 'assets', f))];
+      const cssFiles = [...(await readdir(resolve(root, slug, 'assets'))).filter(f=>f.endsWith('.css')).map(f=>resolve(root, slug, 'assets', f))];
+      if ((site.confirmationAliases?.length ?? 0) > 0) cssFiles.unshift(resolve(root, slug, 'thank-you.css'));
       for (const file of cssFiles) {
         const css = await readFile(file, 'utf8');
         for (const [, url] of css.matchAll(/url\(["']?(\/(?!\/)[^)'"\s]+)["']?\)/g)) {
@@ -50,6 +53,13 @@ for (const edition of ['com','ru']) {
     }
   });
 }
+test('mkclients masterclass is present in both editions', async () => {
+  for (const edition of ['com', 'ru']) {
+    const html = await readFile(resolve('dist', edition, 'mkclients', 'index.html'), 'utf8');
+    assert.ok(html.includes('Собери систему, которая генерит клиентов и деньги 24/7'));
+    assert.ok(html.includes('Евраза, Норникеля и др.'));
+  }
+});
 test('RSYA archive is byte-identical in RU and absent from COM', async () => {
   const files = ['index.html', '.htaccess', 'max/index.html', 'psy/index.html'];
   for (const file of files) {
