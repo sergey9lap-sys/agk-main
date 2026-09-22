@@ -48,18 +48,24 @@ for (const [slug, site] of Object.entries(registry)) {
   const siteRoot = resolve(root, 'sites', slug);
   const base = `/${slug}/`;
   const assetPaths = html => html.replace(/((?:src|href)=["'])\/(?!\/)/g, `$1${base}`);
-  const analytics = html => slug === 'clients' ? withAnalytics(html, edition) : html;
+  const editionHtml = html => html
+    .replaceAll('%%WIDGET_ID%%', config.widgetId ?? '')
+    .replaceAll('%%SCRIPT_ID%%', config.scriptId ?? '')
+    .replaceAll('%%SUCCESS_PATH%%', config.successPath ?? '')
+    .replaceAll('%%COOKIE_SERVICES%%', edition === 'com' && slug === 'clients' ? 'Яндекс.Метрика, Meta Pixel и формы GetCourse' : 'Яндекс.Метрика и формы GetCourse');
+  const analytics = html => slug === 'clients'
+    ? withAnalytics(html, edition)
+    : slug === 'mkclients'
+      ? withAnalytics(html, edition, { includeMetaPixel: false })
+      : html;
   const aliases = site.confirmationAliases ?? [];
-  const confirmation = aliases.length ? analytics(assetPaths(await readFile(resolve(siteRoot, 'src/thank-you.html'), 'utf8'))) : null;
+  const confirmation = aliases.length ? analytics(assetPaths(editionHtml(await readFile(resolve(siteRoot, 'src/thank-you.html'), 'utf8')))) : null;
   await build({
     configFile: false, root: siteRoot, base,
     build: { outDir: resolve(output, slug), emptyOutDir: true },
     plugins: [{
       name: 'agk-edition',
-      transformIndexHtml: { order: 'pre', handler: html => html
-        .replaceAll('%%WIDGET_ID%%', config.widgetId ?? '')
-        .replaceAll('%%SCRIPT_ID%%', config.scriptId ?? '')
-        .replaceAll('%%SUCCESS_PATH%%', config.successPath ?? '') },
+      transformIndexHtml: { order: 'pre', handler: editionHtml },
     }],
   });
   const landingPath = resolve(output, slug, 'index.html');

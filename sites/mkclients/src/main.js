@@ -42,3 +42,29 @@ if (funnelMap) {
   }, {threshold: 0.28});
   routeObserver.observe(funnelMap);
 }
+
+const cookieNotice = document.querySelector('[data-cookie-notice]');
+
+if (cookieNotice) {
+  const consentCookie = 'agk_cookie_consent';
+  const hasConsent = document.cookie.split('; ').some(item => item === `${consentCookie}=accepted`);
+
+  const hideNotice = () => {
+    cookieNotice.classList.add('cookie-notice--closing');
+    window.setTimeout(() => {
+      cookieNotice.hidden = true;
+      cookieNotice.classList.remove('cookie-notice--closing');
+    }, 180);
+  };
+
+  if (!hasConsent) cookieNotice.hidden = false;
+
+  cookieNotice.querySelector('[data-cookie-accept]')?.addEventListener('click', () => {
+    const secure = location.protocol === 'https:' ? '; Secure' : '';
+    document.cookie = `${consentCookie}=accepted; Path=/; Max-Age=31536000; SameSite=Lax${secure}`;
+    window.dispatchEvent(new CustomEvent('agk:cookie-consent'));
+    hideNotice();
+  });
+
+  cookieNotice.querySelector('[data-cookie-dismiss]')?.addEventListener('click', hideNotice);
+}

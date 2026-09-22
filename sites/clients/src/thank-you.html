@@ -43,5 +43,29 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <p class="see-you">До встречи на вебинаре<br><strong>21 сентября</strong></p>
   </footer>
 </main>
+<aside class="cookie-notice" data-cookie-notice hidden aria-label="Уведомление об использовании cookie-файлов">
+  <button class="cookie-notice__close" type="button" data-cookie-dismiss aria-label="Закрыть уведомление"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+  <p>Сайт использует cookie-файлы для корректной работы и аналитики. Подключённые сервисы: %%COOKIE_SERVICES%%. Подробнее — в <a href="https://agkedu.getcourse.ru/personaldata" target="_blank" rel="noreferrer">политике конфиденциальности</a>.</p>
+  <button class="cookie-notice__accept" type="button" data-cookie-accept>Согласиться</button>
+</aside>
+<script>
+(() => {
+  const notice = document.querySelector('[data-cookie-notice]');
+  const consentCookie = 'agk_cookie_consent';
+  const hasConsent = document.cookie.split('; ').some(item => item === `${consentCookie}=accepted`);
+  const hideNotice = () => {
+    notice.classList.add('cookie-notice--closing');
+    window.setTimeout(() => { notice.hidden = true; notice.classList.remove('cookie-notice--closing'); }, 180);
+  };
+  if (!hasConsent) notice.hidden = false;
+  notice.querySelector('[data-cookie-accept]').addEventListener('click', () => {
+    const secure = location.protocol === 'https:' ? '; Secure' : '';
+    document.cookie = `${consentCookie}=accepted; Path=/; Max-Age=31536000; SameSite=Lax${secure}`;
+    window.dispatchEvent(new CustomEvent('agk:cookie-consent'));
+    hideNotice();
+  });
+  notice.querySelector('[data-cookie-dismiss]').addEventListener('click', hideNotice);
+})();
+</script>
 </body>
 </html>

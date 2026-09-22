@@ -28,12 +28,14 @@ for (const edition of ['com','ru']) {
         pages.push(thanks);
       }
       for (const page of pages) {
-        if (slug === 'clients') {
+        if (['clients', 'mkclients'].includes(slug)) {
           const counter = edition === 'com' ? '110484887' : '110484880';
           assert.equal(page.split(`ym(${counter},'init'`).length - 1, 1);
           assert.ok(!page.includes(edition === 'com' ? '110484880' : '110484887'));
-          assert.equal(page.split("fbq('init', '1923709794923109')").length - 1, edition === 'com' ? 1 : 0);
-          assert.equal(page.includes('facebook.com/tr'), edition === 'com');
+          assert.equal(page.split("fbq('init', '1923709794923109')").length - 1, edition === 'com' && slug === 'clients' ? 1 : 0);
+          assert.ok(page.includes('agk_cookie_consent=accepted'));
+          assert.ok(page.includes('data-cookie-notice'));
+          assert.ok(!page.includes('mc.yandex.ru/watch/'));
         }
         for (const [, url] of page.matchAll(/(?:src|href)=["'](\/(?!\/)[^"']+)["']/g)) {
           const path = url.split(/[?#]/)[0];
