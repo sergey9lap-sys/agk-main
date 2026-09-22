@@ -54,9 +54,9 @@ for (const [slug, site] of Object.entries(registry)) {
     .replaceAll('%%SUCCESS_PATH%%', config.successPath ?? '')
     .replaceAll('%%COOKIE_SERVICES%%', edition === 'com' && slug === 'clients' ? 'Яндекс.Метрика, Meta Pixel и формы GetCourse' : 'Яндекс.Метрика и формы GetCourse');
   const analytics = html => slug === 'clients'
-    ? withAnalytics(html, edition)
+    ? withAnalytics(html, edition, { consentCookie: 'agk_cookie_consent_clients' })
     : slug === 'mkclients'
-      ? withAnalytics(html, edition, { includeMetaPixel: false })
+      ? withAnalytics(html, edition, { includeMetaPixel: false, consentCookie: 'agk_cookie_consent_mkclients' })
       : html;
   const aliases = site.confirmationAliases ?? [];
   const confirmation = aliases.length ? analytics(assetPaths(editionHtml(await readFile(resolve(siteRoot, 'src/thank-you.html'), 'utf8')))) : null;

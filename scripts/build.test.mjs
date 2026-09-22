@@ -33,7 +33,8 @@ for (const edition of ['com','ru']) {
           assert.equal(page.split(`ym(${counter},'init'`).length - 1, 1);
           assert.ok(!page.includes(edition === 'com' ? '110484880' : '110484887'));
           assert.equal(page.split("fbq('init', '1923709794923109')").length - 1, edition === 'com' && slug === 'clients' ? 1 : 0);
-          assert.ok(page.includes('agk_cookie_consent=accepted'));
+          assert.ok(page.includes(`agk_cookie_consent_${slug}=accepted`));
+          assert.ok(!page.includes('agk_cookie_consent=accepted'));
           assert.ok(page.includes('data-cookie-notice'));
           assert.ok(!page.includes('mc.yandex.ru/watch/'));
         }

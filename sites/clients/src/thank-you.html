@@ -51,7 +51,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <script>
 (() => {
   const notice = document.querySelector('[data-cookie-notice]');
-  const consentCookie = 'agk_cookie_consent';
+  const consentCookie = 'agk_cookie_consent_clients';
   const hasConsent = document.cookie.split('; ').some(item => item === `${consentCookie}=accepted`);
   const hideNotice = () => {
     notice.classList.add('cookie-notice--closing');

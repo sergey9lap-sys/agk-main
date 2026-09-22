@@ -242,7 +242,7 @@ initMicroInteractions();
 const cookieNotice = document.querySelector("[data-cookie-notice]");
 
 if (cookieNotice) {
-  const consentCookie = "agk_cookie_consent";
+  const consentCookie = "agk_cookie_consent_clients";
   const hasConsent = document.cookie.split("; ").some((item) => item === `${consentCookie}=accepted`);
 
   const hideNotice = () => {
