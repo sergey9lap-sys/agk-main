@@ -14,8 +14,8 @@
   },
   "praktikum": {
     "editions": {
-      "com": {},
-      "ru": {}
+      "com": { "widgetId": "1659754", "scriptId": "77fac7cc54ccdf128e6aa822db565e97ed1ffc18" },
+      "ru": { "widgetId": "1659752", "scriptId": "e141a9f9c80befc33c47c87467d5185d810dc61a" }
     }
   }
 }

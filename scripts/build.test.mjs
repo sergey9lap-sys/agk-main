@@ -14,7 +14,7 @@ for (const edition of ['com','ru']) {
       if (config.widgetId) {
         assert.ok(html.includes(`id=${config.widgetId}`));
         assert.ok(html.includes(`id="${config.scriptId}"`));
-        assert.ok(html.includes(`data-success-path="${config.successPath}"`));
+        if (config.successPath) assert.ok(html.includes(`data-success-path="${config.successPath}"`));
       }
       assert.ok(!html.includes('%%'));
       assert.ok(!html.includes('widget-fallback'));

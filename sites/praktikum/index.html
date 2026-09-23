@@ -31,9 +31,20 @@
               </aside>
             </div>
             <div class="hero__materials-body">
-              <figure class="hero__materials-visual">
-                <img src="/public/praktikum-materials-generated.webp" alt="Практикум «Три инструмента менторинга» и книги «20 вопросов сильного ментора» и «21 фишка в продажах»" width="1200" height="445">
-              </figure>
+              <div class="hero__bonus-grid" aria-label="Бонусы после регистрации">
+                <article class="hero-bonus hero-bonus--practice">
+                  <span class="hero-bonus__art" aria-hidden="true"><img src="/public/bonus-praktikum-v2.webp" alt="" width="1200" height="800"></span>
+                  <strong><small>Практикум · 75 минут</small><span>Три инструмента менторинга</span></strong>
+                </article>
+                <article class="hero-bonus hero-bonus--questions">
+                  <span class="hero-bonus__art" aria-hidden="true"><img src="/public/bonus-20-questions-v2.webp" alt="" width="1200" height="800"></span>
+                  <strong>20 вопросов сильного ментора</strong>
+                </article>
+                <article class="hero-bonus hero-bonus--sales">
+                  <span class="hero-bonus__art" aria-hidden="true"><img src="/public/bonus-21-sales-v2.webp" alt="" width="1200" height="800"></span>
+                  <strong>21 фишка в продажах</strong>
+                </article>
+              </div>
             </div>
           </div>
         </div>
@@ -47,7 +58,6 @@
     <section class="audience section" id="audience" aria-labelledby="audience-title">
       <div class="shell audience__layout">
         <div class="section-heading audience__heading">
-          <p class="section-kicker">Точка перехода</p>
           <h2 id="audience-title">Для кого практикум</h2>
           <p>Для экспертов, консультантов, наставников, коучей, преподавателей и авторов образовательных программ, которые:</p>
         </div>
@@ -66,7 +76,7 @@
         <div class="economy__statement">
           <p class="economy__number">+30%</p>
           <h2 id="economy-title">Откуда берётся дополнительная выручка</h2>
-          <p>Не из большего количества клиентов и рабочих часов, а из другой экономики вашей практики.</p>
+          <p>Не из большего количества клиентов и рабочих часов, а из другой экономики вашей практики</p>
         </div>
         <div class="economy__list">
           <h3>Менторские инструменты позволяют:</h3>
@@ -88,17 +98,17 @@
         <div class="author__copy">
           <p class="author__label">Автор практикума</p>
           <h2 id="author-title">Александра<br>Горева-Куртышева</h2>
-          <p class="author__lead">EdTech-предприниматель, методолог и архитектор образовательных продуктов.</p>
+          <p class="author__lead">EdTech-предприниматель, методолог и архитектор образовательных продуктов</p>
           <div class="author__stats">
             <p><strong>40 000+</strong><span>учеников из 50 стран</span></p>
             <p><strong>5</strong><span>премий за вклад в образование</span></p>
             <p><strong>98%+</strong><span>конверсия в кейс студентов</span></p>
           </div>
           <div class="author__facts">
-            <p>Собственник BMCG и генеральный продюсер акселератора «Бизнес 360» в Сбере.</p>
-            <p>Автор стратегических программ для X5, ВТБ, Роснефти, Евраза, Норникеля и др.</p>
-            <p>Колумнист РБК и Forbes Russia, резидент Клуба Первых.</p>
-            <p>Член попечительского совета МШУ Сколково, Executive Coaching and Mentoring.</p>
+            <p>Собственник BMCG и генеральный продюсер акселератора «Бизнес 360» в Сбере</p>
+            <p>Автор стратегических программ для X5, ВТБ, Роснефти, Евраза, Норникеля и других компаний</p>
+            <p>Колумнист РБК и Forbes Russia, резидент Клуба Первых</p>
+            <p>Член попечительского совета МШУ Сколково, Executive Coaching and Mentoring</p>
           </div>
         </div>
       </div>
@@ -108,23 +118,19 @@
       <div class="shell access__grid">
         <div class="access__copy">
           <h2 id="access-title">Получите запись практикума и два рабочих подарка</h2>
-          <p>Оставьте контакты — материалы придут после регистрации.</p>
+          <p>Оставьте контакты — материалы придут после регистрации</p>
         </div>
-        <form class="access__form" data-registration-form novalidate>
-          <label>Имя<input type="text" name="name" autocomplete="name" placeholder="Как к вам обращаться" required></label>
-          <label>Электронная почта<input type="email" name="email" autocomplete="email" placeholder="name@example.ru" required></label>
-          <label>Телефон<input type="tel" name="phone" autocomplete="tel" placeholder="+7 999 000-00-00" minlength="7" required></label>
-          <button class="button" type="submit">Получить доступ бесплатно <span aria-hidden="true"></span></button>
-          <p class="access__legal">Нажимая кнопку, вы соглашаетесь с <a href="https://agkedu.getcourse.ru/personaldata" target="_blank" rel="noreferrer">политикой обработки персональных данных</a>.</p>
-          <p class="access__status" data-form-status role="status" hidden></p>
-        </form>
+        <div class="access__widget">
+          <script id="%%SCRIPT_ID%%" src="https://agkedu.getcourse.ru/pl/lite/widget/script?id=%%WIDGET_ID%%"></script>
+          <noscript>Для загрузки формы регистрации включите JavaScript в браузере</noscript>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="shell footer__grid">
-      <div><a class="brand" href="#top"><span>М</span><b>Менторинг</b></a><p>От метода до запуска менторской практики.</p></div>
+      <div><a class="brand" href="#top"><span>М</span><b>Менторинг</b></a><p>От метода до запуска менторской практики</p></div>
       <p>ИП Горева-Куртышева Александра Александровна<br>ИНН 246212538610</p>
       <div><a href="tel:+79895421560">+7 989 542-15-60</a><a href="https://agkedu.getcourse.ru/personaldata" target="_blank" rel="noreferrer">Политика конфиденциальности</a><a href="https://t.me/lp_sergey" target="_blank" rel="noreferrer">Разработка сайта</a></div>
     </div>

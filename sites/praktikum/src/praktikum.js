@@ -33,17 +33,6 @@ const timerId = window.setInterval(() => {
   if (Date.now() >= expiry) window.clearInterval(timerId);
 }, 1000);
 
-const form = document.querySelector("[data-registration-form]");
-const formStatus = document.querySelector("[data-form-status]");
-form?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (!form.reportValidity()) return;
-  if (formStatus) {
-    formStatus.hidden = false;
-    formStatus.textContent = "Форма подготовлена. Для отправки данных нужен ID бесплатного виджета GetCourse.";
-  }
-});
-
 if (!reducedMotion && window.gsap && window.ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);
   const enter = { autoAlpha: 0, y: 22, filter: "blur(5px)", duration: .62, ease: "power3.out", clearProps: "transform,filter,opacity,visibility" };
@@ -55,7 +44,7 @@ if (!reducedMotion && window.gsap && window.ScrollTrigger) {
     .from(".hero__label", { autoAlpha: 0, y: 10, duration: .34, clearProps: "transform,opacity,visibility" }, "<+.08")
     .from(".hero__actions", { ...enter, y: 16, duration: .48 }, "-=.48")
     .from(".hero__materials-title", { autoAlpha: 0, y: 10, duration: .36, clearProps: "transform,opacity,visibility" }, "-=.3")
-    .from(".hero__materials-visual", { autoAlpha: 0, y: 14, duration: .48, clearProps: "transform,opacity,visibility" }, "-=.22")
+    .from(".hero-bonus", { autoAlpha: 0, y: 14, duration: .42, stagger: .06, clearProps: "transform,opacity,visibility" }, "-=.22")
     .from(".timer", { autoAlpha: 0, y: 12, duration: .42, clearProps: "transform,opacity,visibility" }, "-=.22");
 
   const sectionTimeline = (trigger) => gsap.timeline({
@@ -86,6 +75,5 @@ if (!reducedMotion && window.gsap && window.ScrollTrigger) {
   sectionTimeline(".access")
     .from(".access h2", { ...enter })
     .from(".access__copy p", { ...enter, y: 12, duration: .42 }, "-=.34")
-    .from(".access__form label", { autoAlpha: 0, y: 14, duration: .42, stagger: .065, clearProps: "transform,opacity,visibility" }, "-=.24")
-    .from(".access__form .button, .access__legal", { ...enter, y: 10, duration: .4, stagger: .06 }, "-=.18");
+    .from(".access__widget", { ...enter, y: 14, duration: .48 }, "-=.24");
 }

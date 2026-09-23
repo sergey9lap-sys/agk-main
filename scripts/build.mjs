@@ -29,9 +29,10 @@ for (const [slug, site] of Object.entries(registry)) {
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error('Invalid slug');
   const config = site.editions?.[edition];
   if (!config || typeof config !== 'object') throw new Error('Invalid edition config');
-  const hasWidgetConfig = ['widgetId', 'scriptId', 'successPath'].some(key => config[key] !== undefined);
-  if (hasWidgetConfig && (!/^\d+$/.test(config.widgetId) || !/^[a-f0-9]+$/.test(config.scriptId) || !/^\/[a-z0-9/-]+\/$/.test(config.successPath))) throw new Error('Invalid widget config');
-  if ((site.confirmationAliases?.length ?? 0) > 0 && !hasWidgetConfig) throw new Error('Confirmation aliases require widget config');
+  const hasWidgetConfig = ['widgetId', 'scriptId'].some(key => config[key] !== undefined);
+  if (hasWidgetConfig && (!/^\d+$/.test(config.widgetId) || !/^[a-f0-9]+$/.test(config.scriptId))) throw new Error('Invalid widget config');
+  if (config.successPath !== undefined && !/^\/[a-z0-9/-]+\/$/.test(config.successPath)) throw new Error('Invalid success path');
+  if ((site.confirmationAliases?.length ?? 0) > 0 && (!hasWidgetConfig || config.successPath === undefined)) throw new Error('Confirmation aliases require widget config and success path');
   for (const alias of site.confirmationAliases ?? []) {
     if (!/^[a-z0-9-]+$/.test(alias) || routes.has(alias)) throw new Error(`Duplicate or invalid route: ${alias}`);
     routes.add(alias);
