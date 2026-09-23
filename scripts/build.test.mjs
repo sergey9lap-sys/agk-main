@@ -63,6 +63,22 @@ test('mkclients masterclass is present in both editions', async () => {
     assert.ok(html.includes('Евраза, Норникеля и др.'));
   }
 });
+test('praktikum has edition-specific nested confirmation pages without replacing webinar aliases', async () => {
+  for (const [edition, alias, otherAlias] of [['com', 'thanks', 'spasibo'], ['ru', 'spasibo', 'thanks']]) {
+    const root = resolve('dist', edition);
+    const page = await readFile(resolve(root, 'praktikum', alias, 'index.html'), 'utf8');
+    assert.ok(page.includes('Вам открыт доступ'));
+    assert.ok(page.includes('Получить запись и подарки'));
+    assert.ok(page.includes('class="primary-action" href="https://t.me/agkclub_bot"'));
+    assert.ok(page.includes('Персональная консультация'));
+    assert.ok(page.includes('/praktikum/thank-you.css'));
+    assert.ok(page.includes('/praktikum/praktikum-materials-generated.webp'));
+    for (const channel of ['tg', 'max', 'vk']) assert.ok(page.includes(`https://agkedu.getcourse.ru/${channel}_subscribe`));
+    await assert.rejects(access(resolve(root, 'praktikum', otherAlias, 'index.html')));
+    const webinarPage = await readFile(resolve(root, alias, 'index.html'), 'utf8');
+    assert.ok(webinarPage.includes('Ваша регистрация'));
+  }
+});
 test('RSYA archive is byte-identical in RU and absent from COM', async () => {
   const files = ['index.html', '.htaccess', 'max/index.html', 'psy/index.html'];
   for (const file of files) {

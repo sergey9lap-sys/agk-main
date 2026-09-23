@@ -33,6 +33,10 @@ for (const [slug, site] of Object.entries(registry)) {
   if (hasWidgetConfig && (!/^\d+$/.test(config.widgetId) || !/^[a-f0-9]+$/.test(config.scriptId))) throw new Error('Invalid widget config');
   if (config.successPath !== undefined && !/^\/[a-z0-9/-]+\/$/.test(config.successPath)) throw new Error('Invalid success path');
   if ((site.confirmationAliases?.length ?? 0) > 0 && (!hasWidgetConfig || config.successPath === undefined)) throw new Error('Confirmation aliases require widget config and success path');
+  const editionConfirmation = site.editionConfirmationPaths?.[edition];
+  if (editionConfirmation !== undefined && (!/^[a-z0-9-]+$/.test(editionConfirmation) || !hasWidgetConfig || config.successPath !== `/${slug}/${editionConfirmation}/`)) {
+    throw new Error('Edition confirmation requires a widget and matching nested success path');
+  }
   for (const alias of site.confirmationAliases ?? []) {
     if (!/^[a-z0-9-]+$/.test(alias) || routes.has(alias)) throw new Error(`Duplicate or invalid route: ${alias}`);
     routes.add(alias);
@@ -60,7 +64,10 @@ for (const [slug, site] of Object.entries(registry)) {
       ? withAnalytics(html, edition, { includeMetaPixel: false, consentCookie: 'agk_cookie_consent_mkclients' })
       : html;
   const aliases = site.confirmationAliases ?? [];
-  const confirmation = aliases.length ? analytics(assetPaths(editionHtml(await readFile(resolve(siteRoot, 'src/thank-you.html'), 'utf8')))) : null;
+  const editionConfirmation = site.editionConfirmationPaths?.[edition];
+  const confirmation = aliases.length || editionConfirmation
+    ? analytics(assetPaths(editionHtml(await readFile(resolve(siteRoot, 'src/thank-you.html'), 'utf8'))))
+    : null;
   await build({
     configFile: false, root: siteRoot, base,
     build: { outDir: resolve(output, slug), emptyOutDir: true },
@@ -71,7 +78,7 @@ for (const [slug, site] of Object.entries(registry)) {
   });
   const landingPath = resolve(output, slug, 'index.html');
   await writeFile(landingPath, analytics(await readFile(landingPath, 'utf8')));
-  if (aliases.length) {
+  if (confirmation) {
     // Public CSS is copied as-is by Vite: scope its font URLs to this site too.
     const cssPath = resolve(output, slug, 'thank-you.css');
     const css = await readFile(cssPath, 'utf8');
@@ -82,6 +89,10 @@ for (const [slug, site] of Object.entries(registry)) {
     await writeFile(resolve(output, alias, 'index.html'), confirmation);
     await mkdir(resolve(output, slug, alias), { recursive: true });
     await writeFile(resolve(output, slug, alias, 'index.html'), confirmation);
+  }
+  if (editionConfirmation) {
+    await mkdir(resolve(output, slug, editionConfirmation), { recursive: true });
+    await writeFile(resolve(output, slug, editionConfirmation, 'index.html'), confirmation);
   }
 }
 // Copy the archived RU site byte-for-byte, including its directory routing rules.
