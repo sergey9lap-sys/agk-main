@@ -22,7 +22,8 @@ for (const edition of ['com','ru']) {
       for (const alias of site.confirmationAliases ?? []) {
         const thanks = await readFile(resolve(root, alias, 'index.html'), 'utf8');
         assert.ok(thanks.includes('noindex,follow'));
-        for (const channel of ['tg', 'max', 'vk']) assert.ok(thanks.includes(`https://agkedu.getcourse.ru/${channel}_subscribe`));
+        for (const url of ['https://agkedu.getcourse.ru/tlgrm', 'https://agkedu.getcourse.ru/ss?ss=maxbot', 'https://vk.com/app6622219_-210982065#themeId=33822']) assert.ok(thanks.includes(url));
+        for (const stale of ['tg_subscribe', 'max_subscribe', 'vk_subscribe', 't.me/+1wK-qlsmFxI3MTgy', 'max.ru/join/djDyfF9jdtDaccPTD4In2C4g2_vawUb2hKvCRoEAJA4']) assert.ok(!thanks.includes(stale));
         assert.equal((thanks.match(/class="care-actions"/g) ?? []).length, 1);
         assert.equal(thanks, await readFile(resolve(root, slug, alias, 'index.html'), 'utf8'));
         pages.push(thanks);
@@ -69,11 +70,12 @@ test('praktikum has edition-specific nested confirmation pages without replacing
     const page = await readFile(resolve(root, 'praktikum', alias, 'index.html'), 'utf8');
     assert.ok(page.includes('Вам открыт доступ'));
     assert.ok(page.includes('Получить запись и подарки'));
-    assert.ok(page.includes('class="primary-action" href="https://t.me/agkclub_bot"'));
+    assert.ok(page.includes('class="primary-action" href="https://agkedu.getcourse.ru/tlgrm"'));
     assert.ok(page.includes('Персональная консультация'));
     assert.ok(page.includes('/praktikum/thank-you.css'));
     assert.ok(page.includes('/praktikum/praktikum-materials-generated.webp'));
-    for (const channel of ['tg', 'max', 'vk']) assert.ok(page.includes(`https://agkedu.getcourse.ru/${channel}_subscribe`));
+    for (const url of ['https://agkedu.getcourse.ru/tlgrm', 'https://agkedu.getcourse.ru/ss?ss=maxbot', 'https://vk.com/app6622219_-210982065#themeId=33822']) assert.ok(page.includes(url));
+    for (const stale of ['t.me/agkclub_bot', 'tg_subscribe', 'max_subscribe', 'vk_subscribe']) assert.ok(!page.includes(stale));
     await assert.rejects(access(resolve(root, 'praktikum', otherAlias, 'index.html')));
     const webinarPage = await readFile(resolve(root, alias, 'index.html'), 'utf8');
     assert.ok(webinarPage.includes('Ваша регистрация'));
