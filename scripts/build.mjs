@@ -57,12 +57,10 @@ for (const [slug, site] of Object.entries(registry)) {
     .replaceAll('%%WIDGET_ID%%', config.widgetId ?? '')
     .replaceAll('%%SCRIPT_ID%%', config.scriptId ?? '')
     .replaceAll('%%SUCCESS_PATH%%', config.successPath ?? '')
-    .replaceAll('%%COOKIE_SERVICES%%', edition === 'com' && slug === 'clients' ? 'Яндекс.Метрика, Meta Pixel и формы GetCourse' : 'Яндекс.Метрика и формы GetCourse');
-  const analytics = html => slug === 'clients'
-    ? withAnalytics(html, edition, { consentCookie: 'agk_cookie_consent_clients' })
-    : slug === 'mkclients'
-      ? withAnalytics(html, edition, { includeMetaPixel: false, consentCookie: 'agk_cookie_consent_mkclients' })
-      : html;
+    .replaceAll('%%COOKIE_SERVICES%%', edition === 'com' && ['clients', 'praktikum'].includes(slug) ? 'Яндекс.Метрика, Meta Pixel и формы GetCourse' : 'Яндекс.Метрика и формы GetCourse');
+  const analytics = html => ['clients', 'mkclients', 'praktikum'].includes(slug)
+    ? withAnalytics(html, edition, { includeMetaPixel: slug !== 'mkclients', consentCookie: `agk_cookie_consent_${slug}` })
+    : html;
   const aliases = site.confirmationAliases ?? [];
   const editionConfirmation = site.editionConfirmationPaths?.[edition];
   const confirmation = aliases.length || editionConfirmation

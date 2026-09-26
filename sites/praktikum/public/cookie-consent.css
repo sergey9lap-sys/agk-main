@@ -1,0 +1,10 @@
+.cookie-notice[hidden]{display:none}
+.cookie-notice{position:fixed;z-index:100;left:20px;bottom:20px;width:min(430px,calc(100% - 40px));padding:22px 68px 22px 22px;border:1px solid rgba(212,180,105,.65);border-radius:18px;background:#250811;color:#f3e9df;box-shadow:0 16px 48px rgba(22,7,13,.42);font:400 13px/1.55 "Golos Text",Arial,sans-serif}
+.cookie-notice p{margin:0}
+.cookie-notice a{color:#e7c77a;font-weight:700;text-underline-offset:3px}
+.cookie-notice__close{position:absolute;top:12px;right:12px;display:grid;place-items:center;width:40px;height:40px;padding:0;border:1px solid rgba(212,180,105,.55);border-radius:50%;background:transparent;color:#f3e9df;cursor:pointer}
+.cookie-notice__close svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.cookie-notice__accept{min-width:150px;min-height:44px;margin-top:16px;padding:10px 18px;border:0;border-radius:12px;background:#8fe8d5;color:#16070d;font:700 14px/1.2 "Golos Text",Arial,sans-serif;cursor:pointer}
+.cookie-notice :focus-visible{outline:3px solid #8fe8d5;outline-offset:3px}
+@media(hover:hover){.cookie-notice__accept:hover{background:#a8f2e2}.cookie-notice__close:hover{border-color:#e7c77a}}
+@media(max-width:520px){.cookie-notice{left:10px;bottom:10px;width:calc(100% - 20px);padding:20px 58px 20px 20px}.cookie-notice__accept{width:100%}}

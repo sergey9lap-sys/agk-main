@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/thank-you.css">
+  <link rel="stylesheet" href="/cookie-consent.css">
 </head>
 <body>
 <!-- THESIS: После регистрации человек сразу видит следующий шаг и состав подарков без нового продающего лендинга.
@@ -62,5 +63,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </div>
     </footer>
   </main>
+  <aside class="cookie-notice" data-cookie-notice hidden aria-label="Уведомление об использовании cookie-файлов">
+    <button class="cookie-notice__close" type="button" data-cookie-dismiss aria-label="Закрыть уведомление"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    <p>Сайт использует cookie-файлы для корректной работы и аналитики. Подключённые сервисы: %%COOKIE_SERVICES%%. Подробнее — в <a href="https://agkedu.getcourse.ru/personaldata" target="_blank" rel="noopener noreferrer">политике конфиденциальности</a>.</p>
+    <button class="cookie-notice__accept" type="button" data-cookie-accept>Согласиться</button>
+  </aside>
+  <script defer src="/cookie-consent.js"></script>
 </body>
 </html>

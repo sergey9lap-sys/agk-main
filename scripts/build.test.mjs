@@ -29,11 +29,11 @@ for (const edition of ['com','ru']) {
         pages.push(thanks);
       }
       for (const page of pages) {
-        if (['clients', 'mkclients'].includes(slug)) {
+        if (['clients', 'mkclients', 'praktikum'].includes(slug)) {
           const counter = edition === 'com' ? '110484887' : '110484880';
           assert.equal(page.split(`ym(${counter},'init'`).length - 1, 1);
           assert.ok(!page.includes(edition === 'com' ? '110484880' : '110484887'));
-          assert.equal(page.split("fbq('init', '1923709794923109')").length - 1, edition === 'com' && slug === 'clients' ? 1 : 0);
+          assert.equal(page.split("fbq('init', '1923709794923109')").length - 1, edition === 'com' && ['clients', 'praktikum'].includes(slug) ? 1 : 0);
           assert.ok(page.includes(`agk_cookie_consent_${slug}=accepted`));
           assert.ok(!page.includes('agk_cookie_consent=accepted'));
           assert.ok(page.includes('data-cookie-notice'));
@@ -73,7 +73,14 @@ test('praktikum has edition-specific nested confirmation pages without replacing
     assert.ok(page.includes('class="primary-action" href="https://agkedu.getcourse.ru/tlgrm"'));
     assert.ok(page.includes('Персональная консультация'));
     assert.ok(page.includes('/praktikum/thank-you.css'));
+    assert.ok(page.includes('/praktikum/cookie-consent.css'));
+    assert.ok(page.includes('/praktikum/cookie-consent.js'));
     assert.ok(page.includes('/praktikum/praktikum-materials-generated.webp'));
+    const counter = edition === 'com' ? '110484887' : '110484880';
+    assert.equal(page.split(`ym(${counter},'init'`).length - 1, 1);
+    assert.equal(page.split("fbq('init', '1923709794923109')").length - 1, edition === 'com' ? 1 : 0);
+    assert.ok(page.includes('agk_cookie_consent_praktikum=accepted'));
+    assert.ok(page.includes('data-cookie-notice'));
     for (const url of ['https://agkedu.getcourse.ru/tlgrm', 'https://agkedu.getcourse.ru/ss?ss=maxbot', 'https://vk.com/app6622219_-210982065#themeId=33822']) assert.ok(page.includes(url));
     for (const stale of ['t.me/agkclub_bot', 'tg_subscribe', 'max_subscribe', 'vk_subscribe']) assert.ok(!page.includes(stale));
     await assert.rejects(access(resolve(root, 'praktikum', otherAlias, 'index.html')));
