@@ -41,4 +41,14 @@ Use case: stylized-concept. Asset type: square thematic portrait for a Russian w
 
 ## Книга
 
+Исторический макет для прежнего бонуса; не используется на странице после обновления 05.10.2026.
+
 Use case: product-mockup. Asset type: transparent booklet mockup for a premium Russian webinar landing page. One elegant slim checklist booklet, upright three-quarter front view, entire booklet visible with generous transparent margins. Cover in warm ivory with midnight navy editorial serif typography and understated muted gold line work, subtle sun-and-shadow motif. Exact Russian cover text: "ЧЕК-ЛИСТ" and "5 признаков того, что вы работаете не по своему архетипу". Clear accurate legible typography, no extra text, no author name, no logo, no watermark, no surroundings. Soft realistic paper texture, refined studio lighting, tiny natural grounding shadow. Genuine transparent background.
+
+## Новый бонус — 20 вопросов, 05.10.2026
+
+Встроенный Imagegen, редактирование прежней книжки. Оригинал: `../../output/agk-expert-generated-originals-20261005/self-unpacking-book.png`; версия для сайта: `public/img/self-unpacking-book.webp` (560×672, прозрачность сохранена). Используется в первом экране и блоке бонусов; подпись продублирована читаемым HTML.
+
+Prompt: Use case: text-localization / product-mockup. Edit target: the supplied old booklet. Create the updated gift booklet for the same premium Russian webinar landing. Preserve the upright three-quarter front view, slim physical booklet, warm ivory paper, midnight navy editorial serif type, muted gold fine border and geometric sun-and-shadow motif, realistic studio light, full booklet visible and generous transparent margins. Replace ALL old cover wording with this exact Russian title, clearly legible: "20 вопросов" (large), "самораспаковки" (prominent), "для определения своего экспертного архетипа" (smaller, tasteful line breaks). No old "5 признаков" text, no "ЧЕК-ЛИСТ", no author name, logos, extra words or watermark. Balanced elegant typography. Genuinely transparent background with preserved alpha and only a tiny natural grounding shadow. Same visual family as original.
+
+Иконки бонусов: `icon-presentation-3d.png` — Desktop computer; `icon-audit-3d.png` — Bar chart. Официальные Microsoft Fluent UI Emoji, MIT: https://github.com/microsoft/fluentui-emoji/tree/main/assets . Единая существующая 3D-семья, без повторения книги или планшета.
