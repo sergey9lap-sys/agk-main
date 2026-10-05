@@ -1,4 +1,7 @@
 {
+  "expert": {
+    "editions": { "com": {}, "ru": {} }
+  },
   "clients": {
     "editions": {
       "com": { "widgetId": "1656005", "scriptId": "6e3ba3547aa87b1c73462d50079239ae23d9e3f8", "successPath": "/thanks/" },

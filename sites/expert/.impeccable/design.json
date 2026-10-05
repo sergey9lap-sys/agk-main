@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-05T08:00:00Z",
+  "title": "Design System: Эксперт без выгорания",
+  "extensions": {
+    "colorMeta": {
+      "ivory": { "role": "neutral", "displayName": "Слоновая кость" },
+      "paper": { "role": "neutral", "displayName": "Бумага" },
+      "ink": { "role": "neutral", "displayName": "Чернила" },
+      "navy": { "role": "neutral", "displayName": "Тёмный синий" },
+      "emerald": { "role": "secondary", "displayName": "Изумруд" },
+      "gold": { "role": "secondary", "displayName": "Приглушённое золото" },
+      "cta-start": { "role": "primary", "displayName": "Начало исходного CTA-градиента" },
+      "cta-end": { "role": "primary", "displayName": "Конец исходного CTA-градиента" },
+      "messenger": { "role": "primary", "displayName": "Кнопка мессенджера" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Hero", "purpose": "Cormorant Garamond 600, clamp(58px,6.2vw,84px), line-height 1.02; на телефоне 56px. Золотой акцент прямого начертания." },
+      "headline": { "displayName": "Заголовки секций", "purpose": "Заголовки исходных десяти секций." },
+      "confirmation-headline": { "displayName": "Следующий шаг", "purpose": "Заголовок отдельной страницы выбора мессенджера." },
+      "presenter-name": { "displayName": "Имя ведущей", "purpose": "Спокойный Onest в плашке под hero-портретом; мобильный размер 15px." }
+    },
+    "shadows": [
+      { "name": "landing-cta", "value": "0 14px 30px -10px rgba(176,74,34,.6)", "purpose": "Исходная тень CTA лендинга." },
+      { "name": "landing-cta-hover", "value": "0 18px 36px -10px rgba(176,74,34,.7)", "purpose": "Hover CTA лендинга." },
+      { "name": "hero-portrait", "value": "0 40px 70px -30px rgba(29,35,51,.45)", "purpose": "Арочный портрет hero." },
+      { "name": "tile", "value": "0 22px 44px -26px rgba(29,35,51,.3)", "purpose": "Плитки исходного лендинга." },
+      { "name": "registration", "value": "0 40px 80px -40px rgba(29,35,51,.4)", "purpose": "Большой регистрационный блок." }
+    ],
+    "motion": [
+      { "name": "landing-cta", "value": "transform 160ms cubic-bezier(.23,1,.32,1), box-shadow 160ms ease", "purpose": "Hover только мышью: подъём 2px, стрелка 3px; active scale .97. Disabled и reduced-motion без перемещения." },
+      { "name": "card-feedback", "value": "opacity 160ms ease", "purpose": "Мягкий контур карточек через псевдоэлемент; текст и геометрия неподвижны." },
+      { "name": "illustration-feedback", "value": "transform 160ms cubic-bezier(.23,1,.32,1)", "purpose": "Короткий отклик иконок, портретов, логотипов и книги; pointer/hover gating и reduced-motion." },
+      { "name": "messenger", "value": "background-color .18s", "purpose": "Смена фона кнопки мессенджера; отключается при reduced-motion." },
+      { "name": "faq", "value": "transform 160ms cubic-bezier(.23,1,.32,1)", "purpose": "Поворот стрелки открытого details; отключается при reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "landing-tablet", "value": "960px" },
+      { "name": "landing-mobile", "value": "640px" },
+      { "name": "confirmation-stack", "value": "760px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "CTA лендинга",
+      "kind": "button",
+      "refersTo": "button-landing",
+      "description": "Исходный градиент и общая геометрия всех регистрационных CTA.",
+      "html": "<a class=\"ds-landing-cta\" href=\"#register\">Зарегистрироваться</a>",
+      "css": ".ds-landing-cta{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#D9703F,#B04A22);color:#fff;font-family:Onest,system-ui,sans-serif;font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:0;border-radius:100px;width:min(460px,100%);height:72px;padding:18px 48px;line-height:1.4;box-shadow:0 14px 30px -10px rgba(176,74,34,.6);transition:transform .2s,box-shadow .2s}.ds-landing-cta:hover{transform:translateY(-2px);box-shadow:0 18px 36px -10px rgba(176,74,34,.7);background:linear-gradient(135deg,#E07A48,#B85128)}.ds-landing-cta:focus-visible{outline:3px solid #1F4A40;outline-offset:5px}@media(max-width:640px){.ds-landing-cta{width:min(100%,calc(100vw - 95px));height:88px;padding:18px 40px;font-size:14px}}@media(prefers-reduced-motion:reduce){.ds-landing-cta{transition:none}}"
+    },
+    {
+      "name": "Выбор мессенджера",
+      "kind": "nav",
+      "refersTo": "button-messenger",
+      "description": "Равнозначные Telegram, ВКонтакте и MAX; источник не подтверждает настройку рассылки.",
+      "html": "<nav class=\"ds-messengers\" aria-label=\"Выберите мессенджер\"><a href=\"https://agkedu.getcourse.ru/tlgrm\">Telegram <svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a><a href=\"https://vk.com/app6622219_-210982065#themeId=33822\">ВКонтакте <svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a><a href=\"https://agkedu.getcourse.ru/ss?ss=maxbot\">MAX <svg aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a></nav>",
+      "css": ".ds-messengers{display:grid;gap:12px}.ds-messengers a{display:flex;align-items:center;justify-content:center;position:relative;min-height:60px;padding:18px 54px;background:#AD4922;color:#fff;border-radius:100px;text-decoration:none;font-family:Onest,system-ui,sans-serif;font-weight:600;font-size:16px;transition:background-color .18s}.ds-messengers a:hover{background:#923B1B}.ds-messengers a:focus-visible{outline:3px solid #1F4A40;outline-offset:5px}.ds-messengers svg{position:absolute;right:24px;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}@media(prefers-reduced-motion:reduce){.ds-messengers a{transition:none}}"
+    },
+    {
+      "name": "Отключённое поле регистрации",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Реализованная регистрация — явная отключённая заглушка.",
+      "html": "<input class=\"ds-field\" type=\"email\" aria-label=\"Email\" placeholder=\"Email\" disabled>",
+      "css": ".ds-field{width:100%;font-family:Onest,system-ui,sans-serif;font-size:16px;padding:17px 20px;border:1px solid #E4D6C0;border-radius:14px;background:#F7F2EA;color:#1D2333;transition:border .2s}.ds-field:focus{border-color:#B08D57}.ds-field:focus-visible{outline:3px solid #1F4A40;outline-offset:5px}.ds-field:disabled{opacity:.65}@media(prefers-reduced-motion:reduce){.ds-field{transition:none}}"
+    },
+    {
+      "name": "Информационная капсула",
+      "kind": "chip",
+      "description": "Исходная подпись даты/формата, не управляющий фильтр.",
+      "html": "<span class=\"ds-pill\">Бесплатный вебинар</span>",
+      "css": ".ds-pill{display:inline-block;background:#1B2234;color:#F3EBDD;border-radius:100px;padding:9px 20px;font-family:Onest,system-ui,sans-serif;font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:500}"
+    },
+    {
+      "name": "Светлая плитка",
+      "kind": "card",
+      "refersTo": "tile",
+      "description": "Бумажная поверхность и цветная верхняя граница исходника; демонстрация геометрии без новых утверждений.",
+      "html": "<article class=\"ds-tile\"><h3>Эксперт без выгорания</h3></article>",
+      "css": ".ds-tile{background:#FCFAF6;color:#1D2333;border-radius:20px;padding:26px 24px 28px;box-shadow:0 22px 44px -26px rgba(29,35,51,.3);border-top:3px solid #B08D57}.ds-tile h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600;line-height:1.08;letter-spacing:-.01em;margin:0}"
+    },
+    {
+      "name": "Плашка ведущей",
+      "kind": "custom",
+      "refersTo": "presenter-badge",
+      "description": "Под фотографией, на её полную ширину; имя спокойным гротеском.",
+      "html": "<div class=\"ds-presenter\"><span>Ведущая</span><strong>Александра Горева-Куртышева</strong></div>",
+      "css": ".ds-presenter{position:relative;margin:14px 0 0;background:rgba(252,250,246,.8);border-radius:14px;padding:14px 18px;width:100%;font-family:Onest,sans-serif}.ds-presenter span{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8A6A39;margin-bottom:5px;font-weight:500}.ds-presenter strong{display:block;font-size:17px;line-height:1.4;font-weight:500;color:#1D2333}@media(max-width:640px){.ds-presenter{padding:12px 16px}.ds-presenter strong{font-size:15px}}"
+    },
+    {
+      "name": "Иконка аудитории",
+      "kind": "custom",
+      "refersTo": "audience-icon",
+      "description": "Готовая предметная 3D-иконка Microsoft Fluent Emoji; MIT, не Unicode и не сгенерированный портрет.",
+      "html": "<div class=\"ds-audience-icon\"><img src=\"/expert/img/icon-graduation-cap-3d.png\" width=\"256\" height=\"256\" alt=\"\"></div>",
+      "css": ".ds-audience-icon{width:44px;height:44px;margin-bottom:12px}.ds-audience-icon img{width:100%;height:100%;object-fit:contain}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Предоставленный лендинг маркетолога",
+    "overview": "Этот документ фиксирует реализованную систему `sites/expert`, а не предлагает новую визуальную концепцию. Основание — импортированный HTML, `src/landing.css`, пять исходных JPEG и `public/thank-you.css`. Сохранение исходных десяти секций, текстов и фотографий — прямое условие пользователя. Эти правила не распространяются автоматически на остальные сайты AGK.\n\nСветлая бумажная основа чередуется с тёмными секциями. Контраст выразительной антиквы и спокойного гротеска, золотые линии, округлые панели и подлинные портреты уже присутствуют в исходнике. Страница выбора мессенджера продолжает эту систему более короткой композицией. Её первый комментарий в body фиксирует направление: завершение выбора мессенджера, портрет и три равнозначные кнопки.",
+    "keyCharacteristics": ["Светлая бумажная основа и тёмные синие секции.", "Cormorant Garamond для заголовков, Onest для основного текста.", "Исходные фотографии, арочная рамка и мотив полусвета-полутени.", "Оранжевый градиент CTA лендинга и однотонные кнопки мессенджеров."],
+    "rules": [{ "name": "The Source Palette Rule", "body": "Сохранять исходный градиент CTA лендинга; однотонная кнопка страницы мессенджеров не является разрешением заменить его.", "section": "colors" }],
+    "dos": ["Do сохранять исходные тексты, десять секций, пять JPEG и исходные брендовые мотивы.", "Do применять одинаковую геометрию ко всем CTA лендинга на соответствующем breakpoint.", "Do сохранять ясный keyboard focus и reduced-motion.", "Do различать визуально подготовленную страницу и подключённый сценарий регистрации.", "Do сохранять плашку под портретом, оригинальные логотипы и читаемый HTML-текст рядом с повторяемой обложкой книги.", "Do сохранять короткие слова и «потому что» вместе при переносах, не редактируя исходные формулировки."],
+    "donts": ["Don't трактовать этот документ как согласование редизайна или редактирования исходных материалов.", "Don't заменять фотографии синтетическими аналогами или добавлять новые отзывы и результаты.", "Don't переносить эти токены на остальные сайты AGK без отдельного основания.", "Don't считать узкий визуальный review утверждением всех десяти секций, работающей регистрации, выдачи подарка или публикации."]
+  }
+}

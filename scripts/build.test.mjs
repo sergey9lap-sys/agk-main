@@ -88,6 +88,75 @@ test('praktikum has edition-specific nested confirmation pages without replacing
     assert.ok(webinarPage.includes('Ваша регистрация'));
   }
 });
+test('expert preserves the supplied landing and has isolated messenger confirmation', async () => {
+  for (const edition of ['com', 'ru']) {
+    const root = resolve('dist', edition, 'expert');
+    const html = await readFile(resolve(root, 'index.html'), 'utf8');
+    assert.equal((html.match(/<section\b/g) ?? []).length, 10);
+    assert.ok(html.includes('<fieldset disabled>'));
+    assert.ok(html.replace(/\u00a0/g, ' ').includes('Форма регистрации пока не подключена'));
+    assert.ok(html.includes('<em>как выйти из тени</em>'));
+    assert.ok(html.includes('потому что'));
+    const intro = html.slice(html.indexOf('class="learn-intro"'), html.indexOf('<ol class="steps">'));
+    assert.ok(intro.includes('class="main-note"'));
+    assert.ok(intro.includes('Хочу на вебинар'));
+    for (const key of ['king', 'geisha', 'mother', 'master', 'cassandra']) await access(resolve(root, `img/archetype-${key}.webp`));
+    await access(resolve(root, 'img/checklist-book.webp'));
+    assert.equal((html.match(/src="\.\/img\/checklist-book.webp"/g) ?? []).length, 2);
+    assert.ok(html.includes('aria-label="Дата, время и формат вебинара"'));
+    assert.ok(!html.includes('ССЫЛКА-НА-ПАПКУ-С-ФОТО'));
+    assert.ok(!html.includes('pl/lite/widget'));
+    const thanks = await readFile(resolve(root, 'thanks/index.html'), 'utf8');
+    assert.ok(thanks.includes('Остался один шаг'));
+    assert.ok(thanks.includes('12 октября в 15:00 МСК'));
+    for (const link of ['https://agkedu.getcourse.ru/tlgrm', 'https://agkedu.getcourse.ru/ss?ss=maxbot', 'https://vk.com/app6622219_-210982065#themeId=33822']) assert.ok(thanks.includes(link));
+    await access(resolve(root, 'thank-you.css'));
+    for (const image of ['alexandra-hero.jpg', 'alexandra-expert.jpg', 'alexandra-final.jpg', 'bg-hero.jpg', 'bg-shadows.jpg']) {
+      assert.deepEqual(await readFile(resolve('sites/expert/public/img', image)), await readFile(resolve(root, 'img', image)));
+    }
+  }
+});
+
+test('expert feedback is pointer-gated and respects reduced motion', async () => {
+  const css = await readFile(resolve('sites/expert/src/landing.css'), 'utf8');
+  assert.ok(css.includes('@media(hover:hover) and (pointer:fine)'));
+  assert.ok(css.includes('@media(prefers-reduced-motion:reduce)'));
+  assert.ok(css.includes('.agk .btn:active:not(:disabled)'));
+  assert.ok(css.includes('.agk .btn:disabled:hover{transform:none'));
+  assert.ok(css.includes('--feedback-time:160ms'));
+  assert.ok(!/transition\s*:\s*all\b/.test(css));
+});
+
+test('expert refinement ships editorial avatars, original logos and licensed audience icons', async () => {
+  for (const edition of ['com', 'ru']) {
+    const root = resolve('dist', edition, 'expert');
+    const html = await readFile(resolve(root, 'index.html'), 'utf8');
+    for (const key of ['graduation-cap', 'speech-balloon', 'books', 'briefcase', 'worksheet', 'ticket', 'label']) {
+      assert.ok(html.includes(`./img/icon-${key}-3d.png`));
+      await access(resolve(root, `img/icon-${key}-3d.png`));
+    }
+    for (const image of ['logo-vtb.svg', 'logo-skolkovo.png', 'logo-cissa.png', 'logo-clubfirst.png']) {
+      assert.ok(html.includes(`./img/${image}`));
+      await access(resolve(root, 'img', image));
+    }
+    for (const key of ['king', 'geisha', 'mother', 'master', 'cassandra']) {
+      assert.ok(html.includes(`./img/avatar-${key}-editorial.webp`));
+      await access(resolve(root, `img/avatar-${key}-editorial.webp`));
+    }
+    assert.ok(html.includes('Cormorant+Garamond:ital,wght@0,600;1,500&family=Onest'));
+    assert.equal((html.match(/class="ic ic-3d"/g) || []).length, 3);
+    assert.ok(html.includes('<blockquote class="mission">'));
+    assert.ok(html.includes('class="hero-copy"'));
+    assert.ok(html.includes('class="clients-track"'));
+    assert.ok(html.includes('class="site-footer"'));
+    assert.ok(html.includes('ИНН 246212538610'));
+    assert.ok(html.includes('href="tel:+79895421560"'));
+    assert.ok(html.includes('<span class="quote-mark" aria-hidden="true">“</span>'));
+    assert.ok(html.includes('<span class="quote-mark" aria-hidden="true">”</span>'));
+    assert.ok(!html.includes('src="./img/archetype-'));
+  }
+  assert.ok((await readFile(resolve('sites/expert/FLUENT-EMOJI-LICENSE.txt'), 'utf8')).includes('Copyright (c) Microsoft Corporation'));
+});
 test('RSYA archive is byte-identical in RU and absent from COM', async () => {
   const files = ['index.html', '.htaccess', 'max/index.html', 'psy/index.html'];
   for (const file of files) {
