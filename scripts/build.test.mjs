@@ -117,6 +117,19 @@ test('expert preserves the supplied landing and has isolated messenger confirmat
   }
 });
 
+test('expert has a nested RU spasibo without replacing existing webinar confirmations', async () => {
+  const thanks = await readFile(resolve('dist/com/expert/thanks/index.html'), 'utf8');
+  const spasibo = await readFile(resolve('dist/ru/expert/spasibo/index.html'), 'utf8');
+  assert.equal(spasibo, thanks);
+  assert.ok(spasibo.includes('href="../thank-you.css"'));
+  assert.ok(spasibo.includes('src="../img/alexandra-final.jpg"'));
+  const registry = JSON.parse(await readFile(resolve('sites.json'), 'utf8'));
+  assert.equal(registry.expert.editions.com.successPath, '/expert/thanks/');
+  assert.equal(registry.expert.editions.ru.successPath, '/expert/spasibo/');
+  const oldPage = await readFile(resolve('dist/ru/spasibo/index.html'), 'utf8');
+  assert.ok(!oldPage.includes('Эксперт без выгорания'));
+});
+
 test('expert feedback is pointer-gated and respects reduced motion', async () => {
   const css = await readFile(resolve('sites/expert/src/landing.css'), 'utf8');
   assert.ok(css.includes('@media(hover:hover) and (pointer:fine)'));

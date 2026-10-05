@@ -34,6 +34,11 @@ for (const [slug, site] of Object.entries(registry)) {
   if (config.successPath !== undefined && !/^\/[a-z0-9/-]+\/$/.test(config.successPath)) throw new Error('Invalid success path');
   if ((site.confirmationAliases?.length ?? 0) > 0 && (!hasWidgetConfig || config.successPath === undefined)) throw new Error('Confirmation aliases require widget config and success path');
   const editionConfirmation = site.editionConfirmationPaths?.[edition];
+  for (const [alias, source] of Object.entries(site.editionStaticAliases?.[edition] ?? {})) {
+    if (!/^[a-z0-9-]+$/.test(alias) || !/^[a-z0-9-]+$/.test(source) || alias === source || config.successPath !== `/${slug}/${alias}/`) {
+      throw new Error('Invalid nested static confirmation alias');
+    }
+  }
   if (editionConfirmation !== undefined && (!/^[a-z0-9-]+$/.test(editionConfirmation) || !hasWidgetConfig || config.successPath !== `/${slug}/${editionConfirmation}/`)) {
     throw new Error('Edition confirmation requires a widget and matching nested success path');
   }
@@ -91,6 +96,15 @@ for (const [slug, site] of Object.entries(registry)) {
   if (editionConfirmation) {
     await mkdir(resolve(output, slug, editionConfirmation), { recursive: true });
     await writeFile(resolve(output, slug, editionConfirmation, 'index.html'), confirmation);
+  }
+  // Static forms can reserve an edition-specific confirmation before a widget exists.
+  // Both paths are nested one level below this site, so relative assets stay valid.
+  for (const [alias, source] of Object.entries(site.editionStaticAliases?.[edition] ?? {})) {
+    const target = resolve(output, slug, alias, 'index.html');
+    try { await access(target); throw new Error(`Output collision: ${target}`); }
+    catch (error) { if (error.code !== 'ENOENT') throw error; }
+    await mkdir(dirname(target), { recursive: true });
+    await copyFile(resolve(output, slug, source, 'index.html'), target);
   }
 }
 // Copy the archived RU site byte-for-byte, including its directory routing rules.

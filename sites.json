@@ -1,6 +1,10 @@
 {
   "expert": {
-    "editions": { "com": {}, "ru": {} }
+    "editions": {
+      "com": { "successPath": "/expert/thanks/" },
+      "ru": { "successPath": "/expert/spasibo/" }
+    },
+    "editionStaticAliases": { "ru": { "spasibo": "thanks" } }
   },
   "clients": {
     "editions": {
