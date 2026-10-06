@@ -198,18 +198,12 @@
         <h2>Перестаньте выгорать. <em>Начните жить.</em></h2>
         <p class="lead">Можно и дальше работать на силе воли и тянуть всё до пятёрки, а можно понять, в чём вы <span class="nw">по-настоящему</span> сильны, и строить работу вокруг этого. Приглашаю вас на <b>бесплатный вебинар</b>, который станет первым шагом к вашей новой экспертной жизни.</p>
         <div class="reg-meta" aria-label="Дата, время и формат вебинара"><span><b>12 октября</b>понедельник</span><span><b>15:00</b>МСК</span><span><b>онлайн</b></span></div>
-        <!-- ЗАМЕНИТЕ action на адрес формы (GetCourse) или поставьте вместо этой формы родную форму Тильды -->
-        <form aria-describedby="registration-status">
-          <p id="registration-status" class="registration-status" role="status">Форма регистрации пока не подключена. Приём заявок ещё не открыт.</p>
-          <fieldset disabled>
-          <input aria-label="Ваше имя" type="text" name="name" placeholder="Ваше имя" required>
-          <input aria-label="Email" type="email" name="email" placeholder="Email" required>
-          <input aria-label="Телефон" type="tel" name="phone" placeholder="Телефон">
-          <button class="btn" type="submit">Зарегистрироваться бесплатно</button>
-          <!-- ЗАМЕНИТЕ ссылку на политику конфиденциальности -->
-          <p class="fine">Нажимая на кнопку, вы соглашаетесь с <a href="https://agkedu.getcourse.ru/personaldata">политикой конфиденциальности</a>.</p>
-        </fieldset>
-        </form>
+        <div class="registration-widget" data-success-path="%%SUCCESS_PATH%%">
+          <div class="registration-widget-embed"><script id="%%SCRIPT_ID%%" src="https://agkedu.getcourse.ru/pl/lite/widget/script?id=%%WIDGET_ID%%"></script></div>
+          <p class="registration-status" role="status">Загружаем форму регистрации…</p>
+          <noscript><p>Для регистрации включите JavaScript в браузере и обновите страницу.</p></noscript>
+        </div>
+        <p class="fine">Нажимая на кнопку, вы соглашаетесь с <a href="https://agkedu.getcourse.ru/personaldata">политикой конфиденциальности</a>.</p>
       </div>
     </div>
   </div>

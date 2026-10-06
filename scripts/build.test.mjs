@@ -93,8 +93,14 @@ test('expert preserves the supplied landing and has isolated messenger confirmat
     const root = resolve('dist', edition, 'expert');
     const html = await readFile(resolve(root, 'index.html'), 'utf8');
     assert.equal((html.match(/<section\b/g) ?? []).length, 10);
-    assert.ok(html.includes('<fieldset disabled>'));
-    assert.ok(html.replace(/\u00a0/g, ' ').includes('Форма регистрации пока не подключена'));
+    assert.ok(!html.includes('<fieldset disabled>'));
+    assert.ok(!html.replace(/\u00a0/g, ' ').includes('Форма регистрации пока не подключена'));
+    const widgetId = edition === 'ru' ? '1665138' : '1665143';
+    const otherWidgetId = edition === 'ru' ? '1665143' : '1665138';
+    const scriptId = edition === 'ru' ? 'f20545b6c51a6f43bc1d9f47f4ab021a8fdf5dac' : '8ff2abf3e57004ebb172838a880fc45f1cfc7dfd';
+    assert.equal((html.match(/pl\/lite\/widget\/script\?id=/g) ?? []).length, 1);
+    assert.ok(html.includes(`id="${scriptId}" src="https://agkedu.getcourse.ru/pl/lite/widget/script?id=${widgetId}"`));
+    assert.ok(!html.includes(`id=${otherWidgetId}`));
     assert.ok(html.includes('Что будет <em>на вебинаре</em>'));
     assert.ok(html.includes('потому что'));
     const intro = html.slice(html.indexOf('class="learn-intro"'), html.indexOf('<ol class="steps">'));
@@ -110,7 +116,7 @@ test('expert preserves the supplied landing and has isolated messenger confirmat
     assert.equal((program.match(/<li>/g) ?? []).length, 4);
     assert.ok(html.includes('aria-label="Дата, время и формат вебинара"'));
     assert.ok(!html.includes('ССЫЛКА-НА-ПАПКУ-С-ФОТО'));
-    assert.ok(!html.includes('pl/lite/widget'));
+    assert.ok(html.includes(`data-success-path="/expert/${edition === 'ru' ? 'spasibo' : 'thanks'}/"`));
     const thanks = await readFile(resolve(root, 'thanks/index.html'), 'utf8');
     assert.ok(thanks.includes('Остался один шаг'));
     assert.ok(thanks.includes('12 октября в 15:00 МСК'));

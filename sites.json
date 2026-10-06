@@ -1,8 +1,8 @@
 {
   "expert": {
     "editions": {
-      "com": { "successPath": "/expert/thanks/" },
-      "ru": { "successPath": "/expert/spasibo/" }
+      "com": { "widgetId": "1665143", "scriptId": "8ff2abf3e57004ebb172838a880fc45f1cfc7dfd", "successPath": "/expert/thanks/" },
+      "ru": { "widgetId": "1665138", "scriptId": "f20545b6c51a6f43bc1d9f47f4ab021a8fdf5dac", "successPath": "/expert/spasibo/" }
     },
     "editionStaticAliases": { "ru": { "spasibo": "thanks" } }
   },
