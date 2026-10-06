@@ -99,11 +99,11 @@ test('expert preserves the supplied landing and has isolated messenger confirmat
     assert.ok(html.includes('потому что'));
     const intro = html.slice(html.indexOf('class="learn-intro"'), html.indexOf('<ol class="steps">'));
     assert.ok(intro.includes('class="main-note"'));
-    assert.ok(intro.includes('Хочу на вебинар'));
+    assert.ok(html.includes('class="cta-row program-cta"'));
     for (const key of ['king', 'geisha', 'mother', 'master', 'cassandra']) await access(resolve(root, `img/archetype-${key}.webp`));
     await access(resolve(root, 'img/checklist-book.webp'));
     assert.equal((html.match(/src="\.\/img\/checklist-book.webp"/g) ?? []).length, 0);
-    assert.ok(html.includes('20 вопросов самораспаковки'));
+    assert.ok(html.includes('20 вопросов для архетипической самораспаковки'));
     assert.ok(html.includes('«Прививка от выгорания»'));
     assert.equal((html.match(/class="sh locked"/g) ?? []).length, 3);
     const program = html.slice(html.indexOf('<ol class="steps">'), html.indexOf('</ol>', html.indexOf('<ol class="steps">')));
@@ -115,7 +115,7 @@ test('expert preserves the supplied landing and has isolated messenger confirmat
     assert.ok(thanks.includes('Остался один шаг'));
     assert.ok(thanks.includes('12 октября в 15:00 МСК'));
     assert.ok(thanks.includes('«Прививка от выгорания»'));
-    assert.ok(thanks.includes('20 вопросов самораспаковки'));
+    assert.ok(thanks.includes('20 вопросов для архетипической самораспаковки'));
     for (const link of ['https://agkedu.getcourse.ru/tlgrm', 'https://agkedu.getcourse.ru/ss?ss=maxbot', 'https://vk.com/app6622219_-210982065#themeId=33822']) assert.ok(thanks.includes(link));
     await access(resolve(root, 'thank-you.css'));
     for (const image of ['alexandra-hero.jpg', 'alexandra-expert.jpg', 'alexandra-final.jpg', 'bg-hero.jpg', 'bg-shadows.jpg']) {
@@ -151,8 +151,8 @@ test('expert refinement ships editorial avatars, original logos and licensed aud
   for (const edition of ['com', 'ru']) {
     const root = resolve('dist', edition, 'expert');
     const html = await readFile(resolve(root, 'index.html'), 'utf8');
-    assert.equal((html.match(/src="\.\/img\/self-unpacking-book.webp"/g) ?? []).length, 2);
-    await access(resolve(root, 'img/self-unpacking-book.webp'));
+    assert.equal((html.match(/src="\.\/img\/archetypal-self-unpacking-book.webp"/g) ?? []).length, 2);
+    await access(resolve(root, 'img/archetypal-self-unpacking-book.webp'));
     for (const key of ['graduation-cap', 'speech-balloon', 'books', 'briefcase', 'presentation', 'audit', 'label']) {
       assert.ok(html.includes(`./img/icon-${key}-3d.png`));
       await access(resolve(root, `img/icon-${key}-3d.png`));

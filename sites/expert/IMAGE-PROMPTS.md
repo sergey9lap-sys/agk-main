@@ -47,8 +47,16 @@ Use case: product-mockup. Asset type: transparent booklet mockup for a premium R
 
 ## Новый бонус — 20 вопросов, 05.10.2026
 
+Историческая версия: 06.10.2026 название и обложка заменены следующей редакцией.
+
 Встроенный Imagegen, редактирование прежней книжки. Оригинал: `../../output/agk-expert-generated-originals-20261005/self-unpacking-book.png`; версия для сайта: `public/img/self-unpacking-book.webp` (560×672, прозрачность сохранена). Используется в первом экране и блоке бонусов; подпись продублирована читаемым HTML.
 
 Prompt: Use case: text-localization / product-mockup. Edit target: the supplied old booklet. Create the updated gift booklet for the same premium Russian webinar landing. Preserve the upright three-quarter front view, slim physical booklet, warm ivory paper, midnight navy editorial serif type, muted gold fine border and geometric sun-and-shadow motif, realistic studio light, full booklet visible and generous transparent margins. Replace ALL old cover wording with this exact Russian title, clearly legible: "20 вопросов" (large), "самораспаковки" (prominent), "для определения своего экспертного архетипа" (smaller, tasteful line breaks). No old "5 признаков" text, no "ЧЕК-ЛИСТ", no author name, logos, extra words or watermark. Balanced elegant typography. Genuinely transparent background with preserved alpha and only a tiny natural grounding shadow. Same visual family as original.
 
 Иконки бонусов: `icon-presentation-3d.png` — Desktop computer; `icon-audit-3d.png` — Bar chart. Официальные Microsoft Fluent UI Emoji, MIT: https://github.com/microsoft/fluentui-emoji/tree/main/assets . Единая существующая 3D-семья, без повторения книги или планшета.
+
+## Актуальная книжка — 06.10.2026
+
+Название: «20 вопросов для архетипической самораспаковки». Встроенный Imagegen, редактирование прежней обложки без смены стиля. Оригинал: `../../output/agk-expert-generated-originals-20261006/archetypal-self-unpacking-book.png`; WebP с alpha: `public/img/archetypal-self-unpacking-book.webp`, 560×672. Подписи синхронизированы в hero, бонусах, COM thanks и RU spasibo. Прежние файлы сохранены.
+
+Prompt: Use case: text-localization. Edit target: supplied booklet. Change only cover wording and typesetting for this new EXACT Russian title: "20 вопросов для архетипической самораспаковки". Set "20 вопросов" large, then "для архетипической" and "самораспаковки" as elegant balanced navy serif lines. Remove ALL previous words including "для определения своего экспертного архетипа". Preserve ivory booklet, muted gold border, geometric sun/shadow and lower circular motifs, three-quarter angle, paper texture, studio light, generous margins and whole visible booklet. No extra words, no logo, no author, no watermark. Genuine transparent alpha background, tiny natural grounding shadow. Do not change the design family.
