@@ -485,22 +485,22 @@ body{margin:0}html{scroll-behavior:smooth}.agk #register{scroll-margin-top:24px}
  .agk .btn,.agk form .btn{width:100%;height:68px;padding:14px 40px;font-size:14px;letter-spacing:.04em}
  .agk .hero{padding:40px 0 28px}
  .agk .hero-grid{position:relative;grid-template-columns:1fr;gap:14px;align-items:start}
- .agk .hero-copy,.agk .hero-photo,.agk .hero .offer{display:contents}
+ .agk .hero-copy,.agk .hero-photo{display:contents}
  .agk .hero h1{position:relative;z-index:3;grid-column:1;grid-row:1;width:74%;min-height:174px;font-size:clamp(38px,11.5vw,60px);line-height:1;margin:0;padding-top:8px;color:var(--ink);text-wrap:initial}
  .agk .hero h1 em{font-size:.94em;letter-spacing:-.025em;line-height:1.064}
  .agk .hero h1 em span{display:block}
- .agk .hero .h1sub{grid-column:1;grid-row:3;margin:0;font-size:17px;line-height:1.4;color:var(--ink)}
- .agk .hero .offer-opening{position:relative;z-index:3;grid-column:1;grid-row:2;width:54%;min-height:94px;font-size:19px;line-height:1.4;color:var(--ink);text-wrap:pretty}
- .agk .hero .offer-detail{position:relative;z-index:3;grid-column:1;grid-row:4;font-size:17px;line-height:1.5;color:var(--ink);text-wrap:pretty}
+ .agk .hero .h1sub{position:relative;z-index:3;grid-column:1;grid-row:2;width:54%;min-height:94px;margin:0;font-size:17px;line-height:1.4;color:var(--ink)}
+ .agk .hero .offer{position:relative;z-index:3;grid-column:1;grid-row:3;display:block;margin:0;font-size:17px;line-height:1.5;color:var(--ink);text-wrap:pretty}
+ .agk .hero .offer-opening,.agk .hero .offer-detail{display:inline}
  .agk .hero .offer b{font-weight:500}
  .agk .hero .offer .arch{display:block;margin-top:10px;border-radius:0;aspect-ratio:auto;box-shadow:none;color:var(--gold-d);white-space:normal}
  .agk .hero-photo .arch{position:absolute;right:-24px;top:-16px;width:74%;height:360px;aspect-ratio:auto;border-radius:0;box-shadow:none;z-index:1;pointer-events:none;mask-image:linear-gradient(90deg,transparent 12%,#000 40%),linear-gradient(180deg,transparent,#000 20%,#000 64%,transparent);mask-composite:intersect}
  .agk .hero-photo .arch img{object-position:56% 12%}
  .agk .hero-photo .arch-line{display:none}
- .agk .hero-copy>.btn{grid-column:1/-1;grid-row:5}
- .agk .hero .pill{grid-column:1/-1;grid-row:6;margin:0;text-align:center;line-height:1.5;padding:10px 14px;font-size:12px}
- .agk .hero .gift{grid-column:1/-1;grid-row:7;margin:0;font-size:16px}
- .agk .hero .badge{grid-column:1/-1;grid-row:8;margin:0;background:none;padding:12px 0 0;border-top:1px solid var(--sand2);border-radius:0}
+ .agk .hero-copy>.btn{grid-column:1/-1;grid-row:4}
+ .agk .hero .pill{grid-column:1/-1;grid-row:5;margin:0;text-align:center;line-height:1.5;padding:10px 14px;font-size:12px}
+ .agk .hero .gift{grid-column:1/-1;grid-row:6;margin:0;font-size:16px}
+ .agk .hero .badge{grid-column:1/-1;grid-row:7;margin:0;background:none;padding:12px 0 0;border-top:1px solid var(--sand2);border-radius:0}
  .agk .hero .badge::after{display:none}
  .agk .tiles-sec{margin-top:0;padding-top:8px}
  .agk .clients{display:block;min-width:0}
