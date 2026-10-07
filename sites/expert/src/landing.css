@@ -500,7 +500,7 @@ body{margin:0}html{scroll-behavior:smooth}.agk #register{scroll-margin-top:24px}
  .agk .hero-copy>.btn{grid-column:1/-1;grid-row:4}
  .agk .hero .pill{grid-column:1/-1;grid-row:5;margin:0;text-align:center;line-height:1.5;padding:10px 14px;font-size:12px}
  .agk .hero .gift{grid-column:1/-1;grid-row:6;margin:0;font-size:16px}
- .agk .hero .badge{grid-column:1/-1;grid-row:7;margin:0;background:none;padding:12px 0 0;border-top:1px solid var(--sand2);border-radius:0}
+ .agk .hero .badge{display:none}
  .agk .hero .badge::after{display:none}
  .agk .tiles-sec{margin-top:0;padding-top:8px}
  .agk .clients{display:block;min-width:0}
