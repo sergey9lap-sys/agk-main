@@ -72,3 +72,6 @@ html{background:#0A2342;color-scheme:light}
 .agk :is(input,.btn,a):focus-visible{outline-color:#F5CF5C}
 .agk .form-card :is(input,.btn,a):focus-visible{outline-color:#0A2342}
 .agk ::selection{background:#F5CF5C;color:#0A2342}
+.agk .consultation-widget,.agk .consultation-widget-embed{width:100%;min-width:0}
+.agk .consultation-widget iframe{display:block;width:100%;max-width:100%;border:0}
+.agk .consultation-widget-status[hidden]{display:none}

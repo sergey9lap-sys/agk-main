@@ -1,5 +1,8 @@
 {
-  "consultation": { "editions": { "com": {}, "ru": {} } },
+  "consultation": { "editions": {
+    "com": { "widgetId": "1665870", "scriptId": "71a191a1ab9d1d46c7bf10a99272fddbe5cb650b" },
+    "ru": { "widgetId": "1665870", "scriptId": "71a191a1ab9d1d46c7bf10a99272fddbe5cb650b" }
+  } },
   "expert": {
     "editions": {
       "com": { "widgetId": "1665143", "scriptId": "8ff2abf3e57004ebb172838a880fc45f1cfc7dfd", "successPath": "/expert/thanks/" },

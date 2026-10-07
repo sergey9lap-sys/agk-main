@@ -61,20 +61,12 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="form-card">
       <h2>Оставьте заявку на диагностику</h2>
       <p class="sub">Мы свяжемся с вами, чтобы согласовать время созвона, количество мест ограничено.</p>
-      <!-- Картинки уже встроены в код, отдельно загружать ничего не нужно. ЗАМЕНИТЕ action на адрес формы (GetCourse) или поставьте вместо этой формы родную форму Тильды -->
-      <p class="form-status" role="status">Приём заявок пока не подключён. Форма станет доступна после подключения регистрации.</p>
-      <form data-consultation-form>
-        <input type="text" name="name" placeholder="Имя" required aria-label="Имя">
-        <div class="two">
-          <input type="tel" name="phone" placeholder="Телефон" required aria-label="Телефон">
-          <input type="email" name="email" placeholder="Почта" required aria-label="Почта">
-        </div>
-        <input type="text" name="telegram" placeholder="Ник в Telegram, по желанию" aria-label="Ник в Telegram, по желанию">
-        <button class="btn" type="submit" disabled>Записаться на диагностику <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-        <div class="terms"><span>Бесплатно</span><span>в Zoom</span><span>30 минут</span></div>
-        <!-- ЗАМЕНИТЕ ссылку на политику конфиденциальности -->
-        <p class="fine">Нажимая на кнопку, вы соглашаетесь с <a href="https://agkedu.getcourse.ru/personaldata" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a>.</p>
-      </form>
+      <div class="consultation-widget" aria-label="Форма заявки на диагностику продуктовой линейки">
+        <div class="consultation-widget-embed"><script id="%%SCRIPT_ID%%" src="https://agkedu.getcourse.ru/pl/lite/widget/script?id=%%WIDGET_ID%%"></script></div>
+        <p class="consultation-widget-status fine" role="status">Загружаем форму заявки…</p>
+      </div>
+      <div class="terms"><span>Бесплатно</span><span>в Zoom</span><span>30 минут</span></div>
+      <p class="fine">Нажимая на кнопку, вы соглашаетесь с <a href="https://agkedu.getcourse.ru/personaldata" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a>.</p>
     </div>
 
   </div>

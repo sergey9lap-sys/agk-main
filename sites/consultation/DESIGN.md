@@ -81,6 +81,8 @@ components:
 
 # Design System: AGK Consultation
 
+Integration update 2026-10-07: the provided GetCourse widget 1665870 replaces the temporary disabled form. Field/button tokens below describe the former local form, not the external iframe. The surrounding paper panel, navy/gold palette and responsive ordering are unchanged. GetCourse controls its own fields, consent and submit styling; the parent page does not claim to restyle cross-origin content.
+
 ## Overview
 
 The implemented surface uses the blue and gold palette recovered from `clients-funnels-webinar-2026/src/styles.css` following the user's rejection of the earlier gray-purple treatment. A blue photographic background carries white text and gold emphasis; a paper-colored form surface separates the application fields from the offer. The reference establishes the palette used here, without implying approval of this rendered revision.

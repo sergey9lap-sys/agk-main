@@ -5,15 +5,16 @@ import { resolve } from 'node:path';
 import { runInNewContext } from 'node:vm';
 import { withAnalytics } from './analytics.mjs';
 const registry = JSON.parse(await readFile(new URL('../sites.json', import.meta.url), 'utf8'));
-test('consultation preserves supplied offer and keeps unconfigured form non-submitting', async () => {
+test('consultation preserves supplied offer and embeds the supplied GetCourse widget', async () => {
   for (const edition of ['ru', 'com']) {
     const html = await readFile(resolve('dist', edition, 'consultation/index.html'), 'utf8');
-    for (const text of ['Линия поддержки', 'экспертам, у которых запуски окупаются всё хуже', 'выручка не растёт', 'план пересборки линейки', '17 лет', '550+', '40 000', 'Приём заявок пока не подключён']) assert.ok(html.includes(text));
-    assert.match(html, /type="submit" disabled/);
+    for (const text of ['Линия поддержки', 'экспертам, у которых запуски окупаются всё хуже', 'выручка не растёт', 'план пересборки линейки', '17 лет', '550+', '40 000']) assert.ok(html.includes(text));
+    assert.equal((html.match(/widget\/script\?id=1665870/g) ?? []).length, 1);
+    assert.ok(html.includes('id="71a191a1ab9d1d46c7bf10a99272fddbe5cb650b"'));
+    assert.ok(!html.includes('Приём заявок пока не подключён'));
+    assert.ok(!html.includes('data-consultation-form'));
     assert.ok(!html.includes('action="#"'));
     assert.ok(!html.includes('data:image/'));
-    for (const field of ['name', 'phone', 'email']) assert.match(html, new RegExp(`name="${field}"[^>]*required`));
-    assert.match(html, /name="telegram"[^>]*aria-label=/);
     assert.ok(html.includes('https://agkedu.getcourse.ru/personaldata'));
     await access(resolve('dist', edition, 'consultation/img/source-1.jpg'));
     await access(resolve('dist', edition, 'consultation/img/source-2.jpg'));
