@@ -75,3 +75,13 @@ html{background:#0A2342;color-scheme:light}
 .agk .consultation-widget,.agk .consultation-widget-embed{width:100%;min-width:0}
 .agk .consultation-widget iframe{display:block;width:100%;max-width:100%;border:0}
 .agk .consultation-widget-status[hidden]{display:none}
+/* Compact outer panel only; never crop or scale the GetCourse contents. */
+.agk .form-card{padding:16px 24px}
+.agk .form-card h2{font-size:28px;line-height:1.05;margin-bottom:8px}
+.agk .form-card .sub{font-size:15px;line-height:1.4;margin-bottom:12px}
+.agk .form-card .terms{margin-top:8px}
+@media(min-width:1101px){.agk .grid{grid-template-columns:1.05fr .95fr}.agk .stat strong{white-space:nowrap}}
+@media(max-width:960px){
+ .agk .form-card{padding:16px}
+ .agk .form-card h2{font-size:26px}
+}

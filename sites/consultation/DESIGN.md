@@ -127,6 +127,8 @@ The display token applies to normal-height desktop screens. On desktop screens a
 
 ## Layout
 
+Compact integration update: the outer form panel uses 16px vertical / 24px horizontal padding (16px all around on mobile), a 28px heading (26px mobile), and 15px introductory text at 1.4 line-height with 12px spacing before the widget. Above 1100px the grid is 1.05fr/.95fr, giving the external form more wrapping room. The iframe retains its full automatic height; no clipping, fixed-height scroll box, zoom or transform scaling is used. Other layout and palette rules stay unchanged.
+
 The centered container has a maximum width of 1240px and horizontal padding of 32px. Desktop uses a `1.15fr .85fr` grid with a 48px column gap and centered vertical alignment. The screen has a minimum height of `100svh` and 36px vertical padding. At widths from 961px to 1100px, columns become equal with a 32px gap; the author group wraps and the statistics retain their own full-width row.
 
 At or below 960px, the container inset is 18px and the grid becomes a vertical flex layout. The intact offer heading and description come first, the form second, and explanatory groups plus author evidence third. The two explanatory groups stack. Mobile screen padding is 28px above and 36px below; the form has 24px vertical and 20px horizontal padding with a 28px trailing gap. Desktop screens at or below 820px tall use 24px screen and form padding.
