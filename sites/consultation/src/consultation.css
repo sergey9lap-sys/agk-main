@@ -1,6 +1,6 @@
 /* Agreed AGK navy/gold world, keeping the supplied composition and copy. */
-html{background:#1B2234;color-scheme:light}
-.agk{--gold:#B08D57;--gold-l:#D9C29A;background:linear-gradient(110deg,rgba(27,34,52,.97),rgba(27,34,52,.9)),url('../public/img/source-1.jpg') center/cover no-repeat;color:#FCFAF6;min-height:100svh}
+html{background:#0A2342;color-scheme:light}
+.agk{--gold:#F5CF5C;--gold-l:#F5CF5C;background:linear-gradient(110deg,rgba(10,35,66,.97),rgba(10,35,66,.9)),url('../public/img/source-1.jpg') center/cover no-repeat;color:#FBFAF6;min-height:100svh}
 .agk .screen{min-height:100svh;padding:36px 0}
 .agk .grid{gap:48px}
 .agk .pill{background:none;padding:0;color:#D9C29A;letter-spacing:.04em;font-size:13px;text-transform:none;margin-bottom:18px}
@@ -61,3 +61,13 @@ html{background:#1B2234;color-scheme:light}
  .agk .a-name .nw{white-space:normal}
 }
 @media(prefers-reduced-motion:reduce){.agk *{scroll-behavior:auto;transition:none!important}}
+/* Exact blue/gold palette recovered from clients-funnels-webinar-2026. */
+.agk .pill,.agk h1 em,.agk .blk h3,.agk .blk:nth-child(2) h3,.agk .stat strong{color:#F5CF5C}
+.agk .what,.agk .blk li,.agk .a-name,.agk .stat span{color:#FBFAF6}
+.agk .blk,.agk .blk:nth-child(2){border-top-color:#F5CF5C66}
+.agk .blk li:before,.agk .blk:nth-child(2) li:before{background:#F5CF5C}
+.agk .form-card{background:#F4F1EA;color:#0A1B33}
+.agk .form-card h2{color:#0A1B33}
+.agk .form-status{background:#FFF4CC;color:#0A2342}
+.agk :is(input,.btn,a):focus-visible{outline-color:#F5CF5C}
+.agk ::selection{background:#F5CF5C;color:#0A2342}

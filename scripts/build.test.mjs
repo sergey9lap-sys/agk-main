@@ -132,6 +132,7 @@ test('expert preserves the supplied landing and has isolated messenger confirmat
     assert.equal((program.match(/<li>/g) ?? []).length, 4);
     assert.ok(html.includes('aria-label="Дата, время и формат вебинара"'));
     assert.ok(!html.includes('ССЫЛКА-НА-ПАПКУ-С-ФОТО'));
+    assert.ok(html.includes('class="reg-photo"><img src="./img/alexandra-thanks-identity-v2.webp"'));
     assert.ok(html.includes(`data-success-path="/expert/${edition === 'ru' ? 'spasibo' : 'thanks'}/"`));
     const thanks = await readFile(resolve(root, 'thanks/index.html'), 'utf8');
     assert.ok(thanks.includes('Остался один шаг'));

@@ -2,17 +2,19 @@
 name: AGK Consultation
 description: Implemented navy and gold system for the AGK diagnostic landing page.
 colors:
-  navy: "#1B2234"
-  gold: "#B08D57"
-  gold-light: "#D9C29A"
+  navy: "#0A2342"
+  gold: "#F5CF5C"
   gold-dark: "#8A6A39"
-  paper: "#FCFAF6"
+  paper: "#F4F1EA"
+  white: "#FBFAF6"
+  heading-white: "#FCFAF6"
   ivory: "#F7F2EA"
   sand: "#EDE3D3"
   field-border: "#E4D6C0"
   ink: "#1D2333"
+  form-ink: "#0A1B33"
   muted: "#5D6170"
-  status-text: "#3A3F4E"
+  status-bg: "#FFF4CC"
 typography:
   display:
     fontFamily: "Cormorant Garamond, Georgia, serif"
@@ -66,13 +68,13 @@ components:
     width: "100%"
   form-card:
     backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
+    textColor: "{colors.form-ink}"
     rounded: "{rounded.form}"
     padding: "32px"
     width: "100%"
   form-status:
-    backgroundColor: "{colors.sand}"
-    textColor: "{colors.status-text}"
+    backgroundColor: "{colors.status-bg}"
+    textColor: "{colors.navy}"
     rounded: "{rounded.notice}"
     padding: "12px 14px"
 ---
@@ -81,7 +83,7 @@ components:
 
 ## Overview
 
-The implemented surface preserves the user-approved AGK navy and gold identity. A dark photographic background carries light text and gold emphasis; an off-white form surface separates the application fields from the offer.
+The implemented surface uses the blue and gold palette recovered from `clients-funnels-webinar-2026/src/styles.css` following the user's rejection of the earlier gray-purple treatment. A blue photographic background carries white text and gold emphasis; a paper-colored form surface separates the application fields from the offer. The reference establishes the palette used here, without implying approval of this rendered revision.
 
 This document records the final CSS cascade: `src/source.css` followed by `src/consultation.css`. It describes the implemented consultation surface, without assigning an unconfirmed metaphor or extending page-specific composition to other AGK sites.
 
@@ -96,22 +98,24 @@ This document records the final CSS cascade: `src/source.css` followed by `src/c
 
 ### Primary
 
-- **Gold:** field focus border, keyboard outline and portrait outline.
-- **Light gold:** italic offer line, explanatory headings, bullets, statistics and text selection.
+- **Gold:** field focus border, keyboard outline, portrait outline, italic offer line, explanatory headings, bullets, statistics and text selection.
 - **Dark gold:** the short format terms below the form button.
 
 ### Neutral
 
 - **Navy:** page background and selection text.
-- **Paper:** primary text on the dark surface and form-card background.
+- **Paper:** form-card background.
+- **White:** supporting text on the blue surface.
+- **Heading white:** main heading and author-name text; the supplied portrait border also retains this value.
 - **Ivory:** input backgrounds.
-- **Sand:** supporting text on navy and disabled-action/status surfaces.
+- **Sand:** disabled-action surface.
 - **Field border:** input outlines at rest.
-- **Ink:** form headings and field values.
+- **Ink:** field values.
+- **Form ink:** form heading and card text.
 - **Muted:** input placeholders, form description, disabled button label and policy text.
-- **Status text:** the registration availability notice.
+- **Status background:** registration availability notice, paired with navy text.
 
-The background combines the supplied photograph with a navy linear overlay. The former light background, emerald list accent and orange enabled-button gradients remain in the supplied stylesheet but do not define the visible consultation system.
+The background combines the supplied photograph with a blue linear overlay using `rgba(10,35,66,.97)` and `rgba(10,35,66,.9)`. The reference's deep-blue token is not used in this surface and is therefore omitted. The former light background, emerald list accent and orange enabled-button gradients remain in the supplied stylesheet but do not define the visible consultation system.
 
 ## Typography
 
@@ -129,7 +133,7 @@ Form fields use a 10px gap. The phone/email wrapper is single-column on every br
 
 ## Elevation & Depth
 
-The light form has a single diffuse shadow (`0 22px 46px -22px #0008`). Explanatory groups have no shadow or filled card background; a translucent light-gold top rule separates their text. The portrait retains its fine gold outline and soft source shadow (`0 0 0 1px var(--gold), 0 10px 20px -10px rgba(29,35,51,.4)`). The disabled button has no shadow or transform.
+The light form has a single diffuse shadow (`0 22px 46px -22px #0008`). Explanatory groups have no shadow or filled card background; a translucent gold top rule separates their text. The portrait retains its fine gold outline and soft source shadow (`0 0 0 1px var(--gold), 0 10px 20px -10px rgba(29,35,51,.4)`). The disabled button has no shadow or transform.
 
 ## Shapes
 
@@ -151,7 +155,7 @@ The status notice is separate from supplied sales copy and appears immediately a
 
 ### Explanatory groups and author evidence
 
-Each explanatory group begins with a light-gold top rule and an uppercase sans-serif heading, then a list with gold bullets. The author group preserves the supplied portrait, name, method attribution and three numerical facts. Statistics remain visible at intermediate desktop widths and form a full-width mobile row.
+Each explanatory group begins with a translucent gold top rule and an uppercase sans-serif heading, then a list with gold bullets. The author group preserves the supplied portrait, name, method attribution and three numerical facts. Statistics remain visible at intermediate desktop widths and form a full-width mobile row.
 
 ### Policy link
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-07T10:14:20Z",
+  "generatedAt": "2026-10-07T10:39:14Z",
   "title": "Design System: AGK Consultation",
   "extensions": {
     "shadows": [
@@ -23,7 +23,7 @@
       "refersTo": "button-disabled",
       "description": "Current application action while registration is not connected.",
       "html": "<button class=\"ds-application\" disabled>Записаться на диагностику<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></button>",
-      "css": ".ds-application{position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:68px;padding:14px 36px;border:0;border-radius:100px;background:#EDE3D3;color:#5D6170;font:600 15px Onest,system-ui,sans-serif;letter-spacing:.02em;text-transform:uppercase;cursor:not-allowed}.ds-application svg{position:absolute;right:16px;width:17px;height:17px;pointer-events:none}.ds-application:disabled,.ds-application:disabled:hover{box-shadow:none;transform:none}.ds-application:focus-visible{outline:3px solid #B08D57;outline-offset:3px}"
+      "css": ".ds-application{position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:68px;padding:14px 36px;border:0;border-radius:100px;background:#EDE3D3;color:#5D6170;font:600 15px Onest,system-ui,sans-serif;letter-spacing:.02em;text-transform:uppercase;cursor:not-allowed}.ds-application svg{position:absolute;right:16px;width:17px;height:17px;pointer-events:none}.ds-application:disabled,.ds-application:disabled:hover{box-shadow:none;transform:none}.ds-application:focus-visible{outline:3px solid #F5CF5C;outline-offset:3px}"
     },
     {
       "name": "Text field",
@@ -31,7 +31,7 @@
       "refersTo": "input",
       "description": "Full-width ivory input with the shared gold focus treatment.",
       "html": "<input class=\"ds-field\" type=\"text\" placeholder=\"Имя\" aria-label=\"Имя\">",
-      "css": ".ds-field{width:100%;min-height:52px;padding:14px 18px;border:1px solid #E4D6C0;border-radius:12px;background:#F7F2EA;color:#1D2333;font:400 16px/1.5 Onest,system-ui,sans-serif;transition:border .2s}.ds-field::placeholder{color:#5D6170;opacity:1}.ds-field:focus{border-color:#B08D57}.ds-field:focus-visible{outline:3px solid #B08D57;outline-offset:3px}@media(prefers-reduced-motion:reduce){.ds-field{transition:none}}"
+      "css": ".ds-field{width:100%;min-height:52px;padding:14px 18px;border:1px solid #E4D6C0;border-radius:12px;background:#F7F2EA;color:#1D2333;font:400 16px/1.5 Onest,system-ui,sans-serif;transition:border .2s}.ds-field::placeholder{color:#5D6170;opacity:1}.ds-field:focus{border-color:#F5CF5C}.ds-field:focus-visible{outline:3px solid #F5CF5C;outline-offset:3px}@media(prefers-reduced-motion:reduce){.ds-field{transition:none}}"
     },
     {
       "name": "Form surface",
@@ -39,7 +39,7 @@
       "refersTo": "form-card",
       "description": "Off-white application surface over the navy background.",
       "html": "<section class=\"ds-form\"><h2>Оставьте заявку на диагностику</h2><p>Мы свяжемся с вами, чтобы согласовать время созвона, количество мест ограничено.</p></section>",
-      "css": ".ds-form{padding:32px;border-radius:16px;background:#FCFAF6;color:#1D2333;box-shadow:0 22px 46px -22px #0008}.ds-form h2{margin:0 0 8px;font:600 32px/1.05 'Cormorant Garamond',Georgia,serif;letter-spacing:-.01em}.ds-form p{margin:0;color:#5D6170;font:400 16px/1.5 Onest,system-ui,sans-serif}"
+      "css": ".ds-form{padding:32px;border-radius:16px;background:#F4F1EA;color:#0A1B33;box-shadow:0 22px 46px -22px #0008}.ds-form h2{margin:0 0 8px;font:600 32px/1.05 'Cormorant Garamond',Georgia,serif;letter-spacing:-.01em}.ds-form p{margin:0;color:#5D6170;font:400 16px/1.5 Onest,system-ui,sans-serif}"
     },
     {
       "name": "Registration availability notice",
@@ -47,25 +47,25 @@
       "refersTo": "form-status",
       "description": "Visible status before the unconnected form fields.",
       "html": "<p class=\"ds-status\" role=\"status\">Приём заявок пока не подключён. Форма станет доступна после подключения регистрации.</p>",
-      "css": ".ds-status{margin:0 0 16px;padding:12px 14px;border-radius:10px;background:#EDE3D3;color:#3A3F4E;font:400 14px/1.5 Onest,system-ui,sans-serif}"
+      "css": ".ds-status{margin:0 0 16px;padding:12px 14px;border-radius:10px;background:#FFF4CC;color:#0A2342;font:400 14px/1.5 Onest,system-ui,sans-serif}"
     },
     {
       "name": "Explanatory group",
       "kind": "custom",
-      "description": "Open list group separated by a light-gold top rule.",
+      "description": "Open list group separated by a translucent gold top rule.",
       "html": "<section class=\"ds-group\"><h3>Для кого</h3><ul><li>экспертам, у которых запуски окупаются всё хуже</li><li>онлайн-школам, где продуктов много, а выручка не растёт</li></ul></section>",
-      "css": ".ds-group{padding:18px 0 0;border-top:1px solid #D9C29A66;background:#1B2234}.ds-group h3{margin:0 0 12px;color:#D9C29A;font:600 14px/1.5 Onest,system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase}.ds-group ul{display:grid;gap:10px;list-style:none;margin:0;padding:0}.ds-group li{position:relative;padding-left:18px;color:#EDE3D3;font:400 16px/1.5 Onest,system-ui,sans-serif}.ds-group li:before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:#D9C29A}"
+      "css": ".ds-group{padding:18px 0 0;border-top:1px solid #F5CF5C66;background:#0A2342}.ds-group h3{margin:0 0 12px;color:#F5CF5C;font:600 14px/1.5 Onest,system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase}.ds-group ul{display:grid;gap:10px;list-style:none;margin:0;padding:0}.ds-group li{position:relative;padding-left:18px;color:#FBFAF6;font:400 16px/1.5 Onest,system-ui,sans-serif}.ds-group li:before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:#F5CF5C}"
     },
     {
       "name": "Author statistic",
       "kind": "custom",
       "description": "Serif numerical evidence with a sans-serif caption on navy.",
       "html": "<div class=\"ds-stat\"><strong>17 лет</strong><span>в обучении</span></div>",
-      "css": ".ds-stat{background:#1B2234}.ds-stat strong{display:block;color:#D9C29A;font:600 26px/1 'Cormorant Garamond',Georgia,serif;font-variant-numeric:lining-nums}.ds-stat span{display:block;margin-top:3px;color:#EDE3D3;font:400 13px/1.3 Onest,system-ui,sans-serif}"
+      "css": ".ds-stat{background:#0A2342}.ds-stat strong{display:block;color:#F5CF5C;font:600 26px/1 'Cormorant Garamond',Georgia,serif;font-variant-numeric:lining-nums}.ds-stat span{display:block;margin-top:3px;color:#FBFAF6;font:400 13px/1.3 Onest,system-ui,sans-serif}"
     }
   ],
   "narrative": {
-    "overview": "The implemented surface preserves the user-approved AGK navy and gold identity. A dark photographic background carries light text and gold emphasis; an off-white form surface separates the application fields from the offer.\n\nThis document records the final CSS cascade: `src/source.css` followed by `src/consultation.css`. It describes the implemented consultation surface, without assigning an unconfirmed metaphor or extending page-specific composition to other AGK sites.",
+    "overview": "The implemented surface uses the blue and gold palette recovered from `clients-funnels-webinar-2026/src/styles.css` following the user's rejection of the earlier gray-purple treatment. A blue photographic background carries white text and gold emphasis; a paper-colored form surface separates the application fields from the offer. The reference establishes the palette used here, without implying approval of this rendered revision.\n\nThis document records the final CSS cascade: `src/source.css` followed by `src/consultation.css`. It describes the implemented consultation surface, without assigning an unconfirmed metaphor or extending page-specific composition to other AGK sites.",
     "keyCharacteristics": [
       "Navy background with gold headings, rules and numeric emphasis.",
       "Cormorant Garamond headings and Onest body text.",
