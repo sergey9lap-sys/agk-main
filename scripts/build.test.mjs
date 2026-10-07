@@ -5,6 +5,20 @@ import { resolve } from 'node:path';
 import { runInNewContext } from 'node:vm';
 import { withAnalytics } from './analytics.mjs';
 const registry = JSON.parse(await readFile(new URL('../sites.json', import.meta.url), 'utf8'));
+test('consultation preserves supplied offer and keeps unconfigured form non-submitting', async () => {
+  for (const edition of ['ru', 'com']) {
+    const html = await readFile(resolve('dist', edition, 'consultation/index.html'), 'utf8');
+    for (const text of ['Линия поддержки', 'экспертам, у которых запуски окупаются всё хуже', 'выручка не растёт', 'план пересборки линейки', '17 лет', '550+', '40 000', 'Приём заявок пока не подключён']) assert.ok(html.includes(text));
+    assert.match(html, /type="submit" disabled/);
+    assert.ok(!html.includes('action="#"'));
+    assert.ok(!html.includes('data:image/'));
+    for (const field of ['name', 'phone', 'email']) assert.match(html, new RegExp(`name="${field}"[^>]*required`));
+    assert.match(html, /name="telegram"[^>]*aria-label=/);
+    assert.ok(html.includes('https://agkedu.getcourse.ru/personaldata'));
+    await access(resolve('dist', edition, 'consultation/img/source-1.jpg'));
+    await access(resolve('dist', edition, 'consultation/img/source-2.jpg'));
+  }
+});
 for (const edition of ['com','ru']) {
   test(`${edition}: paths, widgets and thank-you aliases`, async () => {
     const root = resolve('dist', edition);
@@ -138,7 +152,8 @@ test('expert has a nested RU spasibo without replacing existing webinar confirma
   const withoutRegionalTracking = page => page.replace(/<script>\s*\(\(\) => \{[\s\S]*?<\/script>/, '').replace('Яндекс.Метрика, Meta Pixel и формы GetCourse', 'Яндекс.Метрика и формы GetCourse');
   assert.equal(withoutRegionalTracking(spasibo), withoutRegionalTracking(thanks));
   assert.ok(spasibo.includes('href="../thank-you.css"'));
-  assert.ok(spasibo.includes('src="../img/alexandra-final.jpg"'));
+  assert.ok(spasibo.includes('src="../img/alexandra-thanks-identity-v2.webp"'));
+  await access(resolve('dist/ru/expert/img/alexandra-thanks-identity-v2.webp'));
   const registry = JSON.parse(await readFile(resolve('sites.json'), 'utf8'));
   assert.equal(registry.expert.editions.com.successPath, '/expert/thanks/');
   assert.equal(registry.expert.editions.ru.successPath, '/expert/spasibo/');

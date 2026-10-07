@@ -1,4 +1,5 @@
 {
+  "consultation": { "editions": { "com": {}, "ru": {} } },
   "expert": {
     "editions": {
       "com": { "widgetId": "1665143", "scriptId": "8ff2abf3e57004ebb172838a880fc45f1cfc7dfd", "successPath": "/expert/thanks/" },

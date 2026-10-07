@@ -1,0 +1,63 @@
+/* Agreed AGK navy/gold world, keeping the supplied composition and copy. */
+html{background:#1B2234;color-scheme:light}
+.agk{--gold:#B08D57;--gold-l:#D9C29A;background:linear-gradient(110deg,rgba(27,34,52,.97),rgba(27,34,52,.9)),url('../public/img/source-1.jpg') center/cover no-repeat;color:#FCFAF6;min-height:100svh}
+.agk .screen{min-height:100svh;padding:36px 0}
+.agk .grid{gap:48px}
+.agk .pill{background:none;padding:0;color:#D9C29A;letter-spacing:.04em;font-size:13px;text-transform:none;margin-bottom:18px}
+.agk .pill b{color:inherit}
+.agk h1{font-size:clamp(44px,4.5vw,64px);line-height:1.04;letter-spacing:-.02em;color:#FCFAF6}
+.agk h1 em{color:#D9C29A}
+.agk .what{border:0;padding:0;color:#EDE3D3;font-size:18px;line-height:1.5;margin-bottom:28px}
+.agk .what b{color:inherit}
+.agk .blocks{gap:24px}
+.agk .blk,.agk .blk:nth-child(2){background:none;border:0;border-top:1px solid #D9C29A66;padding:18px 0 0;border-radius:0;box-shadow:none}
+.agk .blk h3,.agk .blk:nth-child(2) h3{color:#D9C29A;font-size:14px;letter-spacing:.05em}
+.agk .blk li{font-size:16px;color:#EDE3D3;line-height:1.5;padding-left:18px}
+.agk .blk li:before,.agk .blk:nth-child(2) li:before{width:6px;height:6px;background:#D9C29A;border:0;top:9px}
+.agk .a-name{color:#EDE3D3;max-width:245px}
+.agk .a-name b{color:#FCFAF6;font-size:21px}
+.agk .stats{gap:16px}
+.agk .stat strong{color:#D9C29A}
+.agk .stat span{color:#EDE3D3;font-size:13px}
+.agk .form-card{width:100%;background:#FCFAF6;border:0;border-radius:16px;padding:32px;box-shadow:0 22px 46px -22px #0008;color:#1D2333}
+.agk .form-card h2{font-size:32px;color:#1D2333}
+.agk .form-card .sub{font-size:16px;line-height:1.5}
+.agk input[type=text],.agk input[type=email],.agk input[type=tel]{font-size:16px;min-height:52px}
+.agk input::placeholder{color:#5D6170;opacity:1}
+.agk .two{grid-template-columns:1fr}
+.agk .btn{position:relative;height:68px;font-size:15px;padding:14px 36px;letter-spacing:.02em}
+.agk .btn svg{position:absolute;right:16px;pointer-events:none}
+.agk .btn:disabled{cursor:not-allowed;background:#EDE3D3;color:#5D6170;box-shadow:none;transform:none}
+.agk .form-status{font-size:14px;line-height:1.5;background:#EDE3D3;color:#3A3F4E;padding:12px 14px;border-radius:10px;margin:0 0 16px}
+.agk .fine,.agk .fine a{color:#5D6170;font-size:13px;line-height:1.5}
+.agk :is(input,.btn,a):focus-visible{outline:3px solid #B08D57;outline-offset:3px}
+.agk ::selection{background:#D9C29A;color:#1B2234}
+@media(min-width:961px) and (max-height:820px){
+ .agk .screen{padding:24px 0}
+ .agk h1{font-size:48px}
+ .agk .form-card{padding:24px}
+ .agk .what{font-size:17px;margin-bottom:20px}
+}
+@media(max-width:1100px) and (min-width:961px){
+ .agk .grid{gap:32px;grid-template-columns:1fr 1fr}
+ .agk .stats{display:flex}
+ .agk .author{flex-wrap:wrap}
+ .agk .stats{width:100%;margin-left:0}
+}
+@media(max-width:960px){
+ .agk .screen{padding:28px 0 36px}
+ .agk .wrap{width:100%}
+ .agk h1{font-size:clamp(36px,7vw,48px);line-height:1.05}
+ .agk h1 .nw{white-space:normal}
+ .agk .what{font-size:17px;padding:0;margin-bottom:24px}
+ .agk .form-card{margin:0 0 28px;padding:24px 20px}
+ .agk .form-card h2{font-size:30px}
+ .agk .form-card .sub{font-size:16px}
+ .agk .btn{font-size:14px;height:68px;padding:12px 34px}
+ .agk .rest,.agk .head{width:100%}
+ .agk .blocks{gap:24px}
+ .agk .author{margin-top:28px}
+ .agk .stats{display:flex;width:100%;gap:12px}
+ .agk .a-name .nw{white-space:normal}
+}
+@media(prefers-reduced-motion:reduce){.agk *{scroll-behavior:auto;transition:none!important}}

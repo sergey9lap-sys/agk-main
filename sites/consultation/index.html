@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Линия поддержки экспертов и онлайн-школ · диагностика продуктовой линейки</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./src/source.css">
+<link rel="stylesheet" href="./src/consultation.css">
+<meta name="description" content="Бесплатная диагностика продуктовой линейки экспертов и онлайн-школ: 30 минут разбора с экспертом школы Александры Горевой-Куртышевой.">
+</head>
+<body style="margin:0">
+<!-- THESIS: diagnose the product line, with the application visible immediately.
+OWN-WORLD: agreed AGK navy and gold, Cormorant headings and Onest text.
+STORY: audience, concrete outcomes, author evidence, application.
+FIRST VIEWPORT: offer and proof left, open light form right; mobile heading then form.
+FORM: user-supplied two-column composition, source-driven code-led build, no new concept seed.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md -->
+<div class="agk">
+<section class="screen" id="register">
+  <div class="wrap grid">
+
+    <div class="left">
+      <div class="head">
+        <div class="pill"><b>Бесплатная диагностика</b> · Zoom · 30 минут</div>
+        <h1>Линия поддержки <em>экспертов и <span class="nw">онлайн-школ</span></em></h1>
+        <p class="what"><b>30 минут разбора</b> вашей продуктовой линейки с экспертом школы Александры <span class="nw">Горевой-Куртышевой</span></p>
+      </div>
+
+      <div class="rest">
+        <div class="blocks">
+          <div class="blk">
+            <h3>Для кого</h3>
+            <ul>
+              <li>экспертам, у которых запуски окупаются всё хуже</li>
+              <li><span class="nw">онлайн-школам</span>, где продуктов много, а выручка не растёт</li>
+            </ul>
+          </div>
+          <div class="blk">
+            <h3>Что получите</h3>
+            <ul>
+              <li>увидите, какие продукты приносят деньги, а какие стали балластом</li>
+              <li>получите план пересборки линейки и поймёте, куда двигаться дальше: самостоятельно или с командой Александры</li>
+            </ul>
+          </div>
+        </div>
+        <div class="author">
+          <div class="ava"><img src="./img/source-2.jpg" alt="Александра Горева-Куртышева"></div>
+          <div class="a-name"><b>Александра <span class="nw">Горева-Куртышева</span></b>По её авторской методике</div>
+          <div class="stats">
+            <div class="stat"><strong>17 лет</strong><span>в обучении</span></div>
+            <div class="stat"><strong>550+</strong><span>школ</span></div>
+            <div class="stat"><strong>40 000</strong><span>предпринимателей</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h2>Оставьте заявку на диагностику</h2>
+      <p class="sub">Мы свяжемся с вами, чтобы согласовать время созвона, количество мест ограничено.</p>
+      <!-- Картинки уже встроены в код, отдельно загружать ничего не нужно. ЗАМЕНИТЕ action на адрес формы (GetCourse) или поставьте вместо этой формы родную форму Тильды -->
+      <p class="form-status" role="status">Приём заявок пока не подключён. Форма станет доступна после подключения регистрации.</p>
+      <form data-consultation-form>
+        <input type="text" name="name" placeholder="Имя" required aria-label="Имя">
+        <div class="two">
+          <input type="tel" name="phone" placeholder="Телефон" required aria-label="Телефон">
+          <input type="email" name="email" placeholder="Почта" required aria-label="Почта">
+        </div>
+        <input type="text" name="telegram" placeholder="Ник в Telegram, по желанию" aria-label="Ник в Telegram, по желанию">
+        <button class="btn" type="submit" disabled>Записаться на диагностику <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="terms"><span>Бесплатно</span><span>в Zoom</span><span>30 минут</span></div>
+        <!-- ЗАМЕНИТЕ ссылку на политику конфиденциальности -->
+        <p class="fine">Нажимая на кнопку, вы соглашаетесь с <a href="https://agkedu.getcourse.ru/personaldata" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a>.</p>
+      </form>
+    </div>
+
+  </div>
+</section>
+</div>
+<script type="module" src="./src/page.js"></script>
+</body>
+</html>
