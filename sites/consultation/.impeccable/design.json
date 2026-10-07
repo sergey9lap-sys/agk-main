@@ -23,7 +23,7 @@
       "refersTo": "button-disabled",
       "description": "Current application action while registration is not connected.",
       "html": "<button class=\"ds-application\" disabled>Записаться на диагностику<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></button>",
-      "css": ".ds-application{position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:68px;padding:14px 36px;border:0;border-radius:100px;background:#EDE3D3;color:#5D6170;font:600 15px Onest,system-ui,sans-serif;letter-spacing:.02em;text-transform:uppercase;cursor:not-allowed}.ds-application svg{position:absolute;right:16px;width:17px;height:17px;pointer-events:none}.ds-application:disabled,.ds-application:disabled:hover{box-shadow:none;transform:none}.ds-application:focus-visible{outline:3px solid #F5CF5C;outline-offset:3px}"
+      "css": ".ds-application{position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:68px;padding:14px 36px;border:0;border-radius:100px;background:#EDE3D3;color:#5D6170;font:600 15px Onest,system-ui,sans-serif;letter-spacing:.02em;text-transform:uppercase;cursor:not-allowed}.ds-application svg{position:absolute;right:16px;width:17px;height:17px;pointer-events:none}.ds-application:disabled,.ds-application:disabled:hover{box-shadow:none;transform:none}.ds-application:focus-visible{outline:3px solid #0A2342;outline-offset:3px}"
     },
     {
       "name": "Text field",
@@ -31,7 +31,7 @@
       "refersTo": "input",
       "description": "Full-width ivory input with the shared gold focus treatment.",
       "html": "<input class=\"ds-field\" type=\"text\" placeholder=\"Имя\" aria-label=\"Имя\">",
-      "css": ".ds-field{width:100%;min-height:52px;padding:14px 18px;border:1px solid #E4D6C0;border-radius:12px;background:#F7F2EA;color:#1D2333;font:400 16px/1.5 Onest,system-ui,sans-serif;transition:border .2s}.ds-field::placeholder{color:#5D6170;opacity:1}.ds-field:focus{border-color:#F5CF5C}.ds-field:focus-visible{outline:3px solid #F5CF5C;outline-offset:3px}@media(prefers-reduced-motion:reduce){.ds-field{transition:none}}"
+      "css": ".ds-field{width:100%;min-height:52px;padding:14px 18px;border:1px solid #E4D6C0;border-radius:12px;background:#F7F2EA;color:#1D2333;font:400 16px/1.5 Onest,system-ui,sans-serif;transition:border .2s}.ds-field::placeholder{color:#5D6170;opacity:1}.ds-field:focus{border-color:#F5CF5C}.ds-field:focus-visible{outline:3px solid #0A2342;outline-offset:3px}@media(prefers-reduced-motion:reduce){.ds-field{transition:none}}"
     },
     {
       "name": "Form surface",
@@ -73,12 +73,12 @@
       "Desktop columns and explicit mobile content ordering."
     ],
     "rules": [
-      {"name": "The Visible Focus Rule", "body": "Inputs, buttons and links receive a 3px gold `:focus-visible` outline with a 3px offset. Input focus also changes its border to gold. Field border transitions take 0.2s; reduced-motion disables transitions.", "section": "components"}
+      {"name": "The Visible Focus Rule", "body": "Inputs, buttons and links receive a 3px `:focus-visible` outline with a 3px offset: navy within the light form card and gold on the dark surface. Input focus also changes its border to gold. Field border transitions take 0.2s; reduced-motion disables transitions.", "section": "components"}
     ],
     "dos": [
       "Do preserve the supplied copy, images, form fields and author evidence when adapting this surface.",
       "Do preserve the whole offer before the form on mobile, followed by explanatory content.",
-      "Do retain the visible gold keyboard outline and readable muted placeholders.",
+      "Do retain the visible navy keyboard outline within the light form, gold outline on dark surfaces and readable muted placeholders.",
       "Do keep the registration availability notice adjacent to the disabled action."
     ],
     "donts": [

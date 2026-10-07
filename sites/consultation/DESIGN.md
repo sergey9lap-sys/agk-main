@@ -98,12 +98,12 @@ This document records the final CSS cascade: `src/source.css` followed by `src/c
 
 ### Primary
 
-- **Gold:** field focus border, keyboard outline, portrait outline, italic offer line, explanatory headings, bullets, statistics and text selection.
+- **Gold:** field focus border, keyboard outline on the dark surface, portrait outline, italic offer line, explanatory headings, bullets, statistics and text selection.
 - **Dark gold:** the short format terms below the form button.
 
 ### Neutral
 
-- **Navy:** page background and selection text.
+- **Navy:** page background, selection text and keyboard outlines within the light form card.
 - **Paper:** form-card background.
 - **White:** supporting text on the blue surface.
 - **Heading white:** main heading and author-name text; the supplied portrait border also retains this value.
@@ -145,7 +145,7 @@ Form-card, input and notice corners use the frontmatter roles. The form button r
 
 The card pairs a serif heading with sans-serif supporting copy. Inputs span the card width, have a minimum height of 52px, a thin field-border stroke and the ivory background. Placeholders use the muted token with opacity 1. The form exposes three required fields and one optional Telegram field; their source labels remain intact.
 
-**The Visible Focus Rule.** Inputs, buttons and links receive a 3px gold `:focus-visible` outline with a 3px offset. Input focus also changes its border to gold. Field border transitions take 0.2s; reduced-motion disables transitions.
+**The Visible Focus Rule.** Inputs, buttons and links receive a 3px `:focus-visible` outline with a 3px offset: navy within the light form card and gold on the dark surface. Input focus also changes its border to gold. Field border transitions take 0.2s; reduced-motion disables transitions.
 
 ### Application button and availability notice
 
@@ -167,7 +167,7 @@ The policy link retains native underlining, the muted text color and the shared 
 
 - **Do** preserve the supplied copy, images, form fields and author evidence when adapting this surface.
 - **Do** preserve the whole offer before the form on mobile, followed by explanatory content.
-- **Do** retain the visible gold keyboard outline and readable muted placeholders.
+- **Do** retain the visible navy keyboard outline within the light form, gold outline on dark surfaces and readable muted placeholders.
 - **Do** keep the registration availability notice adjacent to the disabled action.
 
 ### Don't:

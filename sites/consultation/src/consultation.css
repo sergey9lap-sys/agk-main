@@ -70,4 +70,5 @@ html{background:#0A2342;color-scheme:light}
 .agk .form-card h2{color:#0A1B33}
 .agk .form-status{background:#FFF4CC;color:#0A2342}
 .agk :is(input,.btn,a):focus-visible{outline-color:#F5CF5C}
+.agk .form-card :is(input,.btn,a):focus-visible{outline-color:#0A2342}
 .agk ::selection{background:#F5CF5C;color:#0A2342}
