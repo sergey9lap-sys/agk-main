@@ -62,8 +62,8 @@ for (const [slug, site] of Object.entries(registry)) {
     .replaceAll('%%WIDGET_ID%%', config.widgetId ?? '')
     .replaceAll('%%SCRIPT_ID%%', config.scriptId ?? '')
     .replaceAll('%%SUCCESS_PATH%%', config.successPath ?? '')
-    .replaceAll('%%COOKIE_SERVICES%%', edition === 'com' && ['clients', 'praktikum'].includes(slug) ? 'Яндекс.Метрика, Meta Pixel и формы GetCourse' : 'Яндекс.Метрика и формы GetCourse');
-  const analytics = html => ['clients', 'mkclients', 'praktikum'].includes(slug)
+    .replaceAll('%%COOKIE_SERVICES%%', edition === 'com' && ['clients', 'praktikum', 'expert'].includes(slug) ? 'Яндекс.Метрика, Meta Pixel и формы GetCourse' : 'Яндекс.Метрика и формы GetCourse');
+  const analytics = html => ['clients', 'mkclients', 'praktikum', 'expert'].includes(slug)
     ? withAnalytics(html, edition, { includeMetaPixel: slug !== 'mkclients', consentCookie: `agk_cookie_consent_${slug}` })
     : html;
   const aliases = site.confirmationAliases ?? [];
@@ -81,6 +81,12 @@ for (const [slug, site] of Object.entries(registry)) {
   });
   const landingPath = resolve(output, slug, 'index.html');
   await writeFile(landingPath, analytics(await readFile(landingPath, 'utf8')));
+  if (slug === 'expert') {
+    // Public confirmation HTML bypasses Vite's transformIndexHtml hook.
+    // Apply the same edition and consent-gated analytics before the RU alias copy.
+    const thanksPath = resolve(output, slug, 'thanks/index.html');
+    await writeFile(thanksPath, analytics(editionHtml(await readFile(thanksPath, 'utf8'))));
+  }
   if (confirmation) {
     // Public CSS is copied as-is by Vite: scope its font URLs to this site too.
     const cssPath = resolve(output, slug, 'thank-you.css');

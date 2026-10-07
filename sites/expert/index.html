@@ -219,5 +219,12 @@
 </footer>
 </div>
 <script type="module" src="./src/page.js"></script>
+<link rel="stylesheet" href="./cookie-consent.css">
+<aside class="cookie-notice" data-cookie-notice hidden aria-label="Уведомление об использовании cookie-файлов">
+  <button class="cookie-notice__close" type="button" data-cookie-dismiss aria-label="Закрыть уведомление"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+  <p>Сайт использует cookie-файлы для работы и аналитики. Сервисы: %%COOKIE_SERVICES%%. Подробнее — в <a href="https://agkedu.getcourse.ru/personaldata" target="_blank" rel="noopener noreferrer">политике конфиденциальности</a>.</p>
+  <button class="cookie-notice__accept" type="button" data-cookie-accept>Согласиться</button>
+</aside>
+<script defer src="./cookie-consent.js"></script>
 </body>
 </html>

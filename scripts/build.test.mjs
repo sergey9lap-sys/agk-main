@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, access, readdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { runInNewContext } from 'node:vm';
+import { withAnalytics } from './analytics.mjs';
 const registry = JSON.parse(await readFile(new URL('../sites.json', import.meta.url), 'utf8'));
 for (const edition of ['com','ru']) {
   test(`${edition}: paths, widgets and thank-you aliases`, async () => {
@@ -29,11 +31,11 @@ for (const edition of ['com','ru']) {
         pages.push(thanks);
       }
       for (const page of pages) {
-        if (['clients', 'mkclients', 'praktikum'].includes(slug)) {
+        if (['clients', 'mkclients', 'praktikum', 'expert'].includes(slug)) {
           const counter = edition === 'com' ? '110484887' : '110484880';
           assert.equal(page.split(`ym(${counter},'init'`).length - 1, 1);
           assert.ok(!page.includes(edition === 'com' ? '110484880' : '110484887'));
-          assert.equal(page.split("fbq('init', '1923709794923109')").length - 1, edition === 'com' && ['clients', 'praktikum'].includes(slug) ? 1 : 0);
+          assert.equal(page.split("fbq('init', '1923709794923109')").length - 1, edition === 'com' && ['clients', 'praktikum', 'expert'].includes(slug) ? 1 : 0);
           assert.ok(page.includes(`agk_cookie_consent_${slug}=accepted`));
           assert.ok(!page.includes('agk_cookie_consent=accepted'));
           assert.ok(page.includes('data-cookie-notice'));
@@ -133,7 +135,8 @@ test('expert preserves the supplied landing and has isolated messenger confirmat
 test('expert has a nested RU spasibo without replacing existing webinar confirmations', async () => {
   const thanks = await readFile(resolve('dist/com/expert/thanks/index.html'), 'utf8');
   const spasibo = await readFile(resolve('dist/ru/expert/spasibo/index.html'), 'utf8');
-  assert.equal(spasibo, thanks);
+  const withoutRegionalTracking = page => page.replace(/<script>\s*\(\(\) => \{[\s\S]*?<\/script>/, '').replace('Яндекс.Метрика, Meta Pixel и формы GetCourse', 'Яндекс.Метрика и формы GetCourse');
+  assert.equal(withoutRegionalTracking(spasibo), withoutRegionalTracking(thanks));
   assert.ok(spasibo.includes('href="../thank-you.css"'));
   assert.ok(spasibo.includes('src="../img/alexandra-final.jpg"'));
   const registry = JSON.parse(await readFile(resolve('sites.json'), 'utf8'));
@@ -190,5 +193,38 @@ test('RSYA archive is byte-identical in RU and absent from COM', async () => {
   for (const file of files) {
     assert.deepEqual(await readFile(resolve('sites/rsya-ru', file)), await readFile(resolve('dist/ru', file)));
     await assert.rejects(access(resolve('dist/com', file)));
+  }
+});
+
+test('expert analytics is edition-scoped on landing, thanks and RU spasibo without duplicates', async () => {
+  for (const edition of ['com', 'ru']) {
+    for (const path of ['index.html', 'thanks/index.html', ...(edition === 'ru' ? ['spasibo/index.html'] : [])]) {
+      const html = await readFile(resolve('dist', edition, 'expert', path), 'utf8');
+      const counter = edition === 'ru' ? '110484880' : '110484887';
+      assert.equal(html.split(`ym(${counter},'init'`).length - 1, 1);
+      assert.ok(!html.includes(edition === 'ru' ? '110484887' : '110484880'));
+      assert.equal(html.split("fbq('init', '1923709794923109')").length - 1, edition === 'com' ? 1 : 0);
+      assert.ok(html.includes('agk_cookie_consent_expert=accepted'));
+      assert.ok(html.includes('data-cookie-notice'));
+      assert.ok(!html.includes('%%'));
+    }
+    if (edition === 'ru') assert.equal(await readFile(resolve('dist/ru/expert/spasibo/index.html'), 'utf8'), await readFile(resolve('dist/ru/expert/thanks/index.html'), 'utf8'));
+  }
+});
+
+test('analytics stays off without consent and loads once after accepting or with existing consent', () => {
+  for (const edition of ['ru', 'com']) for (const accepted of [false, true]) {
+    const scripts = [], listeners = {};
+    const context = { document: {
+      cookie: accepted ? 'agk_cookie_consent_expert=accepted' : '', scripts: [], referrer: '',
+      createElement: () => ({}), getElementsByTagName: () => [{ parentNode: { insertBefore: node => scripts.push(node.src) } }],
+    }, location: { href: `https://example.test/expert/` }, addEventListener: (event, handler) => { listeners[event] = handler; } };
+    context.window = context;
+    const html = withAnalytics('<head></head>', edition, { consentCookie: 'agk_cookie_consent_expert' });
+    runInNewContext(html.match(/<script>([\s\S]*?)<\/script>/)[1], context);
+    if (!accepted) { assert.equal(scripts.length, 0); listeners['agk:cookie-consent'](); listeners['agk:cookie-consent'](); }
+    assert.equal(scripts.length, edition === 'com' ? 2 : 1);
+    assert.equal(scripts.filter(src => src.includes('mc.yandex.ru')).length, 1);
+    if (edition === 'com') assert.deepEqual(Array.from(context.fbq.queue, args => Array.from(args)), [['init', '1923709794923109'], ['track', 'PageView']]);
   }
 });
