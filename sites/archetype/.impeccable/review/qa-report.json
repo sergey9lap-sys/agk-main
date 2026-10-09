@@ -1,0 +1,534 @@
+[
+  {
+    "name": "desktop",
+    "width": 1536,
+    "height": 1024,
+    "overflow": false,
+    "missingImages": [],
+    "h1": "Глубинная архетипическая распаковка эксперта",
+    "ctas": [
+      {
+        "label": "ВЫБРАТЬ ТАРИФ",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ХОЧУ НА МАСТЕР-КЛАСС",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ХОЧУ ОПИРАТЬСЯ НА СИЛЬНОЕ",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "УЗНАТЬ СВОЙ АРХЕТИП",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ЗАПИСАТЬСЯ НА МАСТЕР-КЛАСС",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ВЫБРАТЬ ТАРИФ БАЗОВЫЙ",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ВЫБРАТЬ ТАРИФ ПОЛНЫЙ",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ВЫБРАТЬ ТАРИФ ЛИЧНЫЙ",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "УЧИТЬСЯ У АЛЕКСАНДРЫ",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ХОЧУ ТАКОЙ ЖЕ РЕЗУЛЬТАТ",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ВЫБРАТЬ ТАРИФ",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      }
+    ],
+    "sections": [
+      "",
+      "audience",
+      "problem",
+      "approach",
+      "method",
+      "archetypes",
+      "program",
+      "tariffs",
+      "bonuses",
+      "author",
+      "reviews",
+      "faq",
+      "closing"
+    ],
+    "errors": [],
+    "failed": [],
+    "states": {
+      "selectedFull": "2",
+      "escapeClosed": true,
+      "faqOpens": true,
+      "noForm": true,
+      "focusStyle": "solid"
+    }
+  },
+  {
+    "name": "laptop",
+    "width": 1280,
+    "height": 720,
+    "overflow": false,
+    "missingImages": [],
+    "h1": "Глубинная архетипическая распаковка эксперта",
+    "ctas": [
+      {
+        "label": "ВЫБРАТЬ ТАРИФ",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ХОЧУ НА МАСТЕР-КЛАСС",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ХОЧУ ОПИРАТЬСЯ НА СИЛЬНОЕ",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "УЗНАТЬ СВОЙ АРХЕТИП",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ЗАПИСАТЬСЯ НА МАСТЕР-КЛАСС",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ВЫБРАТЬ ТАРИФ БАЗОВЫЙ",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ВЫБРАТЬ ТАРИФ ПОЛНЫЙ",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ВЫБРАТЬ ТАРИФ ЛИЧНЫЙ",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "УЧИТЬСЯ У АЛЕКСАНДРЫ",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ХОЧУ ТАКОЙ ЖЕ РЕЗУЛЬТАТ",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ВЫБРАТЬ ТАРИФ",
+        "width": 310,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      }
+    ],
+    "sections": [
+      "",
+      "audience",
+      "problem",
+      "approach",
+      "method",
+      "archetypes",
+      "program",
+      "tariffs",
+      "bonuses",
+      "author",
+      "reviews",
+      "faq",
+      "closing"
+    ],
+    "errors": [],
+    "failed": [],
+    "states": {
+      "selectedFull": "2",
+      "escapeClosed": true,
+      "faqOpens": true,
+      "noForm": true,
+      "focusStyle": "solid"
+    }
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "missingImages": [],
+    "h1": "Глубинная архетипическая распаковка эксперта",
+    "ctas": [
+      {
+        "label": "ВЫБРАТЬ ТАРИФ",
+        "width": 350,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ХОЧУ НА МАСТЕР-КЛАСС",
+        "width": 350,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ХОЧУ ОПИРАТЬСЯ НА СИЛЬНОЕ",
+        "width": 350,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "УЗНАТЬ СВОЙ АРХЕТИП",
+        "width": 350,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ЗАПИСАТЬСЯ НА МАСТЕР-КЛАСС",
+        "width": 350,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ВЫБРАТЬ ТАРИФ БАЗОВЫЙ",
+        "width": 350,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ВЫБРАТЬ ТАРИФ ПОЛНЫЙ",
+        "width": 350,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ВЫБРАТЬ ТАРИФ ЛИЧНЫЙ",
+        "width": 350,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "УЧИТЬСЯ У АЛЕКСАНДРЫ",
+        "width": 350,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ХОЧУ ТАКОЙ ЖЕ РЕЗУЛЬТАТ",
+        "width": 350,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ВЫБРАТЬ ТАРИФ",
+        "width": 350,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      }
+    ],
+    "sections": [
+      "",
+      "audience",
+      "problem",
+      "approach",
+      "method",
+      "archetypes",
+      "program",
+      "tariffs",
+      "bonuses",
+      "author",
+      "reviews",
+      "faq",
+      "closing"
+    ],
+    "errors": [],
+    "failed": [],
+    "states": {
+      "selectedFull": "2",
+      "escapeClosed": true,
+      "faqOpens": true,
+      "noForm": true,
+      "focusStyle": "solid"
+    }
+  },
+  {
+    "name": "narrow",
+    "width": 320,
+    "height": 740,
+    "overflow": false,
+    "missingImages": [],
+    "h1": "Глубинная архетипическая распаковка эксперта",
+    "ctas": [
+      {
+        "label": "ВЫБРАТЬ ТАРИФ",
+        "width": 280,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ХОЧУ НА МАСТЕР-КЛАСС",
+        "width": 280,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ХОЧУ ОПИРАТЬСЯ НА СИЛЬНОЕ",
+        "width": 280,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "УЗНАТЬ СВОЙ АРХЕТИП",
+        "width": 280,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ЗАПИСАТЬСЯ НА МАСТЕР-КЛАСС",
+        "width": 280,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ВЫБРАТЬ ТАРИФ БАЗОВЫЙ",
+        "width": 280,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ВЫБРАТЬ ТАРИФ ПОЛНЫЙ",
+        "width": 280,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ВЫБРАТЬ ТАРИФ ЛИЧНЫЙ",
+        "width": 280,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "УЧИТЬСЯ У АЛЕКСАНДРЫ",
+        "width": 280,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ХОЧУ ТАКОЙ ЖЕ РЕЗУЛЬТАТ",
+        "width": 280,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      },
+      {
+        "label": "ВЫБРАТЬ ТАРИФ",
+        "width": 280,
+        "height": 60,
+        "radius": "30px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      }
+    ],
+    "sections": [
+      "",
+      "audience",
+      "problem",
+      "approach",
+      "method",
+      "archetypes",
+      "program",
+      "tariffs",
+      "bonuses",
+      "author",
+      "reviews",
+      "faq",
+      "closing"
+    ],
+    "errors": [],
+    "failed": [],
+    "states": {
+      "selectedFull": "2",
+      "escapeClosed": true,
+      "faqOpens": true,
+      "noForm": true,
+      "focusStyle": "solid"
+    }
+  }
+]

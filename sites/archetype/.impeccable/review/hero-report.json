@@ -1,0 +1,27 @@
+[
+  {
+    "name": "hero-repro",
+    "width": 1536,
+    "height": 1024,
+    "overflow": true,
+    "missingImages": [],
+    "h1": "Глубиннаяархетипическаяраспаковкаэксперта",
+    "ctas": [
+      {
+        "label": "ВЫБРАТЬ ТАРИФ",
+        "width": 310,
+        "height": 60,
+        "radius": "6px",
+        "background": "rgb(184, 77, 53)",
+        "font": "600 15px / 18.75px Manrope, Arial, sans-serif",
+        "icon": "0 0 24 24"
+      }
+    ],
+    "sections": [
+      ""
+    ],
+    "errors": [],
+    "failed": [],
+    "states": {}
+  }
+]

@@ -1,0 +1,922 @@
+[
+  {
+    "width": 1536,
+    "errors": [],
+    "overflow": false,
+    "heading": {
+      "x": 711.703125,
+      "y": 7310.703125,
+      "width": 746.296875,
+      "height": 56.625,
+      "bottom": 7367.328125,
+      "right": 1458
+    },
+    "intro": {
+      "x": 711.703125,
+      "y": 7397.328125,
+      "width": 353.9375,
+      "height": 23,
+      "bottom": 7420.328125,
+      "right": 1065.640625
+    },
+    "photo": {
+      "x": 78,
+      "y": 7310.703125,
+      "width": 540,
+      "height": 961,
+      "bottom": 8271.703125,
+      "right": 618
+    },
+    "image": {
+      "x": 84,
+      "y": 7316.703125,
+      "width": 528,
+      "height": 949,
+      "bottom": 8265.703125,
+      "right": 612
+    },
+    "closing": {
+      "x": 996.25,
+      "y": 10461.78125,
+      "width": 360,
+      "height": 447.03125,
+      "bottom": 10908.8125,
+      "right": 1356.25
+    },
+    "footer": {
+      "x": 0,
+      "y": 10980.8125,
+      "width": 1536,
+      "height": 209.6875,
+      "bottom": 11190.5,
+      "right": 1536
+    },
+    "bottomBorder": "1px",
+    "radii": {
+      "cta": "36px",
+      "event": "50px",
+      "plaques": [
+        "12px",
+        "12px",
+        "12px"
+      ],
+      "tariffs": [
+        {
+          "card": "0px",
+          "button": "36px"
+        },
+        {
+          "card": "0px",
+          "button": "36px"
+        },
+        {
+          "card": "0px",
+          "button": "36px"
+        }
+      ]
+    },
+    "approachTop": "76px",
+    "ctas": [
+      {
+        "text": "ВЫБРАТЬ ТАРИФ",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ХОЧУ НА МАСТЕР-КЛАСС",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ХОЧУ ОПИРАТЬСЯ НА СИЛЬНОЕ",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "УЗНАТЬ СВОЙ АРХЕТИП",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ЗАПИСАТЬСЯ НА МАСТЕР-КЛАСС",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ВЫБРАТЬ ТАРИФ БАЗОВЫЙ",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ВЫБРАТЬ ТАРИФ ПОЛНЫЙ",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ВЫБРАТЬ ТАРИФ ЛИЧНЫЙ",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "УЧИТЬСЯ У АЛЕКСАНДРЫ",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ХОЧУ ТАКОЙ ЖЕ РЕЗУЛЬТАТ",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ВЫБРАТЬ ТАРИФ",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      }
+    ],
+    "cards": [
+      {
+        "selector": ".audience-grid",
+        "heights": [
+          361,
+          361,
+          361,
+          361
+        ]
+      },
+      {
+        "selector": ".approach-grid",
+        "heights": [
+          229,
+          229
+        ]
+      },
+      {
+        "selector": ".archetypes-grid",
+        "heights": [
+          389,
+          389,
+          389,
+          389,
+          363,
+          363,
+          363,
+          363
+        ]
+      },
+      {
+        "selector": ".program-grid",
+        "heights": [
+          509,
+          509,
+          509
+        ]
+      }
+    ],
+    "missing": []
+  },
+  {
+    "width": 1280,
+    "errors": [],
+    "overflow": false,
+    "heading": {
+      "x": 598.84375,
+      "y": 7601.03125,
+      "width": 625.15625,
+      "height": 50.578125,
+      "bottom": 7651.609375,
+      "right": 1224
+    },
+    "intro": {
+      "x": 598.84375,
+      "y": 7681.609375,
+      "width": 353.9375,
+      "height": 23,
+      "bottom": 7704.609375,
+      "right": 952.78125
+    },
+    "photo": {
+      "x": 56,
+      "y": 7601.03125,
+      "width": 468.84375,
+      "height": 961,
+      "bottom": 8562.03125,
+      "right": 524.84375
+    },
+    "image": {
+      "x": 62,
+      "y": 7607.03125,
+      "width": 456.84375,
+      "height": 949,
+      "bottom": 8556.03125,
+      "right": 518.84375
+    },
+    "closing": {
+      "x": 808.328125,
+      "y": 10790.921875,
+      "width": 360,
+      "height": 447.03125,
+      "bottom": 11237.953125,
+      "right": 1168.328125
+    },
+    "footer": {
+      "x": 0,
+      "y": 11309.953125,
+      "width": 1280,
+      "height": 209.6875,
+      "bottom": 11519.640625,
+      "right": 1280
+    },
+    "bottomBorder": "1px",
+    "radii": {
+      "cta": "36px",
+      "event": "50px",
+      "plaques": [
+        "12px",
+        "12px",
+        "12px"
+      ],
+      "tariffs": [
+        {
+          "card": "0px",
+          "button": "36px"
+        },
+        {
+          "card": "0px",
+          "button": "36px"
+        },
+        {
+          "card": "0px",
+          "button": "36px"
+        }
+      ]
+    },
+    "approachTop": "76px",
+    "ctas": [
+      {
+        "text": "ВЫБРАТЬ ТАРИФ",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ХОЧУ НА МАСТЕР-КЛАСС",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ХОЧУ ОПИРАТЬСЯ НА СИЛЬНОЕ",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "УЗНАТЬ СВОЙ АРХЕТИП",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ЗАПИСАТЬСЯ НА МАСТЕР-КЛАСС",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ВЫБРАТЬ ТАРИФ БАЗОВЫЙ",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ВЫБРАТЬ ТАРИФ ПОЛНЫЙ",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ВЫБРАТЬ ТАРИФ ЛИЧНЫЙ",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "УЧИТЬСЯ У АЛЕКСАНДРЫ",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ХОЧУ ТАКОЙ ЖЕ РЕЗУЛЬТАТ",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ВЫБРАТЬ ТАРИФ",
+        "width": 360,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      }
+    ],
+    "cards": [
+      {
+        "selector": ".audience-grid",
+        "heights": [
+          391,
+          391,
+          391,
+          391
+        ]
+      },
+      {
+        "selector": ".approach-grid",
+        "heights": [
+          229,
+          229
+        ]
+      },
+      {
+        "selector": ".archetypes-grid",
+        "heights": [
+          442,
+          442,
+          442,
+          442,
+          363,
+          363,
+          363,
+          363
+        ]
+      },
+      {
+        "selector": ".program-grid",
+        "heights": [
+          567,
+          567,
+          567
+        ]
+      }
+    ],
+    "missing": []
+  },
+  {
+    "width": 390,
+    "errors": [],
+    "overflow": false,
+    "heading": {
+      "x": 20,
+      "y": 14501.046875,
+      "width": 187.03125,
+      "height": 55.75,
+      "bottom": 14556.796875,
+      "right": 207.03125
+    },
+    "intro": {
+      "x": 20,
+      "y": 14574.796875,
+      "width": 187.03125,
+      "height": 52.78125,
+      "bottom": 14627.578125,
+      "right": 207.03125
+    },
+    "photo": {
+      "x": 223.03125,
+      "y": 14458.3125,
+      "width": 146.953125,
+      "height": 212,
+      "bottom": 14670.3125,
+      "right": 369.984375
+    },
+    "image": {
+      "x": 229.03125,
+      "y": 14464.3125,
+      "width": 134.953125,
+      "height": 200,
+      "bottom": 14664.3125,
+      "right": 363.984375
+    },
+    "closing": {
+      "x": 60,
+      "y": 19137.59375,
+      "width": 270,
+      "height": 334.65625,
+      "bottom": 19472.25,
+      "right": 330
+    },
+    "footer": {
+      "x": 0,
+      "y": 19508.25,
+      "width": 390,
+      "height": 481.359375,
+      "bottom": 19989.609375,
+      "right": 390
+    },
+    "bottomBorder": "1px",
+    "radii": {
+      "cta": "36px",
+      "event": "36px",
+      "plaques": [
+        "36px",
+        "36px",
+        "36px"
+      ],
+      "tariffs": [
+        {
+          "card": "0px",
+          "button": "36px"
+        },
+        {
+          "card": "0px",
+          "button": "36px"
+        },
+        {
+          "card": "0px",
+          "button": "36px"
+        }
+      ]
+    },
+    "approachTop": "56px",
+    "ctas": [
+      {
+        "text": "ВЫБРАТЬ ТАРИФ",
+        "width": 350,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ХОЧУ НА МАСТЕР-КЛАСС",
+        "width": 350,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ХОЧУ ОПИРАТЬСЯ НА СИЛЬНОЕ",
+        "width": 350,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "УЗНАТЬ СВОЙ АРХЕТИП",
+        "width": 350,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ЗАПИСАТЬСЯ НА МАСТЕР-КЛАСС",
+        "width": 350,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ВЫБРАТЬ ТАРИФ БАЗОВЫЙ",
+        "width": 350,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ВЫБРАТЬ ТАРИФ ПОЛНЫЙ",
+        "width": 350,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ВЫБРАТЬ ТАРИФ ЛИЧНЫЙ",
+        "width": 350,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "УЧИТЬСЯ У АЛЕКСАНДРЫ",
+        "width": 350,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ХОЧУ ТАКОЙ ЖЕ РЕЗУЛЬТАТ",
+        "width": 350,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ВЫБРАТЬ ТАРИФ",
+        "width": 350,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      }
+    ],
+    "cards": [
+      {
+        "selector": ".audience-grid",
+        "heights": [
+          295,
+          295,
+          322,
+          322
+        ]
+      },
+      {
+        "selector": ".approach-grid",
+        "heights": [
+          203,
+          232
+        ]
+      },
+      {
+        "selector": ".archetypes-grid",
+        "heights": [
+          324,
+          324,
+          324,
+          350,
+          297,
+          245,
+          245,
+          245
+        ]
+      },
+      {
+        "selector": ".program-grid",
+        "heights": [
+          518,
+          458,
+          371
+        ]
+      }
+    ],
+    "missing": []
+  },
+  {
+    "width": 320,
+    "errors": [],
+    "overflow": false,
+    "heading": {
+      "x": 20,
+      "y": 15879.359375,
+      "width": 147.828125,
+      "height": 46.78125,
+      "bottom": 15926.140625,
+      "right": 167.828125
+    },
+    "intro": {
+      "x": 20,
+      "y": 15944.140625,
+      "width": 147.828125,
+      "height": 105.5625,
+      "bottom": 16049.703125,
+      "right": 167.828125
+    },
+    "photo": {
+      "x": 183.828125,
+      "y": 15858.53125,
+      "width": 116.171875,
+      "height": 212,
+      "bottom": 16070.53125,
+      "right": 300
+    },
+    "image": {
+      "x": 189.828125,
+      "y": 15864.53125,
+      "width": 104.171875,
+      "height": 200,
+      "bottom": 16064.53125,
+      "right": 294
+    },
+    "closing": {
+      "x": 25,
+      "y": 20997.078125,
+      "width": 270,
+      "height": 334.65625,
+      "bottom": 21331.734375,
+      "right": 295
+    },
+    "footer": {
+      "x": 0,
+      "y": 21367.734375,
+      "width": 320,
+      "height": 527.25,
+      "bottom": 21894.984375,
+      "right": 320
+    },
+    "bottomBorder": "1px",
+    "radii": {
+      "cta": "36px",
+      "event": "36px",
+      "plaques": [
+        "36px",
+        "36px",
+        "36px"
+      ],
+      "tariffs": [
+        {
+          "card": "0px",
+          "button": "36px"
+        },
+        {
+          "card": "0px",
+          "button": "36px"
+        },
+        {
+          "card": "0px",
+          "button": "36px"
+        }
+      ]
+    },
+    "approachTop": "56px",
+    "ctas": [
+      {
+        "text": "ВЫБРАТЬ ТАРИФ",
+        "width": 280,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ХОЧУ НА МАСТЕР-КЛАСС",
+        "width": 280,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ХОЧУ ОПИРАТЬСЯ НА СИЛЬНОЕ",
+        "width": 280,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "УЗНАТЬ СВОЙ АРХЕТИП",
+        "width": 280,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ЗАПИСАТЬСЯ НА МАСТЕР-КЛАСС",
+        "width": 280,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ВЫБРАТЬ ТАРИФ БАЗОВЫЙ",
+        "width": 280,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ВЫБРАТЬ ТАРИФ ПОЛНЫЙ",
+        "width": 280,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ВЫБРАТЬ ТАРИФ ЛИЧНЫЙ",
+        "width": 280,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "УЧИТЬСЯ У АЛЕКСАНДРЫ",
+        "width": 280,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ХОЧУ ТАКОЙ ЖЕ РЕЗУЛЬТАТ",
+        "width": 280,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      },
+      {
+        "text": "ВЫБРАТЬ ТАРИФ",
+        "width": 280,
+        "height": 72,
+        "radius": "36px",
+        "color": "rgb(184, 77, 53)",
+        "font": "16px",
+        "opacity": "1",
+        "filter": "none"
+      }
+    ],
+    "cards": [
+      {
+        "selector": ".audience-grid",
+        "heights": [
+          322,
+          353,
+          348,
+          384
+        ]
+      },
+      {
+        "selector": ".approach-grid",
+        "heights": [
+          232,
+          260
+        ]
+      },
+      {
+        "selector": ".archetypes-grid",
+        "heights": [
+          377,
+          381,
+          350,
+          434,
+          324,
+          245,
+          245,
+          245
+        ]
+      },
+      {
+        "selector": ".program-grid",
+        "heights": [
+          605,
+          545,
+          398
+        ]
+      }
+    ],
+    "missing": []
+  }
+]

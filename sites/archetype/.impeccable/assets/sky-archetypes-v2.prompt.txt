@@ -1,0 +1,6 @@
+Use case: precise-object-edit.
+Edit target: sky-archetypes.png, navy celestial atlas background for AGK archetype masterclass website.
+Change ONLY the two planetary spheres: remove the large crescent sphere at the upper-right edge and the small sphere at lower left, replacing their areas seamlessly with the same deep navy star field and subtle gold dust.
+Preserve the composition, landscape aspect ratio, dark quiet central negative space, fine gold constellation linework and scattered glowing stars around the outer edges, premium antique atlas texture, navy and muted gold palette.
+No new objects, no moons or planets, no books, no astrological zodiac symbols, no text, no logos, no watermark. Keep the rest of the reference image as unchanged as possible.
+Execution: built-in ImageGen edit, reference viewed before generation.

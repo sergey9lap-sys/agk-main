@@ -1,4 +1,5 @@
 {
+  "archetype": { "editions": { "com": {}, "ru": {} } },
   "consultation": { "editions": {
     "com": { "widgetId": "1665870", "scriptId": "71a191a1ab9d1d46c7bf10a99272fddbe5cb650b" },
     "ru": { "widgetId": "1665870", "scriptId": "71a191a1ab9d1d46c7bf10a99272fddbe5cb650b" }
