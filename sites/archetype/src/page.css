@@ -268,6 +268,29 @@
 .audience-grid article:before,.archetypes-grid article:before,.program-grid article:before,.approach-grid article:before,.tariff-card:before,.bonus-cover:before,.reviews-grid figure:before{
  content:'';position:absolute;inset:0;pointer-events:none;background-image:var(--frame-top),var(--frame-bottom),var(--frame-side);background-repeat:no-repeat;background-size:100% var(--arch-cap),100% var(--arch-foot),100% calc(100% - var(--arch-cap) - var(--arch-foot));background-position:center top,center bottom,center var(--arch-cap)
 }
+/* v16: the approved celestial engraving family joins every dark scene.
+   Cold navy/silver-blue stays the palette; copy, real portraits and CTA tokens stay intact. */
+.hero-scene{background-image:none}
+.hero-map{position:absolute;top:-80px;bottom:0;left:50%;width:100vw;transform:translateX(-50%);z-index:-1;pointer-events:none}
+.hero-map>img{width:100%;height:100%;object-fit:cover;object-position:center center}
+.hero-map:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 4%,rgba(3,16,31,.16) 16%,rgba(3,16,31,.12) 49%,transparent 62%)}
+.hero-visual>.constellation{display:none}
+@media(max-width:900px){.hero-map{top:-80px}.hero-map>img{object-position:80% center}}
+@media(max-width:600px){.hero-map{top:-65px}.hero-map>img{object-position:right center}.hero-map:after{background:linear-gradient(90deg,rgba(3,16,31,.72),rgba(3,16,31,.3) 72%,rgba(3,16,31,.16))}}
+.method,.archetypes,.tariffs,.reviews,.closing{background-image:none;background-color:var(--navy)}
+.method:before{content:none}
+.section-map{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.section-map>img{width:100%;height:100%;object-fit:cover;object-position:center}
+.section-map:after{content:'';position:absolute;inset:0;background-image:url('../img/celestial-rail-left-v16.webp'),url('../img/celestial-rail-right-v16.webp');background-size:28px auto;background-position:left top,right top;background-repeat:repeat-y}
+.section-map--method>img{object-fit:contain;object-position:right center}
+.section-map--method:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 25%,rgba(5,23,43,.7) 52%,transparent 76%)}
+.section-map--closing>img{object-position:right center}
+@media(max-width:600px){
+ .section-map:after{background-size:12px auto;opacity:.75}
+ .section-map--method>img{height:220px;object-position:right top}
+ .section-map--method:before{background:linear-gradient(180deg,transparent 80px,var(--navy) 260px)}
+ .section-map--closing>img{object-position:70% center}
+}
 .audience-grid article,.archetypes-grid article{--arch-cap:110px;padding-top:72px}
 .archetypes-grid article:after{inset:5px 10px 12px;border-radius:50% 50% 12px 12px / 90px 90px 12px 12px}
 .program-grid article{--arch-cap:120px;padding-top:84px}

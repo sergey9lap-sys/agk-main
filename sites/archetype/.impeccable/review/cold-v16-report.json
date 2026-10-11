@@ -1,0 +1,493 @@
+{
+  "contentPreserved": true,
+  "report": [
+    {
+      "width": 1536,
+      "errors": [],
+      "overflow": false,
+      "missing": [],
+      "backgrounds": [
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-hero-v16.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-method-v16.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-archetypes-v16.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-tariffs-v16.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-reviews-v16.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-closing-v16.webp",
+          "loaded": true
+        }
+      ],
+      "ctas": [
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        }
+      ],
+      "headings": [
+        {
+          "color": "rgb(242, 247, 252)",
+          "text": "Методология из корпоративного мира"
+        },
+        {
+          "color": "rgb(200, 230, 250)",
+          "text": "Архетипы, которые разберём"
+        },
+        {
+          "color": "rgb(242, 247, 252)",
+          "text": "Выберите формат участия"
+        },
+        {
+          "color": "rgb(242, 247, 252)",
+          "text": "Что говорят те, кто уже был на моих мероприятиях"
+        },
+        {
+          "color": "rgb(200, 230, 250)",
+          "text": "Перестаньте тянуть всё сразу. Опирайтесь на свою природу."
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "errors": [],
+      "overflow": false,
+      "missing": [],
+      "backgrounds": [
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-hero-v16.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-method-v16.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-archetypes-v16.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-tariffs-v16.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-reviews-v16.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-closing-v16.webp",
+          "loaded": true
+        }
+      ],
+      "ctas": [
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 360,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        }
+      ],
+      "headings": [
+        {
+          "color": "rgb(242, 247, 252)",
+          "text": "Методология из корпоративного мира"
+        },
+        {
+          "color": "rgb(200, 230, 250)",
+          "text": "Архетипы, которые разберём"
+        },
+        {
+          "color": "rgb(242, 247, 252)",
+          "text": "Выберите формат участия"
+        },
+        {
+          "color": "rgb(242, 247, 252)",
+          "text": "Что говорят те, кто уже был на моих мероприятиях"
+        },
+        {
+          "color": "rgb(200, 230, 250)",
+          "text": "Перестаньте тянуть всё сразу. Опирайтесь на свою природу."
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "errors": [],
+      "overflow": false,
+      "missing": [],
+      "backgrounds": [
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-hero-v16-mobile.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-method-v16-mobile.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-archetypes-v16-mobile.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-tariffs-v16-mobile.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-reviews-v16-mobile.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-closing-v16-mobile.webp",
+          "loaded": true
+        }
+      ],
+      "ctas": [
+        {
+          "width": 350,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 350,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 350,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 350,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 350,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 350,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 350,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 350,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 349.984375,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 350,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 350,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        }
+      ],
+      "headings": [
+        {
+          "color": "rgb(242, 247, 252)",
+          "text": "Методология из корпоративного мира"
+        },
+        {
+          "color": "rgb(200, 230, 250)",
+          "text": "Архетипы, которые разберём"
+        },
+        {
+          "color": "rgb(242, 247, 252)",
+          "text": "Выберите формат участия"
+        },
+        {
+          "color": "rgb(242, 247, 252)",
+          "text": "Что говорят те, кто уже был на моих мероприятиях"
+        },
+        {
+          "color": "rgb(200, 230, 250)",
+          "text": "Перестаньте тянуть всё сразу. Опирайтесь на свою природу."
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "errors": [],
+      "overflow": false,
+      "missing": [],
+      "backgrounds": [
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-hero-v16-mobile.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-method-v16-mobile.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-archetypes-v16-mobile.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-tariffs-v16-mobile.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-reviews-v16-mobile.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:4362/archetype/img/celestial-closing-v16-mobile.webp",
+          "loaded": true
+        }
+      ],
+      "ctas": [
+        {
+          "width": 280,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 280,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 280,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 280,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 280,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 280,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 280,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 280,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 280,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 280,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        },
+        {
+          "width": 280,
+          "height": 72,
+          "radius": "36px",
+          "color": "rgb(184, 77, 53)"
+        }
+      ],
+      "headings": [
+        {
+          "color": "rgb(242, 247, 252)",
+          "text": "Методология из корпоративного мира"
+        },
+        {
+          "color": "rgb(200, 230, 250)",
+          "text": "Архетипы, которые разберём"
+        },
+        {
+          "color": "rgb(242, 247, 252)",
+          "text": "Выберите формат участия"
+        },
+        {
+          "color": "rgb(242, 247, 252)",
+          "text": "Что говорят те, кто уже был на моих мероприятиях"
+        },
+        {
+          "color": "rgb(200, 230, 250)",
+          "text": "Перестаньте тянуть всё сразу. Опирайтесь на свою природу."
+        }
+      ]
+    }
+  ]
+}

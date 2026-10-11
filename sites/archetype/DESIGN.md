@@ -103,6 +103,10 @@ components:
 
 # Design System: AGK — Archetype
 
+### Approved-reference hero backdrop — 11 October 2026
+
+Only the hero adopts the supplied approved mockup's engraved celestial chart, right crescent, bottom mountains, lower-left N/E/S/W compass and narrow ornamental edge rails. Generated raster artwork uses the current cold navy palette. Real portrait, live source copy and shared CTA tokens remain unchanged; all subsequent scenes retain the runway design. This explicit local request overrides the earlier no-antique-map direction only in the hero.
+
 ### Refinement v14: inner insets and screen-centered play marks
 
 Audience/named-archetype icons and headings, plus program dates/icons/headings, receive12px extra left inset relative to body copy. Centered unknown archetypes are exempt. Both lecture-format play marks are decorative aria-hidden spans, positioned at50% horizontal and27%/34% vertical of their distinct covers; text keeps its previous flow position. No new video action, copy change, image regeneration or CTA-token change.
