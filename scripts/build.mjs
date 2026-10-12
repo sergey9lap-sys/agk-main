@@ -3,6 +3,7 @@ import { readFile, writeFile, mkdir, rm, access, readdir, copyFile } from 'node:
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { withAnalytics } from './analytics.mjs';
+import { withLoader, errorPage, themedSites } from './delivery-surfaces.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const edition = process.argv[2];
@@ -80,7 +81,11 @@ for (const [slug, site] of Object.entries(registry)) {
     }],
   });
   const landingPath = resolve(output, slug, 'index.html');
-  await writeFile(landingPath, analytics(await readFile(landingPath, 'utf8')));
+  await writeFile(landingPath, withLoader(analytics(await readFile(landingPath, 'utf8')),slug));
+  if(themedSites.includes(slug)){
+    await writeFile(resolve(output,slug,'404.html'),errorPage(slug));
+    await writeFile(resolve(output,slug,'.htaccess'),`ErrorDocument 404 /${slug}/404.html\n`);
+  }
   if (slug === 'archetype' && edition === 'ru') {
     const notice = await readFile(resolve(siteRoot, 'src/cookie-notice.html'), 'utf8');
     const html = withAnalytics(await readFile(landingPath, 'utf8'), edition, {
@@ -130,5 +135,5 @@ for (const file of importedFiles) {
   await copyFile(resolve(root, staticSource, file), target);
 }
 // COM still has no homepage. Preserve an imported 404 page if supplied later.
-if (!importedFiles.includes('404.html')) await writeFile(resolve(output, '404.html'), '<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Страница не найдена</title><h1>Страница не найдена</h1></html>');
+if (!importedFiles.includes('404.html')) await writeFile(resolve(output, '404.html'), errorPage());
 console.log(`AGK ${edition}: ${output}`);

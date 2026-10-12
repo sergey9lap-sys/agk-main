@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Как на вашем опыте зарабатывать на 30% больше</title>
+<meta name="description" content="Бесплатная диагностическая консультация для экспертов: какой менторский продукт собрать из вашего опыта, с кого начать и сколько это может стоить.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#141C3A; --navy-2:#1C2650; --ink:#22283A; --muted:#5F6680;
+    --cream:#FBF6EE; --cream-2:#F3EBDD; --line:#E6DCC8;
+    --gold:#D4AF5E; --gold-2:#B8923F; --coral:#D2694B; --coral-2:#BF5A3E;
+    --white:#fff; --radius:18px; --max:1120px; --text:720px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Manrope',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15;color:var(--navy)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  .text{max-width:var(--text);margin:0 auto}
+  a{color:inherit}
+
+  /* ---------- HERO ---------- */
+  .hero{background:var(--navy);color:#fff;position:relative;overflow:hidden;min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:28px 0}
+  .hero .frame{position:absolute;inset:14px;border:1px solid rgba(212,175,94,.35);border-radius:10px;pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;position:relative;width:100%}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Playfair Display',serif;font-size:15px;letter-spacing:.02em;color:var(--gold);margin-bottom:22px}
+  .brand img{height:26px;width:auto;display:block}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:16px}
+  .eyebrow b{color:var(--gold);font-weight:700}
+  .hero h1{color:#FBF6EE;font-size:clamp(28px,3.6vw,44px);font-weight:500;margin-bottom:16px;max-width:580px}
+  .hero p.lead{font-size:16.5px;color:rgba(255,255,255,.8);margin-bottom:18px;max-width:540px}
+  .pills{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px;max-width:580px}
+  .pill{display:flex;align-items:center;gap:10px;border:1px solid rgba(212,175,94,.5);border-radius:999px;padding:9px 14px 9px 10px;font-size:13.5px;line-height:1.3;color:rgba(255,255,255,.92);background:rgba(255,255,255,.03)}
+  .pill i{flex:0 0 26px;height:26px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-style:normal;font-size:12px}
+  .scroll-hint{display:inline-flex;align-items:center;gap:10px;color:rgba(255,255,255,.6);font-size:13.5px;text-decoration:none}
+  .scroll-hint:hover{color:#fff}
+  .scroll-hint svg{width:16px;height:16px;animation:bob 1.8s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+  /* ---------- FORM CARD ---------- */
+  .card{background:#fff;color:var(--ink);border-radius:var(--radius);padding:22px 24px;box-shadow:0 24px 60px rgba(0,0,0,.35);border:1px solid rgba(212,175,94,.35)}
+  .card h3{font-family:'Playfair Display',serif;font-size:21px;font-weight:600;color:var(--navy);margin-bottom:3px}
+  .card .sub{font-size:13px;color:var(--muted);margin-bottom:14px}
+  .field{margin-bottom:10px}
+  .field input,.field select,.field textarea{width:100%;font:inherit;font-size:15px;padding:10px 13px;border:1px solid var(--line);border-radius:10px;background:var(--cream);color:var(--ink);outline:none;transition:border .15s,box-shadow .15s}
+  .field input:focus,.field select:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(210,105,75,.18);background:#fff}
+  .btn{display:block;width:100%;border:0;cursor:pointer;font:inherit;font-weight:700;font-size:15px;letter-spacing:.04em;text-transform:uppercase;padding:15px 20px;border-radius:999px;background:var(--coral);color:#fff;margin-top:6px;transition:background .15s,transform .1s;box-shadow:0 8px 24px rgba(210,105,75,.35)}
+  .btn:hover{background:var(--coral-2)}.btn:active{transform:translateY(1px)}
+  .note{font-size:11.5px;color:var(--muted);margin-top:10px;line-height:1.45}
+
+  /* ---------- ARTICLE ---------- */
+  .article{padding:64px 0 24px}
+  .article .kicker{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
+  .article h2{font-size:clamp(26px,3vw,36px);font-weight:500;margin:0 0 20px}
+  .article h2.sec{margin-top:56px;padding-top:28px;border-top:1px solid var(--line)}
+  .article p{margin-bottom:18px}
+  .article p.big{font-size:20px;color:var(--navy);font-weight:500}
+  .checks{list-style:none;margin:8px 0 28px;display:grid;gap:10px}
+  .checks li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px 14px 50px;position:relative}
+  .checks li::before{content:"";position:absolute;left:16px;top:16px;width:22px;height:22px;border-radius:50%;background:var(--coral)}
+  .checks li::after{content:"";position:absolute;left:24px;top:20px;width:5px;height:10px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+  figure{margin:32px auto 36px;max-width:860px}
+  figure img{display:block;width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line)}
+  figure figcaption{font-size:13.5px;color:var(--muted);text-align:center;margin-top:10px}
+  .callout{background:var(--navy);color:#fff;border-radius:var(--radius);padding:24px 28px;margin:28px 0;position:relative;overflow:hidden}
+  .callout::before{content:"✦";position:absolute;right:18px;top:10px;color:var(--gold);font-size:28px;opacity:.6}
+  .callout p{margin:0;color:rgba(255,255,255,.95);font-size:18px}
+  .author{display:flex;gap:22px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin:28px 0}
+  .author .photo{flex:0 0 112px;width:112px;height:112px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);box-shadow:0 8px 20px rgba(27,36,64,.15)}
+  .author .who{font-family:'Playfair Display',serif;font-size:19px;color:var(--navy);margin-bottom:4px}
+  .author .role{font-size:13px;color:var(--coral-2);font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px}
+  @media (max-width:600px){.author{flex-direction:column;align-items:center;text-align:center}}
+  .author p{margin:0;font-size:16px}
+  .case{background:#fff;border:1px solid var(--gold);border-radius:var(--radius);padding:26px 30px;margin:28px 0}
+  .case .lbl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-bottom:10px}
+  .case p{margin:0}
+  .case strong{color:var(--coral-2)}
+
+
+  mark{background:linear-gradient(transparent 55%,rgba(212,175,94,.45) 55%);color:inherit;padding:0 2px}
+  .article strong{color:var(--navy);font-weight:700}
+  .nots,.nums{list-style:none;margin:4px 0 20px;display:grid;gap:10px}
+  .nots li,.nums li{position:relative;padding-left:34px}
+  .nots li::before{content:"✕";position:absolute;left:4px;top:1px;color:var(--coral);font-weight:700}
+  .nums{counter-reset:n}
+  .nums li::before{counter-increment:n;content:counter(n);position:absolute;left:0;top:2px;width:24px;height:24px;border-radius:50%;background:var(--navy);color:var(--gold);font-size:12.5px;font-weight:700;display:grid;place-items:center}
+
+  /* ---------- FINAL ---------- */
+  .final{background:var(--navy);color:#fff;padding:64px 0 72px;margin-top:48px;position:relative;overflow:hidden}
+  .final .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative}
+  .final h2{color:#FBF6EE;font-size:clamp(26px,3vw,38px);font-weight:500;margin-bottom:16px}
+  .final p{margin-bottom:14px;color:rgba(255,255,255,.82)}
+  footer{padding:36px 0 40px;font-size:13px;color:var(--muted);text-align:center}
+  footer img{width:220px;height:auto;display:block;margin:0 auto 14px}
+  footer a{color:var(--muted)}
+
+  .sticky{display:none}
+  .sticky[hidden]{display:none!important}
+  .field label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width:900px){
+    body{font-size:16px}
+    .hero{min-height:0;padding:18px 0 24px;display:block}
+    .hero .frame{inset:8px}
+    .hero .wrap{grid-template-columns:1fr;gap:16px}
+    .brand{font-size:13px;margin-bottom:12px;gap:9px}
+    .brand img{height:16px}
+    .eyebrow{font-size:11px;margin-bottom:10px;display:block;line-height:1.5}
+    .lead-2{display:none}
+    .hero h1{font-size:25px;margin-bottom:10px}
+    .hero p.lead{font-size:14.5px;margin-bottom:0}
+    .pills,.scroll-hint,.hero .sub{display:none}
+    .card{padding:16px 16px 14px;box-shadow:0 14px 34px rgba(0,0,0,.3)}
+    .card h3{font-size:18px;margin-bottom:10px}
+    .field{margin-bottom:7px}
+    .field input,.field select{padding:11px 12px;font-size:15px}
+    .btn{padding:13px;font-size:14px}
+    .note{font-size:10.5px;margin-top:8px}
+    .mob-pills{display:grid;grid-template-columns:1fr;gap:8px;padding:22px 20px 0}
+    .mob-pills .pill{border-color:var(--gold);color:var(--ink);background:#fff}
+    .final .wrap{grid-template-columns:1fr;gap:28px}
+    .article{padding:40px 0 16px}
+    .article h2.sec{margin-top:40px}
+    .sticky{display:block;position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(251,246,238,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);z-index:20}
+    .sticky a{display:block;text-align:center;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:14px;background:var(--coral);color:#fff;padding:13px;border-radius:999px}
+    body{padding-bottom:70px}
+  }
+  @media (min-width:901px){.mob-pills{display:none}}
+</style>
+</head>
+<body>
+
+<!-- ============ ПЕРВЫЙ ЭКРАН ============ -->
+<section class="hero" id="top">
+    <div class="frame"></div>
+  <div class="wrap">
+    <div>
+      <div class="brand"><img src="img/logo-mark-light.png" alt="" width="22" height="22"><span>Академия Александры Горевой-Куртышевой</span></div>
+      <div class="eyebrow"><b>Бесплатная диагностическая консультация</b> · 30 минут · онлайн</div>
+      <h1>Как на вашем опыте зарабатывать на 30% больше, даже если вы работаете в найме</h1>
+      <p class="lead">Для специалистов с большим опытом, которые хотят сделать из него свой продукт, в том числе параллельно с основной работой. <span class="lead-2">За 30 минут с экспертом нашей школы по методике Александры Горевой-Куртышевой вы поймёте:</span></p>
+      <div class="pills">
+        <div class="pill"><i>✦</i>какой продукт собрать из вашего опыта</div>
+        <div class="pill"><i>✦</i>с каких клиентов и контактов начать</div>
+        <div class="pill"><i>✦</i>сколько может стоить ваша работа в формате трека</div>
+        <div class="pill"><i>✦</i>какой следующий шаг сделать в менторинге</div>
+      </div>
+      <a class="scroll-hint" href="#article">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        Ниже подробно рассказываем, кому и зачем нужна эта консультация
+      </a>
+    </div>
+
+    <div class="card" id="form">
+      <h3>Записаться на консультацию</h3>
+      <div class="sub">Заполните форму, менеджер свяжется с вами и подберёт удобное время</div>
+      <!-- ВАЖНО: замените action на адрес обработчика формы (Геткурс / Tilda / свой скрипт) -->
+      <form action="#" method="post" data-form="consultation-top">
+        <div class="field"><label for="name1">Имя</label><input id="name1" name="name" type="text" required autocomplete="name" placeholder="Имя"></div>
+        <div class="field"><label for="phone1">Телефон</label><input id="phone1" name="phone" type="tel" required autocomplete="tel" placeholder="Телефон"></div>
+        <div class="field"><label for="email1">Почта</label><input id="email1" name="email" type="email" required autocomplete="email" placeholder="Почта"></div>
+        <div class="field"><label for="msg1">Какой мессенджер удобен</label>
+          <select id="msg1" name="messenger" required>
+            <option value="" disabled selected>Какой мессенджер удобен</option>
+            <option>Telegram</option><option>WhatsApp</option><option>Max</option>
+          </select></div>
+        <div class="field"><label for="handle1">Ссылка на мессенджер или ник в Telegram</label><input id="handle1" name="handle" type="text" required placeholder="Ссылка на мессенджер или ник в ТГ"></div>
+        <button class="btn" type="submit">Записаться на консультацию</button>
+        <div class="note">Мест ограниченное количество, консультации проводятся лично. Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки персональных данных</a>.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Пункты результата для мобильной версии (на десктопе они в первом экране) -->
+<div class="mob-pills">
+  <p style="font-size:15px;color:var(--muted);margin-bottom:4px">За 30 минут с экспертом нашей школы по методике Александры Горевой-Куртышевой вы поймёте:</p>
+  <div class="pill"><i>✦</i>какой продукт собрать из вашего опыта</div>
+  <div class="pill"><i>✦</i>с каких клиентов и контактов начать</div>
+  <div class="pill"><i>✦</i>сколько может стоить ваша работа в формате трека</div>
+  <div class="pill"><i>✦</i>какой следующий шаг сделать в менторинге</div>
+</div>
+
+<!-- ============ СТАТЬЯ ============ -->
+<main class="article" id="article">
+  <div class="wrap">
+    <div class="text">
+      <div class="kicker">Кому и зачем нужна эта консультация</div>
+      <h2>Узнаёте себя?</h2>
+      <p class="big">Чаще всего к нам приходят люди с большим бэкграундом.</p>
+      <p>Несколько корпоративных треков, где вы успели поработать и с людьми, и с продажами, и с управлением, может быть, второе высшее по психологии или коучинговое образование, которое получали, чтобы наконец ответить себе на вопрос «кто я и про что я». <mark>Экспертизы много, в каждой из прошлых жизней что-то есть, и непонятно, за что сейчас хвататься</mark>: в какой нише себя позиционировать, что именно предлагать и с чего вообще начать.</p>
+      <p>При этом у многих основная работа никуда не делась, и <mark>хочется развивать свою практику параллельно, не увольняясь и не рискуя</mark>, но не хватает понимания, как это устроено по шагам. А те, кто уже пробовал консультировать, знают и другую сторону: клиенты приходят случайно, по рекомендации или из блога, вы делитесь опытом, человек благодарит и уходит, а дальше непонятно, был ли результат и можно ли на этом что-то спланировать.</p>
+    </div>
+
+    <figure><img src="img/02-crossroads.jpg" alt="Эксперт на развилке нескольких карьерных дорог" loading="lazy"></figure>
+
+    <div class="text">
+      <p>Посмотрите, что из этого про вас:</p>
+      <ul class="checks">
+        <li><strong>опыта много</strong>, в нескольких сферах, и непонятно, как собрать его в один понятный продукт;</li>
+        <li><strong>вы в найме</strong> и хотите развивать свою практику параллельно, но не знаете, с чего начать;</li>
+        <li><strong>вы уже консультируете</strong>, но клиенты приходят случайно, и доход не спланировать;</li>
+        <li><strong>раньше получалось, сейчас не получается</strong>, и вы не можете выйти из состояния сбитого лётчика;</li>
+        <li><strong>клиенты спрашивают, какой будет результат</strong> и за что конкретно они платят, и вам сложно на это ответить;</li>
+        <li><strong>вы проводите бесплатные разборы</strong> по часу-два, слышите «спасибо, всё поняла», и на этом всё заканчивается;</li>
+        <li><strong>вы чувствуете, что продешевили</strong>: клиент получил очень много, а заплатил как за час разговора.</li>
+      </ul>
+
+      <h2 class="sec">Что общего у всех этих ситуаций</h2>
+      <p>Ситуации разные, а причина, если присмотреться, одна: <mark>опыт есть, но он не капитализирован</mark>. Давайте разберёмся, чем монетизация отличается от капитализации, потому что вся история именно в этом.</p><p><strong>Монетизация</strong> это когда вы продали консультацию сегодня, получили деньги завтра, и всё, нужно придумывать что-то новенькое.</p><p><strong>Капитализация</strong> это когда вы один раз сделали определённые действия со своей экспертизой, со своим бэкграундом, с тем, что вы годами делали в найме или во фрилансе, и дальше <mark>это работает на вас и через полгода, и через год, и через десять лет</mark>.</p><p>Разовая консультация такого накопительного эффекта не даёт в принципе, как бы хорошо вы её ни проводили, а когда продукта нет вообще, капитализировать просто нечего.</p>
+    </div>
+
+    <figure><img src="img/03-capital.jpg" alt="Монетизация: монета исчезает. Капитализация: лестница из монет растёт" loading="lazy"><figcaption>Монетизация против капитализации</figcaption></figure>
+
+    <div class="text">
+      <p>И есть второй момент, который всё это усиливает. Рынок за последний год очень сильно поменялся, и сейчас мы живём во время <mark>культа результата</mark>. Клиент приходит и спрашивает: а какой будет результат, за что конкретно я плачу, что будет через месяц, что будет через два. Разовой консультацией на этот вопрос ответить невозможно, потому что после одной встречи результат либо случается, либо нет, и вы на это уже никак не влияете.</p><p><strong>Эксперт, который умеет работать с результатом, чувствует себя в рынке прекрасно. Эксперт, который не умеет, видит вокруг кризис.</strong></p>
+      <div class="callout"><p>Получается, нужен формат, который решает сразу обе задачи: превращает ваш опыт в продукт с накопительным эффектом и при этом позволяет обещать клиенту результат. Такой формат есть, и он старше всех остальных. Это менторинг.</p></div>
+
+      <h2 class="sec">Что такое менторинг и почему именно он</h2>
+      <p><strong>Менторинг это передача вашего опыта по определённой методологии.</strong> Не разовый разговор, а трек из нескольких встреч, по которому вы ведёте человека к результату, причём к такому, который можно <mark>заранее описать, оцифровать и даже прописать в договоре</mark>.</p><p>Главное отличие от всего остального в том, что <mark>результат в менторинге клиент делает своими руками</mark>: вы даёте инструменты, упражнения и правильные вопросы, он действует, и в конце трека у него есть новый навык и реальное изменение, а у вас есть кейс. Вот так разовая консультация превращается в продукт, а вопрос «какой будет результат» перестаёт быть страшным.</p>
+    </div>
+
+    <figure><img src="img/04-mentoring.jpg" alt="Ментор показывает путь, клиент идёт по нему сам" loading="lazy"></figure>
+
+    <div class="text">
+      <p>Важно понимать, чем менторинг не является.</p><ul class="nots"><li><strong>Не коучинг</strong>, где мы работаем преимущественно вопросами.</li><li><strong>Не консалтинг</strong>, где мы приходим к клиенту, внедряем решение своими руками, нанимаемся к нему фактически в штат и потом остаёмся крайними, когда он эту работу обесценивает.</li><li><strong>Не терапия</strong>, ментор в хорошем варианте не контрактуется на травмы и детство.</li><li><strong>Не наставничество по старинке</strong> в формате «смотри, как делаю я, и повтори».</li></ul><p>Менторинг исторически вообще <mark>первая форма обучения</mark>, наши далёкие предки у костра в пещере именно так передавали друг другу опыт, и всё, что мы сейчас видим в образовательном рынке, наросло на этом фундаменте.</p>
+      <div class="author">
+        <img class="photo" src="img/alexandra.jpg" alt="Александра Горева-Куртышева" width="112" height="112" loading="lazy">
+        <div><div class="who">Александра Горева-Куртышева</div><div class="role">Автор методики</div><p>Занимается менторингом <strong>17 лет</strong>, посвятила ему кандидатскую диссертацию и <strong>6 лет</strong> учит ему экспертов в открытом рынке. Всё, что написано на этой странице, и всё, что вы услышите на консультации, построено на её методике.</p></div>
+      </div>
+
+      <h2 class="sec">Почему с него стоит начинать, а не с курса или клуба</h2>
+      <p>Логичный вопрос: если уж делать продукт, почему не курс, не клуб, не что-то посерьёзнее? Потому что когда эксперт сразу идёт делать курс или клуб, он, как правило, распаковывает слишком много, и получается не до конца связанная экосистема, которая монетизируется в моменте, а потом устаревает.</p><p>Менторинг же <mark>не требует записывать уроки, собирать команду и строить инфраструктуру</mark>, он собирается из того опыта, который у вас уже есть, и его совершенно необязательно делать запуском, это может быть постоянный формат работы с клиентами параллельно с основной работой. <strong>Если вы сейчас в найме, это самый реалистичный способ начать зарабатывать на своей экспертизе, никуда не увольняясь.</strong></p>
+    </div>
+
+    <figure><img src="img/05-start.jpg" alt="Рабочий стол: основная работа и первые шаги в своей практике" loading="lazy"></figure>
+
+    <div class="text">
+      <p><mark>Первые клиенты для менторинга у вас, скорее всего, уже есть</mark>, потому что никто не стартует с нуля. У каждого есть бывшие коллеги, люди, которым вы когда-то помогли, те, кто интересовался вашей консультацией, но тогда не купил, участники ваших встреч, подписчики, пусть даже их немного. Это ваши <strong>текущие активы</strong>, и с ними почти никто не работает, а именно с них проще всего начать.</p>
+      <p>А дальше на этом фундаменте вырастает всё остальное: групповой менторинг, премиальные программы, курс, клуб, роль советника. Все большие продукты, как правило, тестируются именно через менторский формат, поэтому с него и стоит начинать.</p>
+
+      <h2 class="sec">Откуда берутся плюс 30% к доходу</h2>
+      <p>Теперь про цифру из заголовка, потому что она не с потолка.</p><ul class="nums"><li><strong>Вы продаёте не час своего времени, а трек</strong> с понятным результатом, и чек за такую работу совсем другой.</li><li><strong>Вы начинаете правильно считать стоимость:</strong> не только встречи, но и подготовку, работу между сессиями и свои наработки, которые клиент получает просто потому, что пришёл к вам. Если мы не можем составить смету трека, то наш чек это просто фантазия, так большинство экспертов показывают клиенту только <mark>верхушку айсберга</mark>.</li><li><strong>Клиент остаётся с вами дальше</strong> после хорошо проведённого трека, рекомендует вас и даёт кейс, который продаёт без вашего участия.</li></ul><p>Поэтому менторинг работает <mark>на любых активах, хоть на маленькой базе, хоть на большой</mark>.</p>
+    </div>
+
+    <figure><img src="img/06-iceberg.jpg" alt="Айсберг: клиент видит только час встречи, под водой подготовка и наработки" loading="lazy"><figcaption>Клиент видит только верхушку айсберга</figcaption></figure>
+
+    <div class="text">
+      <div class="case">
+        <div class="lbl">Пример из программы</div>
+        <p>Елена пришла уже с опытом и пониманием, с кем хочет работать, но без упакованного продукта. За полтора месяца обучения она провела <strong>пять менторских треков</strong>, два из них коммерческих, заработала <strong>первые 100 тысяч рублей</strong> на новом формате, а затем перешла в групповые программы.</p>
+      </div>
+
+      <h2 class="sec">Что с этим делать дальше</h2>
+      <p>Можно закрыть эту страницу и ещё какое-то время думать, подходит ли вам этот формат. Но <mark>перенишеваться лёжа на диване невозможно</mark>: ответ на вопрос, какой именно продукт собрать из вашего опыта, с каких контактов начать и сколько за это брать, появляется только тогда, когда вы раскладываете свою конкретную ситуацию с человеком, который уже видел десятки таких историй. В статье это не разобрать, слишком разные у всех ниши и бэкграунды.</p>
+      <p>Поэтому мы сделали <strong>диагностическую консультацию</strong>. Это 30 минут один на один с опытным экспертом нашей школы, который работает по методике Александры. Он посмотрит на ваш опыт и текущую ситуацию и скажет:</p><ul class="nums"><li>какой <strong>менторский трек</strong> из этого можно собрать;</li><li>на каком <strong>этапе</strong> вы сейчас находитесь;</li><li>что имеет смысл делать <strong>следующим шагом</strong>, чтобы развиваться в менторинге.</li></ul><p>Если увидим, что вам подходит наша программа, расскажем о ней и о том, как присоединиться к текущему потоку. Если не подходит, тоже скажем честно.</p>
+      <p><strong>Приходите с конкретикой:</strong> чем занимаетесь, кому и как сейчас помогаете, что хотите изменить. Так разговор получится предметным.</p>
+    </div>
+  </div>
+</main>
+
+<!-- ============ ФИНАЛЬНЫЙ ЭКРАН ============ -->
+<section class="final" id="form-bottom">
+    <div class="wrap">
+    <div>
+      <h2>Запишитесь на диагностическую консультацию</h2>
+      <p>30 минут с опытным экспертом нашей школы по методике Александры Горевой-Куртышевой. Вы уйдёте с пониманием, какой менторский продукт можно собрать из того, что вы уже умеете, с каких клиентов начать, сколько может стоить ваша работа в формате трека и что делать следующим шагом.</p>
+      <p>Количество мест ограничено, потому что консультации проводятся лично.</p>
+    </div>
+    <div class="card">
+      <h3>Записаться на консультацию</h3>
+      <div class="sub">Заполните форму, менеджер свяжется с вами и подберёт удобное время</div>
+      <form action="#" method="post" data-form="consultation-bottom">
+        <div class="field"><label for="name2">Имя</label><input id="name2" name="name" type="text" required autocomplete="name" placeholder="Имя"></div>
+        <div class="field"><label for="phone2">Телефон</label><input id="phone2" name="phone" type="tel" required autocomplete="tel" placeholder="Телефон"></div>
+        <div class="field"><label for="email2">Почта</label><input id="email2" name="email" type="email" required autocomplete="email" placeholder="Почта"></div>
+        <div class="field"><label for="msg2">Какой мессенджер удобен</label>
+          <select id="msg2" name="messenger" required>
+            <option value="" disabled selected>Какой мессенджер удобен</option>
+            <option>Telegram</option><option>WhatsApp</option><option>Max</option>
+          </select></div>
+        <div class="field"><label for="handle2">Ссылка на мессенджер или ник в Telegram</label><input id="handle2" name="handle" type="text" required placeholder="Ссылка на мессенджер или ник в ТГ"></div>
+        <button class="btn" type="submit">Записаться на консультацию</button>
+        <div class="note">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки персональных данных</a>.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer><img src="img/logo-full.png" alt="Академия методологии Александры Горевой-Куртышевой" width="220" loading="lazy"><div><a href="#">Политика конфиденциальности</a></div></footer>
+
+<div class="sticky" id="sticky" hidden><a href="#form-bottom">Записаться на консультацию</a></div>
+
+<script>
+  // Плавающая кнопка на мобильных: показываем, когда первая форма и финальная форма не на экране
+  (function(){
+    var s=document.getElementById('sticky'), top=document.getElementById('form'), bottom=document.getElementById('form-bottom');
+    if(!('IntersectionObserver' in window)){s.hidden=false;return;}
+    var vis={top:true,bottom:false};
+    function upd(){s.hidden=vis.top||vis.bottom;}
+    new IntersectionObserver(function(e){vis.top=e[0].isIntersecting;upd();}).observe(top);
+    new IntersectionObserver(function(e){vis.bottom=e[0].isIntersecting;upd();}).observe(bottom);
+  })();
+</script>
+</body>
+</html>
