@@ -231,6 +231,12 @@
 @media(max-width:900px){.problem .reassurance{padding-bottom:20px;padding-right:0;min-height:0}.closing-photo{margin-right:0}}
 @media(max-width:900px){.hero-scene{background-size:auto 1350px;background-position:65% top}}
 /* Mobile poster: portrait shares the heading row, copy/actions keep full width. */
+/* Soft offset depth preserves the existing celestial materials and arch edges. */
+.cta{box-shadow:0 7px 18px rgba(72,26,15,.25)}
+.audience-grid article,.archetypes-grid article,.approach-grid article,.program-grid article,.reviews-grid figure{filter:drop-shadow(0 9px 16px rgba(1,13,27,.14))}
+.portrait-arch,.author-photo,.closing-photo,.bonus-cover{filter:drop-shadow(0 16px 30px rgba(1,13,27,.34))}
+.site-footer{position:relative;isolation:isolate;overflow:hidden;color:var(--ivory);padding-top:56px}
+.site-footer:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(3,16,31,.97),rgba(3,16,31,.86)),url('../img/celestial-closing-v16.webp') center 65%/cover no-repeat}
 /* Complete the portrait frame instead of merging its open bottom into the footer. */
 /* Generated shallow arches follow content height, never the asset's aspect ratio. */
 .audience-grid article,.archetypes-grid article,.program-grid article,.approach-grid article{position:relative;isolation:isolate;border:0;border-radius:0;background:transparent!important}
@@ -262,7 +268,7 @@
 /* These are decorative lecture-format marks, not unimplemented play buttons.
    Positions follow the screen centers of the two distinct supplied covers. */
 .bonus-cover--lecture .bonus-play{position:absolute;left:50%;top:27%;transform:translate(-50%,-50%);margin:0;z-index:2}
-.bonus-cover--lecture:nth-child(2) .bonus-play{left:calc(50% - 8px);top:calc(34% - 8px)}
+.bonus-cover--lecture:nth-child(2) .bonus-play{left:calc(50% - 18px);top:calc(34% - 20px)}
 .bonus-cover--lecture .bonus-copy{margin-top:392px}
 @media(max-width:600px){.bonus-cover--lecture .bonus-copy{margin-top:348px}}
 .tariff-content>h3,.tariff-name,.tariff-price>*{margin-left:12px;max-width:calc(100% - 12px)}

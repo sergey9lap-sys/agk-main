@@ -1,4 +1,11 @@
 import { tiers, priceStage, priceFor, formatPrice } from './pricing.js';
+import '../../shared/feedback.css';
+import {setupEntrances} from '../../shared/entrance.js';
+setupEntrances({
+ hero:'.hero h1,.hero-offer,.hero .cta,.hero-results li,.hero-visual',
+ sections:'main>section,.site-footer',
+ items:'h2,.section-intro,.audience-grid article,.problem-grid>div>p,.reassurance,.approach-grid article,.approach-note,.method-grid p,.archetypes-grid article,.program-grid article,.tariff-card,.bonuses-grid article,.author-intro-name,.author-intro-details,.author-photo,.client-list,.credentials,.mission,.reviews-grid figure,.faq details,.closing p,.closing-photo,.section-action,.footer-legal,.footer-bottom',
+});
 // Recognisable schematic star figures, not an observing chart or astrology.
 const figures = {
   ursa: { stars: [[110,20,4],[86,66,2],[64,105,2],[52,149,2],[100,170,3],[91,214,2],[43,194,3]], edges: [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,3]] },
