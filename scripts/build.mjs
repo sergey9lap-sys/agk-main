@@ -81,6 +81,14 @@ for (const [slug, site] of Object.entries(registry)) {
   });
   const landingPath = resolve(output, slug, 'index.html');
   await writeFile(landingPath, analytics(await readFile(landingPath, 'utf8')));
+  if (slug === 'archetype' && edition === 'ru') {
+    const notice = await readFile(resolve(siteRoot, 'src/cookie-notice.html'), 'utf8');
+    const html = withAnalytics(await readFile(landingPath, 'utf8'), edition, {
+      includeMetaPixel: false, consentCookie: 'agk_cookie_consent_archetype',
+    }).replace('</head>', '<link rel="stylesheet" href="/archetype/cookie-consent.css"></head>')
+      .replace('</body>', `${notice}<script src="/archetype/cookie-consent.js" defer></script></body>`);
+    await writeFile(landingPath, html);
+  }
   if (slug === 'expert') {
     // Public confirmation HTML bypasses Vite's transformIndexHtml hook.
     // Apply the same edition and consent-gated analytics before the RU alias copy.
