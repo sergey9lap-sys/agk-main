@@ -4,6 +4,7 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { withAnalytics } from './analytics.mjs';
 import { withLoader, errorPage, themedSites } from './delivery-surfaces.mjs';
+import { withRussianTypography } from '../sites/shared/russian-typography.js';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const edition = process.argv[2];
@@ -59,7 +60,7 @@ for (const [slug, site] of Object.entries(registry)) {
   const siteRoot = resolve(root, 'sites', slug);
   const base = `/${slug}/`;
   const assetPaths = html => html.replace(/((?:src|href)=["'])\/(?!\/)/g, `$1${base}`);
-  const editionHtml = html => html
+  const editionHtml = html => (['mentor-consultation','archetype'].includes(slug) ? withRussianTypography(html) : html)
     .replaceAll('%%WIDGET_ID%%', config.widgetId ?? '')
     .replaceAll('%%SCRIPT_ID%%', config.scriptId ?? '')
     .replaceAll('%%SUCCESS_PATH%%', config.successPath ?? '')
@@ -93,6 +94,15 @@ for (const [slug, site] of Object.entries(registry)) {
     }).replace('</head>', '<link rel="stylesheet" href="/archetype/cookie-consent.css"></head>')
       .replace('</body>', `${notice}<script src="/archetype/cookie-consent.js" defer></script></body>`);
     await writeFile(landingPath, html);
+  }
+  if (slug === 'mentor-consultation' && edition === 'ru') {
+    const notice = await readFile(resolve(siteRoot, 'src/cookie-notice.html'), 'utf8');
+    const html = withAnalytics(await readFile(landingPath, 'utf8'), edition, {
+      includeMetaPixel: false, consentCookie: 'agk_cookie_consent_mentor_consultation',
+    }).replace('</head>', '<link rel="stylesheet" href="/mentor-consultation/cookie-consent.css"></head>')
+      .replace('</nav></div></div><div class="wrap footer-bottom">', '<button class="cookie-settings" type="button" data-cookie-settings>Настройки cookie</button></nav></div></div><div class="wrap footer-bottom">')
+      .replace('</body>', `${notice}<script src="/mentor-consultation/cookie-consent.js" defer></script></body>`);
+    await writeFile(landingPath, withRussianTypography(html));
   }
   if (slug === 'expert') {
     // Public confirmation HTML bypasses Vite's transformIndexHtml hook.

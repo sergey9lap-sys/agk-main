@@ -1,4 +1,6 @@
 import { tiers, priceStage, priceFor, formatPrice } from './pricing.js';
+import {setupRussianTypography, protectRussianText} from '../../shared/russian-typography.js';
+setupRussianTypography();
 import '../../shared/feedback.css';
 import {setupEntrances} from '../../shared/entrance.js';
 setupEntrances({
@@ -91,7 +93,7 @@ function updatePrices() {
     next.replaceChildren();
     for(let i=stage+1;i<tier.prices.length;i++) {
       const line = document.createElement('p');
-      line.textContent = `с ${i===1?'16':'19'} октября ${formatPrice(tier.prices[i])}`;
+      line.textContent = protectRussianText(`с ${i===1?'16':'19'} октября ${formatPrice(tier.prices[i])}`);
       next.append(line);
     }
   }

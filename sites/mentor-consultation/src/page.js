@@ -1,6 +1,8 @@
 import '../../shared/feedback.css';
 import {setupEntrances} from '../../shared/entrance.js';
 import {setupRegistration} from './registration.js';
+import {setupRussianTypography} from '../../shared/russian-typography.js';
+setupRussianTypography();
 setupRegistration();
 setupEntrances({
  hero:'.hero h1,.hero .lead,.hero .hero-jump,.hero .pill,.hero .card',

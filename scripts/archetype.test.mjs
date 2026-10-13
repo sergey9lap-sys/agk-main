@@ -14,7 +14,7 @@ test('archetype complete content and scoped assets exist in both editions',async
   const registry=JSON.parse(await readFile('sites.json','utf8'));
   assert.deepEqual(registry.archetype.editions,{com:{},ru:{}});
   for(const edition of ['com','ru']){
-    const html=await readFile(`dist/${edition}/archetype/index.html`,'utf8');
+    const html=(await readFile(`dist/${edition}/archetype/index.html`,'utf8')).replaceAll('\u00a0',' ').replaceAll('\u2011','-');
     for(const id of ['audience','problem','approach','method','archetypes','program','tariffs','bonuses','author','reviews','faq','closing'])assert.ok(html.includes(`id="${id}"`));
     for(const copy of ['20 и 22 октября','«Раненый король»','«Пленённая гейша»','«Уставшая мать»','«Уставший мастер»','«Кассандра»','Архетип 6','Архетип 7','Архетип 8','Личная 45-минутная консультация','19 декабря 2026','Ольга, коуч','Павел, наставник','Наталья, психолог','Диана, консультант','Записи обеих встреч на 90 дней'])assert.ok(html.includes(copy),`Missing ${copy}`);
     assert.ok(html.includes('seed 2a8d1ded'));
@@ -43,7 +43,7 @@ test('archetype refinement uses approved identity and original brand assets',asy
 });
 test('bonus covers retain live copy and hero CTA precedes outcome plaques',async()=>{
   for(const edition of ['com','ru']){
-    const html=await readFile(`dist/${edition}/archetype/index.html`,'utf8');
+    const html=(await readFile(`dist/${edition}/archetype/index.html`,'utf8')).replaceAll('\u00a0',' ').replaceAll('\u2011','-');
     assert.ok(html.indexOf('href="#tariffs"><span>ВЫБРАТЬ ТАРИФ')<html.indexOf('<ul class="hero-results"'));
     assert.equal((html.match(/class="bonus-play"/g)??[]).length,2);
     for(const name of ['bonus-products-runway-v6','bonus-mentoring-runway-v6','bonus-newyear-runway-v6']){

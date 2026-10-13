@@ -1,5 +1,11 @@
 # Mentoring consultation
 
+13.10.2026 additional proofreading: protect approved short pronouns/connectors, «считать стоимость», and semantic groups using the same typography helper. RU only: cookie notice with accept/reject/close plus footer settings, consent key agk_cookie_consent_mentor_consultation, counter 110484880 after acceptance only; rejection remembered and withdrawal reloads to stop future tracking. No COM tracking added, native GetCourse unchanged.
+
+13.10.2026 repeated typography feedback: shared russian-typography.js protects prepositions/conjunctions across inline emphasis, numeric units and hyphenated words. Build HTML and pre-entrance DOM use the same idempotent same-length substitutions; copy, family, scale and page structure remain unchanged. No hardcoded responsive line breaks.
+
+13.10.2026 mobile correction: retain original logo files, scope their built URLs to /mentor-consultation/ independently of trailing slash, and prevent the hero mark from flex-shrinking. Numeric quantities (30 minutes, 17/6 years, 100 thousand) use static nonbreaking spaces in every occurrence, including hero and final CTA description. Copy, hierarchy, colors and widget behavior unchanged.
+
 Public route: /mentor-consultation/; /mentoring/ intentionally reserved for the separate long-lived site. Internal folder follows public slug. Native widget remains 1667814, no placeholder redirect/alias added to the reserved route.
 
 Current reading markers: chapters have visible 2px separators (#8E7F6B on beige, #8195B8 on navy) and static Manrope subheadings on desktop and mobile. Semantic reading parts use 7px circular markers with 24px inset; no arrows, controls or hidden copy. Next intro/conditions and standalone conclusions use bullets; the original three outcomes retain their numbered panels. No new rank/step numbering assigned to explanatory fragments. Source text and widget behavior unchanged.

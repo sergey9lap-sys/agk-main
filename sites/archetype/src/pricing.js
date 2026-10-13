@@ -13,5 +13,5 @@ export function priceFor(tier, date = new Date()) {
   return tiers[tier].prices[priceStage(date)];
 }
 export function formatPrice(price) {
-  return new Intl.NumberFormat('ru-RU').format(price) + ' Р';
+  return new Intl.NumberFormat('ru-RU').format(price) + '\u00a0Р';
 }

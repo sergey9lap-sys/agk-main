@@ -103,6 +103,12 @@ components:
 
 # Design System: AGK — Archetype
 
+13.10.2026 exact proofreading: additional nonbreaking short pronouns/connectors and approved «но власть вас», «и ваше королевство», «что вам не подходит», «Я — Сердце компании» semantic groups. No copy edits or hard line breaks added; same rules on both responsive layouts.
+
+13.10.2026 typography refinement: same shared nonbreaking-word rules as mentor-consultation for headings, prose, cards, controls and dynamic tariff dates. Original wording, Prata/Manrope type system, artwork and CTA geometry preserved. Avoid viewport-specific hard breaks and audit 320/390/desktop for unbreakable-group overflow.
+
+Verified in built RU browser at 320/390/1280: no horizontal page overflow, no remaining plain-space links after protected short words in visible headings/prose/cards/controls. The existing visually-hidden audience H2 is intentionally 1px and excluded from text-width defects. External cross-origin GetCourse content remains provider-controlled. COM/RU builds and 25 tests pass; not committed, pushed or published in this revision.
+
 ### Approved-reference hero backdrop — 11 October 2026
 
 Only the hero adopts the supplied approved mockup's engraved celestial chart, right crescent, bottom mountains, lower-left N/E/S/W compass and narrow ornamental edge rails. Generated raster artwork uses the current cold navy palette. Real portrait, live source copy and shared CTA tokens remain unchanged; all subsequent scenes retain the runway design. This explicit local request overrides the earlier no-antique-map direction only in the hero.

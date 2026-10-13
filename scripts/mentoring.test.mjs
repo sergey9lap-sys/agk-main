@@ -21,6 +21,9 @@ test('mentoring complete and isolated in both editions',async()=>{
  for(const edition of ['ru','com']){
  await assert.rejects(access(`dist/${edition}/mentoring`),{code:'ENOENT'});
  const html=await readFile(`dist/${edition}/mentor-consultation/index.html`,'utf8');
+ for(const logo of ['logo-mark-light.png','logo-full.png'])assert.ok(html.includes(`src="/mentor-consultation/img/${logo}"`),`Logo must be route scoped: ${edition} ${logo}`);
+ assert.equal((html.match(/30\u00a0минут/g)||[]).length,5);
+ assert.ok(html.includes('17\u00a0лет')&&html.includes('6\u00a0лет')&&html.includes('100\u00a0тысяч'));
  for(const id of ['audience','capital','method','start','economics','next','form-bottom'])assert.ok(html.includes(`id="${id}"`));
  for(const name of ['crossroads','capital','mentoring','start','iceberg']){assert.ok(html.includes(`${name}-editorial.webp`));await access(`dist/${edition}/mentor-consultation/img/${name}-editorial.webp`);}
  for(const name of ['alexandra.jpg','logo-full.png','logo-mark-light.png'])await access(`dist/${edition}/mentor-consultation/img/${name}`);

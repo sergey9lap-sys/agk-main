@@ -120,3 +120,7 @@ mark{background:none;padding:0;font-weight:700}
 .reading-chapter .reading-part+.reading-part{margin-top:22px}
 .next-conditions{padding-top:24px;border-top:2px solid var(--reading-separator)}
 @media(max-width:600px){.reading-chapter{padding-top:20px}.reading-topic{font-size:18px}.reading-chapter .reading-part+.reading-part{margin-top:20px}}
+.brand img{flex-shrink:0}
+/* Keep the long nonbreaking heading inside the narrowest phone column. */
+@media(max-width:600px){.final .wrap{grid-template-columns:minmax(0,1fr)}.final .wrap>div{min-width:0}.author .who{grid-column:1/-1;grid-row:1}.author .photo{grid-row:2}.author .role{grid-column:2;grid-row:2;align-self:center}}
+@media(max-width:360px){.hero h1{font-size:30px}.final h2{font-size:25px}}
