@@ -1,0 +1,154 @@
+{
+  "created": "2026-10-16",
+  "additional_assets_manifest": "manifest-additions.json",
+  "mode": "built-in imagegen",
+  "reference": "../../.impeccable/mocks/value-v6-pencil/value-atelier-pencil.png",
+  "produce": [
+    {
+      "id": "hero",
+      "source_crop": "approved comp hero still life; regeneration, not screenshot crop",
+      "output_path": "hero.webp",
+      "strategy": "faithful regeneration clean plate, WebP conversion",
+      "prompt_used": "Use case: product-mockup. Asset type: clean reusable website hero background, NOT a website screenshot. Input image is the approved style and composition reference only. Recreate its dark charcoal and aged copper atelier with amber sidelight and luxurious tactile black marble table. Landscape 1536x1024. The upper 65 percent is a very calm near-black warm charcoal subtly mottled wall, plenty of dark negative space for real HTML heading left and real HTML form right. At bottom left only, on the marble ledge, place three tactile product objects: one large closed black marble/bronze box, a smaller closed burnt terracotta book, and a small black notebook leaning in front, draped rust velvet cloth behind and below. Absolutely NO words or letters on the objects. Object group occupies lower left 45 percent and lower 30 percent, never the upper copy area. Far right edge only a bronze vase with delicate dried amber stems, low visual contrast; right-center remains dark empty for form overlay. Continuous full-bleed scene. Preserve approved palette, material, lighting and perspective. No UI, no text, no people, no logos, no borders, no card, no form, no labels, no watermark. Photographic still life, warm chiaroscuro, subtle and restrained.",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "format": "webp",
+      "transparency": false,
+      "bytes": 103018,
+      "deviations": "No words on product objects; semantic labels may be added separately. Negative space upper65%; group bottom-left, vase right. No UI baked.",
+      "qa_status": "accepted"
+    },
+    {
+      "id": "expert",
+      "source_crop": [
+        0,
+        0,
+        512,
+        1024
+      ],
+      "output_path": "expert.webp",
+      "strategy": "faithful triptych regeneration then deterministic exact-third crop",
+      "prompt_used": "Use case: illustration-story. Asset type: production pencil illustration triptych strip for three website audience cards. Use attached approved screenshot as STYLE reference only: warm sepia parchment, expressive fine graphite hatching, authentic artist drawing, no photorealism. Generate a landscape 1536x1024 image divided into THREE EXACTLY EQUAL VERTICAL PANELS, boundaries at 1/3 and 2/3 width, with no gutters. Each panel is a self-contained half-body drawing on uniform warm ochre paper, same lighting and scale, full rectangular illustration to edge; card shape/frame/caption will be done in CSS. Left panel: female expert about 40, thoughtful, gesturing with pencil toward a simple diagram on an easel behind her, no writing, expertise and explanation. Center panel: male mentor about 45 with glasses, thoughtfully listening and talking across a desk with open notebook, supportive gesture, no writing, subtle suggestion of seated listener shoulder in foreground is okay. Right panel: female educational-product author about 35 working at a slim unbranded silver laptop, looking down at laptop while writing in a notebook that lies flat on the desk facing HER, no viewer-facing notebook or pages. Her role reads creator of lessons, not a glamorous portrait. A small background pinboard with simple abstract diagrams only. All three honest human proportions, quiet expressive faces, hand-drawn contour, graphite crosshatch and sepia wash, no cartoon. NO readable text, no letters, no words, no logos, NO captions, no card borders, no rounded corners, no shadows outside paper, no UI. Keep all main faces/gestures inside own third so each is cleanly cropped into a portrait card.",
+      "dimensions": [
+        512,
+        1024
+      ],
+      "format": "webp",
+      "transparency": false,
+      "deviations": "No caption band or card chrome; must be semantic CSS.",
+      "qa_status": "accepted"
+    },
+    {
+      "id": "mentor",
+      "source_crop": [
+        512,
+        0,
+        1024,
+        1024
+      ],
+      "output_path": "mentor.webp",
+      "strategy": "faithful triptych regeneration then deterministic exact-third crop",
+      "prompt_used": "Use case: illustration-story. Asset type: production pencil illustration triptych strip for three website audience cards. Use attached approved screenshot as STYLE reference only: warm sepia parchment, expressive fine graphite hatching, authentic artist drawing, no photorealism. Generate a landscape 1536x1024 image divided into THREE EXACTLY EQUAL VERTICAL PANELS, boundaries at 1/3 and 2/3 width, with no gutters. Each panel is a self-contained half-body drawing on uniform warm ochre paper, same lighting and scale, full rectangular illustration to edge; card shape/frame/caption will be done in CSS. Left panel: female expert about 40, thoughtful, gesturing with pencil toward a simple diagram on an easel behind her, no writing, expertise and explanation. Center panel: male mentor about 45 with glasses, thoughtfully listening and talking across a desk with open notebook, supportive gesture, no writing, subtle suggestion of seated listener shoulder in foreground is okay. Right panel: female educational-product author about 35 working at a slim unbranded silver laptop, looking down at laptop while writing in a notebook that lies flat on the desk facing HER, no viewer-facing notebook or pages. Her role reads creator of lessons, not a glamorous portrait. A small background pinboard with simple abstract diagrams only. All three honest human proportions, quiet expressive faces, hand-drawn contour, graphite crosshatch and sepia wash, no cartoon. NO readable text, no letters, no words, no logos, NO captions, no card borders, no rounded corners, no shadows outside paper, no UI. Keep all main faces/gestures inside own third so each is cleanly cropped into a portrait card.",
+      "dimensions": [
+        512,
+        1024
+      ],
+      "format": "webp",
+      "transparency": false,
+      "deviations": "No caption band or card chrome; must be semantic CSS.",
+      "qa_status": "accepted"
+    },
+    {
+      "id": "author",
+      "source_crop": [
+        1024,
+        0,
+        1536,
+        1024
+      ],
+      "output_path": "author.webp",
+      "strategy": "faithful triptych regeneration then deterministic exact-third crop",
+      "prompt_used": "Use case: illustration-story. Asset type: production pencil illustration triptych strip for three website audience cards. Use attached approved screenshot as STYLE reference only: warm sepia parchment, expressive fine graphite hatching, authentic artist drawing, no photorealism. Generate a landscape 1536x1024 image divided into THREE EXACTLY EQUAL VERTICAL PANELS, boundaries at 1/3 and 2/3 width, with no gutters. Each panel is a self-contained half-body drawing on uniform warm ochre paper, same lighting and scale, full rectangular illustration to edge; card shape/frame/caption will be done in CSS. Left panel: female expert about 40, thoughtful, gesturing with pencil toward a simple diagram on an easel behind her, no writing, expertise and explanation. Center panel: male mentor about 45 with glasses, thoughtfully listening and talking across a desk with open notebook, supportive gesture, no writing, subtle suggestion of seated listener shoulder in foreground is okay. Right panel: female educational-product author about 35 working at a slim unbranded silver laptop, looking down at laptop while writing in a notebook that lies flat on the desk facing HER, no viewer-facing notebook or pages. Her role reads creator of lessons, not a glamorous portrait. A small background pinboard with simple abstract diagrams only. All three honest human proportions, quiet expressive faces, hand-drawn contour, graphite crosshatch and sepia wash, no cartoon. NO readable text, no letters, no words, no logos, NO captions, no card borders, no rounded corners, no shadows outside paper, no UI. Keep all main faces/gestures inside own third so each is cleanly cropped into a portrait card.",
+      "dimensions": [
+        512,
+        1024
+      ],
+      "format": "webp",
+      "transparency": false,
+      "deviations": "Requested change: woman writes beside laptop; viewer-facing sheet and words removed.",
+      "qa_status": "accepted"
+    },
+    {
+      "id": "wheel",
+      "source_crop": "new production item consistent with approved material language, original page copy about wheel",
+      "output_path": "wheel.webp",
+      "strategy": "faithful new item in approved world; WebP conversion",
+      "prompt_used": "Use case: product-mockup. Asset type: isolated production illustration of a prize wheel for a dark copper atelier website. Matching attached reference's charcoal, warm bronze, terracotta, tactile old craft materials and amber side light. One beautiful compact physical tabletop wheel of fortune, near frontal three-quarter view tilted only slightly, on a small aged bronze stand. Eight equal broad sections made of dark charcoal and burnished bronze; exactly one section burnt terracotta highlighted subtly, no mint or green. Central brushed bronze hub, delicate brass rim, simple small pointer at top. No words, no numerals, no icons or invented prize labels. On flat dark warm charcoal background, softly grounded realistic shadow. Square composition, entire wheel and base comfortably in frame. Strong object silhouette, elegant physical craft, realistic materials not cartoon. No extra objects, no text, no UI, no logos, no watermark.",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "format": "webp",
+      "transparency": false,
+      "bytes": 174800,
+      "deviations": "No prize labels invented; 8 sections, one terracotta, flat warm dark backdrop.",
+      "qa_status": "accepted"
+    }
+  ],
+  "direct": [
+    {
+      "id": "original-expert-photo",
+      "output_path": "../alexandra.avif",
+      "strategy": "existing authentic photo preserved untouched",
+      "qa_status": "accepted"
+    },
+    {
+      "id": "academy-logo",
+      "output_path": "../academy.png",
+      "strategy": "existing authentic logo preserved untouched; no hero header per request",
+      "qa_status": "accepted"
+    }
+  ],
+  "semantic": [
+    {
+      "id": "copy-and-forms",
+      "implementation": "All title/body/labels/form inputs/CTA remain HTML; hero is decorative background; no text in asset.",
+      "notes": "Keep complete approved source content and honest unconnected form state.",
+      "qa_status": "accepted"
+    },
+    {
+      "id": "audience-card-chrome",
+      "implementation": "CSS polygon/clip-path layered ochre base, slim aged-brass border, charcoal caption band and quiet shadow, text as HTML; three produced portraits inside. Responsive stacked cards, no generated label.",
+      "notes": "For image aspect-ratio around 1.15 use object-fit:cover; object-position:center 35% keeping face/gesture. Original full vertical crop remains available.",
+      "qa_status": "accepted"
+    },
+    {
+      "id": "hero-scene-layout",
+      "implementation": "Decorative CSS background hero.webp with dark text area occupying upper65%. At mobile use a separate full-width image region or preserve bottom-left objects via position:left bottom; don't let semantic form obscure complete object group.",
+      "notes": "No mint within images: mint reserved for CTA only.",
+      "qa_status": "accepted"
+    },
+    {
+      "id": "wheel-copy",
+      "implementation": "Real heading/prize sentence/copy in HTML outside image, no claim of actual randomization unless implemented. Wheel raster decorative supporting illustration.",
+      "notes": "Do not bake labels onto wheel.",
+      "qa_status": "accepted"
+    }
+  ],
+  "execution_order": [
+    "Hero clean plate",
+    "Pencil portrait strip and exact-third crops",
+    "Bronze wheel",
+    "WebP optimization and embedded prompt metadata",
+    "Parent implements semantic layout and responsive crop QA"
+  ],
+  "blockers": [],
+  "assumptions": [
+    "Approved visual world stands; no additional concept round required.",
+    "Portraits are illustrations of audience types, not real testimonials or expert identity.",
+    "No implementation HTML/CSS was changed by asset producer.",
+    "Opaque square wheel background is intentional and must blend with dark warm section."
+  ]
+}

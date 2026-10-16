@@ -1,0 +1,25 @@
+{
+  "created": "2026-10-16",
+  "mode": "built-in imagegen",
+  "assets": [
+    {
+      "file": "guide.webp",
+      "source": "guide-original.png",
+      "dimensions": [880, 880],
+      "bytes": 91992,
+      "alpha": true,
+      "use": "The same named guide in hero, gift section and final CTA",
+      "prompt": "Use case: product-mockup. Create ONE premium photorealistic isolated physical paperback guide for a Russian webinar website, transparent RGBA background. This is a production website cutout, NOT a webpage or poster. A slim upright A5 guide with visible cream page edges, subtly angled 12 degrees so the entire FRONT COVER is highly legible and dominant; modest three-quarter view, not extreme perspective. Warm charcoal leather-like dark brown cover (#211a14), restrained embossed copper foil, warm cream text. Quiet editorial atelier aesthetic, no white patch, no logo, no people, no props, no pedestal, no extra booklet, no background, no cropped edges. Beautiful soft realistic contact shadow contained within transparent canvas, fine real paper/material details. Center book and leave ~10% transparent margin all sides. This exact same image will be used small in hero and larger in gift section. Text on front cover must be EXACT Russian Cyrillic, beautifully typeset, highly readable and not tiny: top small 'ГАЙД', then large '15', then in generous large lines 'игровых механик,' / 'которые доводят' / 'до покупки'. Only this text, no other words or marks. '15' and title should feel like a single refined designed cover with ample breathing room. Do not generate any invented Academy logo. Portrait-ish object in square canvas. Warm studio lighting from upper left, premium tactile realism, understated, high contrast cream typography, copper fine border.",
+      "qa": "Exact cover title inspected visually. Built-in transparent generation; mechanical resizing/WebP only. Real PDF not supplied."
+    },
+    {
+      "file": "alexandra-bw.webp",
+      "source": "../../../agk-webinar-com/public/alexandra-hero-bw.png",
+      "archive": "alexandra-bw-original.png",
+      "dimensions": [740, 1103],
+      "bytes": 23996,
+      "generated": false,
+      "qa": "Existing genuine project portrait requested by user. Mechanical resize/WebP; face and photo not regenerated."
+    }
+  ]
+}

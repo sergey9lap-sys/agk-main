@@ -1,4 +1,5 @@
 {
+  "sales": { "editions": { "com": {}, "ru": {} } },
   "mentor-consultation": { "editions": { "com": {}, "ru": {} } },
   "archetype": { "editions": { "com": {}, "ru": {} } },
   "consultation": { "editions": {

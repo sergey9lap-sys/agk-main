@@ -1,0 +1,31 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile,access} from 'node:fs/promises';
+import {resolve} from 'node:path';
+
+for(const edition of ['com','ru']) test(`${edition}: sales preserves Atelier and isolated preview confirmations`,async()=>{
+ const root=resolve('dist',edition,'sales');
+ const html=await readFile(resolve(root,'index.html'),'utf8');
+ assert.equal((html.match(/<section\b/g)||[]).length,6);
+ assert.equal((html.match(/<form\b/g)||[]).length,2);
+ assert.equal((html.match(/<fieldset disabled/g)||[]).length,2);
+ assert.ok(html.includes('Как эксперту заработать'));
+ assert.ok(html.includes('grand-prize'));
+ assert.ok(!html.includes('href="thanks.html"'));
+ assert.ok(html.includes('alexandra-facing-right.webp'));
+ assert.equal((html.match(/guide.webp/g)||[]).length,3);
+ assert.ok(!html.includes('widget/script'));
+ for(const [,url] of html.matchAll(/(?:src|href)="(\/sales\/[^"#?]+)"/g))await access(resolve('dist',edition,'.'+url));
+ const thanks=await readFile(resolve(root,'thanks/index.html'),'utf8');
+ assert.equal((thanks.match(/class="button primary"/g)||[]).length,3);
+ assert.ok(thanks.includes('href="../atelier-v2.css"'));
+ assert.ok(thanks.includes('href="../"'));
+ assert.ok(!thanks.includes('academy.png'));
+ for(const url of ['https://agkedu.getcourse.ru/tlgrm','https://agkedu.getcourse.ru/ss?ss=maxbot','https://vk.com/app6622219_-210982065#themeId=33822'])assert.ok(thanks.includes(url));
+ const css=await readFile(resolve(root,'atelier-v2.css'),'utf8');
+ assert.ok(css.includes('--card-radius:20px'));
+ assert.ok(css.includes('--action-height:64px'));
+ const baseCss=await readFile(resolve(root,'atelier.css'),'utf8');
+ for(const [,asset] of (baseCss+css).matchAll(/url\(([^)]+)\)/g))await access(resolve(root,asset));
+ await access(resolve(root,'404.html'));
+});
