@@ -15,3 +15,11 @@ export function priceFor(tier, date = new Date()) {
 export function formatPrice(price) {
   return new Intl.NumberFormat('ru-RU').format(price) + '\u00a0Р';
 }
+export function upcomingPrices(tier, date = new Date()) {
+  if(!Object.hasOwn(tiers,tier)) throw new RangeError('Unknown tariff');
+  const stage=priceStage(date);
+  return priceDates.flatMap((at,index)=>index>=stage?[{at,price:tiers[tier].prices[index+1]}]:[]);
+}
+export function nextPriceChange(date = new Date()) {
+  return priceDates.map(Date.parse).find(at=>at>+date) ?? null;
+}

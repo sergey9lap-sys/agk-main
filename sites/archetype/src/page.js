@@ -1,4 +1,4 @@
-import { tiers, priceStage, priceFor, formatPrice } from './pricing.js';
+import { tiers, priceFor, formatPrice, upcomingPrices, nextPriceChange } from './pricing.js';
 import {setupRussianTypography, protectRussianText} from '../../shared/russian-typography.js';
 setupRussianTypography();
 import '../../shared/feedback.css';
@@ -82,22 +82,27 @@ function showCheckout() {
   loadCheckout(checkoutPanels.find(panel => !panel.hidden));
   dialog.scrollTop = 0;
 }
+let priceTimer;
 function updatePrices() {
-  const stage = priceStage();
-  for(const [id, tier] of Object.entries(tiers)) {
-    document.querySelector(`[data-price="${id}"]`).textContent = formatPrice(tier.prices[stage]);
-    const history = document.querySelector(`[data-price-history="${id}"]`);
-    history.hidden = stage === 0;
-    history.textContent = stage ? formatPrice(tier.prices[stage-1]) : '';
+  clearTimeout(priceTimer);
+  const now = new Date();
+  for(const id of Object.keys(tiers)) {
+    document.querySelector(`[data-price="${id}"]`).textContent = formatPrice(priceFor(id, now));
     const next = document.querySelector(`[data-price-next="${id}"]`);
     next.replaceChildren();
-    for(let i=stage+1;i<tier.prices.length;i++) {
+    const upcoming = upcomingPrices(id, now);
+    next.hidden = upcoming.length === 0;
+    for(const change of upcoming) {
       const line = document.createElement('p');
-      line.textContent = protectRussianText(`с ${i===1?'16':'19'} октября ${formatPrice(tier.prices[i])}`);
+      const day = new Intl.DateTimeFormat('ru-RU',{timeZone:'Europe/Moscow',day:'numeric'}).format(new Date(change.at));
+      line.textContent = protectRussianText(`с ${day} октября ${formatPrice(change.price)}`);
       next.append(line);
     }
   }
-  document.querySelector('.dialog-price').textContent = formatPrice(priceFor(select.value));
+  document.querySelector('.dialog-price').textContent = formatPrice(priceFor(select.value, now));
+  // Refresh even if the visitor keeps the tab open across midnight.
+  const change = nextPriceChange(now);
+  if(change !== null) priceTimer = setTimeout(updatePrices, Math.min(change-+now+50, 2147483647));
 }
 for(const button of document.querySelectorAll('[data-register]')) {
   button.addEventListener('click', ()=> {
@@ -114,4 +119,5 @@ document.querySelector('[data-close]').addEventListener('click',()=>dialog.close
 dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
 dialog.addEventListener('close',()=>opener?.focus({preventScroll:true}));
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)updatePrices();});
+window.addEventListener('pageshow',updatePrices);
 updatePrices();

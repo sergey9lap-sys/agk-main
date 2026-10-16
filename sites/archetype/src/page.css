@@ -75,7 +75,7 @@
 .tariff-gifts li{display:flex;gap:10px;font-size:15px;line-height:1.55;margin-bottom:13px}.tariff-gifts li:last-child{margin-bottom:0}
 .tariff-gifts span{color:var(--gold);flex:0 0 20px;width:20px;height:20px;margin-top:2px}.tariff-gifts svg{width:100%;height:100%}.tariff-card--featured .tariff-gifts span{color:var(--gold-dark)}
 .tariff-price{margin-top:auto;border-top:1px solid var(--line);padding-top:25px}.tariff-card--featured .tariff-price{border-color:#d5c7ad}
-.price{font:44px/1.2 Prata,Georgia,serif;font-variant-numeric:tabular-nums;white-space:nowrap;margin-bottom:16px}.price-history{font-size:16px;text-decoration:line-through;color:var(--muted);margin-bottom:12px}.tariff-card--featured .price-history{color:#725b37}
+.price{font:44px/1.2 Prata,Georgia,serif;font-variant-numeric:tabular-nums;white-space:nowrap;margin-bottom:16px}
 .price-next{font-size:14px;line-height:1.7;color:#c6d1df;min-height:48px}.tariff-card--featured .price-next{color:#6d542f}
 .tariff-card>.cta{display:flex;margin-inline:auto;flex-shrink:0}.no-script-note{margin-top:30px;color:#d0dbe8}
 .bonuses-grid{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:24px}
@@ -216,7 +216,7 @@
 .tariff-card:not(.tariff-card--featured){background:rgba(5,23,43,.94);outline-color:#6b9dbf}
 .tariff-card--featured{background:#f2f7fc;outline-color:#c8e6fa}
 .tariff-card--featured .tariff-features li,.tariff-card--featured .tariff-gifts,.tariff-card--featured .tariff-price{border-color:#b6cfdf}
-.tariff-card--featured .tariff-features li>span,.tariff-card--featured .price-history,.tariff-card--featured .price-next{color:var(--steel)}
+.tariff-card--featured .tariff-features li>span,.tariff-card--featured .price-next{color:var(--steel)}
 .reviews{background-image:url('../img/runway-reviews-v5.webp')}.reviews-grid figure{background:rgba(5,23,43,.92)}
 .closing{background-image:url('../img/runway-closing-v5.webp');background-position:center top}
 .closing-photo{margin-right:0;background:var(--deep)}
