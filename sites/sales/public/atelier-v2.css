@@ -51,3 +51,18 @@ body{overflow-x:clip}
  .thanks .messengers{grid-template-columns:minmax(0,1fr);gap:16px;width:auto}
 }
 @media(max-width:360px){.button{font-size:15px}}
+
+/* Mobile poster, discreet material and service-level developer credit. */
+.mobile-portrait{display:none}
+.site-footer .developer-credit{display:block;padding:0;border:0;border-radius:0;font-size:13px;text-decoration:underline;text-underline-offset:5px;justify-self:start;grid-row:auto;grid-column:2}
+.audience,.gift-section{position:relative;isolation:isolate}
+.audience:before,.gift-section:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:url(assets/atelier-v1/bronze-surface.webp) center/768px;opacity:.18;mix-blend-mode:soft-light}
+.gift-section:before{inset:0 calc(-1 * var(--gutter));opacity:.09}
+@media(max-width:760px){
+ .hero-poster{position:relative;isolation:isolate}
+ .hero-copy{width:100%;max-width:none}
+ .hero-copy h1{position:relative;width:71%;font-size:clamp(30px,8.5vw,48px);line-height:1.05;text-wrap:initial}
+ .mobile-portrait{display:block;position:absolute;z-index:-1;right:calc(-1 * var(--gutter));top:0;width:54%;height:100%;background:url(assets/atelier-v2/alexandra-mobile-left.webp) center 22%/cover no-repeat;mask-image:linear-gradient(to right,transparent 0%,#000 36%,#000 88%,transparent 100%),linear-gradient(to bottom,transparent,#000 10%,#000 66%,transparent 100%);mask-composite:intersect}
+ .event-card{position:relative;margin-top:18px}
+ .site-footer .developer-credit{grid-column:1}
+}

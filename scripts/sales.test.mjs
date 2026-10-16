@@ -11,6 +11,10 @@ for(const edition of ['com','ru']) test(`${edition}: sales preserves Atelier and
  assert.equal((html.match(/<fieldset disabled/g)||[]).length,2);
  assert.ok(html.includes('Как эксперту заработать'));
  assert.ok(html.includes('grand-prize'));
+ assert.ok(!html.includes('class="preview-banner"'));
+ assert.ok(html.includes('class="mobile-portrait" aria-hidden="true"'));
+ assert.ok(html.includes('class="developer-credit" href="https://t.me/lp_sergey"'));
+ assert.ok(html.includes('>Разработка сайтов</a>'));
  assert.ok(!html.includes('href="thanks.html"'));
  assert.ok(html.includes('alexandra-facing-right.webp'));
  assert.equal((html.match(/guide.webp/g)||[]).length,3);
