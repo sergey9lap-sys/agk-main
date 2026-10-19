@@ -46,6 +46,8 @@ for(const edition of ['com','ru']) test(`${edition}: sales has regional forms, c
  assert.ok(css.includes('--card-radius:20px'));
  assert.ok(css.includes('--action-height:64px'));
  assert.ok(css.includes('--action:#d6ff3f'));
+ assert.ok(css.includes('--registration-width:clamp(340px,37.5vw,480px)'));
+ assert.ok(css.includes('.hero,.final-layout{grid-template-columns:minmax(0,1fr) var(--registration-width)'));
  const baseCss=await readFile(resolve(root,'atelier.css'),'utf8');
  for(const [,asset] of (baseCss+css).matchAll(/url\(([^)]+)\)/g))await access(resolve(root,asset));
  await access(resolve(root,'404.html'));
