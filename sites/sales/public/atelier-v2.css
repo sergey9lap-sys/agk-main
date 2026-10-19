@@ -79,7 +79,7 @@ body{overflow-x:clip}
 .live-gift strong.grand-prize{border-color:var(--campaign)}
 .final-section{background:#973b1c}
 .registration-widget{min-width:0}
-.registration-frame{display:block;width:100%;border:0;background:transparent;border-radius:8px}
+.registration-frame{display:block;width:100%;border:0;background:transparent;border-radius:8px;color-scheme:normal}
 .widget-status,.widget-recovery{font-size:14px;line-height:1.6;margin-top:14px}
 .widget-status[hidden],.widget-recovery[hidden]{display:none}
 .cookie-settings{display:block;margin:0 auto 24px;padding:8px 12px;border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;text-decoration:underline;cursor:pointer}

@@ -19,17 +19,23 @@ for(const edition of ['com','ru']) test(`${edition}: sales has regional forms, c
  assert.ok(html.includes('>Разработка сайтов</a>'));
  assert.ok(!html.includes('href="thanks.html"'));
  assert.ok(html.includes('alexandra-facing-right.webp'));
- assert.equal((html.match(/guide.webp/g)||[]).length,3);
+ assert.equal((html.match(/guide-sales-v3.webp/g)||[]).length,3);
+ assert.ok(html.includes('15 механик, которые усиливают продажи'));
+ assert.ok(!html.includes('игровых механик'));
  assert.ok(!html.includes('widget/script'));
  const widget=await readFile(resolve(root,'registration/index.html'),'utf8');
  assert.equal((widget.match(/widget\/script\?id=/g)||[]).length,1);
  assert.ok(widget.includes(edition==='com'?'id=1670561':'id=1670558'));
  assert.ok(!widget.includes('%%'));
+ assert.ok(widget.includes('color-scheme:normal'));
+ assert.ok(!widget.includes('color-scheme:light'));
  assert.ok(!widget.includes("fbq('init'"));
  for(const [,url] of html.matchAll(/(?:src|href)="(\/sales\/[^"#?]+)"/g))await access(resolve('dist',edition,'.'+url));
  const thanks=await readFile(resolve(root,'thanks/index.html'),'utf8');
  assert.ok(!thanks.includes('Макет страницы'));
  assert.ok(thanks.includes('Распродажи и сезонные продукты:'));
+ assert.ok(thanks.includes('15 механик, которые усиливают продажи'));
+ assert.ok(!thanks.includes('игровых механик'));
  for(const page of [html,thanks]){
    assert.equal(page.split(`ym(${edition==='com'?'110484887':'110484880'},'init'`).length-1,1);
    assert.equal(page.split("fbq('init', '1923709794923109')").length-1,edition==='com'?1:0);
