@@ -1,0 +1,20 @@
+/* Для пользовательского CSS ТОЛЬКО виджетов 1670558 и 1670561 в GetCourse.
+   Черновик по наблюдаемым классам COM: не подключён к родительскому сайту.
+   Проверить обе версии в редакторе GetCourse; не удалять чекбоксы согласий. */
+.lt-normal-form .btn.f-btn {
+  background: #d6ff3f !important;
+  color: #1d1814 !important;
+  border: 1px solid #d6ff3f !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  min-height: 64px;
+  width: 100%;
+  font-size: 16px !important;
+  font-weight: 800;
+}
+.lt-normal-form .btn.f-btn:hover { outline: 2px solid #f8e4c2; outline-offset: 3px; }
+.lt-normal-form .f-input { width:100%; min-width:0; box-sizing:border-box; font-size:16px; }
+.lt-normal-form label { color:#f8e4c2; font-size:14px; line-height:1.6; font-style:normal; }
+.lt-normal-form label a { color:#ffce99; text-decoration:underline; }
+.modal-block-content.block-box { width:100%; margin-inline:0; }
+@media(max-width:760px){ .lt-normal-form .btn.f-btn { min-height:60px; } }

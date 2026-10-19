@@ -6,7 +6,7 @@
 
 ```text
 sites/clients/       сайт вебинара → /clients/
-sites/sales/         вебинар о сезоне распродаж → /sales/ (формы пока макет)
+sites/sales/         вебинар 27 октября → /sales/ (GetCourse RU/COM; RELEASE-OCT27.md)
 sites/mkclients/     платный мастер-класс → /mkclients/
 sites.json          список сайтов и настройки виджетов RU/COM
 scripts/build.mjs   сборка всех сайтов для выбранной аудитории

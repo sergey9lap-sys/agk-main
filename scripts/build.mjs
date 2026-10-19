@@ -64,8 +64,8 @@ for (const [slug, site] of Object.entries(registry)) {
     .replaceAll('%%WIDGET_ID%%', config.widgetId ?? '')
     .replaceAll('%%SCRIPT_ID%%', config.scriptId ?? '')
     .replaceAll('%%SUCCESS_PATH%%', config.successPath ?? '')
-    .replaceAll('%%COOKIE_SERVICES%%', edition === 'com' && ['clients', 'praktikum', 'expert'].includes(slug) ? 'Яндекс.Метрика, Meta Pixel и формы GetCourse' : 'Яндекс.Метрика и формы GetCourse');
-  const analytics = html => ['clients', 'mkclients', 'praktikum', 'expert'].includes(slug)
+    .replaceAll('%%COOKIE_SERVICES%%', edition === 'com' && ['clients', 'praktikum', 'expert', 'sales'].includes(slug) ? 'Яндекс.Метрика, Meta Pixel и формы GetCourse' : 'Яндекс.Метрика и формы GetCourse');
+  const analytics = html => ['clients', 'mkclients', 'praktikum', 'expert', 'sales'].includes(slug)
     ? withAnalytics(html, edition, { includeMetaPixel: slug !== 'mkclients', consentCookie: `agk_cookie_consent_${slug}` })
     : html;
   const aliases = site.confirmationAliases ?? [];
@@ -104,7 +104,13 @@ for (const [slug, site] of Object.entries(registry)) {
       .replace('</body>', `${notice}<script src="/mentor-consultation/cookie-consent.js" defer></script></body>`);
     await writeFile(landingPath, withRussianTypography(html));
   }
-  if (slug === 'expert') {
+  if (slug === 'sales') {
+    // Each visible form has an isolated document: the official script ID is
+    // never duplicated in one document, and no analytics PageView is doubled.
+    const embedPath = resolve(output, slug, 'registration/index.html');
+    await writeFile(embedPath, editionHtml(await readFile(embedPath, 'utf8')));
+  }
+  if (['expert', 'sales'].includes(slug)) {
     // Public confirmation HTML bypasses Vite's transformIndexHtml hook.
     // Apply the same edition and consent-gated analytics before the RU alias copy.
     const thanksPath = resolve(output, slug, 'thanks/index.html');

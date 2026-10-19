@@ -66,3 +66,28 @@ body{overflow-x:clip}
  .event-card{position:relative;margin-top:18px}
  .site-footer .developer-credit{grid-column:1}
 }
+
+/* 27 October launch: louder seasonal accents, one distinct action colour. */
+:root{--action:#d6ff3f;--campaign:#ff9e43;--rust:#a94019}
+.primary{color:#1d1814}
+.hero-copy h1 em{color:var(--campaign)}
+.event-card{background:var(--campaign);border-color:var(--campaign);color:var(--ink)}
+.event-card .event-date,.hero-copy .event-card .source-detail{color:var(--ink)}
+.audience{background:var(--rust)}
+.audience .section-heading h2{color:#fff2dc}
+.gift-copy .source-detail,.agenda li:before,.grand-prize svg,.final-section .event-date{color:var(--campaign)}
+.live-gift strong.grand-prize{border-color:var(--campaign)}
+.final-section{background:#973b1c}
+.registration-widget{min-width:0}
+.registration-frame{display:block;width:100%;border:0;background:transparent;border-radius:8px}
+.widget-status,.widget-recovery{font-size:14px;line-height:1.6;margin-top:14px}
+.widget-status[hidden],.widget-recovery[hidden]{display:none}
+.cookie-settings{display:block;margin:0 auto 24px;padding:8px 12px;border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;text-decoration:underline;cursor:pointer}
+.cookie-notice[hidden]{display:none}
+.cookie-notice{position:fixed;z-index:100;bottom:16px;left:16px;width:min(520px,calc(100% - 32px));padding:22px;background:#211a14;color:var(--paper);border:1px solid #c58c50;border-radius:16px;box-shadow:0 16px 36px #0006;font:14px/1.6 Manrope,sans-serif}
+.cookie-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+.cookie-actions button{flex:1;min-height:44px;padding:12px;border:1px solid var(--action);border-radius:10px;background:var(--action);color:var(--ink);font:700 14px/1.4 Manrope,sans-serif;cursor:pointer}
+.cookie-actions [data-cookie-reject]{background:transparent;color:var(--action)}
+@media(max-width:360px){.cookie-actions{flex-direction:column}.cookie-notice{padding:18px}}
+/* Let the external form use the mobile column; it already owns inner padding. */
+@media(max-width:760px){.registration{padding-inline:0}.registration>h2{margin-inline:22px}.widget-status,.widget-recovery{margin-inline:22px}}

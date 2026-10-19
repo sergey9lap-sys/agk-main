@@ -6,12 +6,13 @@ colors:
   paper: "#f8e4c2"
   muted: "#d2bca0"
   copper: "#c58c50"
-  rust: "#914524"
-  action: "#8ee8d6"
-  action-ink: "#132823"
+  rust: "#a94019"
+  action: "#d6ff3f"
+  action-ink: "#1d1814"
+  campaign: "#ff9e43"
   bronze-surface: "#35271c"
   program-surface: "#31241b"
-  closing-surface: "#793c25"
+  closing-surface: "#973b1c"
   brand-mount: "#f5e8d2"
 typography:
   display:
@@ -73,6 +74,10 @@ components:
 ---
 
 # Design System: AGK — Value Atelier
+
+## Текущая правка — 19.10.2026, имеет приоритет над историей ниже
+
+По прямому запросу сайт громче: primary `#d6ff3f` с текстом `#1d1814`, самостоятельный оранжевый `#ff9e43` для темы/даты/приза, насыщенная терракота аудитории/финала. Шрифты, геометрия, все шесть секций и подлинные материалы сохранены. Новая тема целиком в hero, финале и «Спасибо». Вместо отключённых полей — предоставленные региональные GetCourse-виджеты. Аналитика на landing/thanks после cookie-выбора. Детали и ограничения — RELEASE-OCT27.md; цвет и размеры кнопки внутри внешнего iframe ещё требуют настройки в GetCourse, не считать их унифицированными с собственными CTA сайта.
 
 ## Mobile v4 — 16.10.2026
 

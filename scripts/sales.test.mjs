@@ -3,13 +3,15 @@ import assert from 'node:assert/strict';
 import {readFile,access} from 'node:fs/promises';
 import {resolve} from 'node:path';
 
-for(const edition of ['com','ru']) test(`${edition}: sales preserves Atelier and isolated preview confirmations`,async()=>{
+for(const edition of ['com','ru']) test(`${edition}: sales has regional forms, campaign title and consent-gated analytics`,async()=>{
  const root=resolve('dist',edition,'sales');
  const html=await readFile(resolve(root,'index.html'),'utf8');
  assert.equal((html.match(/<section\b/g)||[]).length,6);
- assert.equal((html.match(/<form\b/g)||[]).length,2);
- assert.equal((html.match(/<fieldset disabled/g)||[]).length,2);
- assert.ok(html.includes('Как эксперту заработать'));
+ assert.equal((html.match(/class="registration-frame"/g)||[]).length,2);
+ assert.ok(!html.includes('fieldset disabled'));
+ assert.ok(html.includes('Распродажи и сезонные продукты:'));
+ assert.ok(html.includes('чтобы перевыполнить все планы'));
+ assert.ok(!html.includes('Это макет формы'));
  assert.ok(html.includes('grand-prize'));
  assert.ok(!html.includes('class="preview-banner"'));
  assert.ok(html.includes('class="mobile-portrait" aria-hidden="true"'));
@@ -19,8 +21,22 @@ for(const edition of ['com','ru']) test(`${edition}: sales preserves Atelier and
  assert.ok(html.includes('alexandra-facing-right.webp'));
  assert.equal((html.match(/guide.webp/g)||[]).length,3);
  assert.ok(!html.includes('widget/script'));
+ const widget=await readFile(resolve(root,'registration/index.html'),'utf8');
+ assert.equal((widget.match(/widget\/script\?id=/g)||[]).length,1);
+ assert.ok(widget.includes(edition==='com'?'id=1670561':'id=1670558'));
+ assert.ok(!widget.includes('%%'));
+ assert.ok(!widget.includes("fbq('init'"));
  for(const [,url] of html.matchAll(/(?:src|href)="(\/sales\/[^"#?]+)"/g))await access(resolve('dist',edition,'.'+url));
  const thanks=await readFile(resolve(root,'thanks/index.html'),'utf8');
+ assert.ok(!thanks.includes('Макет страницы'));
+ assert.ok(thanks.includes('Распродажи и сезонные продукты:'));
+ for(const page of [html,thanks]){
+   assert.equal(page.split(`ym(${edition==='com'?'110484887':'110484880'},'init'`).length-1,1);
+   assert.equal(page.split("fbq('init', '1923709794923109')").length-1,edition==='com'?1:0);
+   assert.ok(page.includes('agk_cookie_consent_sales=accepted'));
+   assert.ok(page.includes('data-cookie-reject'));
+   assert.ok(!page.includes('%%'));
+ }
  assert.equal((thanks.match(/class="button primary"/g)||[]).length,3);
  assert.ok(thanks.includes('href="../atelier-v2.css"'));
  assert.ok(thanks.includes('href="../"'));
@@ -29,6 +45,7 @@ for(const edition of ['com','ru']) test(`${edition}: sales preserves Atelier and
  const css=await readFile(resolve(root,'atelier-v2.css'),'utf8');
  assert.ok(css.includes('--card-radius:20px'));
  assert.ok(css.includes('--action-height:64px'));
+ assert.ok(css.includes('--action:#d6ff3f'));
  const baseCss=await readFile(resolve(root,'atelier.css'),'utf8');
  for(const [,asset] of (baseCss+css).matchAll(/url\(([^)]+)\)/g))await access(resolve(root,asset));
  await access(resolve(root,'404.html'));

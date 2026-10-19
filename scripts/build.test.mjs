@@ -29,8 +29,9 @@ for (const edition of ['com','ru']) {
       const html = await readFile(resolve(root, slug, 'index.html'), 'utf8');
       const config = site.editions[edition];
       if (config.widgetId) {
-        assert.ok(html.includes(`id=${config.widgetId}`));
-        assert.ok(html.includes(`id="${config.scriptId}"`));
+        const widgetHtml = slug === 'sales' ? await readFile(resolve(root,slug,'registration/index.html'),'utf8') : html;
+        assert.ok(widgetHtml.includes(`id=${config.widgetId}`));
+        assert.ok(widgetHtml.includes(`id="${config.scriptId}"`));
         if (config.successPath) assert.ok(html.includes(`data-success-path="${config.successPath}"`));
       }
       assert.ok(!html.includes('%%'));
