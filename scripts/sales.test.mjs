@@ -12,7 +12,13 @@ for(const edition of ['com','ru']) test(`${edition}: sales has regional forms, c
  assert.ok(html.includes('Распродажи и сезонные продукты:'));
  assert.ok(html.includes('чтобы перевыполнить все планы'));
  assert.ok(!html.includes('Это макет формы'));
- assert.ok(html.includes('grand-prize'));
+ assert.ok(!html.includes('grand-prize'));
+ assert.ok(!html.includes('class="live-gift"'));
+ assert.ok(!html.includes('wheel.webp'));
+ assert.ok(!html.includes('колесо фортуны'));
+ assert.ok(!html.includes('главный приз'));
+ assert.ok(html.includes('program-outcome--result-only'));
+ assert.ok(html.includes('Поймёте, что именно поставить в продажу'));
  assert.ok(!html.includes('class="preview-banner"'));
  assert.ok(html.includes('class="mobile-portrait" aria-hidden="true"'));
  assert.ok(html.includes('class="developer-credit" href="https://t.me/lp_sergey"'));

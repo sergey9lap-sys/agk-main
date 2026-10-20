@@ -93,6 +93,7 @@ body{overflow-x:clip}
 @media(max-width:760px){.registration{padding-inline:0}.registration>h2{margin-inline:22px}.widget-status,.widget-recovery{margin-inline:22px}}
 
 /* Wider registration area, shared by hero and closing section. */
+.program-outcome--result-only{grid-template-columns:minmax(0,1fr);max-width:760px}
 @media(min-width:761px){
  :root{--registration-width:clamp(340px,37.5vw,480px)}
  .hero,.final-layout{grid-template-columns:minmax(0,1fr) var(--registration-width);column-gap:40px}
