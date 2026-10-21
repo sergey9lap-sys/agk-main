@@ -36,12 +36,18 @@ for(const edition of ['com','ru']) test(`${edition}: sales has regional forms, c
  assert.ok(widget.includes('color-scheme:normal'));
  assert.ok(!widget.includes('color-scheme:light'));
  assert.ok(!widget.includes("fbq('init'"));
+ assert.ok(widget.includes(`data-success-path="/sales/${edition==='ru'?'spasibo':'thanks'}/"`));
  for(const [,url] of html.matchAll(/(?:src|href)="(\/sales\/[^"#?]+)"/g))await access(resolve('dist',edition,'.'+url));
  const thanks=await readFile(resolve(root,'thanks/index.html'),'utf8');
  assert.ok(!thanks.includes('Макет страницы'));
  assert.ok(thanks.includes('Распродажи и сезонные продукты:'));
  assert.ok(thanks.includes('15 механик, которые усиливают продажи'));
  assert.ok(!thanks.includes('игровых механик'));
+ if(edition==='ru'){
+   const alias=await readFile(resolve(root,'spasibo/index.html'),'utf8');
+   assert.equal(alias,thanks,'RU widget destination must exist and preserve the same thank-you content and analytics');
+   for(const [,asset] of alias.matchAll(/(?:src|href)="(\.\.\/[^"#?]+)"/g))await access(resolve(root,'spasibo',asset));
+ }else await assert.rejects(access(resolve(root,'spasibo/index.html')));
  for(const page of [html,thanks]){
    assert.equal(page.split(`ym(${edition==='com'?'110484887':'110484880'},'init'`).length-1,1);
    assert.equal(page.split("fbq('init', '1923709794923109')").length-1,edition==='com'?1:0);
