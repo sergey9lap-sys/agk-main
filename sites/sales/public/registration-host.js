@@ -2,6 +2,15 @@
   const hosts = [...document.querySelectorAll('.registration-widget')];
   const timers = new Map();
   for (const host of hosts) {
+    // The standalone recovery form must receive the same campaign as the embed.
+    const recoveryLink = host.querySelector('.widget-recovery a');
+    if (recoveryLink) {
+      const recoveryUrl = new URL(recoveryLink.href, location.href);
+      if (recoveryUrl.origin === location.origin) {
+        recoveryUrl.search = location.search;
+        recoveryLink.href = recoveryUrl.href;
+      }
+    }
     const frame = host.querySelector('iframe');
     const startTimer = () => {
       if (host.dataset.ready) return;
