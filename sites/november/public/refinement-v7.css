@@ -1,0 +1,41 @@
+/* Same approved world; mobile is a distinct reading and comparison flow. */
+:root{--shadow-card:0 12px 28px #100b072b;--shadow-action:0 8px 18px #100b074d;--shadow-action-hover:0 11px 24px #100b0760}
+.button,.button:hover,.button:active{box-shadow:var(--shadow-action)}
+.button:hover{box-shadow:var(--shadow-action-hover)}
+.plan,.plan-full,.class-entry,.class-entry:last-child,.guides li,.guides li:first-child,.extras-grid article,.extras-grid article:last-child,.calendar-board,.speaker-grid>figure,.comparison-scroll,.consultation-dialog,.order-panel{box-shadow:var(--shadow-card)}
+.extras-grid article,.extras-grid article:last-child{border:1px solid #f8e4c2cc}
+.plan-gallery .gallery-track,.classes-gallery .gallery-track,.guides-gallery .gallery-track{padding-bottom:28px}
+.guide-section,.tariffs,.extras{position:relative}
+main>.section{box-shadow:0 10px 24px #100b0724}
+@media(max-width:760px){
+ .cover-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:0 12px;padding-block:24px 30px;align-items:start}
+ .cover-copy{display:contents}.academy{grid-column:1/-1;grid-row:1;min-height:0;max-width:none;margin:0 0 22px;font-size:9px;line-height:1.65}
+ .cover h1{grid-column:1;grid-row:2;align-self:start;font-size:clamp(29px,8.6vw,44px);line-height:1.04;margin:0;padding:0;max-width:100%;z-index:2}
+ .cover h1 span{display:block;font:500 17px/1.4 Manrope,sans-serif;margin:14px 0 0}
+ .cover-photo{grid-column:2;grid-row:2;position:relative;inset:auto;align-self:start;width:100%;height:clamp(170px,50vw,220px);max-width:none;margin:0;border:0;border-radius:0;mask-image:linear-gradient(90deg,transparent,#000 12%,#000)}
+ .cover-photo img{height:100%;width:100%;object-fit:cover;object-position:center 20%;mask-image:linear-gradient(0deg,transparent,#000 20%,#000);border-radius:0}
+ .cover-description{grid-column:1/-1;grid-row:3;margin-top:20px;font-size:16px;line-height:1.55;max-width:none}
+ .cover .deadline{grid-column:1/-1;grid-row:4;margin-top:20px;width:100%}.cover .button{grid-column:1/-1;grid-row:5;margin-top:18px}
+ .plan-gallery .gallery-track,.plan-gallery.is-expanded .gallery-track{display:flex;flex-direction:column;gap:24px;overflow:visible;scroll-snap-type:none;padding:4px 0 0}
+ .plan-gallery .gallery-controls{display:none!important}.plan-gallery .plan{width:100%;min-width:0;margin:0}
+ .plan .plan-bottom{display:flex;flex-direction:column;align-items:center;width:100%;min-width:0}.plan .price{align-self:stretch}.plan .button{flex-shrink:0;position:relative;left:auto;right:auto;margin:0}
+ .calendar-layout{overflow:visible;scrollbar-width:none;border-radius:12px}
+ .calendar-board{display:flex;flex-direction:column;gap:0;min-width:0;width:100%;padding:24px 18px;border-radius:12px}
+ .calendar-heading{position:static;width:auto;display:block;padding-bottom:22px}.calendar-heading p:first-child{font-size:44px}
+ .calendar-weekdays{display:none}.calendar-days{display:contents}.calendar-blank,.calendar-day:not(.event-card){display:none}
+ .calendar-board .event-card,.calendar-board .event-card:nth-of-type(2){display:block;width:100%;margin:20px 0 0;padding:22px 16px;min-height:0;background:#ead0a3a6;border:1px solid #b7997170;border-radius:10px;box-shadow:0 6px 14px #674a3618;grid-column:auto;grid-row:auto}
+ .calendar-board .event-card .training-date,.calendar-board .event-card:nth-of-type(2) .training-date{margin-bottom:18px;gap:8px;flex-wrap:wrap}
+ .calendar-board .event-card .training-date time{font-size:20px}.calendar-board .event-card h3{font-size:30px}.calendar-board .event-card p{font-size:16px;line-height:1.6}
+ .compare-switch,.compare-switch:not([hidden]),.compare-hint{display:none!important}
+ .compare-section .comparison-scroll{overflow:visible;margin:0;padding:0;border-radius:0;background:#f8e4c2 var(--paper-material) 0 0/600px 600px;color:var(--ink)}
+ .compare-section table{display:block;width:100%;min-width:0;table-layout:fixed;border-collapse:collapse}
+ .compare-section thead{display:block;position:sticky;top:0;z-index:5;background:#e9cfa5;box-shadow:0 5px 12px #36251a26}
+ .compare-section thead tr,.compare-section tbody tr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+ .compare-section thead th:first-child{display:none}.compare-section .comparison-scroll thead th{width:auto;font:700 14px/1.4 Manrope,sans-serif;padding:14px 6px;text-align:center;min-width:0}
+ .compare-section tbody{display:block}.compare-section tbody tr{border-bottom:1px solid #b79971;padding:0}
+ .compare-section .comparison-scroll tbody th{grid-column:1/-1;width:auto;font:600 15px/1.5 Manrope,sans-serif;text-align:left;padding:15px 14px 8px;background:#e9cfa56b;border:0}
+ .compare-section .comparison-scroll tbody td{display:block;width:auto;min-width:0;font:400 14px/1.5 Manrope,sans-serif;text-align:center;padding:10px 6px 16px;overflow-wrap:normal;border:0;border-right:1px solid #b799714d}
+ .compare-section .comparison-scroll tbody td:last-child{border-right:0}.compare-section .comparison-scroll .sale-row td{font:600 clamp(21px,5.6vw,26px)/1.3 Atelier,Georgia,serif;padding-top:12px}
+ .compare-actions{display:flex;flex-direction:column;align-items:center;gap:16px}.compare-actions [data-plan]{display:flex!important}
+}
+@media(max-width:360px){.cover h1{font-size:29px}.academy{font-size:8px}.cover-photo{height:175px}.cover-description{font-size:15px}.calendar-board{padding:22px 14px}.calendar-board .event-card{padding-inline:14px}.calendar-board .event-card h3{font-size:28px}.compare-section .comparison-scroll tbody td{font-size:13px;padding-inline:2px}.compare-section .comparison-scroll thead th{font-size:13px}}

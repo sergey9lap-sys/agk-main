@@ -29,6 +29,7 @@ if (![resolve(root, 'dist/com'), resolve(root, 'dist/ru')].includes(output)) thr
 const routes = new Set(Object.keys(registry));
 for (const [slug, site] of Object.entries(registry)) {
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error('Invalid slug');
+  if (site.source && (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(site.source) || !registry[site.source] || registry[site.source].source)) throw new Error('Invalid shared source');
   const config = site.editions?.[edition];
   if (!config || typeof config !== 'object') throw new Error('Invalid edition config');
   const hasWidgetConfig = ['widgetId', 'scriptId'].some(key => config[key] !== undefined);
@@ -57,10 +58,10 @@ await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 for (const [slug, site] of Object.entries(registry)) {
   const config = site.editions[edition];
-  const siteRoot = resolve(root, 'sites', slug);
+  const siteRoot = resolve(root, 'sites', site.source ?? slug);
   const base = `/${slug}/`;
   const assetPaths = html => html.replace(/((?:src|href)=["'])\/(?!\/)/g, `$1${base}`);
-  const editionHtml = html => (['mentor-consultation','archetype'].includes(slug) ? withRussianTypography(html) : html)
+  const editionHtml = html => (['mentor-consultation','archetype','november','sale2026'].includes(slug) ? withRussianTypography(html) : html)
     .replaceAll('%%WIDGET_ID%%', config.widgetId ?? '')
     .replaceAll('%%SCRIPT_ID%%', config.scriptId ?? '')
     .replaceAll('%%SUCCESS_PATH%%', config.successPath ?? '')
@@ -82,7 +83,18 @@ for (const [slug, site] of Object.entries(registry)) {
     }],
   });
   const landingPath = resolve(output, slug, 'index.html');
-  await writeFile(landingPath, withLoader(analytics(await readFile(landingPath, 'utf8')),slug));
+  let landing = withLoader(analytics(await readFile(landingPath, 'utf8')),slug);
+  if (slug === 'november' || site.source === 'november') {
+    const source = await readFile(resolve(siteRoot, 'index.html'), 'utf8');
+    const contract = source.match(/<!-- THESIS:[\s\S]*?-->/)?.[0];
+    if (!contract) throw new Error('November requires its design contract');
+    landing = landing.replace(/<body[^>]*>/, match => match + '\n' + contract);
+  }
+  await writeFile(landingPath, landing);
+  if(site.source === 'november'){
+    await writeFile(resolve(output,slug,'404.html'),errorPage(slug));
+    await writeFile(resolve(output,slug,'.htaccess'),`ErrorDocument 404 /${slug}/404.html\n`);
+  }
   if(themedSites.includes(slug)){
     await writeFile(resolve(output,slug,'404.html'),errorPage(slug));
     await writeFile(resolve(output,slug,'.htaccess'),`ErrorDocument 404 /${slug}/404.html\n`);

@@ -1,0 +1,154 @@
+/* November V4: one quiet paper family, complete images and an actual calendar. */
+:root{--action-width:320px;--action-height:68px;--action-radius:24px;--dark-material:url(assets/v4/dark-paper.webp);--paper-material:url(assets/paper.webp)}
+html{scrollbar-gutter:auto}
+body{background:#2c211b var(--dark-material) 0 0/640px 640px;color:var(--paper)}
+.button,.plan .button,.compare-actions .button{width:var(--action-width);height:var(--action-height);min-height:var(--action-height);border-radius:var(--action-radius);padding:14px 58px 14px 32px;font-size:16px;line-height:1.35;margin-inline:0;box-shadow:none}
+.button:hover{box-shadow:none;outline:2px solid var(--action);outline-offset:4px}
+.button:active{box-shadow:none}.button:focus-visible{outline:3px solid var(--paper);outline-offset:5px}
+.button svg{right:23px;width:22px;height:22px}
+.section{padding-block:48px}.section h2{font-size:clamp(38px,4vw,56px);line-height:1.08}
+/* The portrait is authentic. The scene contains no printed year or title. */
+.cover{background:#2c211b url(assets/v4/hero-stilllife.webp) center bottom/cover no-repeat;isolation:isolate}
+.cover:before{background:linear-gradient(90deg,#241b16f5 0%,#241b16d9 47%,#241b1644 100%)}
+.cover-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:42px;min-height:0;padding-block:34px 42px;align-items:center}
+.cover-copy{padding:0;min-width:0}.academy{font-size:11px;line-height:1.65;letter-spacing:.025em;max-width:470px;margin:0 0 24px}
+.cover h1{font-size:clamp(58px,6.6vw,88px);line-height:.98;max-width:760px;padding:0;text-wrap:initial}
+.cover h1 span{display:inline-block;vertical-align:baseline;margin:0 0 0 8px;padding:0;font:500 .42em/1.2 Manrope,sans-serif;letter-spacing:0;color:var(--paper)}
+.cover-description{font-size:18px;line-height:1.55;margin-top:22px;max-width:555px}
+.cover-photo{position:relative;align-self:center;min-width:0;height:auto;max-width:405px;width:100%;margin:0;justify-self:end;opacity:1;overflow:hidden;border-radius:28px;background:#44382e;box-shadow:none}
+.cover-photo img{width:100%;height:auto;max-height:none;object-fit:contain;object-position:center;mask-image:none;filter:none}
+.cover .deadline{display:grid;gap:4px;grid-column:auto;padding:16px 20px;margin-top:24px;border:1px solid #c58c5099;border-radius:16px;background:#261d16cc;max-width:475px;font-size:16px;line-height:1.45}
+.cover .deadline p:first-child{font-weight:700;color:var(--paper)}
+.cover .deadline p:last-child{color:#eac69d;font-size:18px;font-weight:600;margin:0}
+.cover .button{margin-top:22px}
+.tariffs .gallery-track{padding-top:2px}.plan,.plan-full{border-radius:22px;padding:24px;background:#30241c var(--dark-material) 0 0/640px 640px}
+.plan-full{border-color:var(--copper)}.plan:nth-child(2){background:var(--paper) var(--paper-material) 0 0/600px 600px}
+.plan .button{--action-width:inherit;display:flex;justify-self:center;margin-inline:auto}
+.plan h3,.plan-full h3{font-size:46px}.plan li{font-size:15px;line-height:1.5;padding-block:6px}
+.plan-meta{font-size:13px}.plan-meta span:last-child:not(:first-child){border-radius:6px}
+.plan .access{font-size:15px}.plan .price strong{font-size:46px}
+.consultation-action{display:flex;justify-content:center;margin-top:28px}
+.button.secondary{background:#fff8ed;color:#9f3d22;border-color:#9f3d22}
+.button.secondary:hover,.button.secondary:focus-visible{outline-color:#9f3d22}
+.pending-note{max-width:800px;font-size:13px;line-height:1.6;margin-top:18px}
+/* First half of November, with both event cards visible at the same time. */
+.new-section{background-color:#683321;background-image:linear-gradient(#683321dc,#683321dc),var(--dark-material);background-size:auto,640px 640px;background-position:0 0;background-repeat:repeat}
+.new-section>.wrap>h2{max-width:1000px;margin-bottom:18px}.new-section>.wrap>.section-lead{margin-bottom:26px;font-size:13px}
+.calendar-layout{display:grid;grid-template-columns:minmax(330px,.8fr) minmax(0,1.2fr);gap:36px;align-items:start}
+.calendar-board{padding:24px 20px 20px;border-radius:22px;background:var(--paper) var(--paper-material) 0 0/600px 600px;color:var(--ink)}
+.calendar-heading{display:grid;gap:8px;padding-bottom:22px;border-bottom:1px solid #b79971}
+.calendar-heading p:first-child{font:600 38px/1.1 Atelier,Georgia,serif}.calendar-heading p:first-child span{font:500 16px Manrope,sans-serif;margin-left:8px;color:#674a36}
+.calendar-heading p:last-child{font-size:13px;color:#674a36}
+.calendar-weekdays,.calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.calendar-weekdays{padding:18px 0 10px;color:#795233;text-align:center;font-size:12px}
+.calendar-day{min-height:48px;display:flex;flex-direction:column;align-items:center;padding:9px 0;color:#674a36;font-size:15px;text-decoration:none;border-radius:10px}
+.calendar-event{background:#963f29;color:#fff7ec;min-height:95px;padding-top:9px;gap:5px}
+.calendar-event time{font:600 36px/1 Atelier,Georgia,serif}.calendar-event>span{font-size:9px;line-height:1.4;text-align:center}
+.calendar-event:hover{outline:1px solid #963f29;outline-offset:2px}.calendar-event:focus-visible{outline-color:#1d1814}
+.calendar-events{display:grid;gap:22px}
+.calendar-events .event-card{display:block;padding:24px 28px;border:1px solid #c58c5080;border-radius:20px;background:#48271c8c;scroll-margin-top:24px}
+.event-card .training-date,.event-card:nth-of-type(2) .training-date{display:block;width:auto;padding:0;margin:0 0 14px;transform:none;background:none;box-shadow:none;color:#f8e4c2;text-align:left}
+.event-card .training-date:after{display:none}.event-card .training-date>span{display:inline;padding:0;margin-right:6px;border:0;color:#edb98c;font-size:12px}
+.event-card .training-date time{display:inline;font:600 18px/1.5 Manrope,sans-serif;text-align:left}
+.event-card .training-date time b{display:inline;font:inherit;margin:0}.event-card .training-date time small{display:inline;font:inherit;margin:0}
+.event-card h3{font-size:33px;margin-bottom:12px}.event-card p{font-size:16px;line-height:1.55}
+.event-card .training-topics{margin-top:16px}.event-card .training-topics summary{padding:12px 0;font-size:15px}
+.event-card .training-topics ul{columns:1;padding-left:20px;margin-top:15px}.event-card .training-topics li{font-size:15px;line-height:1.6;padding:0;margin-bottom:12px}
+/* Keep the whole generated image; the crop is never enlarged to fill a box. */
+.masterclasses,.speaker-section{background:var(--paper) var(--paper-material) 0 0/600px 600px;color:var(--ink)}
+.class-entry,.class-entry:last-child{border-radius:20px;background:#f8e4c2}
+.class-entry .class-visual{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;background:#e5cba3}
+.class-entry h3{font-size:30px;line-height:1.12;min-height:68px;margin-bottom:12px}
+.class-entry>p,.class-entry:last-child>p{font-size:16px;line-height:1.55}
+.class-entry .format,.class-entry:last-child .format{font-size:13px;line-height:1.5}
+.guide-section,.compare-section,.faq-section{background:#2c211b var(--dark-material) 0 0/640px 640px}
+.guides li,.guides li:first-child{background:#f8e4c2;border-radius:20px;color:var(--ink);display:flex;flex-direction:column;border:0;overflow:hidden}
+.guide-cover{position:static;height:280px;width:100%;margin:0;background:#51311f;display:flex;justify-content:center}
+.guide-cover>img{width:auto;max-width:100%;height:100%;aspect-ratio:1;object-fit:contain;display:block}
+.guide-caption{font:600 24px/1.2 Atelier,Georgia,serif;padding:18px 22px 22px;margin:0;text-wrap:balance}
+.gallery-disclaimer{font-size:13px;line-height:1.55}
+.guide-intro p{font-size:16px;line-height:1.65}
+.section-action{margin-top:28px}.section-top{gap:30px}.section-top p{font-size:15px;line-height:1.55}
+/* Explicit membership is the first thing read inside each programme. */
+.extras-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.extras-grid article,.extras-grid article:last-child{display:flex;flex-direction:column;gap:0;padding:26px;border:1px solid #c58c5080;border-radius:20px;background:#30241c var(--dark-material) 0 0/640px 640px;align-items:start}
+.extras-grid article:nth-child(2){background-color:#42281e}
+.extras-grid .inclusion{order:0;align-self:start;justify-self:auto;text-align:left;font:700 12px/1.5 Manrope,sans-serif;letter-spacing:.02em;color:#eac69d;margin:0 0 20px;padding:0;min-height:36px}
+.extras-grid h3{order:1;font-size:34px;line-height:1.1;margin:0 0 16px}
+.extras-grid article>p:not(.inclusion){order:2;font-size:16px;line-height:1.6}
+.personal-split{order:2;display:grid;gap:16px;width:100%}.personal-split p{display:grid;gap:5px;font-size:15px;line-height:1.55}.personal-split p+p{padding-top:15px;border-top:1px solid #806044}
+.personal-split b{font-size:12px;font-weight:700;color:#eac69d}
+.speaker-grid>figure{background:#c58c50 var(--paper-material) 0 0/600px 600px;transform:none;border-radius:20px;box-shadow:none;padding:10px;overflow:hidden}
+.speaker-grid>figure img{border-radius:12px;object-fit:contain;aspect-ratio:auto}
+.comparison-scroll{border-radius:18px}.comparison-deadline{max-width:none;text-align:center;font-size:17px;line-height:1.6;color:var(--paper);padding:17px 22px;border:1px solid #c58c5080;border-radius:16px;background:#261d1699;margin-top:28px}
+.faq-section{background-position:left top;background-size:640px 640px;background-repeat:repeat}
+.faq-section>.wrap{background:none;border:0;border-radius:0;padding:0}
+.faq-list{max-width:1000px}.faq-list details{background:transparent}.faq-list summary{font-size:18px;line-height:1.5}.faq-list details p{font-size:16px;line-height:1.65}
+.footer{grid-template-columns:1fr 1fr;padding-block:36px 24px;gap:22px 48px;border-top:1px solid #806044}
+.footer>p:first-child{font-size:27px}.footer>p:nth-child(2){font-size:13px;line-height:1.7}
+.legal-links{font-size:13px;line-height:1.7}.legal-links span{color:var(--muted)}
+.footer-bottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:24px;border-top:1px solid #806044;font-size:12px;line-height:1.6}
+.footer-bottom a{display:inline-flex;align-items:center;gap:6px;text-decoration:underline;text-underline-offset:4px}.footer-bottom svg{flex:none}
+/* Placeholder consultation: no request is sent until an actual receiver is supplied. */
+.consultation-dialog{width:min(620px,calc(100% - 40px));max-width:100%;max-height:calc(100dvh - 40px);padding:40px;border:0;border-radius:28px;color:var(--ink);background:var(--paper) var(--paper-material) 0 0/600px 600px;box-shadow:0 24px 80px #0006;overflow-y:auto;scrollbar-color:#a94019 #f8e4c2;color-scheme:light}
+.consultation-dialog::backdrop{background:#1d1814bf}
+.consultation-dialog h2{font-size:42px;line-height:1.1;padding-right:34px;margin:0 0 14px}
+.consultation-dialog>p{font-size:16px;line-height:1.6;color:#674a36}
+.consultation-close{position:absolute;top:18px;right:18px;display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid #b79971;border-radius:50%;color:var(--ink);background:transparent}
+.consultation-dialog form{display:grid;gap:18px;margin-top:26px}.consultation-dialog form>label{display:grid;gap:8px;font-size:15px;font-weight:600}
+.consultation-dialog form>label>span{font-size:12px;font-weight:400;color:#674a36}
+.consultation-dialog input:not([type=radio]){display:block;width:100%;min-width:0;min-height:50px;padding:12px 14px;border:1px solid #a78a66;border-radius:12px;font:400 16px/1.5 Manrope,sans-serif;color:var(--ink);background:#fff8ed;caret-color:#9f3d22}
+.consultation-dialog input::placeholder{color:#73573f;opacity:1}
+.consultation-dialog fieldset{min-width:0;padding:0;border:0;margin:2px 0 0;display:flex;flex-wrap:wrap;gap:8px 22px}
+.consultation-dialog legend{font-size:15px;font-weight:600;margin-bottom:8px}.consultation-dialog fieldset label{display:flex;align-items:center;gap:9px;min-height:44px;font-size:15px}.consultation-dialog input[type=radio]{accent-color:#9f3d22;width:20px;height:20px;margin:0}
+.consultation-placeholder{font-size:14px;line-height:1.55;color:#674a36;padding:14px 16px;border:1px solid #b79971;border-radius:12px}
+.consultation-dialog .button{justify-self:center}.consultation-dialog .button:disabled{opacity:.5;cursor:not-allowed;outline:0}
+.consultation-dialog :focus-visible{outline:3px solid #9f3d22;outline-offset:4px}
+.consultation-contact{font-size:13px;line-height:1.6;color:#674a36}.consultation-contact a{white-space:nowrap}
+/* Keep the same fibre scale, with an opaque quiet wash instead of sharp grain. */
+body,.plan:not(:nth-child(2)),.guide-section,.compare-section,.faq-section,.extras-grid article,.extras-grid article:last-child{
+ background-color:#2c211b;background-image:linear-gradient(#2c211be8,#2c211be8),var(--dark-material);background-position:0 0;background-size:auto,640px 640px;background-repeat:repeat;background-blend-mode:normal
+}
+.new-section{background-image:linear-gradient(#683321ed,#683321ed),var(--dark-material);background-blend-mode:normal}
+@media(min-width:761px) and (max-width:1100px){
+ :root{--action-width:270px;--action-height:66px}
+ .cover-grid{gap:28px;grid-template-columns:1.15fr .85fr}.cover h1{font-size:64px}.cover-description{font-size:17px}.cover-photo{max-width:340px}
+ .calendar-layout{grid-template-columns:320px minmax(0,1fr);gap:24px}.calendar-board{padding:20px 16px}.calendar-events .event-card{padding:22px}.event-card h3{font-size:30px}
+ .extras-grid{gap:18px}.extras-grid article{padding:22px}.extras-grid h3{font-size:30px}
+ .compare-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
+}
+@media(min-width:761px) and (max-width:1000px){.extras-grid{grid-template-columns:1fr 1fr}.extras-grid .personal-card{grid-column:1/-1}.personal-split{grid-template-columns:1fr 1fr}.personal-split p+p{border:0;padding-top:0}}
+@media(max-width:760px){
+ :root{--action-width:calc(100vw - 48px);--action-height:64px;--action-radius:22px}
+ .section{padding-block:34px}.section h2{font-size:36px;margin-bottom:22px}
+ .cover-grid{display:block;padding-block:24px 30px}.cover-copy{padding:0}.academy{min-height:190px;max-width:calc(100% - 154px);font-size:9px;line-height:1.7;margin:0 0 18px;letter-spacing:0}
+ .cover h1{font-size:clamp(44px,11.5vw,66px);line-height:1;padding:0}.cover h1 span{font-size:.42em;margin-left:5px}
+ .cover-description{font-size:16px;line-height:1.55;margin-top:18px;max-width:100%}
+ .cover-photo{position:absolute;top:24px;right:0;width:144px;height:180px;margin:0;border-radius:20px;overflow:hidden;opacity:1;background:none}
+ .cover-photo img{width:100%;height:100%;object-fit:contain;object-position:center;mask-image:none;filter:none;max-height:none;border-radius:20px}
+ .cover .deadline{padding:14px 16px;margin-top:20px;font-size:15px;gap:7px;border-radius:14px;max-width:none}.cover .deadline p:last-child{font-size:17px}
+ .cover .button{margin-top:18px}.plan,.plan-full{padding:22px}.plan .button{position:relative;left:0;width:var(--action-width);margin:0}.plan h3,.plan-full h3{font-size:43px}
+ .plan .price strong{font-size:44px}.plan li{font-size:15px}.pending-note{text-align:left;font-size:12px}.consultation-action{margin-top:24px}
+ .calendar-layout{grid-template-columns:1fr;gap:22px}.calendar-board{padding:22px 16px 18px}.calendar-heading p:first-child{font-size:34px}.calendar-heading p:last-child{font-size:13px}
+ .calendar-days,.calendar-weekdays{gap:4px}.calendar-event{min-height:90px}.calendar-event time{font-size:32px}
+ .calendar-events{gap:18px}.calendar-events .event-card{padding:23px 20px}.event-card h3{font-size:31px}.event-card .training-date time{font-size:16px}.event-card p{font-size:16px}.event-card .training-topics summary{font-size:15px}
+ .class-entry .class-visual{height:auto;aspect-ratio:3/2;object-fit:contain}.class-entry h3{font-size:29px;min-height:64px}.class-entry .format{font-size:13px}
+ .guide-cover{height:245px;aspect-ratio:auto}.guide-cover>img{height:100%;width:auto;max-width:100%;object-fit:contain}.guide-caption{font-size:24px;line-height:1.2;padding:18px 20px 22px}
+ .guide-intro p,.section-top p{font-size:15px;line-height:1.6}.gallery-disclaimer{font-size:12px}
+ .extras-grid{grid-template-columns:1fr;gap:18px}.extras-grid article,.extras-grid article:last-child{padding:24px}.extras-grid .inclusion{min-height:0;margin-bottom:16px;font-size:12px}.extras-grid h3{font-size:33px;margin-bottom:14px}
+ .speaker-grid>figure{padding:7px;border-radius:16px}.speaker-grid>figure img{border-radius:10px}
+ .comparison-deadline{font-size:16px;text-align:left;padding:16px 18px;margin-top:24px}.comparison-scroll{border-radius:14px}.compare-actions{margin-top:22px}
+ .faq-section>.wrap{background:none;border:0;padding:0}.faq-list summary{font-size:17px}.faq-list details p{font-size:16px;line-height:1.6}
+ .footer{grid-template-columns:1fr;gap:22px;padding-block:30px 24px}.footer>p:first-child{font-size:26px}.footer-bottom{flex-wrap:wrap;gap:16px 24px;padding-top:22px}.footer-bottom p{flex-basis:100%}
+ .consultation-dialog{width:100%;max-width:100%;max-height:100dvh;padding:32px 24px 28px;border-radius:24px;margin:auto 0}
+ .consultation-dialog h2{font-size:35px;padding-right:30px}.consultation-close{top:14px;right:14px}
+}
+@media(max-width:360px){
+ :root{--action-width:calc(100vw - 36px)}
+ .academy{min-height:163px;max-width:calc(100% - 135px);font-size:8px;line-height:1.7;margin-bottom:16px}.cover-photo{width:124px;height:155px}
+ .cover h1{font-size:42px;padding:0}.cover h1 span{font-size:.39em}.cover-description{font-size:15px;line-height:1.6}
+ .cover .deadline{font-size:14px;padding:13px 14px}.cover .deadline p:last-child{font-size:16px}
+ .button{font-size:15px}.section h2{font-size:32px}.calendar-board{padding-inline:12px}.calendar-day{font-size:14px}.calendar-event time{font-size:30px}.calendar-event>span{font-size:8px}
+ .consultation-dialog{padding-inline:18px}.consultation-dialog h2{font-size:32px}
+}
+@media(prefers-reduced-motion:reduce){.consultation-dialog,.consultation-dialog::backdrop{animation:none;transition:none}html{scroll-behavior:auto}}

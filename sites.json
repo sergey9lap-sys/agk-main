@@ -1,4 +1,6 @@
 {
+  "sale2026": { "source": "november", "editions": { "com": {}, "ru": {} } },
+  "november": { "editions": { "com": {}, "ru": {} } },
   "sales": { "editions": {
     "com": { "widgetId": "1670561", "scriptId": "4b311f35f9e19e3a80e369af255b66020a2cc8f7", "successPath": "/sales/thanks/" },
     "ru": { "widgetId": "1670558", "scriptId": "e365a78e24f8e02e3e521855c2f495a61fa9d664", "successPath": "/sales/spasibo/" }

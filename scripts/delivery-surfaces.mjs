@@ -1,3 +1,4 @@
+import {novemberError} from './november-error.mjs';
 export const themedSites=['mentor-consultation','archetype'];
 export function withLoader(html,slug){
  if(!themedSites.includes(slug))return html;
@@ -9,6 +10,11 @@ export function withLoader(html,slug){
  return html.replace(/<head\b[^>]*>/,m=>`${m}${style}${readyScript}`).replace(/<body\b[^>]*>/,m=>`${m}<div class="site-loading" id="site-loading" aria-hidden="true"><div class="loading-motif">${emblem}</div><span class="loading-copy">Готовим страницу</span></div>`);
 }
 export function errorPage(slug){
+ if(slug==='november' || slug==='sale2026') return novemberError.replaceAll('/november/',`/${slug}/`);
+ if(slug===undefined){
+  const recovery = `<script>{const slug=location.pathname.split('/')[1];if(['november','sale2026'].includes(slug)){const page=new DOMParser().parseFromString(${JSON.stringify(novemberError)}.replaceAll('/november/','/'+slug+'/'),'text/html');document.head.replaceWith(page.head);document.body.replaceWith(page.body);}}</script>`;
+  return errorPage('generic').replace('</body>',recovery+'</body>');
+ }
  const specific=themedSites.includes(slug),theme=specific?slug:'generic';
  return `<!doctype html><html lang="ru" data-theme="${theme}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Страница не найдена — AGK</title><style>
 @font-face{font-family:MentoringDisplay;src:url('/mentor-consultation/fonts/playfair-display.ttf')}@font-face{font-family:ArchetypeDisplay;src:url('/archetype/fonts/Prata-Regular.ttf')}

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "brown-linen",
+    "prompt": "Use case: photorealistic-natural. Asset type: repeatable website surface photograph. Full-frame macro photograph of rich chocolate brown bookbinding linen, medium-fine woven natural fibers, warm walnut umber, quiet copper undertone. Clearly visible tactile fabric weave but subdued low contrast for cream typography. Perfectly flat overhead evenly lit material sample, consistent across the entire canvas, no vignette, no folds, no props, no text, no leather, no scratches, no embossed pattern, no graphic lines. Landscape 3:2. It should be distinctly woven dark linen, unlike pale handmade paper.",
+    "source": "C:\\Users\\User\\.codex\\generated_images\\01a004a0-79b1-7bc0-84c2-39e98907cfbe\\exec-c6bfe517-9ac4-4caf-a0e2-bd05ede6a913.png",
+    "mode": "built-in",
+    "asset": "assets/v5/brown-linen.webp"
+  },
+  {
+    "id": "footer-study",
+    "prompt": "Use case: photorealistic-natural. Asset type: wide website footer background, landscape3:2. Premium editorial photograph of an autumn writer's study, a walnut desk by a tall softly lit window, one open ivory notebook and a single copper fountain pen on the desk in the lower left foreground, curtain and amber October tree bokeh beyond the window on the right. Quiet deep chocolate walls occupy the upper half and left center, intentional calm space for cream live website footer typography. Real restrained photography, natural fibers and wood, soft late afternoon amber daylight, cream and chocolate autumn palette with copper detail. Wide 35mm view, spacious composition, no vase, no pile of books, no people, no text, no logos, no watermarks.",
+    "source": "C:\\Users\\User\\.codex\\generated_images\\01a004a0-79b1-7bc0-84c2-39e98907cfbe\\exec-d206e0c2-bc7f-4d53-8ff3-12ab8bf29ad7.png",
+    "mode": "built-in",
+    "asset": "assets/v5/footer-study.webp"
+  }
+]

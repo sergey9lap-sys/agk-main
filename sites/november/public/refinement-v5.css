@@ -1,0 +1,56 @@
+/* V5: wide editorial spread, real linen and one readable calendar. */
+:root{--gutter:clamp(24px,2.5vw,56px);--linen:url(assets/v5/brown-linen.webp)}
+.wrap{width:calc(100% - 2 * var(--gutter));max-width:none}
+body,.guide-section,.compare-section{background-color:#302219;background-image:linear-gradient(#271c15a3,#271c15a3),var(--linen);background-size:auto,900px 600px;background-position:0 0;background-repeat:repeat}
+.cover{background:#2b211a;overflow:hidden}
+.cover:before{background:none}.cover-grid{position:relative;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:0;min-height:650px;padding-block:48px 56px;isolation:isolate}
+.cover-copy{position:relative;z-index:2;max-width:780px}.academy{margin-bottom:30px}
+.cover h1{font-size:clamp(64px,6.4vw,96px);max-width:850px}.cover-description{max-width:560px}
+.cover-photo{position:absolute;z-index:0;top:0;bottom:0;right:calc(-1 * var(--gutter));width:52%;height:100%;max-width:none;max-height:none;border:0;border-radius:0;background:none;margin:0;box-shadow:none;overflow:visible;align-self:auto;mask-image:linear-gradient(90deg,transparent 0%,#000 25%,#000 94%,transparent 100%)}
+.cover-photo img{height:100%;width:100%;object-fit:cover;object-position:center 28%;border-radius:0;max-height:none;mask-image:linear-gradient(0deg,transparent 0%,#000 18%,#000 96%,transparent 100%)}
+.cover .deadline{background:#2b211add}
+.plan:not(:nth-child(2)),.extras-grid article,.extras-grid article:last-child{background-image:linear-gradient(#302219b8,#302219b8),var(--linen);background-size:auto,900px 600px;background-color:#302219}
+.tariffs{padding-block:64px}.guide-section,.compare-section{padding-block:64px}
+.new-section{background:#66351f var(--linen) 0 0/900px 600px;background-blend-mode:multiply;padding-block:56px}
+.new-section>.wrap>h2{max-width:1100px}.new-section>.wrap>.section-lead{margin-bottom:28px}
+.calendar-layout{display:block}
+.calendar-board{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));padding:36px 40px 40px;gap:0;background:#f8e4c2 var(--paper-material) 0 0/600px 600px;border-radius:12px;color:#36251a}
+.calendar-heading{grid-column:1/-1;grid-row:1;display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding-bottom:24px;border-bottom:1px solid #98724b}
+.calendar-heading p:first-child{font-size:72px}.calendar-heading p:first-child span{font-size:26px}.calendar-heading p:last-child{font-size:16px}
+.calendar-weekdays,.calendar-days,.calendar-events{display:contents}
+.calendar-weekdays>span{grid-row:2;text-align:right;font-size:13px;padding:14px 18px;border-bottom:1px solid #b79971;color:#795233}
+.calendar-day,.calendar-blank{grid-column:var(--day-column);grid-row:var(--day-row);min-height:64px;padding:10px 18px;display:flex;align-items:flex-end;justify-content:flex-start;border-radius:0;border-right:1px solid #b7997170;border-bottom:1px solid #b79971;font-size:22px;color:#674a36}
+.calendar-day:nth-child(7n),.calendar-blank:nth-child(7n){border-right:0}
+.calendar-event{background:transparent;color:#963f29;min-height:64px;flex-direction:row;align-items:center;justify-content:space-between;gap:8px}
+.calendar-event time{font-size:38px}.calendar-event>span{font-size:10px;text-align:right}.calendar-event:hover{outline-offset:-3px}.calendar-event:focus-visible{outline:3px solid #963f29;outline-offset:-3px}
+.calendar-events .event-card{grid-column:2/-1;grid-row:6;display:grid;grid-template-columns:145px minmax(0,1fr);gap:28px;margin:0 0 26px;padding:26px 30px;background:#ecd3aa99;border:0;border-radius:0 0 12px 12px;box-shadow:none;color:#36251a}
+.calendar-events .event-card:nth-child(2){grid-row:8;background:#e9c8a299;margin-bottom:0}
+.event-card .training-date,.event-card:nth-of-type(2) .training-date{color:#963f29;line-height:1.2;margin:0;display:block}
+.event-card .training-date>span{color:#963f29;display:block;font-size:12px;margin-bottom:10px}
+.event-card .training-date time{display:block;font:500 22px/1.3 Atelier,Georgia,serif}
+.event-card .training-date time b{display:block;font:600 88px/.85 Atelier,Georgia,serif;margin-bottom:10px}
+.event-card .training-date time small{display:block;font:600 13px/1.5 Manrope,sans-serif;margin-top:12px}
+.event-card h3{font-size:clamp(30px,2.8vw,44px);max-width:800px}.event-card p{color:#36251a;font-size:16px;max-width:70ch}
+.event-card .training-topics{border-color:#a97b4e}.event-card .training-topics summary{color:#674a36;border-color:#a97b4e}.event-card :focus-visible{outline:3px solid #963f29;outline-offset:4px}
+.faq-section{background:#f8e4c2 var(--paper-material) 0 0/600px 600px;color:#36251a}
+.faq-list{max-width:none;display:grid;grid-template-columns:1fr 1fr;gap:0 48px}.faq-list details{border-color:#a98964}.faq-list details p{color:#36251a;max-width:65ch}.faq-list summary{color:#36251a}.faq-section :focus-visible{outline-color:#963f29}
+.footer-scene{position:relative;background:#291d14 url(assets/v5/footer-study.webp) center 62%/cover no-repeat;color:#f8e4c2;isolation:isolate;min-height:500px;display:flex;align-items:stretch}
+.footer-scene:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#24180ee8,#24180eb3 60%,#24180e44)}
+.footer-scene .footer{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-content:space-between;gap:28px 60px;min-height:500px;padding-block:52px 28px;border:0}
+.footer>p:first-child{font:600 clamp(32px,3vw,48px)/1.12 Atelier,Georgia,serif;max-width:620px}.footer>p:nth-child(2){align-self:start;max-width:400px}.legal-links{grid-column:1/-1;max-width:620px;align-self:start;gap:18px 32px}.legal-links span{color:#f8e4c2}.footer-bottom{border-color:#c58c5099;background:#24180ecc;margin:0 calc(-1 * var(--gutter));padding:22px var(--gutter) 0}.footer a:focus-visible{outline-color:#f8e4c2}
+.notfound{min-height:100svh;display:grid;align-content:center;padding-block:64px;max-width:850px}.notfound .error-code{font:600 clamp(110px,18vw,230px)/.85 Atelier,Georgia,serif;color:#eac69d;margin-bottom:28px}.notfound h1{font-size:clamp(40px,5vw,68px);margin-bottom:22px}.notfound p{margin-bottom:30px;max-width:48ch}.error-page{background:#2b211a url(assets/v5/footer-study.webp) right center/cover no-repeat;isolation:isolate}.error-page:before{content:'';position:fixed;inset:0;background:linear-gradient(90deg,#24180ff2,#24180fb3 60%,#24180f55);z-index:-1}
+.footer-scene .footer-bottom{min-width:0;width:100%;margin-inline:0;padding-inline:0;background:transparent}.footer-bottom>p{min-width:0;max-width:100%;overflow-wrap:break-word}
+@media(min-width:1700px){.cover-grid{min-height:740px}.cover-photo{width:48%}.cover-description{font-size:20px}.plan{padding:32px}.plan .button{--action-width:inherit}.calendar-board{padding-inline:56px}.class-entry>p{max-width:65ch}}
+@media(min-width:761px) and (max-width:1100px){.cover-grid{min-height:610px}.cover h1{font-size:64px}.cover-description{max-width:470px;font-size:16px}.cover-photo{width:49%;opacity:.85}.calendar-board{padding:28px 24px}.calendar-heading p:first-child{font-size:60px}.calendar-events .event-card{grid-column:1/-1;gap:24px;grid-template-columns:120px minmax(0,1fr)}.calendar-day,.calendar-blank{padding-inline:12px}.calendar-event>span{font-size:9px}.faq-list{gap:0 28px}.footer-scene .footer{gap:24px 36px}}
+@media(max-width:760px){
+ :root{--gutter:24px}.wrap{width:calc(100% - 2 * var(--gutter))}
+ .cover-grid{display:block;min-height:0;padding-block:24px 30px}.cover-copy{max-width:none}.academy{position:relative;z-index:2;min-height:190px;max-width:calc(100% - 150px);margin-bottom:18px}.cover h1{font-size:clamp(44px,11.5vw,66px)}.cover-description{max-width:none}
+ .cover-photo{top:0;bottom:auto;right:calc(-1 * var(--gutter));height:260px;width:210px;max-width:none;opacity:1;border-radius:0;mask-image:linear-gradient(90deg,transparent,#000 24%,#000)}.cover-photo img{object-fit:cover;object-position:center 25%;border-radius:0;mask-image:linear-gradient(0deg,transparent,#000 26%,#000 97%,transparent)}
+ .tariffs,.guide-section,.compare-section{padding-block:36px}.new-section{padding-block:36px}.calendar-board{padding:22px 14px 24px;border-radius:10px}.calendar-heading{display:block;padding-bottom:18px}.calendar-heading p:first-child{font-size:48px}.calendar-heading p:first-child span{font-size:20px}.calendar-heading p:last-child{font-size:13px;margin-top:12px}
+ .calendar-weekdays>span{padding:12px 0;text-align:center;font-size:10px}.calendar-day,.calendar-blank{padding:10px 0;min-height:54px;align-items:center;font-size:17px}.calendar-event{flex-direction:column;gap:2px;justify-content:center}.calendar-event time{font-size:30px}.calendar-event>span{display:none}
+ .calendar-events .event-card{grid-column:1/-1;grid-template-columns:1fr;gap:16px;padding:22px 14px;margin-bottom:16px;border-radius:0 0 8px 8px}.calendar-events .event-card:nth-child(2){margin-bottom:0}
+ .event-card .training-date,.event-card:nth-of-type(2) .training-date{display:flex;align-items:center;gap:12px}.event-card .training-date>span{font-size:11px;margin:0}.event-card .training-date time{display:flex;align-items:baseline;gap:7px;font-size:23px;flex-wrap:wrap}.event-card .training-date time b{font-size:58px;margin:0}.event-card .training-date time small{font-size:12px;margin:0}.event-card h3{font-size:31px}.event-card p{font-size:15px;line-height:1.65}.event-card .training-topics summary{font-size:14px}
+ .faq-list{display:block}.faq-section{background-size:600px 600px}.footer-scene{min-height:620px;background-position:64% center}.footer-scene .footer{grid-template-columns:1fr;min-height:620px;padding-block:36px 24px;gap:24px}.footer>p:first-child{font-size:34px}.footer>p:nth-child(2){max-width:100%}.legal-links{grid-column:auto;display:grid;gap:16px}.footer-bottom{padding-top:20px;align-self:end;font-size:12px}.footer-bottom p{max-width:90%}
+ .notfound{padding-block:40px}.notfound h1{font-size:42px}.notfound .button{max-width:none}.error-page{background-position:62% center}
+}
+@media(max-width:360px){:root{--gutter:18px}.academy{min-height:163px;max-width:calc(100% - 126px)}.cover-photo{width:180px;height:230px}.cover h1{font-size:42px}.calendar-board{padding-inline:10px}.calendar-heading p:first-child{font-size:43px}.calendar-events .event-card{padding:20px 10px}.event-card h3{font-size:28px}.event-card .training-date{gap:8px}.event-card .training-date time{font-size:20px}.event-card .training-date time b{font-size:50px}.event-card .training-date time small{font-size:10px}}

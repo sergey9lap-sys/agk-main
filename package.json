@@ -9,7 +9,7 @@
     "build": "node scripts/build.mjs com",
     "build:com": "node scripts/build.mjs com",
     "build:ru": "node scripts/build.mjs ru",
-    "test": "node --test scripts/build.test.mjs scripts/archetype-pricing.test.mjs scripts/sales.test.mjs scripts/sales-attribution.test.mjs",
+    "test": "node --test scripts/build.test.mjs scripts/archetype-pricing.test.mjs scripts/sales.test.mjs scripts/sales-attribution.test.mjs scripts/sale2026.test.mjs",
     "preview:com": "vite preview --outDir dist/com --host 127.0.0.1",
     "preview:ru": "vite preview --outDir dist/ru --host 127.0.0.1"
   },
