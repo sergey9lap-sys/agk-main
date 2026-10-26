@@ -1,0 +1,22 @@
+/* V13: fade the photograph itself; no veil can cover the copy or CTA. */
+.cover::after,.cover::before{display:none;content:none}
+.cover-grid{isolation:auto}
+.cover-copy{z-index:2;opacity:1;filter:none}
+.cover-photo{inset:0 -8% 0 auto;width:78%;z-index:0;mask-image:linear-gradient(90deg,transparent 22%,#000 46%)}
+.cover-photo img{height:calc(100% - 26px);width:100%;margin-top:26px;object-fit:contain;object-position:right top;filter:none}
+@media(min-width:761px){
+ .speaker-grid{grid-template-columns:minmax(250px,.72fr) minmax(0,1.5fr);align-items:stretch;gap:30px 50px}
+ .speaker-grid>figure{position:relative;align-self:stretch;justify-self:stretch;width:100%;max-width:none;height:auto;min-height:0;margin:10px 0 0;padding:0;border-radius:16px;overflow:hidden}
+ .speaker-grid>figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:0;max-height:none}
+ .speaker-grid>div:not(.section-action){min-width:0}
+ .client-logos{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));align-items:center;gap:14px;padding-block:20px;margin-bottom:0}
+ .client-logos img{width:100%;max-width:104px;height:36px;object-fit:contain;justify-self:center}
+ .client-logos img[alt="Нестле"],.client-logos img[alt="X5"]{height:44px;max-width:112px}
+ .client-logos img[alt="ВкусВилл"]{height:28px;max-width:90px}
+}
+@media(min-width:761px) and (max-width:1000px){.speaker-grid{grid-template-columns:minmax(220px,.8fr) minmax(0,1.5fr);gap:26px}.client-logos{gap:8px}.client-logos img{height:30px}.client-logos img[alt="Нестле"],.client-logos img[alt="X5"]{height:36px}}
+@media(max-width:760px){
+ .cover-photo{inset:auto;width:100%;mask-image:linear-gradient(0deg,transparent,#000 12%)}
+ .cover-photo img{height:100%;margin-top:0;object-fit:cover;object-position:55% top}
+ .client-logos img[alt="Нестле"],.client-logos img[alt="X5"]{height:29px;max-width:80px}
+}

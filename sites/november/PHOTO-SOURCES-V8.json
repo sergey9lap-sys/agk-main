@@ -1,0 +1,55 @@
+[
+  {
+    "role": "alexandra-hero.webp",
+    "driveId": "1spa1Si4nocT8vnREKvG8YLpfKx9qP0cD",
+    "sourceName": "1J2A6030.jpg",
+    "sourceUrl": "https://drive.google.com/file/d/1spa1Si4nocT8vnREKvG8YLpfKx9qP0cD/view",
+    "sourceSha256": "5c200776890df8e2395858bca89dbd483e1f126ba99f79aa45e16c5099262795",
+    "sourceSize": [
+      4188,
+      6070
+    ],
+    "asset": "assets/v8/alexandra-hero.webp",
+    "assetSize": [
+      1200,
+      1739
+    ],
+    "processing": "EXIF orientation, proportional resize and WebP encoding only; no generation, retouching, face editing or background replacement"
+  },
+  {
+    "role": "alexandra-author.webp",
+    "driveId": "1KUWNixHLYhZ2ayJhgFZQLuS7nztgukVE",
+    "sourceName": "1J2A5887 (3).jpg",
+    "sourceUrl": "https://drive.google.com/file/d/1KUWNixHLYhZ2ayJhgFZQLuS7nztgukVE/view",
+    "sourceSha256": "3354ad8f25470d5686e9a27bf89b0d06649ae88d1739cf1853796054b3c3b83a",
+    "sourceSize": [
+      4215,
+      5436
+    ],
+    "asset": "assets/v8/alexandra-author.webp",
+    "assetSize": [
+      800,
+      1032
+    ],
+    "processing": "EXIF orientation, proportional resize and WebP encoding only; no generation, retouching, face editing or background replacement"
+  },
+  {
+    "role": "alexandra-hero-mobile.webp",
+    "driveId": "1spa1Si4nocT8vnREKvG8YLpfKx9qP0cD",
+    "sourceName": "1J2A6030.jpg",
+    "sourceUrl": "https://drive.google.com/file/d/1spa1Si4nocT8vnREKvG8YLpfKx9qP0cD/view",
+    "sourceSha256": "5c200776890df8e2395858bca89dbd483e1f126ba99f79aa45e16c5099262795",
+    "crop": [
+      900,
+      650,
+      3450,
+      4050
+    ],
+    "asset": "assets/v8/alexandra-hero-mobile.webp",
+    "assetSize": [
+      600,
+      800
+    ],
+    "processing": "Conventional portrait crop from the same original; proportional resize and WebP encoding only, no face edits"
+  }
+]

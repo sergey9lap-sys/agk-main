@@ -1,0 +1,13 @@
+/* V12: original 1J2A5736 photograph. Never mirror or regenerate the person. */
+.cover-grid{z-index:auto;isolation:auto}
+.cover-photo{inset:0 0 0 auto;z-index:0;width:80%;mask-image:linear-gradient(90deg,transparent,#000 29%)}
+.cover-photo img{height:calc(100% - 26px);margin-top:26px;object-fit:cover;object-position:center top}
+.cover:after{z-index:1;background:linear-gradient(90deg,#10191c,#10191cee 44%,#10191c99 53%,transparent 68%)}
+.plan:nth-child(2) .price{background:#202c31;border-color:#68706d}
+.plan:nth-child(2) .price strong{color:#f5e7cf}
+.plan:nth-child(2) .price del{color:#c7bfb5}
+.plan:nth-child(2) .price>span{background:transparent;color:#f5e7cf}
+@media(max-width:760px){
+ .cover-photo{inset:auto;width:100%;mask-image:linear-gradient(0deg,transparent,#000 12%)}
+ .cover-photo img{height:100%;margin-top:0;object-position:55% top}
+}

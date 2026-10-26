@@ -1,0 +1,64 @@
+/* Client feedback 26 Oct: authentic portraits, darker material, legible prices. */
+@font-face{font-family:SaleDisplay;src:url(fonts/playfair-display-v8.ttf) format('truetype');font-style:normal;font-weight:500;font-display:swap}
+:root{--ink:#142024;--paper:#f5e7cf;--muted:#d3c6b2;--copper:#c9ab78;--line:#68706d;--headline:#ebcb8c;--price-dark:#ffa17e;--price-paper:#a52e21;--dark-surface:#121a1e;--action-width:320px}
+body{font-size:18px;line-height:1.65}
+body,.guide-section,.compare-section,.new-section{background-color:var(--dark-surface);background-image:linear-gradient(#121a1e99,#121a1e99),var(--linen);background-size:auto,900px 600px;background-blend-mode:normal,luminosity}
+h1,h2,h3,.guide-caption,.footer>p:first-child{font-family:SaleDisplay,Georgia,serif;font-weight:500;letter-spacing:-.025em;line-height:1.16}
+.section h2{font-size:clamp(38px,3.6vw,54px);line-height:1.18;color:var(--headline)}
+.masterclasses h2,.masterclasses h3,.speaker-section h2,.faq-section h2,.calendar-board h3,.consultation-dialog h2{color:var(--ink)}
+.masterclasses,.speaker-section,.faq-section{background-color:#f8e4c2}
+.cover{background:#121a1e}.cover:before{background:none}
+.cover-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:center;min-height:650px;padding-block:32px 40px}
+.cover-copy{display:block;max-width:none;min-width:0;position:relative;z-index:1}
+.academy{font-size:12px;line-height:1.6;margin-bottom:24px;max-width:none}
+.cover h1{font-family:SaleDisplay,Georgia,serif;font-size:clamp(54px,5.2vw,84px);line-height:1.12;max-width:100%;color:var(--headline)}
+.cover h1 span{font:600 23px/1.4 Manrope,sans-serif;color:var(--paper);margin:12px 0 0;display:block}
+.cover-description{font-size:20px;line-height:1.6;max-width:56ch;margin-top:22px}
+.cover-photo{grid-column:2;grid-row:1;position:relative;inset:auto;align-self:stretch;justify-self:stretch;width:100%;height:620px;max-width:none;margin:0;border:0;border-radius:0;opacity:1;background:none;mask-image:linear-gradient(90deg,transparent,#000 9%,#000 97%,transparent)}
+.cover-photo img{width:100%;height:100%;object-fit:cover;object-position:center 14%;border-radius:0;filter:none;mask-image:linear-gradient(0deg,transparent,#000 12%,#000 97%,transparent)}
+.cover-photo picture{display:block;width:100%;height:100%}
+.cover .deadline{background:#19252acc;border-color:#9ca99c80;max-width:none;font-size:17px}.cover .deadline p:first-child{color:var(--paper)}.cover .deadline p:last-child{color:#ebcb8c;font-size:20px}
+.plan:not(:nth-child(2)),.extras-grid article,.extras-grid article:last-child,.extras-grid article:nth-child(2){background-color:#172125;background-image:linear-gradient(#152025aa,#152025aa),var(--linen);background-size:auto,900px 600px;background-blend-mode:normal,luminosity}
+.plan h3,.plan-full h3{font-family:SaleDisplay,Georgia,serif;font-size:42px;color:var(--headline)}
+.plan:nth-child(2) h3{color:var(--ink)}.plan li{font-size:17px;line-height:1.6;padding-block:8px}.plan .access{font-size:17px}.plan-meta{font-size:14px}
+.plan .price strong{font:800 48px/1.15 Manrope,sans-serif;color:var(--price-dark);font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.035em}
+.plan:nth-child(2) .price strong{color:var(--price-paper)}.price del{font-size:18px}.price>span{font-size:15px;font-weight:600;color:var(--paper)}
+.class-entry h3,.class-entry:last-child h3{font-family:SaleDisplay,Georgia,serif;font-size:29px;line-height:1.2;min-height:72px}
+.class-entry>p,.class-entry:last-child>p{font-size:18px;line-height:1.65}.class-entry .format,.class-entry:last-child .format{font-size:15px;line-height:1.55}
+.section-top p,.guide-intro p{font-size:18px;line-height:1.65}.section-top h2>span{font-family:Manrope,sans-serif;font-weight:700}
+.guide-caption{font-size:25px;line-height:1.25}.extras-grid h3{font-family:SaleDisplay,Georgia,serif;font-size:32px;line-height:1.2;color:var(--headline)}
+.extras-grid article>p:not(.inclusion),.personal-split p{font-size:18px;line-height:1.6}.extras-grid .inclusion,.personal-split b{font-size:14px;color:#e3c99e}
+.calendar-heading p:first-child{font-family:SaleDisplay,Georgia,serif;font-size:62px}.calendar-heading p:last-child{font-size:17px}
+.calendar-board .event-card h3{font-family:SaleDisplay,Georgia,serif;font-size:32px;line-height:1.22}.calendar-board .event-card p,.event-card .training-topics li{font-size:18px;line-height:1.65}
+.event-card .training-topics summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:52px;padding:14px 16px;font:700 15px/1.5 Manrope,sans-serif;color:#513823;border:1px solid #9e7348;border-radius:9px;background:#f8e7c9;text-decoration:underline;text-underline-offset:4px;list-style:none}
+.calendar-board .event-card .training-topics summary{font-size:15px}.training-topics summary::-webkit-details-marker{display:none}.training-topics summary svg{flex:0 0 20px}.training-topics .topics-close{display:none}.training-topics[open] .topics-open{display:none}.training-topics[open] .topics-close{display:inline}.training-topics[open] summary svg{transform:rotate(180deg)}
+.credentials li,.speaker-section .section-lead{font-size:18px;line-height:1.65}.speaker-grid>figure{background:#142024;border:1px solid #c9ab7880}.speaker-grid>figure img{object-fit:contain;aspect-ratio:auto}
+.speaker-section h2{font-family:SaleDisplay,Georgia,serif;font-size:clamp(36px,3.6vw,52px);line-height:1.2}
+.compare-section .comparison-scroll thead th{font-family:SaleDisplay,Georgia,serif;font-size:25px;font-weight:500}.compare-section .comparison-scroll tbody th,.compare-section .comparison-scroll tbody td{font-size:18px;line-height:1.6}
+.compare-section .comparison-scroll tr.sale-row{background:#202c31}.compare-section .comparison-scroll tr.sale-row th{background:#202c31;color:var(--paper);font-weight:700}
+.compare-section .comparison-scroll tr.sale-row td{background:#202c31;color:var(--price-dark);font:800 31px/1.35 Manrope,sans-serif;letter-spacing:-.03em;font-variant-numeric:lining-nums tabular-nums}
+.comparison-deadline{background:#18252bc9;border-color:#83928b80;font-size:18px}
+.faq-list summary{font-size:20px;line-height:1.5}.faq-list details p{font-size:18px;line-height:1.7}
+.footer-scene:before{background:linear-gradient(90deg,#10191cf0,#10191cc9 60%,#10191c77)}.footer>p:first-child{font-family:SaleDisplay,Georgia,serif;font-size:clamp(30px,2.7vw,44px)}
+.footer>p:nth-child(2),.legal-links{font-size:14px;line-height:1.7}.footer-bottom{font-size:13px}
+@media(min-width:1700px){.cover-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);min-height:730px}.cover-photo{height:690px}.cover h1{font-size:84px}}
+@media(min-width:761px) and (max-width:1100px){:root{--action-width:270px}.cover-grid{gap:18px;min-height:610px}.cover h1{font-size:46px}.cover-photo{height:580px}.cover-description{font-size:18px}.academy{font-size:11px}.cover .deadline{font-size:15px;padding:14px 16px}.cover .deadline p:last-child{font-size:18px}.plan li{font-size:16px}.plan .price strong{font-size:42px}.calendar-board .event-card h3{font-size:29px}.extras-grid h3{font-size:30px}.compare-section .comparison-scroll tr.sale-row td{font-size:28px}}
+@media(max-width:760px){
+ :root{--action-width:calc(100vw - 2 * var(--gutter) - 48px)}
+ body{font-size:16px}.button,.plan .button,.compare-actions .button{width:var(--action-width);margin-inline:auto;padding:10px 42px 10px 18px;font-size:15px;line-height:1.4;min-height:64px;height:64px}
+ .button svg{right:15px;width:20px;height:20px}.cover .button{justify-self:center}
+ .cover-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:0 12px;min-height:0;padding-block:22px 32px;align-items:start}
+ .cover-copy{display:contents}.academy{grid-column:1/-1;grid-row:1;min-height:0;font-size:9px;margin:0 0 22px;max-width:none}
+ .cover h1{grid-column:1;grid-row:2;font-size:clamp(25px,7.8vw,38px);line-height:1.18;max-width:100%;padding:0;margin:0}.cover h1 span{font-size:16px;margin-top:12px}
+ .cover-photo{grid-column:2;grid-row:2;position:relative;inset:auto;width:100%;height:clamp(180px,52vw,230px);margin:0;mask-image:linear-gradient(90deg,transparent,#000 8%,#000)}
+ .cover-photo img{object-position:center 12%;mask-image:linear-gradient(0deg,transparent,#000 12%,#000)}
+ .cover-description{grid-column:1/-1;grid-row:3;font-size:16px;line-height:1.6;margin-top:20px;max-width:none}.cover .deadline{grid-column:1/-1;grid-row:4;font-size:15px;margin-top:20px}.cover .deadline p:last-child{font-size:17px}.cover .button{grid-column:1/-1;grid-row:5;margin-top:18px}
+ .section h2{font-size:32px;line-height:1.2}.plan h3,.plan-full h3{font-size:36px}.plan li{font-size:16px;line-height:1.6}.plan .access{font-size:16px}.plan .price strong{font-size:42px}.plan .plan-bottom{align-items:center}.plan .button{width:var(--action-width);margin-inline:auto;left:auto;right:auto}
+ .plan-meta{font-size:13px}.class-entry h3,.class-entry:last-child h3{font-size:27px;line-height:1.2;min-height:0}.class-entry>p,.class-entry:last-child>p{font-size:16px}.class-entry .format{font-size:14px}.section-top p,.guide-intro p{font-size:16px}.guide-caption{font-size:23px;line-height:1.25}
+ .calendar-heading p:first-child{font-size:42px}.calendar-heading p:last-child{font-size:14px}.calendar-board .event-card h3{font-size:27px}.calendar-board .event-card p,.event-card .training-topics li{font-size:16px}
+ .extras-grid h3{font-size:29px}.extras-grid article>p:not(.inclusion),.personal-split p{font-size:16px}.extras-grid .inclusion,.personal-split b{font-size:13px}
+ .speaker-section h2{font-size:29px}.credentials li,.speaker-section .section-lead{font-size:16px}
+ .compare-section .comparison-scroll thead th{font:700 14px/1.4 Manrope,sans-serif}.compare-section .comparison-scroll tbody th{font-size:15px}.compare-section .comparison-scroll tbody td{font-size:14px;line-height:1.5}.compare-section .comparison-scroll tr.sale-row td{font:800 21px/1.4 Manrope,sans-serif;padding-inline:3px;letter-spacing:-.035em}
+ .faq-list summary{font-size:18px}.faq-list details p{font-size:16px}.footer>p:first-child{font-size:29px}.comparison-deadline{font-size:16px}.consultation-dialog .button{display:flex;justify-self:center}
+}
+@media(max-width:360px){.cover h1{font-size:25px}.academy{font-size:8px}.cover-photo{height:178px}.cover-description{font-size:15px}.cover .deadline{font-size:14px}.section h2{font-size:29px}.plan h3,.plan-full h3{font-size:34px}.plan .price strong{font-size:38px}.calendar-board .event-card h3{font-size:25px}.guide-caption{font-size:22px}.speaker-section h2{font-size:26px}.compare-section .comparison-scroll tbody td{font-size:13px}.compare-section .comparison-scroll tr.sale-row td{font-size:18px;padding-inline:2px}.button,.plan .button,.compare-actions .button{font-size:14px}}

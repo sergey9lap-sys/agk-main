@@ -1,0 +1,37 @@
+/* V10 restores text-left/photo-right; one continuous room fills the center. */
+.cover{position:relative;isolation:isolate;overflow:hidden}
+.cover-grid{position:static;display:block;min-height:660px;padding-block:38px 44px}
+.cover-copy{display:block;position:relative;z-index:2;width:51%;max-width:720px}
+.academy{margin-bottom:28px}.cover h1{font-size:clamp(52px,5.2vw,80px);line-height:1.1}
+.cover h1 br{display:block}.cover h1 span{display:block;font-size:32px;margin:16px 0 0}
+.cover-details{display:block;max-width:610px;margin-top:24px}
+.cover-description{font-size:20px;line-height:1.6}.cover .deadline{max-width:550px;margin-block:22px}
+.cover-photo{position:absolute;inset:0;z-index:-2;width:100%;height:100%;margin:0;pointer-events:none;mask-image:none}
+.cover-photo img{object-fit:cover;object-position:center 42%;mask-image:none}
+.cover:after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#10191cd9,#10191c66 43%,transparent 65%)}
+.plan .price,.plan:nth-child(2) .price{background:#f5e7cf;border:1px solid #b79971;box-shadow:0 8px 24px #0002}
+.plan .price strong,.plan:nth-child(2) .price strong{color:#962f25}
+.plan .price del,.plan:nth-child(2) .price del{color:#674a36}
+.plan .price>span,.plan:nth-child(2) .price>span{align-self:flex-start;display:inline-block;padding:5px 11px;border-radius:7px;background:#962f25;color:#fff4e5;font-size:16px;font-weight:800;letter-spacing:.01em;margin-top:10px}
+.compare-section .comparison-scroll tr.sale-row,.compare-section .comparison-scroll tr.sale-row th,.compare-section .comparison-scroll tr.sale-row td{background:#f5e7cf;color:#962f25}
+.compare-section .comparison-scroll tr.sale-row th{font-weight:800}
+@media(min-width:761px) and (max-width:1100px){.cover-grid{min-height:640px}.cover-copy{width:54%}.cover h1{font-size:46px}.cover-description{font-size:18px}.cover .deadline{font-size:15px}}
+/* Arrow feedback uses only transform; never changes label alignment. */
+.button svg,.program-trigger svg,.gallery-controls button svg{transition:transform 160ms ease}
+@media(hover:hover) and (pointer:fine){
+ .button:hover svg,.program-trigger:hover svg{transform:translate(3px,-3px)}
+ .gallery-controls button[data-gallery-next]:hover svg{transform:translateX(3px) rotate(180deg)}
+ .gallery-controls button[data-gallery-prev]:hover svg{transform:translateX(-3px)}
+}
+@media(max-width:760px){
+ .cover-grid{display:grid;position:relative;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);min-height:0;padding-block:22px 32px;gap:0 12px}
+ .cover-copy{display:contents;width:auto;max-width:none}.cover:after{display:none}
+ .academy{grid-column:1/-1;grid-row:1;margin-bottom:22px;position:relative;z-index:2}
+ .cover h1{grid-column:1;grid-row:2;font-size:clamp(25px,7.8vw,38px);line-height:1.18;position:relative;z-index:2}.cover h1 span{font-size:26px;margin-top:14px}
+ .cover-photo{position:relative;inset:auto;grid-column:2;grid-row:2;z-index:0;height:clamp(180px,52vw,230px);width:100%;mask-image:linear-gradient(0deg,transparent,#000 12%)}
+ .cover-photo img{object-fit:cover;object-position:100% center}
+ .cover-details{grid-column:1/-1;grid-row:3;margin-top:22px;position:relative;z-index:2;max-width:none}.cover-description{font-size:17px}.cover .deadline{margin-block:20px}
+}
+@media(max-width:360px){.cover h1{font-size:25px}.cover h1 span{font-size:24px}.cover-photo{height:178px}}
+@media(prefers-reduced-motion:reduce){.button svg,.program-trigger svg,.gallery-controls button svg{transition:none;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.gallery-controls button[data-gallery-next] svg{transform:rotate(180deg)!important}}

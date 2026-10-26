@@ -1,0 +1,11 @@
+/* V16: mobile-only scale adjustment; desktop V15 is approved. */
+@media(max-width:760px){
+ .cover-grid{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);column-gap:10px}
+ .cover h1{font-size:clamp(27px,8.4vw,42px)}
+ .cover-photo{width:calc(100% + 20px);margin-right:-20px;height:clamp(198px,60vw,280px)}
+ .cover-photo img{object-fit:contain;object-position:center top}
+}
+@media(max-width:360px){
+ .cover h1{font-size:27px}
+ .cover-photo{width:calc(100% + 16px);margin-right:-16px;height:192px}
+}

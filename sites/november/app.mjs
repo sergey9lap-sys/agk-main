@@ -1,5 +1,6 @@
 import { setupGalleries } from './galleries.mjs';
 import './consultation.mjs';
+import './program-dialogs.mjs';
 import { protectRussianText } from '../shared/russian-typography.js';
 setupGalleries();
 const calendar=document.querySelector('.calendar-layout');

@@ -1,0 +1,42 @@
+/* V9: joined editorial cover, uncropped portrait and one promotional price. */
+.cover-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:18px 28px;min-height:0;padding-block:28px 40px}
+.cover-copy{display:contents}
+.academy{grid-column:1/-1;grid-row:1;margin:0}
+.cover h1{grid-column:1/-1;grid-row:2;font-size:clamp(48px,6.2vw,88px);margin:0;line-height:1.12}
+.cover h1 br{display:none}
+.cover h1 span{display:inline-block;font-size:36px;margin:0 0 0 14px;vertical-align:middle}
+.cover-photo{grid-column:1;grid-row:3;height:440px;min-height:0;mask-image:none;align-self:stretch}
+.cover-photo img{object-fit:contain;object-position:right center;mask-image:none}
+.cover-details{grid-column:2;grid-row:3;align-self:center;min-width:0;max-width:650px}
+.cover-description{margin-top:0;font-size:22px}
+.cover .deadline{margin-block:24px}
+.section h2{font-size:clamp(40px,4.1vw,62px)}
+.plan h3,.plan-full h3{font-size:48px}
+.plan li{font-size:18px}.plan .access{font-size:18px}
+.plan .price{width:100%;padding:18px 20px;background:#202c31;border-radius:12px;box-sizing:border-box}
+.plan .price strong,.plan:nth-child(2) .price strong{color:#ffa17e;font-size:50px}
+.plan .price del,.plan:nth-child(2) .price del{color:#c7bfb5}
+.plan .price>span,.plan:nth-child(2) .price>span{color:#f5e7cf}
+.program-trigger{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;min-height:54px;margin-top:20px;padding:14px 18px;border:1px solid #9e7348;border-radius:12px;background:#f8e7c9;color:#513823;font:700 16px/1.5 Manrope,sans-serif;text-align:left;cursor:pointer}
+.program-trigger svg{flex-shrink:0}.program-trigger:hover{background:#f1d6ad}.program-trigger:focus-visible,.program-close:focus-visible{outline:3px solid #142024;outline-offset:3px}
+.program-dialog{width:min(720px,calc(100vw - 32px));max-height:85dvh;padding:0;border:1px solid #c9ab78;border-radius:20px;background:#f5e7cf;color:#142024;box-shadow:0 28px 100px #0008;overflow:hidden}
+.program-dialog[open]{display:flex;flex-direction:column}
+.program-dialog::backdrop{background:#081014cc}
+.program-dialog header{display:flex;align-items:start;gap:20px;padding:28px 28px 18px;border-bottom:1px solid #b2a58d;flex-shrink:0}
+.program-dialog h2{margin:0;font:500 34px/1.2 SaleDisplay,Georgia,serif;color:#142024}
+.program-close{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;padding:0;border:1px solid #68706d;border-radius:50%;background:transparent;color:#142024;cursor:pointer;margin-left:auto}
+.program-body{padding:12px 32px 28px;overflow-y:auto;overscroll-behavior:contain}.program-body ul{margin:0;padding-left:22px}.program-body li{font-size:19px;line-height:1.65;padding:10px 0}
+@media(min-width:761px) and (max-width:1100px){.cover h1{font-size:clamp(44px,6vw,65px)}.cover h1 span{font-size:28px}.cover-description{font-size:19px}.cover-photo{height:400px}.plan h3{font-size:42px}.plan .price strong{font-size:42px}}
+@media(max-width:760px){
+ .cover-grid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:0 12px;padding-block:22px 32px}
+ .academy{margin-bottom:22px}
+ .cover h1{grid-column:1;grid-row:2;font-size:clamp(25px,7.8vw,38px);line-height:1.18}
+ .cover h1 br{display:block}.cover h1 span{display:block;font-size:26px;margin:14px 0 0}
+ .cover-photo{grid-column:2;grid-row:2;height:clamp(180px,52vw,230px);mask-image:none}
+ .cover-photo img{object-fit:contain;object-position:center top;mask-image:none}
+ .cover-details{grid-column:1/-1;grid-row:3;margin-top:22px;max-width:none}
+ .cover-description{font-size:17px;margin:0}.cover .deadline{margin-block:20px}.cover .button{display:flex}
+ .section h2{font-size:35px}.plan h3,.plan-full h3{font-size:38px}.plan li,.plan .access{font-size:17px}.plan .price strong,.plan:nth-child(2) .price strong{font-size:44px}
+ .program-dialog header{padding:22px 18px 16px;gap:12px}.program-dialog h2{font-size:27px}.program-body{padding:10px 22px 22px}.program-body li{font-size:17px}
+}
+@media(max-width:360px){.cover h1{font-size:25px}.cover h1 span{font-size:24px}.cover-photo{height:178px}.section h2{font-size:31px}.plan .price strong,.plan:nth-child(2) .price strong{font-size:38px}.program-dialog h2{font-size:25px}}

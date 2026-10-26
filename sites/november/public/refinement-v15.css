@@ -1,0 +1,8 @@
+/* V15: softer studio light matches the portrait; no new face processing. */
+.cover{background-image:url(assets/v15/hero-soft-studio.webp)}
+.cover-photo{inset:auto 9% 0 auto;width:44%;height:88%}
+.cover-photo img{object-fit:contain;object-position:center bottom}
+@media(min-width:761px){.speaker-grid>figure{background:#050505}.speaker-grid>figure img{object-fit:contain;object-position:center center}}
+@media(min-width:761px) and (max-width:1100px){.cover-photo{right:1%;width:48%;height:84%}}
+@media(max-width:760px){.cover-photo{inset:auto;width:100%;height:clamp(180px,52vw,230px)}.cover-photo img{object-position:center top}}
+@media(max-width:360px){.cover-photo{height:178px}}

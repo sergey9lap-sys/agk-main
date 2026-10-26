@@ -1,0 +1,20 @@
+/* V17: dedicated vertical scene, larger cutout within the phone viewport. */
+@media(max-width:760px){
+ .cover{background-image:linear-gradient(180deg,transparent 210px,#142024b8 340px,#14202470),url(assets/v17/hero-mobile-studio.webp);background-position:center top;background-size:cover}
+ .cover-grid{column-gap:10px}
+ .cover h1{font-size:clamp(29px,8.8vw,44px);line-height:1.9}
+ .cover h1 span{font-size:46px;line-height:1.5;margin-top:0}
+ .cover-photo{position:relative;left:-22px;width:calc(100% + 44px);height:auto;aspect-ratio:893/1088;margin-right:-22px;align-self:start}
+ .cover-photo img{width:100%;height:100%;object-fit:contain;object-position:center top}
+ .cover-details{margin-top:10px}
+}
+@media(max-width:360px){
+ .cover h1{font-size:29px}
+ .cover h1 span{font-size:42px}
+ .cover-photo{left:-22px;width:calc(100% + 38px);height:auto;margin-right:-16px}
+}
+@media(min-width:500px) and (max-width:760px){
+ .cover h1{font-size:clamp(46px,8.4vw,62px)}
+ .cover h1 span{font-size:60px}
+ .cover-photo{max-height:320px}
+}

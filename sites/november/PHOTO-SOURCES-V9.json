@@ -1,0 +1,11 @@
+{
+  "hero": {
+    "driveId": "1WRJYaK8bTQd62ad81eW7yDpXbfrYnliV",
+    "sourceName": "1J2A5829 (1).jpg",
+    "sourceUrl": "https://drive.google.com/file/d/1WRJYaK8bTQd62ad81eW7yDpXbfrYnliV/view",
+    "asset": "assets/v9/alexandra-hero.webp",
+    "dimensions": [900,1133],
+    "processing": "EXIF orientation, proportional downsize, WebP quality 89; no crop or generation"
+  },
+  "author": "Unchanged: PHOTO-SOURCES-V8.json, alexandra-author.webp"
+}
