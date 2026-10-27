@@ -1,5 +1,13 @@
 {
-  "sale2026": { "source": "november", "editions": { "com": {}, "ru": {
+  "sale2026": { "source": "november", "editions": { "com": {
+    "saleOffer": "https://agkedu.getcourse.ru/oferta_sale2026",
+    "saleWidgets": {
+      "1": { "widgetId": "1674362", "scriptId": "7e45bcc70734e2bea93165ca1900f34dd596ae3e", "title": "Тариф 1 · Эксперт" },
+      "2": { "widgetId": "1674367", "scriptId": "7da6bb66fda7f9262847c8df7e11016658d6cec5", "title": "Тариф 2 · Мастер" },
+      "3": { "widgetId": "1674372", "scriptId": "14a099f1aa0a5ee3a606f83f4adde541b9d7917a", "title": "Тариф 3 · Масштаб" },
+      "help": { "widgetId": "1674401", "scriptId": "4e17abaaa02322b08b74194ad9df2274eb53a248", "title": "Поможем выбрать тариф" }
+    }
+  }, "ru": {
     "saleOffer": "https://agkedu.getcourse.ru/oferta_sale2026",
     "saleWidgets": {
       "1": { "widgetId": "1674362", "scriptId": "7e45bcc70734e2bea93165ca1900f34dd596ae3e", "title": "Тариф 1 · Эксперт" },

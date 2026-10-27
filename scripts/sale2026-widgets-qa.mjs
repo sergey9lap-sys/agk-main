@@ -1,6 +1,6 @@
 import {chromium} from 'file:///C:/Users/User/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs';
 import http from 'node:http';import {readFile,mkdir,writeFile} from 'node:fs/promises';import {resolve,extname} from 'node:path';import assert from 'node:assert/strict';
-const root=resolve('dist/ru'),out='output/sale2026-widgets';await mkdir(out,{recursive:true});
+const edition=process.env.SALE_QA_EDITION||'ru';assert.ok(['ru','com'].includes(edition));const root=resolve('dist/'+edition),out='output/sale2026-widgets'+(edition==='com'?'-com':'');await mkdir(out,{recursive:true});
 const server=http.createServer(async(req,res)=>{try{let path=resolve(root,'.'+new URL(req.url,'http://localhost').pathname);if(!path.startsWith(root))throw Error();if(!extname(path))path+='/index.html';const mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.webp':'image/webp','.ttf':'font/ttf','.woff2':'font/woff2'};res.setHeader('content-type',mime[extname(path)]||'application/octet-stream');res.end(await readFile(path));}catch{res.writeHead(404);res.end();}});await new Promise(r=>server.listen(0,'127.0.0.1',r));
 const base='http://127.0.0.1:'+server.address().port,browser=await chromium.launch({channel:'msedge',headless:true}),report=[];
 try{for(const width of [1280,390,320]){const page=await browser.newPage({viewport:{width,height:850}});const requests=[],errors=[];page.on('request',r=>{if(r.url().includes('/pl/lite/widget/widget?'))requests.push(r.url());});page.on('pageerror',e=>errors.push(e.message));

@@ -21,7 +21,7 @@ test('Sale2026 uses one shared source and builds both regional routes',async()=>
  }
  assert.match(errorPage(),/sale2026/);assert.match(errorPage('archetype'),/data-theme="archetype"/);
 });
-test('Sale2026 preserves approved products, descriptions, prices and the COM placeholder',async()=>{
+test('Sale2026 preserves approved products, descriptions and prices',async()=>{
  const brief=await readFile('sites/november/BRIEF-SOURCE-20261023.txt','utf8');
  const start=brief.indexOf('Тариф 1 «Эксперт»: 3 на выбор ·');
  const programmes=brief.slice(brief.indexOf('\n',start)+1,brief.indexOf('Формат (серая строка)')).trim().split('\n').map(t=>t.trim()).filter(Boolean);
@@ -32,14 +32,15 @@ test('Sale2026 preserves approved products, descriptions, prices and the COM pla
  for(const stale of ['Развитие','Фанаты бренда','Где эксперт теряет деньги','Курс «Наставничество», 1 тариф'])assert.ok(!source.includes(stale));
 });
 
-test('Sale2026 RU connects the four supplied isolated forms; COM keeps them unconfigured',async()=>{
+test('Sale2026 RU and COM connect the same four supplied isolated forms and offer',async()=>{
  const registry=JSON.parse(await readFile('sites.json','utf8')),config=registry.sale2026.editions.ru;
  assert.deepEqual(Object.values(config.saleWidgets).map(w=>w.widgetId),['1674362','1674367','1674372','1674401']);
- assert.equal(registry.sale2026.editions.com.saleWidgets,undefined);
+ assert.deepEqual(registry.sale2026.editions.com,config);
  const ru=await readFile('dist/ru/sale2026/index.html','utf8'),com=await readFile('dist/com/sale2026/index.html','utf8');
- assert.match(ru,/https:\/\/agkedu.getcourse.ru\/oferta_sale2026/);assert.ok(!com.includes('1674362'));assert.ok(!com.includes('oferta_sale2026'));
+ assert.match(ru,/https:\/\/agkedu.getcourse.ru\/oferta_sale2026/);assert.match(com,/https:\/\/agkedu.getcourse.ru\/oferta_sale2026/);assert.ok(com.includes('1674362'));
  for(const [key,widget]of Object.entries(config.saleWidgets)){
   const form=await readFile(`dist/ru/sale2026/forms/${key}/index.html`,'utf8');
+  assert.equal(await readFile(`dist/com/sale2026/forms/${key}/index.html`,'utf8'),form);
   assert.ok(form.includes(`id="${widget.scriptId}"`));assert.ok(form.includes(`script?id=${widget.widgetId}`));
   assert.ok(form.indexOf('widget-context.js')<form.indexOf('pl/lite/widget/script'));
  }
