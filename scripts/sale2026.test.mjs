@@ -26,7 +26,7 @@ test('Sale2026 preserves approved products, descriptions and prices',async()=>{
  const start=brief.indexOf('Тариф 1 «Эксперт»: 3 на выбор ·');
  const programmes=brief.slice(brief.indexOf('\n',start)+1,brief.indexOf('Формат (серая строка)')).trim().split('\n').map(t=>t.trim()).filter(Boolean);
  assert.equal(programmes.length,36);for(const text of programmes)assert.ok(source.includes(text),text);
- for(const price of ['77 850','51 900','40 350','26 900','22 350','14 900'])assert.ok(source.includes(price));
+ for(const price of ['77 850','49 900','40 350','24 900','22 350','12 900'])assert.ok(source.includes(price));
  assert.match(source,/<h3>Мастер<\/h3>/);assert.match(source,/type="submit" disabled/);assert.match(source,/noindex,nofollow/);
  assert.equal((source.match(/type="checkbox"/g)||[]).length,12);assert.ok(!source.includes('class="preview-notice"'));
  for(const stale of ['Развитие','Фанаты бренда','Где эксперт теряет деньги','Курс «Наставничество», 1 тариф'])assert.ok(!source.includes(stale));
