@@ -1,6 +1,7 @@
 import { setupGalleries } from './galleries.mjs';
 import './consultation.mjs';
 import './program-dialogs.mjs';
+import {setupSaleWidgets} from './widgets.mjs';
 import { protectRussianText } from '../shared/russian-typography.js';
 setupGalleries();
 const calendar=document.querySelector('.calendar-layout');
@@ -23,7 +24,7 @@ function updateSelection() {
   }
   status.textContent = protectRussianText(`Выбрано ${set.size} из ${limit}${set.size === limit ? ' — подборка готова' : ''}`);
 }
-document.querySelectorAll('[data-plan]').forEach(trigger => trigger.addEventListener('click', event => {
+if(!setupSaleWidgets()) document.querySelectorAll('[data-plan]').forEach(trigger => trigger.addEventListener('click', event => {
   event.preventDefault();
   lastTrigger = trigger;
   currentPlan = Number(trigger.dataset.plan);

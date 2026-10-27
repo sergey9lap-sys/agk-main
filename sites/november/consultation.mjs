@@ -1,6 +1,7 @@
-// The client explicitly requested placeholders until a GetCourse widget is supplied.
+import {saleWidgets} from './widgets.mjs';
+// Keep the placeholder only in editions without a supplied official widget.
 const dialog=document.querySelector('#consultation-dialog');
-if(dialog){
+if(dialog&&!saleWidgets){
  let trigger=null;
  const previousOverflow=document.body.style.overflow;
  function close(){dialog.close();}

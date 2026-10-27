@@ -1,0 +1,13 @@
+/* Native dialog preserves focus/inert semantics; only the surface moves. */
+.sale-widget-dialog{width:min(760px,calc(100vw - 32px));max-height:calc(100dvh - 32px);padding:0;border:1px solid #c9ab78;border-radius:24px;background:#fff;color:#142024;box-shadow:0 28px 100px #0008;overflow:hidden}
+.sale-widget-dialog[open]{display:flex;flex-direction:column}
+.sale-widget-dialog::backdrop{background:#081014cc}
+.sale-widget-dialog header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-shrink:0;padding:22px 24px;background:#f5e7cf;border-bottom:1px solid #c9ab78}
+.sale-widget-dialog h2{margin:0;font:600 28px/1.2 Manrope,sans-serif;color:#142024}
+.sale-widget-close{display:grid;place-items:center;flex-shrink:0;width:44px;height:44px;padding:0;border:1px solid #8b806c;border-radius:50%;background:transparent;color:#142024;cursor:pointer}
+.sale-widget-close:focus-visible,.sale-widget-recovery a:focus-visible{outline:3px solid #8d3a28;outline-offset:3px}
+.sale-widget-scroll{overflow:auto;overscroll-behavior:contain;min-height:0;scrollbar-gutter:stable}
+.sale-widget-mount iframe{display:block;width:100%;border:0;background:#fff}
+.sale-widget-status,.sale-widget-recovery{padding:12px 24px;margin:0;font:400 16px/1.5 Manrope,sans-serif;color:#142024}
+.sale-widget-recovery a{color:#8d3a28;text-decoration:underline}
+@media(max-width:600px){.sale-widget-dialog{width:calc(100vw - 20px);max-height:calc(100dvh - 20px);border-radius:20px}.sale-widget-dialog header{padding:14px 16px;gap:12px}.sale-widget-dialog h2{font-size:22px}.sale-widget-status,.sale-widget-recovery{padding-inline:16px}}

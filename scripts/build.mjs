@@ -62,6 +62,8 @@ for (const [slug, site] of Object.entries(registry)) {
   const base = `/${slug}/`;
   const assetPaths = html => html.replace(/((?:src|href)=["'])\/(?!\/)/g, `$1${base}`);
   const editionHtml = html => (['mentor-consultation','archetype','november','sale2026'].includes(slug) ? withRussianTypography(html) : html)
+    .replaceAll('%%SALE_WIDGETS%%', JSON.stringify(config.saleWidgets ?? null).replaceAll('<','\\u003c'))
+    .replaceAll('%%SALE_OFFER_LINK%%', config.saleOffer ? `<a href="${config.saleOffer}" target="_blank" rel="noopener">Оферта</a>` : '')
     .replaceAll('%%WIDGET_ID%%', config.widgetId ?? '')
     .replaceAll('%%SCRIPT_ID%%', config.scriptId ?? '')
     .replaceAll('%%SUCCESS_PATH%%', config.successPath ?? '')
@@ -91,6 +93,13 @@ for (const [slug, site] of Object.entries(registry)) {
     landing = landing.replace(/<body[^>]*>/, match => match + '\n' + contract);
   }
   await writeFile(landingPath, landing);
+  if(config.saleWidgets){
+    for(const [key,widget] of Object.entries(config.saleWidgets)){
+      if(!/^(1|2|3|help)$/.test(key)||!/^\d+$/.test(widget.widgetId)||!/^[a-f0-9]{40}$/.test(widget.scriptId))throw Error('Invalid sale widget');
+      const formDir=resolve(output,slug,'forms',key);await mkdir(formDir,{recursive:true});
+      await writeFile(resolve(formDir,'index.html'),`<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>${widget.title}</title><style>html,body{margin:0;padding:0;background:#fff;color:#142024}#widget{width:100%;min-height:100px}iframe{display:block;max-width:100%;border:0}</style><script src="../../widget-context.js"></script></head><body><div id="widget"><script id="${widget.scriptId}" src="https://agkedu.getcourse.ru/pl/lite/widget/script?id=${widget.widgetId}"></script></div><script src="../../widget-embed.js"></script></body></html>`);
+    }
+  }
   if(site.source === 'november'){
     await writeFile(resolve(output,slug,'404.html'),errorPage(slug));
     await writeFile(resolve(output,slug,'.htaccess'),`ErrorDocument 404 /${slug}/404.html\n`);

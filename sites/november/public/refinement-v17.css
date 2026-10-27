@@ -1,4 +1,8 @@
 /* V17: dedicated vertical scene, larger cutout within the phone viewport. */
+/* One shared inset moves the hero, all sections and footer together. */
+@media(min-width:1200px){
+ :root{--gutter:clamp(96px,8.5vw,144px);--action-width:min(320px,calc((100vw - 2 * var(--gutter) - 48px) / 3 - 64px))}
+}
 @media(max-width:760px){
  .cover{background-image:linear-gradient(180deg,transparent 210px,#142024b8 340px,#14202470),url(assets/v17/hero-mobile-studio.webp);background-position:center top;background-size:cover}
  .cover-grid{column-gap:10px}

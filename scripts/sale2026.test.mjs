@@ -21,7 +21,7 @@ test('Sale2026 uses one shared source and builds both regional routes',async()=>
  }
  assert.match(errorPage(),/sale2026/);assert.match(errorPage('archetype'),/data-theme="archetype"/);
 });
-test('Sale2026 preserves approved products, descriptions, prices and disabled forms',async()=>{
+test('Sale2026 preserves approved products, descriptions, prices and the COM placeholder',async()=>{
  const brief=await readFile('sites/november/BRIEF-SOURCE-20261023.txt','utf8');
  const start=brief.indexOf('Тариф 1 «Эксперт»: 3 на выбор ·');
  const programmes=brief.slice(brief.indexOf('\n',start)+1,brief.indexOf('Формат (серая строка)')).trim().split('\n').map(t=>t.trim()).filter(Boolean);
@@ -30,4 +30,19 @@ test('Sale2026 preserves approved products, descriptions, prices and disabled fo
  assert.match(source,/<h3>Мастер<\/h3>/);assert.match(source,/type="submit" disabled/);assert.match(source,/noindex,nofollow/);
  assert.equal((source.match(/type="checkbox"/g)||[]).length,12);assert.ok(!source.includes('class="preview-notice"'));
  for(const stale of ['Развитие','Фанаты бренда','Где эксперт теряет деньги','Курс «Наставничество», 1 тариф'])assert.ok(!source.includes(stale));
+});
+
+test('Sale2026 RU connects the four supplied isolated forms; COM keeps them unconfigured',async()=>{
+ const registry=JSON.parse(await readFile('sites.json','utf8')),config=registry.sale2026.editions.ru;
+ assert.deepEqual(Object.values(config.saleWidgets).map(w=>w.widgetId),['1674362','1674367','1674372','1674401']);
+ assert.equal(registry.sale2026.editions.com.saleWidgets,undefined);
+ const ru=await readFile('dist/ru/sale2026/index.html','utf8'),com=await readFile('dist/com/sale2026/index.html','utf8');
+ assert.match(ru,/https:\/\/agkedu.getcourse.ru\/oferta_sale2026/);assert.ok(!com.includes('1674362'));assert.ok(!com.includes('oferta_sale2026'));
+ for(const [key,widget]of Object.entries(config.saleWidgets)){
+  const form=await readFile(`dist/ru/sale2026/forms/${key}/index.html`,'utf8');
+  assert.ok(form.includes(`id="${widget.scriptId}"`));assert.ok(form.includes(`script?id=${widget.widgetId}`));
+  assert.ok(form.indexOf('widget-context.js')<form.indexOf('pl/lite/widget/script'));
+ }
+ const js=await readFile('sites/november/widgets.mjs','utf8');assert.match(js,/url.search=location.search/);assert.match(js,/event.source!==frame\?\.contentWindow/);
+ assert.match(js,/aria-labelledby/);assert.match(js,/addEventListener\('cancel'/);assert.match(js,/trigger\?\.focus/);
 });
