@@ -1,23 +1,31 @@
 /* V17: dedicated vertical scene, larger cutout within the phone viewport. */
+/* Keep editorial letters, but use the same lining digits as the price font. */
+@font-face{font-family:SaleDisplay;src:url(fonts/manrope-latin.woff2) format('woff2');font-weight:200 800;font-display:swap;unicode-range:U+0030-0039}
+@font-face{font-family:Atelier;src:url(fonts/manrope-latin.woff2) format('woff2');font-weight:200 800;font-display:swap;unicode-range:U+0030-0039}
+:root{--heading-tracking:.01em}
+h1,h2,h3,.guide-caption,.cover h1 span{letter-spacing:var(--heading-tracking);font-variant-numeric:lining-nums}
+.section-top h2>span{font-weight:500}
+.extras-grid>article{min-width:0}
 /* One shared inset moves the hero, all sections and footer together. */
 @media(min-width:1200px){
  :root{--gutter:clamp(96px,8.5vw,144px);--action-width:min(320px,calc((100vw - 2 * var(--gutter) - 48px) / 3 - 64px))}
  .cover-copy{width:calc(51% + var(--gutter) - clamp(24px,2.5vw,56px));max-width:720px}
  .cover-details{max-width:none}
  .cover .deadline{width:100%;max-width:none}
- .cover-photo{right:4%}
+ .cover-photo{right:5.5%}
 }
 @media(max-width:760px){
  .cover{background-image:linear-gradient(180deg,transparent 210px,#142024b8 340px,#14202470),url(assets/v17/hero-mobile-studio.webp);background-position:center top;background-size:cover}
  .cover-grid{column-gap:10px}
- .cover h1{font-size:clamp(29px,8.8vw,44px);line-height:1.9}
+ .cover h1{font-size:clamp(28px,8.5vw,44px);line-height:1.9}
  .cover h1 span{font-size:46px;line-height:1.5;margin-top:0}
  .cover-photo{position:relative;left:-22px;width:calc(100% + 44px);height:auto;aspect-ratio:893/1088;margin-right:-22px;align-self:start}
  .cover-photo img{width:100%;height:100%;object-fit:contain;object-position:center top}
  .cover-details{margin-top:10px}
 }
 @media(max-width:360px){
- .cover h1{font-size:29px}
+ .extras-grid h3{font-size:30px}
+ .cover h1{font-size:28px}
  .cover h1 span{font-size:42px}
  .cover-photo{left:-22px;width:calc(100% + 38px);height:auto;margin-right:-16px}
 }
