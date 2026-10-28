@@ -14,7 +14,7 @@ test('Sale2026 uses one shared source and builds both regional routes',async()=>
  const registry=JSON.parse(await readFile('sites.json','utf8'));assert.equal(registry.sale2026.source,'november');
  for(const edition of ['com','ru']){
   const page=await readFile(`dist/${edition}/sale2026/index.html`,'utf8');
-  assert.match(page,/pinned-brief-20261026-v17/);assert.match(page,/sale2026\/refinement-v17.css/);assert.ok(!page.includes('%%'));
+  assert.match(page,/pinned-brief-20261026-v17/);assert.match(page,/sale2026\/campaign-[a-f0-9]+\.css/);assert.ok(!page.includes('%%'));
   assert.equal((page.match(/class="class-entry"/g)||[]).length,12);assert.equal((page.match(/class="guide-caption"/g)||[]).length,14);
   assert.match(await readFile(`dist/${edition}/sale2026/404.html`,'utf8'),/href="\/sale2026\/"/);
   assert.match(await readFile(`dist/${edition}/sale2026/.htaccess`,'utf8'),/ErrorDocument 404 \/sale2026\/404.html/);
@@ -29,6 +29,10 @@ test('Sale2026 preserves approved products, descriptions and prices',async()=>{
  for(const price of ['77 850','49 900','40 350','24 900','22 350','12 900'])assert.ok(source.includes(price));
  assert.match(source,/<h3>Мастер<\/h3>/);assert.match(source,/type="submit" disabled/);assert.match(source,/noindex,nofollow/);
  assert.equal((source.match(/type="checkbox"/g)||[]).length,12);assert.ok(!source.includes('class="preview-notice"'));
+ assert.match(source,/<h3>Эксперт<\/h3>[\s\S]*?<strong>NEW<\/strong> Тренинг по распродажам/);
+ assert.match(source,/Входит во все тарифы/);assert.match(source,/Входит в тарифы 2 и 3/);
+ assert.match(source,/NEW · Тренинг по распродажам, 3 ноября<\/th><td>да<\/td><td>да<\/td><td>да/);
+ assert.match(source,/NEW · Тренинг по новогодним продуктам, 10 ноября<\/th><td>да<\/td><td>да<\/td><td>—/);
  for(const stale of ['Развитие','Фанаты бренда','Где эксперт теряет деньги','Курс «Наставничество», 1 тариф'])assert.ok(!source.includes(stale));
 });
 

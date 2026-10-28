@@ -1,10 +1,12 @@
 """RU-only directory update, no main site files or other landing pages."""
 from pathlib import Path
 from zipfile import ZipFile,ZIP_DEFLATED
-import hashlib,json
+import hashlib,json,sys,re
 root=Path(__file__).resolve().parents[1]
 source=root/'dist/ru/sale2026'
-archive=root/'output/agk-sale2026-ru-widgets-20261027.zip'
+stamp=sys.argv[1] if len(sys.argv)>1 else '20261027'
+assert re.fullmatch(r'\d{8}',stamp)
+archive=root/f'output/agk-sale2026-ru-widgets-{stamp}.zip'
 with ZipFile(archive,'w',ZIP_DEFLATED) as bundle:
  for item in sorted(source.rglob('*')):
   if item.is_file():bundle.write(item,Path('sale2026')/item.relative_to(source))

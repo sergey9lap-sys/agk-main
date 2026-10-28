@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { withAnalytics } from './analytics.mjs';
 import { withLoader, errorPage, themedSites } from './delivery-surfaces.mjs';
 import { withRussianTypography } from '../sites/shared/russian-typography.js';
+import {optimizeCampaign} from './optimize-campaign.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const edition = process.argv[2];
@@ -93,6 +94,10 @@ for (const [slug, site] of Object.entries(registry)) {
     landing = landing.replace(/<body[^>]*>/, match => match + '\n' + contract);
   }
   await writeFile(landingPath, landing);
+  if(slug==='november'||site.source==='november'){
+    landing=await optimizeCampaign(landing,siteRoot,output,slug);
+    await writeFile(landingPath,landing);
+  }
   if(config.saleWidgets){
     for(const [key,widget] of Object.entries(config.saleWidgets)){
       if(!/^(1|2|3|help)$/.test(key)||!/^\d+$/.test(widget.widgetId)||!/^[a-f0-9]{40}$/.test(widget.scriptId))throw Error('Invalid sale widget');
