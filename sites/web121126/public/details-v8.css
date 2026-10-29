@@ -1,5 +1,6 @@
 /* V8: clear action colour, balanced audience rhythm, tighter editorial grid. */
 :root{--action:#ff624a;--shadow-card:0 10px 24px #050a1f3d;--shadow-action:0 10px 24px #03091c55;--navy-texture:url(media/navy-linen-v8.webp)}
+:root{--gold:#ffce58;--paper:#ffc247;--gold-surface:#ffc247;--line:#b68229}
 .wrap{max-width:1280px;width:calc(100% - 2*clamp(24px,7vw,112px))}
 body,.hero,.gift,.speaker{background-color:var(--navy);background-image:linear-gradient(#10162e65,#10162e65),var(--navy-texture);background-size:auto,512px 512px;background-repeat:no-repeat,repeat}
 .audience-list article,.audience-list article:first-child,.program-list li,.program-list li:first-child,.result,.hero-signup,.form-panel,.gift-preview,.thanks-panel{background-color:var(--card);background-image:linear-gradient(#26314db8,#26314db8),var(--navy-texture);background-size:auto,512px 512px;background-repeat:no-repeat,repeat;box-shadow:var(--shadow-card)}
