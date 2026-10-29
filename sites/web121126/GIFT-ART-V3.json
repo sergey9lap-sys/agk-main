@@ -1,0 +1,74 @@
+[
+  {
+    "name": "meeting",
+    "source": "source-art/gift-meeting-v3.png",
+    "sourceSha256": "db65f67dc546aebd7af93f76b6d56550448e2bee99551ae4c74fcf9e99039b90",
+    "output": "public/media/gift-meeting-320.webp",
+    "size": [
+      320,
+      427
+    ],
+    "bytes": 20750,
+    "generated": true
+  },
+  {
+    "name": "meeting",
+    "source": "source-art/gift-meeting-v3.png",
+    "sourceSha256": "db65f67dc546aebd7af93f76b6d56550448e2bee99551ae4c74fcf9e99039b90",
+    "output": "public/media/gift-meeting-640.webp",
+    "size": [
+      640,
+      853
+    ],
+    "bytes": 64738,
+    "generated": true
+  },
+  {
+    "name": "meeting",
+    "source": "source-art/gift-meeting-v3.png",
+    "sourceSha256": "db65f67dc546aebd7af93f76b6d56550448e2bee99551ae4c74fcf9e99039b90",
+    "output": "public/media/gift-meeting-960.webp",
+    "size": [
+      960,
+      1280
+    ],
+    "bytes": 156118,
+    "generated": true
+  },
+  {
+    "name": "audience",
+    "source": "source-art/gift-audience-v3.png",
+    "sourceSha256": "72119cdb37c019944aa86f430581137effa7078a30ae1b3d7a297fbf138be66d",
+    "output": "public/media/gift-audience-320.webp",
+    "size": [
+      320,
+      427
+    ],
+    "bytes": 18524,
+    "generated": true
+  },
+  {
+    "name": "audience",
+    "source": "source-art/gift-audience-v3.png",
+    "sourceSha256": "72119cdb37c019944aa86f430581137effa7078a30ae1b3d7a297fbf138be66d",
+    "output": "public/media/gift-audience-640.webp",
+    "size": [
+      640,
+      853
+    ],
+    "bytes": 51816,
+    "generated": true
+  },
+  {
+    "name": "audience",
+    "source": "source-art/gift-audience-v3.png",
+    "sourceSha256": "72119cdb37c019944aa86f430581137effa7078a30ae1b3d7a297fbf138be66d",
+    "output": "public/media/gift-audience-960.webp",
+    "size": [
+      960,
+      1280
+    ],
+    "bytes": 117972,
+    "generated": true
+  }
+]

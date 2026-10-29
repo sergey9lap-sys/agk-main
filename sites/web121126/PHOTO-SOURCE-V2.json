@@ -1,0 +1,13 @@
+{
+  "sourceName": "1J2A5829 (1).jpg",
+  "sourceUrl": "https://drive.google.com/file/d/1WRJYaK8bTQd62ad81eW7yDpXbfrYnliV/view",
+  "sourceSha256": "126c8c02215b27632d387faa73b61c91db45dd4f79c20c04d44ff8cb3c3197c0",
+  "sourceBytes": 3430659,
+  "output": "sites/web121126/public/media/author-v2.webp",
+  "outputSize": [
+    900,
+    1133
+  ],
+  "outputBytes": 63570,
+  "processing": "EXIF orientation, proportional resize, WebP93 only. No mirroring, retouching or generated face."
+}

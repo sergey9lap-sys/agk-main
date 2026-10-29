@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-29T13:49:21.262Z",
+  "title": "Design System: AGK — Strategy Folio",
+  "extensions": {
+    "colorMeta": {
+      "action": {
+        "role": "primary",
+        "displayName": "Coral Red Action",
+        "canonical": "#ff624a"
+      },
+      "navy": {
+        "role": "secondary",
+        "displayName": "Navy",
+        "canonical": "#10162e"
+      },
+      "paper": {
+        "role": "secondary",
+        "displayName": "Paper",
+        "canonical": "#ebc34f"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#172039"
+      },
+      "gold": {
+        "role": "secondary",
+        "displayName": "Gold",
+        "canonical": "#f2c94b"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "canonical": "#a8862e"
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Cream",
+        "canonical": "#f5e9d1"
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Card",
+        "canonical": "#1b233b"
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#fff"
+      },
+      "warm-region": {
+        "role": "secondary",
+        "displayName": "Warm Region",
+        "canonical": "#ebc34f"
+      },
+      "card-line": {
+        "role": "neutral",
+        "displayName": "Card Line",
+        "canonical": "#8d794f"
+      },
+      "form-line": {
+        "role": "neutral",
+        "displayName": "Form Line",
+        "canonical": "#9d865d"
+      },
+      "input-surface": {
+        "role": "neutral",
+        "displayName": "Input Surface",
+        "canonical": "#11192c"
+      },
+      "field-line": {
+        "role": "neutral",
+        "displayName": "Field Line",
+        "canonical": "#9d927b"
+      },
+      "placeholder": {
+        "role": "neutral",
+        "displayName": "Placeholder",
+        "canonical": "#c6baa4"
+      },
+      "form-muted": {
+        "role": "neutral",
+        "displayName": "Form Muted",
+        "canonical": "#ded2ba"
+      },
+      "program-muted": {
+        "role": "neutral",
+        "displayName": "Program Muted",
+        "canonical": "#394056"
+      },
+      "preview-slate": {
+        "role": "neutral",
+        "displayName": "Preview Slate",
+        "canonical": "#252c40"
+      },
+      "preview-line": {
+        "role": "neutral",
+        "displayName": "Preview Line",
+        "canonical": "#aa8b4f"
+      },
+      "hero-end": {
+        "role": "secondary",
+        "displayName": "Hero End",
+        "canonical": "#252c3d"
+      },
+      "gold-surface": {
+        "role": "secondary",
+        "displayName": "Bright Gold Surface",
+        "canonical": "#ebc34f"
+      },
+      "texture-overlay": {
+        "role": "neutral",
+        "displayName": "texture-overlay",
+        "canonical": "#10162e65"
+      },
+      "card-overlay": {
+        "role": "neutral",
+        "displayName": "card-overlay",
+        "canonical": "#26314db8"
+      },
+      "quote-surface": {
+        "role": "neutral",
+        "displayName": "quote-surface",
+        "canonical": "#252c4066"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Hero",
+        "purpose": "Компактный hero: 54px, 46px при невысоком desktop, мобильные 34–48px."
+      },
+      "headline": {
+        "displayName": "Section heading",
+        "purpose": "Секции 44px; compact desktop 38px, mobile 36/33px."
+      },
+      "title": {
+        "displayName": "Audience title",
+        "purpose": "Заголовок карточки аудитории 25px, compact desktop и узкий mobile 23px."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Основной текст, базовая длина строки до 70ch."
+      },
+      "action": {
+        "displayName": "Action",
+        "purpose": "Подписи основных кнопок."
+      },
+      "continuation": {
+        "displayName": "Offer continuation",
+        "purpose": "Продолжение оффера внутри h1, выполненное Manrope."
+      },
+      "final-heading": {
+        "displayName": "Final registration heading",
+        "purpose": "Единая Manrope-гарнитура финала, 650/30px/1.35; 28px short desktop, 27px mobile, 25px narrow."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card",
+        "value": "0 10px 24px #050a1f3d",
+        "purpose": "Фактурные карточки, формы, результат, превью, фото, логотипы и цитата."
+      },
+      {
+        "name": "action",
+        "value": "0 10px 24px #03091c55",
+        "purpose": "Общий CTA."
+      },
+      {
+        "name": "action-hover",
+        "value": "0 13px 28px #03091c66",
+        "purpose": "Hover доступного CTA."
+      },
+      {
+        "name": "role",
+        "value": "0 4px 10px #050a1f26",
+        "purpose": "Ролевые плитки и номера."
+      },
+      {
+        "name": "gift-cutout",
+        "value": "drop-shadow(0 18px 18px #02061780)",
+        "purpose": "Прозрачная винная книга V8 без внешней рамки."
+      }
+    ],
+    "motion": [
+      {
+        "name": "arrow-transition",
+        "value": "transform 200ms cubic-bezier(.23,1,.32,1)",
+        "purpose": "Сдвиг SVG-стрелки кнопки на точном указателе; transition отключён при reduced motion."
+      },
+      {
+        "name": "anchor-scroll",
+        "value": "smooth",
+        "purpose": "Переход к регистрации; auto при reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "1100px"
+      },
+      {
+        "name": "hero-thanks-stack",
+        "value": "900px"
+      },
+      {
+        "name": "single-column",
+        "value": "760px"
+      },
+      {
+        "name": "narrow-mobile",
+        "value": "360px"
+      },
+      {
+        "name": "compact-height-desktop",
+        "value": "(min-width:1000px) and (max-height:820px)"
+      },
+      {
+        "name": "tablet",
+        "value": "999px"
+      }
+    ],
+    "materials": [
+      {
+        "name": "navy-linen",
+        "url": "media/navy-linen-v8.webp",
+        "size": "512px 512px",
+        "bytes": 38252,
+        "purpose": "Общий повторяющийся материал navy-секций и карточек, с разными overlays; происхождение ASSETS-V8.json."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Общее основное действие; disabled не имитирует регистрацию.",
+      "html": "<a class=\"ds-button\" href=\"#registration\">Зарегистрироваться<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></a>",
+      "css": ".ds-button{position:relative;display:flex;align-items:center;justify-content:center;width:var(--action-w,320px);height:var(--action-h,64px);min-height:var(--action-h,64px);max-width:100%;padding:12px 48px 12px 24px;border:0;border-radius:var(--radius,24px);background:var(--action,#ff624a);color:var(--navy,#10162e);font:800 16px/1.35 WebText,Arial,sans-serif;text-align:center;text-decoration:none;cursor:pointer;box-shadow:0 10px 24px #03091c55}.ds-button svg{position:absolute;right:18px;transition:transform 200ms cubic-bezier(.23,1,.32,1)}.ds-button:disabled{cursor:default;opacity:1}.ds-button:focus-visible{outline:3px solid var(--cream,#f5e9d1);outline-offset:4px}@media(hover:hover) and (pointer:fine){.ds-button:not(:disabled):hover svg{transform:translate(3px,-3px)}.ds-button:not(:disabled):hover{outline:none}}@media(max-width:1100px){.ds-button{width:var(--action-w,260px)}}@media(max-width:760px){.ds-button{width:var(--action-w,calc(100vw - 2 * var(--gutter,24px) - 48px))}}@media(max-width:360px){.ds-button{font-size:15px;width:var(--action-w,calc(100vw - 2 * var(--gutter,18px) - 48px))}}@media(prefers-reduced-motion:reduce){.ds-button svg{transition:none}} .ds-button:focus-visible{outline:3px solid var(--cream,#f5e9d1);outline-offset:4px}.paper .ds-button:focus-visible{outline-color:var(--navy,#10162e)}"
+    },
+    {
+      "name": "Registration field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Поле из отключённой формы ожидания новых GetCourse ID.",
+      "html": "<label class=\"ds-field\">E-mail<input type=\"email\" autocomplete=\"email\" placeholder=\"name@example.ru\" disabled></label>",
+      "css": ".ds-field{display:grid;gap:6px;font:400 14px/1.65 WebText,Arial,sans-serif;color:var(--cream,#f5e9d1)}.ds-field input{box-sizing:border-box;width:100%;height:48px;min-width:0;padding:12px 14px;border:1px solid #9d927b;border-radius:var(--radius,24px);background:#11192c;font:400 16px/1.65 WebText,Arial,sans-serif;color:var(--cream,#f5e9d1);caret-color:var(--action,#1bd8c0)}.ds-field input:focus-visible{outline:3px solid var(--action,#1bd8c0);outline-offset:5px} .ds-field input{color:var(--cream,#f5e9d1)}.ds-field input::placeholder{color:#c6baa4;opacity:1}"
+    },
+    {
+      "name": "Header registration link",
+      "kind": "nav",
+      "description": "Компактная текстовая навигация к финальной регистрации.",
+      "html": "<a class=\"ds-header-register\" href=\"#registration\">Регистрация<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></a>",
+      "css": ".ds-header-register{display:flex;align-items:center;gap:20px;color:var(--gold,#f2c94b);font:400 15px/1.65 WebText,Arial,sans-serif;text-decoration:none}.ds-header-register svg{width:18px}.ds-header-register:focus-visible{outline:3px solid var(--gold,#f2c94b);outline-offset:5px}@media(hover:hover) and (pointer:fine){.ds-header-register:hover svg{transform:translate(3px,-3px)}}@media(max-width:760px){.ds-header-register{font-size:12px;gap:8px}.ds-header-register svg{width:16px}}"
+    },
+    {
+      "name": "Final registration panel",
+      "kind": "card",
+      "description": "Округлая тёмная панель финальной отключённой регистрации V3.",
+      "html": "<section class=\"ds-form-panel\"><h3>Регистрация на вебинар</h3><p role=\"status\">Запись пока не открыта. Форма регистрации скоро появится здесь.</p></section>",
+      "css": ".ds-form-panel{border:1px solid #9d865d;padding:32px;border-radius:24px;background:#1b233b;color:var(--cream,#f5e9d1)}.ds-form-panel h3{margin:0 0 24px;font:650 24px/1.35 WebText,sans-serif}.ds-form-panel p{margin:0 0 22px;font:400 15px/1.65 WebText,Arial,sans-serif;color:#ded2ba}@media(max-width:1100px){.ds-form-panel{padding:26px 20px}}@media(max-width:760px){.ds-form-panel{padding:28px 20px}}@media(max-width:360px){.ds-form-panel{padding-inline:16px}} .ds-form-panel{background-color:var(--card,#1b233b);background-image:linear-gradient(#26314db8,#26314db8),url(media/navy-linen-v8.webp);background-size:auto,512px 512px;background-repeat:no-repeat,repeat;box-shadow:0 10px 24px #050a1f3d}"
+    },
+    {
+      "name": "Program card",
+      "kind": "custom",
+      "description": "Одна из пяти округлых карточек единого вертикального пути программы V3.",
+      "html": "<div class=\"ds-program-row\"><span>01</span><p>почему стратегическая сессия сейчас один из самых востребованных и дорогих форматов и сколько она стоит в рынке;</p></div>",
+      "css": ".ds-program-row{display:grid;grid-template-columns:38px minmax(0,1fr);gap:18px;padding:12px 20px;border:1px solid #8d794f;border-radius:var(--radius,24px);background:var(--card,#1b233b);color:var(--cream,#f5e9d1);max-width:1100px}.ds-program-row span{display:grid;place-content:center;align-self:start;width:36px;height:36px;border-radius:var(--radius,24px);background:var(--gold,#f2c94b);color:var(--ink,#172039);font:600 16px/1.6 WebText,Arial,sans-serif}.ds-program-row p{margin:0;padding-top:3px;max-width:75ch;font:400 18px/1.5 WebText,Arial,sans-serif}@media(min-width:1000px) and (max-height:820px){.ds-program-row{padding:10px 18px}.ds-program-row p{font-size:17px;line-height:1.45}}@media(max-width:760px){.ds-program-row{padding:18px 16px;grid-template-columns:32px minmax(0,1fr);gap:12px}.ds-program-row span{width:32px;height:32px;font-size:15px}.ds-program-row p{font-size:16px;line-height:1.6;max-width:none;padding-top:1px}} .ds-program-row{background-color:var(--card,#1b233b);background-image:linear-gradient(#26314db8,#26314db8),url(media/navy-linen-v8.webp);background-size:auto,512px 512px;background-repeat:no-repeat,repeat;box-shadow:0 10px 24px #050a1f3d}"
+    },
+    {
+      "name": "Audience role cards",
+      "kind": "custom",
+      "description": "Три компактные тёмные карточки на ярком золоте, ролевые плитки 52px с SVG 48px.",
+      "html": "<section class=\"ds-audience\"><header class=\"ds-audience-heading\"><h2>Кому будет полезно</h2><div class=\"ds-decision\" aria-hidden=\"true\"><span>Разговор</span><svg viewBox=\"0 0 180 64\" fill=\"none\"><path d=\"M8 32h160m-26-20 26 20-26 20\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg><span>Решение</span></div></header><div class=\"ds-audience-list\"><article><div class=\"ds-role-avatar\" aria-hidden=\"true\"><svg viewBox=\"0 0 64 64\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><circle cx=\"27\" cy=\"24\" r=\"9\"/><path d=\"M11 51c0-10 6-17 16-17s16 7 16 17Z\"/><path d=\"m42 16 2 4 4 2-4 2-2 4-2-4-4-2 4-2Z\"/></svg></div><h3>Экспертам, которые проводят консультации:</h3><p>коучам, психологам, менторам, тренерам, маркетологам и продюсерам, которые хотят поднять чек и перестать зависеть от количества часов</p></article><article><div class=\"ds-role-avatar\" aria-hidden=\"true\"><svg viewBox=\"0 0 64 64\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><circle cx=\"27\" cy=\"24\" r=\"9\"/><path d=\"M11 51c0-10 6-17 16-17s16 7 16 17Z\"/><path d=\"M43 19h11v18H43M46 24h5M46 29h5\"/></svg></div><h3>Консультантам, которые выходят на компании:</h3><p>стратегическая сессия понятна корпоративному рынку и открывает дверь в долгие контракты</p></article><article><div class=\"ds-role-avatar\" aria-hidden=\"true\"><svg viewBox=\"0 0 64 64\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><circle cx=\"27\" cy=\"24\" r=\"9\"/><path d=\"M11 51c0-10 6-17 16-17s16 7 16 17Z\"/><circle cx=\"49\" cy=\"26\" r=\"6\"/><path d=\"M42 47c0-6 2-10 7-10s7 4 7 10\"/></svg></div><h3>Собственникам и руководителям,</h3><p>которые хотят, чтобы планёрки заканчивались решениями, а команда шла по плану сама</p></article></div></section>",
+      "css": ".ds-audience{padding-top:0;padding-bottom:100px;background:#ebc34f;color:var(--ink,#172039)}.ds-audience-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:100px;margin:0}.ds-audience h2{color:var(--ink,#172039);margin:0;max-width:none;white-space:nowrap;font:500 40px/1.14 WebDisplay,Georgia,serif;letter-spacing:.005em}.ds-decision{display:flex;align-items:center;justify-content:center;gap:18px;white-space:nowrap;color:var(--ink,#172039);font:500 24px/1.5 WebDisplay,Georgia,serif}.ds-decision svg{width:84px;height:30px;flex-shrink:0}.ds-audience-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.ds-audience-list article{min-width:0}.ds-audience h3{margin:0;font:500 25px/1.3 WebDisplay,Georgia,serif;letter-spacing:.005em}.ds-audience p{margin:0;font:400 16px/1.55 WebText,Arial,sans-serif}@media(max-width:760px){.ds-audience{padding-bottom:112px}.ds-audience-heading{display:block;margin-bottom:32px}.ds-audience h2{max-width:none;font-size:36px}.ds-decision{justify-content:flex-start;margin-top:24px;gap:14px;font-size:22px}.ds-decision svg{width:58px;height:26px}}@media(max-width:360px){.ds-decision{font-size:21px;gap:12px}.ds-decision svg{width:46px}} .ds-audience-list{grid-template-rows:auto auto auto;gap:16px 24px}.ds-audience-list article,.ds-audience-list article:first-child{display:grid;grid-row:span 3;grid-template-rows:subgrid;gap:16px;padding:24px;border:1px solid #8d794f;border-radius:var(--radius,24px);background:var(--card,#1b233b);color:var(--cream,#f5e9d1)}.ds-role-avatar{display:grid;place-content:center;width:52px;height:52px;border-radius:var(--radius,24px);background:var(--gold,#f2c94b);color:#172039}.ds-role-avatar svg{width:48px;height:48px}.ds-audience h3{font-size:25px;line-height:1.3}@media(min-width:1000px) and (max-height:820px){.ds-audience{padding-bottom:84px}.ds-audience-heading{min-height:84px}.ds-audience h2{font-size:36px}.ds-audience-list article,.ds-audience-list article:first-child{padding:20px;gap:14px}.ds-audience h3{font-size:23px}}@media(max-width:760px){.ds-audience-heading{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:12px;min-height:112px;margin:0}.ds-audience h2{font-size:clamp(25px,7.8vw,31px);max-width:none}.ds-decision{justify-content:flex-start;margin:0;font-size:20px}.ds-audience-list{display:grid;grid-template-columns:1fr;grid-template-rows:none;gap:16px}.ds-audience-list article,.ds-audience-list article:first-child{grid-template-rows:auto;grid-row:auto;padding:22px;gap:16px}.ds-audience h3{font-size:25px;margin:0}}@media(max-width:360px){.ds-audience{padding-bottom:104px}.ds-audience-heading{min-height:104px}.ds-audience h2{font-size:25px}.ds-audience-list article,.ds-audience-list article:first-child{padding:20px}.ds-audience h3{font-size:23px}} .ds-audience-list article,.ds-audience-list article:first-child{background-color:var(--card,#1b233b);background-image:linear-gradient(#26314db8,#26314db8),url(media/navy-linen-v8.webp);background-size:auto,512px 512px;background-repeat:no-repeat,repeat;box-shadow:0 10px 24px #050a1f3d}"
+    },
+    {
+      "name": "Speaker credentials",
+      "kind": "custom",
+      "description": "Исходные факты спикера с настоящими круглыми золотыми маркерами.",
+      "html": "<ul class=\"ds-credentials\"><li>Вице-президент Ассоциации спикеров СНГ</li><li>С 2009 года в бизнес-обучении, более 40 000 учеников из 36 стран</li><li>Проводит стратегические сессии для собственников, экспертов и корпораций</li><li>Выпускница Сколково, резидент Клуба Первых</li><li>Автор курса «Методология» и основатель методического агентства</li></ul>",
+      "css": ".ds-credentials{list-style:none;padding:0;margin:18px 0;display:grid;gap:10px;color:var(--cream,#f5e9d1)}.ds-credentials li{position:relative;border:0;padding:0 0 0 20px;font:400 16px/1.55 WebText,Arial,sans-serif}.ds-credentials li:before{content:\"\";position:absolute;left:0;top:.7em;width:6px;height:6px;background:var(--gold,#f2c94b);border-radius:50%}@media(min-width:1000px) and (max-height:820px){.ds-credentials{gap:8px;margin-block:14px}.ds-credentials li{font-size:15px;line-height:1.5}}@media(max-width:760px){.ds-credentials li{font-size:16px;line-height:1.6}}"
+    },
+    {
+      "name": "Vertical hero registration",
+      "kind": "custom",
+      "description": "Тёмная вертикальная форма справа от оффера; поля и submit отключены до новых widget ID.",
+      "html": "<section class=\"ds-opening\"><div><h2>Зарегистрируйтесь<br>и получите подарок</h2></div><form><p class=\"ds-opening-status\" role=\"status\">Запись пока не открыта. Форма регистрации скоро появится здесь.</p><fieldset disabled><label>Имя<input autocomplete=\"given-name\" placeholder=\"Ваше имя\"></label><label>E-mail<input type=\"email\" autocomplete=\"email\" placeholder=\"name@example.ru\"></label><label>Телефон<input type=\"tel\" autocomplete=\"tel\" placeholder=\"+7\"></label><button type=\"submit\" disabled>Зарегистрироваться<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></button></fieldset><p class=\"ds-opening-privacy\">Нажимая на кнопку, вы соглашаетесь с <a href=\"https://agkedu.getcourse.ru/personaldata\" target=\"_blank\" rel=\"noopener\">политикой конфиденциальности</a>.</p></form></section>",
+      "css": ".ds-opening{max-width:500px;padding:26px;border:1px solid #9d865d;border-radius:var(--radius,24px);background:#1b233b;color:var(--cream,#f5e9d1);box-shadow:0 20px 44px #02061738;font:400 18px/1.65 WebText,Arial,sans-serif}.ds-opening h2{color:var(--cream,#f5e9d1);margin:0 0 18px;font:500 29px/1.25 WebDisplay,Georgia,serif;letter-spacing:.005em}.ds-opening-status{margin:0 0 16px;font-size:14px;color:#ded2ba}.ds-opening fieldset{padding:0;margin:0;border:0;min-width:0;display:grid;grid-template-columns:1fr;gap:12px}.ds-opening label{display:grid;gap:6px;font-size:14px}.ds-opening input{box-sizing:border-box;width:100%;height:48px;min-width:0;padding:12px 14px;border:1px solid #9d927b;border-radius:var(--radius,24px);background:#11192c;color:var(--cream,#f5e9d1);font:400 16px/1.65 WebText,Arial,sans-serif}.ds-opening button{position:relative;grid-column:1/-1;justify-self:center;display:flex;align-items:center;justify-content:center;width:var(--action-w,320px);height:64px;max-width:100%;margin:6px auto 0;padding:12px 48px 12px 24px;border:0;border-radius:24px;background:var(--action,#ff624a);color:var(--navy,#10162e);font:800 16px/1.35 WebText,Arial,sans-serif;opacity:1;cursor:default;box-shadow:0 10px 24px #03091c55}.ds-opening button svg{position:absolute;right:18px}.ds-opening-privacy{font-size:12px;margin:14px 0 0;color:#ded2ba}.ds-opening a{color:inherit;text-underline-offset:4px}.ds-opening :focus-visible{outline:3px solid var(--cream,#f5e9d1);outline-offset:4px}@media(max-width:1100px){.ds-opening button{width:var(--action-w,260px)}}@media(min-width:1000px) and (max-height:820px){.ds-opening{padding:22px}.ds-opening h2{font-size:27px}}@media(max-width:900px){.ds-opening{max-width:560px}}@media(max-width:760px){.ds-opening{padding:26px 20px}.ds-opening h2{font-size:28px}.ds-opening button{width:var(--action-w,calc(100vw - 2 * var(--gutter,24px) - 48px))}}@media(max-width:360px){.ds-opening{padding-inline:16px}.ds-opening h2{font-size:26px}.ds-opening button{font-size:15px}} .ds-opening{background-color:var(--card,#1b233b);background-image:linear-gradient(#26314db8,#26314db8),url(media/navy-linen-v8.webp);background-size:auto,512px 512px;background-repeat:no-repeat,repeat;box-shadow:0 10px 24px #050a1f3d}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Strategy Folio",
+    "overview": "Компактный деловой редакционный лист Академии: фактурный navy, яркое золото секций, коралловый акцент действия, винные книги с прозрачностью и настоящий портрет Александры Горевой-Куртышевой. Уточнение кнопок V10 заменяет отклонённый лайм V9 на яркий кораллово-красный, убирает границу и hover-контур; остальная система V8 сохранена. V8 сохраняет полный исходный текст, шесть актов и компактность V7, уточняя материалы, сетку, ритм аудитории и единую гарнитуру финальной регистрации. Золотые книги V7 — исторический материал, заменённый винными изображениями V8.\n\nИсточники: ../../scripts/web121126-content.mjs и каскад public/webinar.css → public/refinement-v2.css → public/refinement-v3.css → public/palette-v6.css → public/compact-v7.css → public/details-v8.css. Последний слой и прямые указания пользователя имеют приоритет. V4/V5 остаются историческими исходниками и не подключены. Благодарности подключают webinar.css → refinement-v3.css → palette-v6.css → compact-v7.css → details-v8.css. /web121126/ и /web121126_r/ используют общую композицию с исходными содержательными различиями. Контекст: PRODUCT.md, REVISION-V8.md, ASSETS-V8.json и IMAGE-PROMPTS-V8.md. Материалы V7 сохранены как история. Шрифты локальные, HTML статичен.",
+    "keyCharacteristics": [
+      "Шесть актов: navy / яркое золото / navy / яркое золото / navy / яркое золото.",
+      "Playfair Display формирует заголовки; Manrope — продолжение оффера, текст и действия.",
+      "Одна бирюзовая роль основного действия и радиус 24px объединяют кнопки и карточки.",
+      "Hero: текст и подарок слева, вертикальная отключённая форма справа, без портрета.",
+      "Винная книга — прозрачный предметный cutout без карточной рамки; настоящие фото и логотипы сохранены."
+    ],
+    "rules": [
+      {
+        "name": "The One Action Color Rule",
+        "body": "V10: единый коралловый CTA #ff624a, navy-текст, border0; hover только тень и стрелка, без outline. Keyboard focus3px offset4 navy на золоте/cream на тёмном. Disabled opacity1 сохраняет disabled-семантику и честный статус.",
+        "section": "colors"
+      },
+      {
+        "name": "The Visible Copy Rule",
+        "body": "Названия подарков и все смысловые тексты остаются живым HTML рядом с растровой иллюстрацией; изображение не заменяет исходный текст.",
+        "section": "typography"
+      },
+      {
+        "name": "The Shared Composition Rule",
+        "body": "Аудиторные варианты используют общую композицию и стили; содержательные различия берутся из конфигурации, а не создают второй дизайн.",
+        "section": "layout"
+      },
+      {
+        "name": "The Shared Radius Rule",
+        "body": "Карточки, действия и контейнеры используют24px; сама прозрачная винная книга — radius0, transparent и настоящий alpha без карточной рамки.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Deep Business Contrast Rule",
+        "body": "V7 использует единое яркое золото #ebc34f для аудитории, программы и финала, navy для результата; акцентное золото #f2c94b. Бежевой программы и голубых регионов нет.",
+        "section": "colors"
+      },
+      {
+        "name": "The Full Copy Compactness Rule",
+        "body": "Компактность достигается отступами, размерами карточек и иллюстраций. При ширине >=1000px и высоте <=820px включается отдельное компактное правило; мобильная высота естественная, текст не скрывается.",
+        "section": "layout"
+      },
+      {
+        "name": "The Balanced Audience Rule",
+        "body": "Область заголовка до карточек равна нижнему отступу:100px desktop,84px short desktop,112/104px mobile. Финальная регистрация использует только WebText/Manrope.",
+        "section": "layout"
+      }
+    ],
+    "dos": [
+      "**Do** сохранять все исходные тексты, шесть актов, оригинальные логотипы и настоящий портрет.",
+      "**Do** использовать единый яркий gold-surface для аудитории, программы и финала; navy для результата.",
+      "**Do** сохранять компактные desktop-отступы и отдельное правило высоты <=820px при ширине >=1000px.",
+      "**Do** оставлять мобильную высоту естественной и весь текст видимым.",
+      "**Do** применять 24px к карточкам и действиям, но 0 к прозрачной предметной книге.",
+      "**Do** повторять соответствующую винную alpha-книгу во всех четырёх местах, хранить исходники и provenance.",
+      "**Do** сохранять коралл только для действий, общую фактуру, равные аудитории интервалы и единую гарнитуру финала.",
+      "**Do** сохранять общий дизайн двух вариантов, исходные messenger URL, фокус и reduced-motion.",
+      "**Do** оставлять обе регистрации отключёнными до новых widget ID."
+    ],
+    "donts": [
+      "**Don't** сокращать текст или скрывать его ради высоты секции.",
+      "**Don't** возвращать бежевую программу, кобальтовые регионы V5 или большие белые области V4.",
+      "**Don't** рисовать белую подложку или скруглённую карточную рамку самой книге.",
+      "**Don't** заменять лицо, логотипы или клиентские факты сгенерированными аналогами.",
+      "**Don't** возвращать портрет в hero, арочные фото или двухколоночную программу.",
+      "**Don't** имитировать отправку формы или подтверждение регистрации."
+    ]
+  }
+}

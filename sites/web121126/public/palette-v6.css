@@ -1,0 +1,31 @@
+/* V6: navy + warm gold, without cobalt or light-blue interface regions. */
+:root{--navy:#10162e;--paper:#e4d1a8;--ink:#172039;--gold:#e2b75d;--line:#a88c58;--action:#bd3c20;--cream:#f5e9d1;--card:#1b233b}
+body{background:var(--navy);color:var(--cream)}
+.hero{background:linear-gradient(115deg,#10162e 52%,#252c3d 100%);color:var(--cream)}
+.header{border-bottom-color:#e2b75d66}.header-register{color:var(--gold)}
+.hero h1{color:var(--cream)}.hero h1>span{color:var(--gold)}
+.hero .event-format{color:#ded2ba}.hero-description{color:var(--cream)}
+.event-date,.hero-rule{color:var(--gold)}.hero-rule{border-top-color:#b18f4c}
+.hero-signup,.form-panel{background:var(--card);border-color:#9d865d;color:var(--cream)}
+.hero-signup{box-shadow:0 20px 44px #02061738}.hero-signup h2,.form-panel h3{color:var(--cream)}
+.form-panel input{background:#11192c;border-color:#9d927b;color:var(--cream)}.form-panel input::placeholder{color:#c6baa4;opacity:1}
+.form-status,.form-privacy{color:#ded2ba}
+.gift-preview,.gift-preview--final{background:#252c40;border-color:#aa8b4f}
+.gift-preview .gift-line,.gift-preview--final .gift-line{color:var(--cream)}
+.audience{background:#c9a566;color:var(--ink)}.audience-heading h2,.decision-mark{color:var(--ink)}
+.audience-list article,.audience-list article:first-child{background:var(--card);border-color:#8d794f;color:var(--cream)}
+.role-avatar,.topic-number{background:var(--gold);color:var(--ink)}
+.gift{background:var(--navy);color:var(--cream)}.gift h2{color:var(--gold)}
+.program{background:var(--paper);color:var(--ink)}.program .section-heading p{color:#394056}
+.program-list li,.program-list li:first-child{background:var(--card);border-color:#8d794f;color:var(--cream)}
+.result{background:#c9a566;color:var(--ink)}.result h3,.result p{color:var(--ink)}
+.live-gift svg{color:var(--ink)}
+.speaker{background:var(--navy);color:var(--cream)}.speaker h2{color:var(--gold)}
+.credentials li:before{background:var(--gold)}.speaker cite{color:#ded2ba}.logos{background:#fff}
+.final{background:#c9a566;color:var(--ink)}.final h2,.final .event-format,.final .event-date{color:var(--ink)}
+.final .gift-line svg{color:var(--gold)}.final .form-panel{color:var(--cream)}
+.footer{color:#ded2ba}
+.thanks-header{border-bottom-color:#e2b75d66}.thanks-panel{background:var(--card);color:var(--cream)}
+.thanks-panel h1{color:var(--gold)}.thanks-portrait figcaption{color:#ded2ba}
+html{scrollbar-color:var(--gold) var(--navy)}::selection{background:var(--gold);color:var(--ink)}
+.paper :focus-visible{outline-color:var(--ink)}.form-panel :focus-visible{outline-color:var(--gold)}

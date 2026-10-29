@@ -1,0 +1,91 @@
+[
+  {
+    "name": "meeting",
+    "source": "source-art/gift-meeting-v8.png",
+    "sourceSha256": "a42962362cd9432f1bc3a1d4dfd9cc0b3304cd3c0042f4f678bd6799db77a207",
+    "output": "public/media/gift-meeting-wine-320.webp",
+    "size": [
+      320,
+      427
+    ],
+    "bytes": 34906,
+    "alpha": true,
+    "generator": "built-in ImageGen"
+  },
+  {
+    "name": "meeting",
+    "source": "source-art/gift-meeting-v8.png",
+    "sourceSha256": "a42962362cd9432f1bc3a1d4dfd9cc0b3304cd3c0042f4f678bd6799db77a207",
+    "output": "public/media/gift-meeting-wine-640.webp",
+    "size": [
+      640,
+      853
+    ],
+    "bytes": 98648,
+    "alpha": true,
+    "generator": "built-in ImageGen"
+  },
+  {
+    "name": "meeting",
+    "source": "source-art/gift-meeting-v8.png",
+    "sourceSha256": "a42962362cd9432f1bc3a1d4dfd9cc0b3304cd3c0042f4f678bd6799db77a207",
+    "output": "public/media/gift-meeting-wine-960.webp",
+    "size": [
+      960,
+      1280
+    ],
+    "bytes": 243148,
+    "alpha": true,
+    "generator": "built-in ImageGen"
+  },
+  {
+    "name": "audience",
+    "source": "source-art/gift-audience-v8.png",
+    "sourceSha256": "5f6d803d58f2d343d8113cedc70c8c6f309094af6be65a07dd640ef458bda87e",
+    "output": "public/media/gift-audience-wine-320.webp",
+    "size": [
+      320,
+      427
+    ],
+    "bytes": 28150,
+    "alpha": true,
+    "generator": "built-in ImageGen"
+  },
+  {
+    "name": "audience",
+    "source": "source-art/gift-audience-v8.png",
+    "sourceSha256": "5f6d803d58f2d343d8113cedc70c8c6f309094af6be65a07dd640ef458bda87e",
+    "output": "public/media/gift-audience-wine-640.webp",
+    "size": [
+      640,
+      853
+    ],
+    "bytes": 85586,
+    "alpha": true,
+    "generator": "built-in ImageGen"
+  },
+  {
+    "name": "audience",
+    "source": "source-art/gift-audience-v8.png",
+    "sourceSha256": "5f6d803d58f2d343d8113cedc70c8c6f309094af6be65a07dd640ef458bda87e",
+    "output": "public/media/gift-audience-wine-960.webp",
+    "size": [
+      960,
+      1280
+    ],
+    "bytes": 258698,
+    "alpha": true,
+    "generator": "built-in ImageGen"
+  },
+  {
+    "name": "navy-linen",
+    "source": "source-art/navy-linen-v8.png",
+    "output": "public/media/navy-linen-v8.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 38252,
+    "generator": "built-in ImageGen"
+  }
+]

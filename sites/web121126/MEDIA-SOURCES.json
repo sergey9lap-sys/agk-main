@@ -1,0 +1,20 @@
+[
+  {
+    "source": "sites\\november\\public\\assets\\v14\\alexandra-5736-cutout.webp",
+    "output": "sites\\web121126\\public\\media\\hero-640.webp",
+    "bytes": 81452,
+    "size": [
+      640,
+      780
+    ]
+  },
+  {
+    "source": "sites\\november\\public\\assets\\v14\\alexandra-5736-cutout.webp",
+    "output": "sites\\web121126\\public\\media\\hero-960.webp",
+    "bytes": 154856,
+    "size": [
+      960,
+      1170
+    ]
+  }
+]

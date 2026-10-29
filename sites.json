@@ -16,6 +16,8 @@
       "help": { "widgetId": "1674401", "scriptId": "4e17abaaa02322b08b74194ad9df2274eb53a248", "title": "Поможем выбрать тариф" }
     }
   } } },
+  "web121126": { "editions": { "com": {"audience":"universal"}, "ru": {"audience":"universal"} } },
+  "web121126_r": { "source":"web121126", "editions": { "com": {"audience":"owners"}, "ru": {"audience":"owners"} } },
   "november": { "editions": { "com": {}, "ru": {} } },
   "sales": { "editions": {
     "com": { "widgetId": "1670561", "scriptId": "4b311f35f9e19e3a80e369af255b66020a2cc8f7", "successPath": "/sales/thanks/" },

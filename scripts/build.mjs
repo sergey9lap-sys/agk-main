@@ -7,6 +7,7 @@ import { withCampaignConsent } from './campaign-consent.mjs';
 import { withLoader, errorPage, themedSites } from './delivery-surfaces.mjs';
 import { withRussianTypography } from '../sites/shared/russian-typography.js';
 import {optimizeCampaign} from './optimize-campaign.mjs';
+import {webinarContent,thanksPage,variants,esc} from './web121126-content.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const edition = process.argv[2];
@@ -30,7 +31,7 @@ const output = resolve(root, 'dist', edition);
 if (![resolve(root, 'dist/com'), resolve(root, 'dist/ru')].includes(output)) throw new Error('Unsafe output');
 const routes = new Set(Object.keys(registry));
 for (const [slug, site] of Object.entries(registry)) {
-  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error('Invalid slug');
+  if (!/^[a-z0-9]+(?:[-_][a-z0-9]+)*$/.test(slug)) throw new Error('Invalid slug');
   if (site.source && (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(site.source) || !registry[site.source] || registry[site.source].source)) throw new Error('Invalid shared source');
   const config = site.editions?.[edition];
   if (!config || typeof config !== 'object') throw new Error('Invalid edition config');
@@ -63,7 +64,10 @@ for (const [slug, site] of Object.entries(registry)) {
   const siteRoot = resolve(root, 'sites', site.source ?? slug);
   const base = `/${slug}/`;
   const assetPaths = html => html.replace(/((?:src|href)=["'])\/(?!\/)/g, `$1${base}`);
+  const webinar=slug==='web121126'||site.source==='web121126';
   const editionHtml = html => (['mentor-consultation','archetype','november','sale2026'].includes(slug) ? withRussianTypography(html) : html)
+    .replaceAll('%%WEB_TITLE%%',webinar?esc(variants[config.audience||'universal'].title):'')
+    .replaceAll('%%WEB_CONTENT%%',webinar?webinarContent(config).replace(/((?:src|srcset)=["'])\/(?!\/)/g,`$1${base}`).replace(/, \/media\//g,`, ${base}media/`):'')
     .replaceAll('%%SALE_WIDGETS%%', JSON.stringify(config.saleWidgets ?? null).replaceAll('<','\\u003c'))
     .replaceAll('%%SALE_OFFER_LINK%%', config.saleOffer ? `<a href="${config.saleOffer}" target="_blank" rel="noopener">Оферта</a>` : '')
     .replaceAll('%%WIDGET_ID%%', config.widgetId ?? '')
@@ -95,6 +99,11 @@ for (const [slug, site] of Object.entries(registry)) {
     landing = landing.replace(/<body[^>]*>/, match => match + '\n' + contract);
   }
   await writeFile(landingPath, landing);
+  if(webinar){
+    for(const end of ['thanks','spasibo']){const folder=resolve(output,slug,end);await mkdir(folder,{recursive:true});await writeFile(resolve(folder,'index.html'),withRussianTypography(thanksPage(config,slug)));}
+    await writeFile(resolve(output,slug,'404.html'),`<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="/${slug}/webinar.css"><title>Страница не найдена</title></head><body><main class="wrap error-page"><p class="error-code">404</p><h1>Здесь пока нет страницы</h1><p>Вернитесь к программе бесплатного вебинара.</p><a class="button" href="/${slug}/">На страницу вебинара</a></main></body></html>`);
+    await writeFile(resolve(output,slug,'.htaccess'),`ErrorDocument 404 /${slug}/404.html\n`);
+  }
   if(slug==='november'||site.source==='november'){
     landing=await optimizeCampaign(landing,siteRoot,output,slug);
     landing=withCampaignConsent(landing,slug,edition);

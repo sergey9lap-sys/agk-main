@@ -1,0 +1,37 @@
+/* Client direction V4: deeper Academy blues, cleaner light surfaces, decisive accents. */
+:root{--navy:#0a1232;--paper:#f4f5fa;--ink:#152044;--gold:#edc45e;--action:#bd3c20;--line:#bac3d9;--cobalt:#243fb1}
+body{background:var(--navy)}
+.hero{background:linear-gradient(115deg,#0a1232 52%,#182653 100%)}
+.header{border-bottom-color:#edc45e66}.header-register{color:var(--gold)}
+.hero h1{color:#fff}.hero h1>span{color:var(--gold)}
+.hero .event-format{color:#d9e0f3}.hero-description{color:#fff}
+.event-date{color:var(--gold)}
+.hero-rule{color:var(--gold);border-top-color:var(--gold)}
+.hero-signup{background:#fff;color:var(--ink);border-color:#fff;box-shadow:0 20px 44px #02061738}
+.hero-signup h2{color:var(--navy)}
+.form-panel input{background:#fff;border-color:#99a7c5}
+.form-status,.form-privacy{color:#4c5873}
+.gift-preview{background:#17264c;border-color:#edc45e80}
+.gift-preview .gift-line{color:#fff}
+.gift-preview--final{background:#fff;border-color:var(--line)}
+.gift-preview--final .gift-line{color:var(--ink)}
+.audience-heading h2{color:var(--cobalt)}
+.decision-mark{color:#243fb1}
+.audience-list article,.audience-list article:first-child{background:#fff;border-color:#b8c4e0}
+.role-avatar{background:var(--cobalt);color:#fff}
+.gift{background:var(--navy)}.gift h2{color:var(--gold)}
+.program-list li,.program-list li:first-child{background:#fff;border-color:#b8c4e0}
+.topic-number{background:var(--cobalt);color:#fff}
+.result{background:var(--navy);color:#fff}
+.result h3{color:var(--gold)}
+.live-gift svg{color:var(--cobalt)}
+.speaker{background:#080e27}.speaker h2,.credentials li:before{color:var(--gold)}
+.credentials li:before{background:var(--gold)}
+.logos{background:#fff}.speaker cite{color:#d9e0f3}
+.final .event-date,.final .gift-line svg{color:var(--cobalt)}
+.form-panel{background:#fff}
+.footer{color:#d9e0f3}
+.thanks-header{border-bottom-color:#edc45e66}
+.thanks-panel{background:#fff}.thanks-portrait figcaption{color:#d9e0f3}
+::selection{background:var(--gold);color:var(--navy)}
+html{scrollbar-color:var(--cobalt) var(--paper)}

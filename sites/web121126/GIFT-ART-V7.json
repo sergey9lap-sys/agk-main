@@ -1,0 +1,80 @@
+[
+  {
+    "name": "meeting",
+    "generatedBy": "built-in imagegen",
+    "source": "source-art/gift-meeting-v7.png",
+    "sourceSha256": "3371e3ad37cd267cf39b62e1faf12673f29cb1a3017655311e42f6f79104f599",
+    "output": "public/media/gift-meeting-gold-320.webp",
+    "size": [
+      320,
+      427
+    ],
+    "bytes": 40174,
+    "alpha": true
+  },
+  {
+    "name": "meeting",
+    "generatedBy": "built-in imagegen",
+    "source": "source-art/gift-meeting-v7.png",
+    "sourceSha256": "3371e3ad37cd267cf39b62e1faf12673f29cb1a3017655311e42f6f79104f599",
+    "output": "public/media/gift-meeting-gold-640.webp",
+    "size": [
+      640,
+      853
+    ],
+    "bytes": 131580,
+    "alpha": true
+  },
+  {
+    "name": "meeting",
+    "generatedBy": "built-in imagegen",
+    "source": "source-art/gift-meeting-v7.png",
+    "sourceSha256": "3371e3ad37cd267cf39b62e1faf12673f29cb1a3017655311e42f6f79104f599",
+    "output": "public/media/gift-meeting-gold-960.webp",
+    "size": [
+      960,
+      1280
+    ],
+    "bytes": 335310,
+    "alpha": true
+  },
+  {
+    "name": "audience",
+    "generatedBy": "built-in imagegen",
+    "source": "source-art/gift-audience-v7.png",
+    "sourceSha256": "e8082944b319eac5759ca69c4779ef7eff2caa537f102074a2f3a7e96fa80943",
+    "output": "public/media/gift-audience-gold-320.webp",
+    "size": [
+      320,
+      427
+    ],
+    "bytes": 35480,
+    "alpha": true
+  },
+  {
+    "name": "audience",
+    "generatedBy": "built-in imagegen",
+    "source": "source-art/gift-audience-v7.png",
+    "sourceSha256": "e8082944b319eac5759ca69c4779ef7eff2caa537f102074a2f3a7e96fa80943",
+    "output": "public/media/gift-audience-gold-640.webp",
+    "size": [
+      640,
+      853
+    ],
+    "bytes": 134638,
+    "alpha": true
+  },
+  {
+    "name": "audience",
+    "generatedBy": "built-in imagegen",
+    "source": "source-art/gift-audience-v7.png",
+    "sourceSha256": "e8082944b319eac5759ca69c4779ef7eff2caa537f102074a2f3a7e96fa80943",
+    "output": "public/media/gift-audience-gold-960.webp",
+    "size": [
+      960,
+      1280
+    ],
+    "bytes": 357244,
+    "alpha": true
+  }
+]
