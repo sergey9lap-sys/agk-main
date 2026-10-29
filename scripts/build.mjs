@@ -3,6 +3,7 @@ import { readFile, writeFile, mkdir, rm, access, readdir, copyFile } from 'node:
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { withAnalytics } from './analytics.mjs';
+import { withCampaignConsent } from './campaign-consent.mjs';
 import { withLoader, errorPage, themedSites } from './delivery-surfaces.mjs';
 import { withRussianTypography } from '../sites/shared/russian-typography.js';
 import {optimizeCampaign} from './optimize-campaign.mjs';
@@ -68,9 +69,9 @@ for (const [slug, site] of Object.entries(registry)) {
     .replaceAll('%%WIDGET_ID%%', config.widgetId ?? '')
     .replaceAll('%%SCRIPT_ID%%', config.scriptId ?? '')
     .replaceAll('%%SUCCESS_PATH%%', config.successPath ?? '')
-    .replaceAll('%%COOKIE_SERVICES%%', edition === 'com' && ['clients', 'praktikum', 'expert', 'sales'].includes(slug) ? 'Яндекс.Метрика, Meta Pixel и формы GetCourse' : 'Яндекс.Метрика и формы GetCourse');
-  const analytics = html => ['clients', 'mkclients', 'praktikum', 'expert', 'sales'].includes(slug)
-    ? withAnalytics(html, edition, { includeMetaPixel: slug !== 'mkclients', consentCookie: `agk_cookie_consent_${slug}` })
+    .replaceAll('%%COOKIE_SERVICES%%', edition === 'com' && ['clients', 'mkclients', 'praktikum', 'expert', 'sales'].includes(slug) ? 'Яндекс.Метрика, Meta Pixel и формы GetCourse' : 'Яндекс.Метрика и формы GetCourse');
+  const analytics = html => ['clients', 'mkclients', 'praktikum', 'expert', 'sales', 'sale2026', 'november'].includes(slug)
+    ? withAnalytics(html, edition, { includeMetaPixel: true, consentCookie: `agk_cookie_consent_${slug}` })
     : html;
   const aliases = site.confirmationAliases ?? [];
   const editionConfirmation = site.editionConfirmationPaths?.[edition];
@@ -96,6 +97,7 @@ for (const [slug, site] of Object.entries(registry)) {
   await writeFile(landingPath, landing);
   if(slug==='november'||site.source==='november'){
     landing=await optimizeCampaign(landing,siteRoot,output,slug);
+    landing=withCampaignConsent(landing,slug,edition);
     await writeFile(landingPath,landing);
   }
   if(config.saleWidgets){
