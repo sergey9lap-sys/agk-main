@@ -1,0 +1,9 @@
+/* Palette supplied by client: quiet metallic gold, consistent generous section rhythm. */
+:root{--navy:#0b162a;--card:#1c2a4a;--gold:#d4af37;--gold-surface:#d4af37;--paper:#d4af37;--cream:#f7f4eb;--line:#a68a48}
+:root{--club-gold:linear-gradient(135deg,#d6a65c 0%,#f0d4a5 36%,#fff2d8 58%,#f3be72 100%);--gold:#f0d4a5}
+.audience,.program,.final{background:var(--club-gold)}.role-avatar,.topic-number{background:var(--club-gold)}
+.section{padding-block:64px;min-height:680px;display:flex;align-items:center}.section>.wrap{width:calc(100% - 2*clamp(24px,7vw,112px))}
+.hero-grid{align-items:center;padding-block:48px;min-height:720px}.hero-rule{display:none}.hero-copy{padding-block:24px}.hero h1{font-size:clamp(42px,4vw,58px)}
+.audience{padding-block:64px}.audience-heading{min-height:0;margin-bottom:32px}.audience-heading h2{white-space:normal}.speaker>.wrap{max-width:1120px}.speaker-grid{align-items:center}.speaker .section-action{margin-top:28px}.speaker blockquote{margin-top:32px}
+.program{padding-block:64px;min-height:900px}.program-list li{padding-block:18px}.gift,.final{min-height:740px}
+@media(max-width:760px){.section{min-height:0;padding-block:48px}.hero-grid{min-height:0;padding-block:20px}.hero-copy{padding-block:10px}.audience-heading{margin-bottom:28px}.section>.wrap{width:calc(100% - 44px)}.program-list li{padding-block:18px}}
