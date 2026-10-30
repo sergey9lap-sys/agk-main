@@ -7,3 +7,7 @@
 .audience{padding-block:64px}.audience-heading{min-height:0;margin-bottom:32px}.audience-heading h2{white-space:normal}.speaker>.wrap{max-width:1120px}.speaker-grid{align-items:center}.speaker .section-action{margin-top:28px}.speaker blockquote{margin-top:32px}
 .program{padding-block:64px;min-height:900px}.program-list li{padding-block:18px}.gift,.final{min-height:740px}
 @media(max-width:760px){.section{min-height:0;padding-block:48px}.hero-grid{min-height:0;padding-block:20px}.hero-copy{padding-block:10px}.audience-heading{margin-bottom:28px}.section>.wrap{width:calc(100% - 44px)}.program-list li{padding-block:18px}}
+/* V15: stronger first-screen hierarchy, same palette and composition. */
+.hero h1{font-size:clamp(48px,4.5vw,64px);line-height:1.08}.hero h1>span{font-size:28px;line-height:1.35}.hero-description{font-size:20px;line-height:1.55}.hero .gift-preview{width:100%;max-width:700px;grid-template-columns:92px minmax(0,1fr);padding:18px;gap:20px}.hero .gift-preview .gift-line{font-size:17px;line-height:1.5}.nowrap{white-space:nowrap}
+@media(max-width:1100px){.hero h1{font-size:50px}.hero h1>span{font-size:26px}.hero-description{font-size:19px}}
+@media(max-width:760px){.hero h1{font-size:clamp(34px,9vw,44px)}.hero h1>span{font-size:23px;line-height:1.38}.hero-description{font-size:18px;line-height:1.55}.hero .gift-preview{grid-template-columns:76px minmax(0,1fr);padding:16px;gap:16px}.hero .gift-preview .gift-line{font-size:15px;line-height:1.5}}

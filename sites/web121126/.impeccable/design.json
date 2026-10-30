@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-30T13:18:45.669Z",
+  "generatedAt": "2026-10-30T15:02:15.549Z",
   "title": "Design System: AGK — Strategy Folio",
   "extensions": {
     "colorMeta": {
@@ -128,7 +128,7 @@
     "typographyMeta": {
       "display": {
         "displayName": "Hero",
-        "purpose": "V13 hero clamp(42px,4vw,58px), перекрывает предыдущие compact/mobile размеры h1."
+        "purpose": "V15 hero: clamp(48px,4.5vw,64px)/1.08; <=1100px 50px; <=760px clamp(34px,9vw,44px)."
       },
       "headline": {
         "displayName": "Section heading",
@@ -148,7 +148,7 @@
       },
       "continuation": {
         "displayName": "Offer continuation",
-        "purpose": "Продолжение оффера внутри h1, выполненное Manrope."
+        "purpose": "V15 hero offer: 28px/1.35; <=1100px 26px; <=760px 23px/1.38, WebText/Manrope."
       },
       "final-heading": {
         "displayName": "Final registration heading",
@@ -236,9 +236,9 @@
       }
     ],
     "revision": {
-      "current": "V14",
+      "current": "V15",
       "stylesheet": "public/refinement-v13.css",
-      "history": "V14 club gradient replaces V13 solid-gold regions; V13 geometry preserved",
+      "history": "V15 hero hierarchy; V14 club gradient and V13 section geometry preserved",
       "layout": {
         "sectionDesktopPadding": "64px",
         "sectionDesktopMinHeight": "680px",
@@ -249,7 +249,7 @@
         "mobileMinHeight": "0",
         "heroRule": "display:none"
       },
-      "validation": "Переданный свежий revision3_finish: Ship local. Публикация не подтверждена.",
+      "validation": "Переданный QA: две страницы × четыре ширины; без overflow/overlap, диапазон в одну строку. web_hero_v15_finish — Ship local; публикация не подтверждена.",
       "gradient": "linear-gradient(135deg,#d6a65c 0%,#f0d4a5 36%,#fff2d8 58%,#f3be72 100%)",
       "gradientSource": "User archive Method-club-main.zip/src/styles/globals.css (.gold-gradient-text)",
       "gradientSelectors": [
@@ -259,7 +259,37 @@
         ".role-avatar",
         ".topic-number"
       ],
-      "goldAccent": "#f0d4a5"
+      "goldAccent": "#f0d4a5",
+      "hero": {
+        "h1": "clamp(48px,4.5vw,64px)/1.08",
+        "offer": "28px/1.35",
+        "description": "20px/1.55",
+        "at1100": {
+          "h1": "50px",
+          "offer": "26px",
+          "description": "19px"
+        },
+        "at760": {
+          "h1": "clamp(34px,9vw,44px)",
+          "offer": "23px/1.38",
+          "description": "18px/1.55"
+        },
+        "giftPreview": {
+          "width": "100%",
+          "maxWidth": "700px",
+          "columns": "92px minmax(0,1fr)",
+          "padding": "18px",
+          "gap": "20px",
+          "text": "17px/1.5",
+          "at760": {
+            "columns": "76px minmax(0,1fr)",
+            "padding": "16px",
+            "gap": "16px",
+            "text": "15px/1.5"
+          }
+        },
+        "range": "50–100 тысяч; renderer span.nowrap, white-space:nowrap"
+      }
     }
   },
   "components": [
@@ -324,7 +354,7 @@
   ],
   "narrative": {
     "northStar": "Strategy Folio",
-    "overview": "Деловой редакционный лист Академии: фактурный navy #0b162a, клубное градиентное золото, карточки #1c2a4a, светлый текст #f7f4eb и коралловый акцент действия #ff624a. V14 заменяет однотонные золотые регионы V13 точным градиентом пользовательского архива; геометрия и более свободный ритм V13 сохранены; hero выровнен по центру с формой, декоративная полоса .hero-rule скрыта. Полные тексты, шесть актов, винные прозрачные книги, настоящий портрет, логотип и отключённые формы сохранены. V12 с янтарным фоном #ffc247 и акцентами #ffce58 — историческая версия, заменённая V13.\n\nИсточники: ../../scripts/web121126-content.mjs и каскад public/webinar.css → public/refinement-v2.css → public/refinement-v3.css → public/palette-v6.css → public/compact-v7.css → public/details-v8.css → последующие цветовые уточнения → public/refinement-v13.css. Последний слой и прямые указания пользователя имеют приоритет. V4/V5 остаются историческими исходниками и не подключены. Благодарности подключают webinar.css → refinement-v3.css → palette-v6.css → compact-v7.css → details-v8.css. /web121126/ и /web121126_r/ используют общую композицию с исходными содержательными различиями. Контекст: PRODUCT.md, REVISION-V8.md, ASSETS-V8.json и IMAGE-PROMPTS-V8.md. Материалы V7 сохранены как история. Шрифты локальные, HTML статичен.",
+    "overview": "Деловой редакционный лист Академии: фактурный navy #0b162a, клубное градиентное золото, карточки #1c2a4a, светлый текст #f7f4eb и коралловый акцент действия #ff624a. V14 заменяет однотонные золотые регионы V13 точным градиентом пользовательского архива; геометрия и более свободный ритм V13 сохранены; hero выровнен по центру с формой, декоративная полоса .hero-rule скрыта. Полные тексты, шесть актов, винные прозрачные книги, настоящий портрет, логотип и отключённые формы сохранены. V12 с янтарным фоном #ffc247 и акцентами #ffce58 — историческая версия, заменённая V13.\n\nИсточники: ../../scripts/web121126-content.mjs и каскад public/webinar.css → public/refinement-v2.css → public/refinement-v3.css → public/palette-v6.css → public/compact-v7.css → public/details-v8.css → последующие цветовые уточнения → public/refinement-v13.css. Последний слой и прямые указания пользователя имеют приоритет. V4/V5 остаются историческими исходниками и не подключены. Благодарности подключают webinar.css → refinement-v3.css → palette-v6.css → compact-v7.css → details-v8.css. /web121126/ и /web121126_r/ используют общую композицию с исходными содержательными различиями. Контекст: PRODUCT.md, REVISION-V8.md, ASSETS-V8.json и IMAGE-PROMPTS-V8.md. Материалы V7 сохранены как история. Шрифты локальные, HTML статичен.\n\nV15: усилена типографическая иерархия hero, его подарок растянут до ширины колонки (max 700px); диапазон 50–100 тысяч внутри nowrap. Цвета V14 и остальная геометрия V13 сохранены.",
     "keyCharacteristics": [
       "Шесть актов: navy / клубный золотой градиент / navy / клубный золотой градиент / navy / клубный золотой градиент.",
       "Playfair Display формирует заголовки; Manrope — продолжение оффера, текст и действия.",
