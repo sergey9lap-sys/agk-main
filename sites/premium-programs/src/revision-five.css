@@ -1,0 +1,9 @@
+/* One radius system; restore the common section grid without stretching author copy. */
+:root{--ui-radius:20px;--radius:var(--ui-radius)}
+.btn,.gc-widget-slot,.hero-dates span,.hero-dates span:nth-child(n),.tariff-card,.recording-card,.recording-discount,.transformation-card,.change-cell,.act-card,.act-card:nth-child(n),.host-facts span,.host-portrait,.host-portrait img,.support-actions a,.support-phone-wrap img,.case-feature,.case-controls button,.gc-modal-panel,.gc-modal-close,.dossier-card,.dossier-finished{border-radius:var(--ui-radius)}
+.hero-dates{gap:14px}.hero-dates span,.hero-dates span:nth-child(n){padding:16px 22px;min-height:56px;font-size:15px;line-height:1.45;background:transparent;border:1px solid #52334480;color:#3f242a;font-weight:400}
+.act-card,.act-card:nth-child(n),.change-cell.is-before,.change-cell.is-after{background:var(--wine);color:var(--cream);box-shadow:0 10px 24px #15090e25;border:1px solid #fff8f026}
+.act-card h3,.act-card p,.act-meta small,.act-meta i,.change-cell.is-before p,.change-cell.is-after p,.change-cell span,.change-cell.is-after span{color:var(--cream)}
+.host{grid-template-columns:330px minmax(0,1fr);justify-content:stretch;gap:40px}
+@media(max-width:900px){.host{grid-template-columns:260px minmax(0,1fr);gap:28px}}
+@media(max-width:680px){.host{grid-template-columns:1fr;gap:24px}.hero-dates span,.hero-dates span:nth-child(n){padding:14px 18px;min-height:52px;font-size:14px}.hero-dates{gap:12px}}

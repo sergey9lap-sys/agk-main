@@ -1,0 +1,23 @@
+/* Recording edition: preserve the incumbent world, replace only the tariff layout. */
+.recording-grid{grid-template-columns:minmax(0,760px);justify-content:center}
+.recording-card{min-height:0;display:flex;flex-direction:column;gap:26px;padding:clamp(26px,4vw,52px);background:var(--cream)}
+.recording-card .tariff-top h2{font:400 clamp(32px,3.6vw,48px)/1.12 Georgia,"Times New Roman",serif;color:var(--tamarind);margin:0;text-wrap:balance}
+.recording-price{padding:0}.recording-price small{font-size:20px;color:#735f5f;margin-bottom:10px}
+.recording-price-current{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.recording-price-current>strong{font-size:clamp(44px,5vw,64px);color:var(--plum);font-variant-numeric:lining-nums}
+.recording-discount{background:var(--tamarind);color:var(--cream);padding:9px 14px;border-radius:999px;font-size:18px;font-weight:700;line-height:1}
+.recording-card ul{gap:0;margin:0}
+.recording-card li.recording-item{display:flex;align-items:flex-start;gap:14px;padding:17px 0;border-bottom:1px solid var(--line);font-size:18px;line-height:1.5}
+.recording-card li.recording-item::before{content:none}
+.recording-item>svg{flex-shrink:0;margin-top:3px;color:var(--tamarind)}
+.recording-duration{font-weight:700;white-space:nowrap}
+.payment-pending{margin:-12px 0 0;color:var(--tamarind);font-size:14px;text-align:center;line-height:1.5}
+.recording-card .gc-widget-slot{align-self:center;margin:0;animation:none}
+.recording-card .gc-widget-slot:disabled{cursor:not-allowed;opacity:.72}
+.recording-card .gc-widget-label::after{content:none}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.hero-dates{max-width:660px}.hero-dates span{min-width:0}.hero-dates span:nth-child(2){transform:none}
+/* One geometry and one accent for the existing conversion links and payment button. */
+.btn,.gc-widget-slot{box-sizing:border-box;width:var(--action-w,350px);min-width:0;max-width:100%;height:68px;min-height:68px;justify-content:center;border-radius:999px;padding-inline:28px;background:linear-gradient(135deg,#e07a45,var(--cta) 48%,var(--cta-dark));color:var(--cream)}
+.btn i{display:flex;align-items:center}.btn svg{width:22px;height:22px}
+@media(max-width:680px){:root{--action-w:min(350px,calc(100vw - 96px))}.recording-card{gap:22px;padding:26px 22px}.recording-card li.recording-item{font-size:16px;padding-block:16px;gap:12px}.recording-price-current{gap:16px}.recording-price small{font-size:18px}.recording-discount{font-size:16px}.btn,.gc-widget-slot{height:64px;min-height:64px}.hero-dates span{font-size:14px;line-height:1.45}}

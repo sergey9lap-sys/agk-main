@@ -1,0 +1,86 @@
+[
+  {
+    "role": 1,
+    "source": "C:\\Users\\User\\.codex\\generated_images\\01a004a0-79b1-7bc0-84c2-39e98907cfbe\\exec-f747779c-789c-4249-b4a8-ba3053fe2ee8.png",
+    "output": "public/dossiers/dossier-1-400.webp",
+    "bytes": 43098,
+    "sha256": "96bea570d51b576cd0c4a3eb86fdec85b9aaa2dc935120af8dafe922675f5000"
+  },
+  {
+    "role": 1,
+    "source": "C:\\Users\\User\\.codex\\generated_images\\01a004a0-79b1-7bc0-84c2-39e98907cfbe\\exec-f747779c-789c-4249-b4a8-ba3053fe2ee8.png",
+    "output": "public/dossiers/dossier-1.webp",
+    "bytes": 127940,
+    "sha256": "e9311c5010649f3957cd6fa1e459699217a7b770fd1333d556848a80f91682ac"
+  },
+  {
+    "role": 2,
+    "source": "C:\\Users\\User\\.codex\\generated_images\\01a004a0-79b1-7bc0-84c2-39e98907cfbe\\exec-3d66a9f6-294b-44ae-a246-51ce50d50750.png",
+    "output": "public/dossiers/dossier-2-400.webp",
+    "bytes": 44634,
+    "sha256": "58bbbf3c9c4f6346e4f21b5fbf2dc758fc16a1e7a1945c6f9efc99e9a4e95a28"
+  },
+  {
+    "role": 2,
+    "source": "C:\\Users\\User\\.codex\\generated_images\\01a004a0-79b1-7bc0-84c2-39e98907cfbe\\exec-3d66a9f6-294b-44ae-a246-51ce50d50750.png",
+    "output": "public/dossiers/dossier-2.webp",
+    "bytes": 124832,
+    "sha256": "93e37a40f3797b6e2cbe2ab25d88302ef2076846f31c7127532471645f570125"
+  },
+  {
+    "role": 3,
+    "source": "C:\\Users\\User\\.codex\\generated_images\\01a004a0-79b1-7bc0-84c2-39e98907cfbe\\exec-5464eb7f-9dba-49a9-b360-5672e92e8df4.png",
+    "output": "public/dossiers/dossier-3-400.webp",
+    "bytes": 45214,
+    "sha256": "7bc2217d51a7acc161a589923e866c46cbd2f29c4f029ca15dedf8fa52d75b18"
+  },
+  {
+    "role": 3,
+    "source": "C:\\Users\\User\\.codex\\generated_images\\01a004a0-79b1-7bc0-84c2-39e98907cfbe\\exec-5464eb7f-9dba-49a9-b360-5672e92e8df4.png",
+    "output": "public/dossiers/dossier-3.webp",
+    "bytes": 126156,
+    "sha256": "2e46daf5cd5eea1367bbf5fea6982b030a310051d192d25a0b6b1a8b9cc4b93b"
+  },
+  {
+    "role": 4,
+    "source": "C:\\Users\\User\\.codex\\generated_images\\01a004a0-79b1-7bc0-84c2-39e98907cfbe\\exec-4dd77774-6bf0-4482-b714-afd88590899f.png",
+    "output": "public/dossiers/dossier-4-400.webp",
+    "bytes": 44248,
+    "sha256": "7d7389359c14beba863c5ed51bbb3d9e49c6bf674a5db88207753fb80218ab7e"
+  },
+  {
+    "role": 4,
+    "source": "C:\\Users\\User\\.codex\\generated_images\\01a004a0-79b1-7bc0-84c2-39e98907cfbe\\exec-4dd77774-6bf0-4482-b714-afd88590899f.png",
+    "output": "public/dossiers/dossier-4.webp",
+    "bytes": 125444,
+    "sha256": "a04f169eccd18c7568bdb9ad4ce08fd6fcc330f9b6473083b5e46574c2c8f7b1"
+  },
+  {
+    "role": 5,
+    "source": "C:\\Users\\User\\.codex\\generated_images\\01a004a0-79b1-7bc0-84c2-39e98907cfbe\\exec-4d8086f2-1953-43cc-85d8-9c9eb7296746.png",
+    "output": "public/dossiers/dossier-5-400.webp",
+    "bytes": 45994,
+    "sha256": "231b7b5315817608981d991a8455b6fbe76e74c2a2d35901b1c353e62259c817"
+  },
+  {
+    "role": 5,
+    "source": "C:\\Users\\User\\.codex\\generated_images\\01a004a0-79b1-7bc0-84c2-39e98907cfbe\\exec-4d8086f2-1953-43cc-85d8-9c9eb7296746.png",
+    "output": "public/dossiers/dossier-5.webp",
+    "bytes": 131272,
+    "sha256": "9bfafb8d4af49a96501ffc2de900db5cb0c80ad1e66326090876a27088679722"
+  },
+  {
+    "role": 6,
+    "source": "C:\\Users\\User\\.codex\\generated_images\\01a004a0-79b1-7bc0-84c2-39e98907cfbe\\exec-9afd7244-6806-4c9b-a848-b32b7dba68b1.png",
+    "output": "public/dossiers/dossier-6-400.webp",
+    "bytes": 45954,
+    "sha256": "7ad002e23b2187d866c4dc52fa16ace01db07ef2393cd371a06d8504ed903fa9"
+  },
+  {
+    "role": 6,
+    "source": "C:\\Users\\User\\.codex\\generated_images\\01a004a0-79b1-7bc0-84c2-39e98907cfbe\\exec-9afd7244-6806-4c9b-a848-b32b7dba68b1.png",
+    "output": "public/dossiers/dossier-6.webp",
+    "bytes": 133074,
+    "sha256": "8d3a4641fb1bce0293ea42a302b3ea7c35e73a164d4992245cd53726058ae9cf"
+  }
+]

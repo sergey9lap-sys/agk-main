@@ -1,4 +1,5 @@
 {
+  "premium-programs": { "prebuilt": true, "editions": { "com": {}, "ru": {} } },
   "sale2026": { "source": "november", "editions": { "com": {
     "saleOffer": "https://agkedu.getcourse.ru/oferta_sale2026",
     "saleWidgets": {

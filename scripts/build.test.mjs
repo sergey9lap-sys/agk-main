@@ -63,7 +63,8 @@ for (const edition of ['com','ru']) {
           await access(resolve(root, '.' + path));
         }
       }
-      const cssFiles = [...(await readdir(resolve(root, slug, 'assets'))).filter(f=>f.endsWith('.css')).map(f=>resolve(root, slug, 'assets', f))];
+      const cssDirectory = resolve(root, slug, site.prebuilt ? '_next/static/css' : 'assets');
+      const cssFiles = [...(await readdir(cssDirectory)).filter(f=>f.endsWith('.css')).map(f=>resolve(cssDirectory, f))];
       if ((site.confirmationAliases?.length ?? 0) > 0) cssFiles.unshift(resolve(root, slug, 'thank-you.css'));
       for (const file of cssFiles) {
         const css = await readFile(file, 'utf8');

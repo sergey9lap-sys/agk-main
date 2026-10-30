@@ -1,5 +1,5 @@
 import { build } from 'vite';
-import { readFile, writeFile, mkdir, rm, access, readdir, copyFile } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rm, access, readdir, copyFile, cp } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { withAnalytics } from './analytics.mjs';
@@ -62,6 +62,12 @@ await mkdir(output, { recursive: true });
 for (const [slug, site] of Object.entries(registry)) {
   const config = site.editions[edition];
   const siteRoot = resolve(root, 'sites', site.source ?? slug);
+  if(site.prebuilt === true){
+    const exported=resolve(siteRoot,'export');
+    await staticFiles(exported);
+    await cp(exported,resolve(output,slug),{recursive:true});
+    continue;
+  }
   const base = `/${slug}/`;
   const assetPaths = html => html.replace(/((?:src|href)=["'])\/(?!\/)/g, `$1${base}`);
   const webinar=slug==='web121126'||site.source==='web121126';

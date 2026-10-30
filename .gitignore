@@ -1,4 +1,7 @@
 node_modules/
+sites/premium-programs/.next/
+sites/premium-programs/out/
+sites/premium-programs/*.tsbuildinfo
 dist/
 .vite/
 .vercel/
