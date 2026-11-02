@@ -1,4 +1,6 @@
 {
+  "web121126_short": { "source": "web121126", "editions": { "com": { "audience": "universal", "short": true } } },
+  "web121126_r_short": { "source": "web121126", "editions": { "com": { "audience": "owners", "short": true } } },
   "premium-programs": { "prebuilt": true, "editions": { "com": {}, "ru": {} } },
   "sale2026": { "source": "november", "editions": { "com": {
     "saleOffer": "https://agkedu.getcourse.ru/oferta_sale2026",

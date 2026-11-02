@@ -13,7 +13,8 @@ export function errorPage(slug){
  if(slug==='november' || slug==='sale2026') return novemberError.replaceAll('/november/',`/${slug}/`);
  if(slug===undefined){
   const recovery = `<script>{const slug=location.pathname.split('/')[1];if(['november','sale2026'].includes(slug)){const page=new DOMParser().parseFromString(${JSON.stringify(novemberError)}.replaceAll('/november/','/'+slug+'/'),'text/html');document.head.replaceWith(page.head);document.body.replaceWith(page.body);}}</script>`;
-  return errorPage('generic').replace('</body>',recovery+'</body>');
+  const siteRecovery=`<script>(()=>{const slug=location.pathname.split('/')[1];if(!['premium-programs','web121126','web121126_r','web121126_short','web121126_r_short'].includes(slug))return;fetch('/'+slug+'/404.html').then(r=>{if(!r.ok)throw Error('Missing themed error');return r.text()}).then(html=>{const p=new DOMParser().parseFromString(html,'text/html');document.head.replaceWith(p.head);document.body.replaceWith(p.body)}).catch(()=>{document.querySelector('.back').href='/'+slug+'/';document.querySelector('.back').textContent='Вернуться на сайт'})})();</script>`;
+  return errorPage('generic').replace('</body>',recovery+siteRecovery+'</body>');
  }
  const specific=themedSites.includes(slug),theme=specific?slug:'generic';
  return `<!doctype html><html lang="ru" data-theme="${theme}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Страница не найдена — AGK</title><style>

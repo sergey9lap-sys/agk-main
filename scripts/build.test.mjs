@@ -26,6 +26,7 @@ for (const edition of ['com','ru']) {
     if (edition === 'com') await assert.rejects(access(resolve(root, 'index.html')));
     else await access(resolve(root, 'index.html'));
     for (const [slug, site] of Object.entries(registry)) {
+      if(!Object.hasOwn(site.editions,edition))continue;
       const html = await readFile(resolve(root, slug, 'index.html'), 'utf8');
       const config = site.editions[edition];
       if (config.widgetId) {

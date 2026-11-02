@@ -439,6 +439,7 @@ export default function Page() {
             <span>Консультант Сбер, Роснефть, Норникель, Nestle, X5, ВкусВилл</span>
             <span>Выпускница Сколково. Резидент Клуба Первых</span>
           </div>
+          <div className="host-action"><MotionCta className="btn-gold">Хочу премиальный продукт</MotionCta></div>
         </div>
       </section>
 

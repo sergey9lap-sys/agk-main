@@ -8,6 +8,7 @@ import { withLoader, errorPage, themedSites } from './delivery-surfaces.mjs';
 import { withRussianTypography } from '../sites/shared/russian-typography.js';
 import {optimizeCampaign} from './optimize-campaign.mjs';
 import {webinarContent,thanksPage,variants,esc} from './web121126-content.mjs';
+import {preparePremiumSurfaces,shortWebinar,withPremiumConsent} from './premium-surfaces.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const edition = process.argv[2];
@@ -34,6 +35,7 @@ for (const [slug, site] of Object.entries(registry)) {
   if (!/^[a-z0-9]+(?:[-_][a-z0-9]+)*$/.test(slug)) throw new Error('Invalid slug');
   if (site.source && (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(site.source) || !registry[site.source] || registry[site.source].source)) throw new Error('Invalid shared source');
   const config = site.editions?.[edition];
+  if (!Object.hasOwn(site.editions ?? {}, edition)) continue;
   if (!config || typeof config !== 'object') throw new Error('Invalid edition config');
   const hasWidgetConfig = ['widgetId', 'scriptId'].some(key => config[key] !== undefined);
   if (hasWidgetConfig && (!/^\d+$/.test(config.widgetId) || !/^[a-f0-9]+$/.test(config.scriptId))) throw new Error('Invalid widget config');
@@ -61,11 +63,13 @@ await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 for (const [slug, site] of Object.entries(registry)) {
   const config = site.editions[edition];
+  if (!Object.hasOwn(site.editions, edition)) continue;
   const siteRoot = resolve(root, 'sites', site.source ?? slug);
   if(site.prebuilt === true){
     const exported=resolve(siteRoot,'export');
     await staticFiles(exported);
     await cp(exported,resolve(output,slug),{recursive:true});
+    if(slug==='premium-programs')await preparePremiumSurfaces(resolve(output,slug),edition);
     continue;
   }
   const base = `/${slug}/`;
@@ -73,7 +77,7 @@ for (const [slug, site] of Object.entries(registry)) {
   const webinar=slug==='web121126'||site.source==='web121126';
   const editionHtml = html => (['mentor-consultation','archetype','november','sale2026'].includes(slug) ? withRussianTypography(html) : html)
     .replaceAll('%%WEB_TITLE%%',webinar?esc(variants[config.audience||'universal'].title):'')
-    .replaceAll('%%WEB_CONTENT%%',webinar?webinarContent(config).replace(/((?:src|srcset)=["'])\/(?!\/)/g,`$1${base}`).replace(/, \/media\//g,`, ${base}media/`):'')
+    .replaceAll('%%WEB_CONTENT%%',webinar?(config.short?shortWebinar(webinarContent(config)):webinarContent(config)).replace(/((?:src|srcset)=["'])\/(?!\/)/g,`$1${base}`).replace(/, \/media\//g,`, ${base}media/`):'')
     .replaceAll('%%SALE_WIDGETS%%', JSON.stringify(config.saleWidgets ?? null).replaceAll('<','\\u003c'))
     .replaceAll('%%SALE_OFFER_LINK%%', config.saleOffer ? `<a href="${config.saleOffer}" target="_blank" rel="noopener">Оферта</a>` : '')
     .replaceAll('%%WIDGET_ID%%', config.widgetId ?? '')
@@ -98,6 +102,7 @@ for (const [slug, site] of Object.entries(registry)) {
   });
   const landingPath = resolve(output, slug, 'index.html');
   let landing = withLoader(analytics(await readFile(landingPath, 'utf8')),slug);
+  if(webinar && config.short)landing=withAnalytics(withPremiumConsent(landing,edition,{slug,webinar:true}),edition,{includeMetaPixel:true,consentCookie:`agk_cookie_consent_${slug}`});
   if (slug === 'november' || site.source === 'november') {
     const source = await readFile(resolve(siteRoot, 'index.html'), 'utf8');
     const contract = source.match(/<!-- THESIS:[\s\S]*?-->/)?.[0];
@@ -106,7 +111,7 @@ for (const [slug, site] of Object.entries(registry)) {
   }
   await writeFile(landingPath, landing);
   if(webinar){
-    for(const end of ['thanks','spasibo']){const folder=resolve(output,slug,end);await mkdir(folder,{recursive:true});await writeFile(resolve(folder,'index.html'),withRussianTypography(thanksPage(config,slug)));}
+    for(const end of ['thanks','spasibo']){const folder=resolve(output,slug,end);await mkdir(folder,{recursive:true});let html=withRussianTypography(thanksPage(config,slug));if(config.short)html=withAnalytics(withPremiumConsent(html,edition,{slug,webinar:true}),edition,{includeMetaPixel:true,consentCookie:`agk_cookie_consent_${slug}`});await writeFile(resolve(folder,'index.html'),html);}
     await writeFile(resolve(output,slug,'404.html'),`<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="/${slug}/webinar.css"><title>Страница не найдена</title></head><body><main class="wrap error-page"><p class="error-code">404</p><h1>Здесь пока нет страницы</h1><p>Вернитесь к программе бесплатного вебинара.</p><a class="button" href="/${slug}/">На страницу вебинара</a></main></body></html>`);
     await writeFile(resolve(output,slug,'.htaccess'),`ErrorDocument 404 /${slug}/404.html\n`);
   }

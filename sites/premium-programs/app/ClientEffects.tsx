@@ -4,6 +4,7 @@ import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 export default function ClientEffects(){
  useEffect(()=>{
+  window.dispatchEvent(new Event('premium:ready'));
   if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   gsap.registerPlugin(ScrollTrigger);
   const ctx=gsap.context(()=>{

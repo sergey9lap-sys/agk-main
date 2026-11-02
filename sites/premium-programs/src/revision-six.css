@@ -1,4 +1,7 @@
 /* Exact client correction: typography parity and beige inner surfaces. */
+.btn.btn-gold,.btn.btn-cream,.support-actions a,.gc-widget-slot:not(:disabled){background:#ffb02e;color:#29161d;box-shadow:0 12px 28px #190c1830;border-color:transparent}
+.btn.btn-gold:hover,.btn.btn-cream:hover,.support-actions a:hover,.gc-widget-slot:not(:disabled):hover{background:#ffc35c;color:#29161d}
+.host-action{margin-top:26px}.host-action .btn{max-width:100%}
 .hero-lead,.hero-dates span,.hero-dates span:nth-child(n){font-family:Arial,Helvetica,sans-serif;font-size:clamp(18px,1.55vw,23px);font-weight:400;line-height:1.38;letter-spacing:0;text-transform:none}
 .hero-dates span,.hero-dates span:nth-child(n){border:2px solid #523344;background:transparent;padding:15px 21px}
 @media(min-width:1101px){.hero-dates{flex-wrap:nowrap;gap:12px;align-items:stretch}.hero-dates span,.hero-dates span:nth-child(n){flex:0 1 auto;white-space:nowrap;padding:14px 16px}.hero{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}.hero-actions{margin-top:22px}}
