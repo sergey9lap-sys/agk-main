@@ -1,6 +1,7 @@
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {withAnalytics} from './analytics.mjs';
+import {withRussianTypography} from '../sites/shared/russian-typography.js';
 const base='/premium-programs/';
 export const premiumSurfaceCSS=`
 *{box-sizing:border-box}body{margin:0;background:#f1e4d5;color:#29161d;font:18px/1.55 Arial,Helvetica,sans-serif;background-image:linear-gradient(#52334412 1px,transparent 1px),linear-gradient(90deg,#52334412 1px,transparent 1px);background-size:72px 72px}a{color:inherit}h1{font:400 clamp(40px,5vw,70px)/1.08 Georgia,serif;margin:16px 0 24px;max-width:15ch}p{max-width:52ch}main{width:min(1240px,calc(100% - 80px));min-height:90svh;margin:auto;display:grid;grid-template-columns:1.35fr 1fr;gap:60px;align-items:center;padding:70px 0}.brand{font-size:16px}.portrait{width:100%;max-height:650px;object-fit:contain;border-radius:20px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.action{display:inline-flex;justify-content:center;gap:20px;align-items:center;min-height:64px;padding:16px 24px;border-radius:20px;background:#d93626;color:#fff;text-decoration:none;font-weight:700;box-shadow:0 12px 28px #190c1830}.action:hover{background:#b9271b;color:#fff}.action svg{width:22px;height:22px;transition:transform .2s}.action:hover svg{transform:translateX(4px)}.secondary{display:inline-block;margin-top:24px;text-underline-offset:5px}.error-code{font:96px/1 Georgia,serif;color:#523344}footer{padding:24px 40px;font:14px/1.5 Arial;display:flex;gap:20px;flex-wrap:wrap}a:focus-visible,button:focus-visible{outline:3px solid #523344;outline-offset:5px}@media(max-width:700px){main{width:calc(100% - 36px);grid-template-columns:1fr;gap:28px;padding:40px 0;min-height:auto}.portrait{max-height:350px}.actions{display:grid}.action{width:100%}footer{padding:24px 18px}}
@@ -30,6 +31,7 @@ export async function preparePremiumSurfaces(directory,edition){
  await writeFile(resolve(directory,'.htaccess'),'ErrorDocument 404 /premium-programs/404.html\n');
  for(const path of ['index.html','pricing/index.html','thanks/index.html','spasibo/index.html','404.html']){
   const file=resolve(directory,path);let html=await readFile(file,'utf8');
+  if(!['index.html','pricing/index.html'].includes(path))html=withRussianTypography(html);
   html=withAnalytics(withPremiumConsent(html,edition),edition,{includeMetaPixel:true,consentCookie:'agk_cookie_consent_premium_programs'});
   await writeFile(file,html);
  }

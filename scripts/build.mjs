@@ -9,6 +9,7 @@ import { withRussianTypography } from '../sites/shared/russian-typography.js';
 import {optimizeCampaign} from './optimize-campaign.mjs';
 import {webinarContent,thanksPage,variants,esc} from './web121126-content.mjs';
 import {preparePremiumSurfaces,shortWebinar,withPremiumConsent} from './premium-surfaces.mjs';
+import {campaignThanks} from './campaign-thanks.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const edition = process.argv[2];
@@ -75,7 +76,7 @@ for (const [slug, site] of Object.entries(registry)) {
   const base = `/${slug}/`;
   const assetPaths = html => html.replace(/((?:src|href)=["'])\/(?!\/)/g, `$1${base}`);
   const webinar=slug==='web121126'||site.source==='web121126';
-  const editionHtml = html => (['mentor-consultation','archetype','november','sale2026'].includes(slug) ? withRussianTypography(html) : html)
+  const editionHtml = html => {const result=html
     .replaceAll('%%WEB_TITLE%%',webinar?esc(variants[config.audience||'universal'].title):'')
     .replaceAll('%%WEB_CONTENT%%',webinar?(config.short?shortWebinar(webinarContent(config)):webinarContent(config)).replace(/((?:src|srcset)=["'])\/(?!\/)/g,`$1${base}`).replace(/, \/media\//g,`, ${base}media/`):'')
     .replaceAll('%%SALE_WIDGETS%%', JSON.stringify(config.saleWidgets ?? null).replaceAll('<','\\u003c'))
@@ -84,6 +85,8 @@ for (const [slug, site] of Object.entries(registry)) {
     .replaceAll('%%SCRIPT_ID%%', config.scriptId ?? '')
     .replaceAll('%%SUCCESS_PATH%%', config.successPath ?? '')
     .replaceAll('%%COOKIE_SERVICES%%', edition === 'com' && ['clients', 'mkclients', 'praktikum', 'expert', 'sales'].includes(slug) ? 'Яндекс.Метрика, Meta Pixel и формы GetCourse' : 'Яндекс.Метрика и формы GetCourse');
+    return webinar||['mentor-consultation','archetype','november','sale2026'].includes(slug)?withRussianTypography(result):result;
+  };
   const analytics = html => ['clients', 'mkclients', 'praktikum', 'expert', 'sales', 'sale2026', 'november'].includes(slug)
     ? withAnalytics(html, edition, { includeMetaPixel: true, consentCookie: `agk_cookie_consent_${slug}` })
     : html;
@@ -120,6 +123,11 @@ for (const [slug, site] of Object.entries(registry)) {
     landing=await optimizeCampaign(landing,siteRoot,output,slug);
     landing=withCampaignConsent(landing,slug,edition);
     await writeFile(landingPath,landing);
+    for(const alias of ['thanks','spasibo']){
+      const folder=resolve(output,slug,alias);await mkdir(folder,{recursive:true});
+      const html=withRussianTypography(campaignThanks(slug));
+      await writeFile(resolve(folder,'index.html'),withAnalytics(withPremiumConsent(html,edition,{slug,webinar:true}),edition,{includeMetaPixel:true,consentCookie:`agk_cookie_consent_${slug}`}));
+    }
   }
   if(config.saleWidgets){
     for(const [key,widget] of Object.entries(config.saleWidgets)){

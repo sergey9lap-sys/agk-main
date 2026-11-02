@@ -2,8 +2,11 @@
 import {useEffect} from "react";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {setupRussianTypography} from "../../shared/russian-typography.js";
 export default function ClientEffects(){
  useEffect(()=>{
+  // Run after React hydration, including text split by inline emphasis.
+  setupRussianTypography();
   window.dispatchEvent(new Event('premium:ready'));
   if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   gsap.registerPlugin(ScrollTrigger);
