@@ -1,6 +1,6 @@
 /* Exact client correction: typography parity and beige inner surfaces. */
-.btn.btn-gold,.btn.btn-cream,.support-actions a,.gc-widget-slot:not(:disabled){background:#ffb02e;color:#29161d;box-shadow:0 12px 28px #190c1830;border-color:transparent}
-.btn.btn-gold:hover,.btn.btn-cream:hover,.support-actions a:hover,.gc-widget-slot:not(:disabled):hover{background:#ffc35c;color:#29161d}
+.btn.btn-gold,.btn.btn-cream,.support-actions a,.gc-widget-slot:not(:disabled){background:#d93626;color:#fff;box-shadow:0 12px 28px #190c1830;border-color:transparent}
+.btn.btn-gold:hover,.btn.btn-cream:hover,.support-actions a:hover,.gc-widget-slot:not(:disabled):hover{background:#b9271b;color:#fff}
 .host-action{margin-top:26px}.host-action .btn{max-width:100%}
 .hero-lead,.hero-dates span,.hero-dates span:nth-child(n){font-family:Arial,Helvetica,sans-serif;font-size:clamp(18px,1.55vw,23px);font-weight:400;line-height:1.38;letter-spacing:0;text-transform:none}
 .hero-dates span,.hero-dates span:nth-child(n){border:2px solid #523344;background:transparent;padding:15px 21px}
