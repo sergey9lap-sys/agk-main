@@ -3,8 +3,8 @@ export const recording = {
   oldPrice: "7 800 Р",
   price: "3 900 Р",
   discount: "−50%",
-  // Await the new offer; do not reuse old live-event widgets.
-  widgetId: "",
+  // Supplied by the client on 02.11.2026 for the recorded masterclass.
+  widgetId: "1677460",
   includes: [
     {text: "Мастер-класс. Часть 1: 5 законов премиума и алгоритм создания программы", duration: "1 ч 40 мин", bonus: false},
     {text: "Мастер-класс. Часть 2: консалтинг, агентство и технология парника", duration: "1 ч 14 мин", bonus: false},

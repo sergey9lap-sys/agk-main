@@ -11,9 +11,7 @@ type GetCourseWidgetProps = {
 function getWidgetUrl(widgetId: string) {
   const params = new URLSearchParams(window.location.search);
 
-  params.set("id", widgetId);
-  params.set("ref", document.referrer);
-  params.set("loc", window.location.href);
+  if (widgetId !== "1677460") throw new Error("Unknown masterclass widget");
 
   try {
     if (window.clrtQueryData) {
@@ -21,7 +19,8 @@ function getWidgetUrl(widgetId: string) {
     }
   } catch {}
 
-  return `https://agkedu.getcourse.ru/pl/lite/widget/widget?${params.toString()}`;
+  // Load the supplied official script in an isolated, same-origin document.
+  return `/premium-programs/forms/recording/?${params.toString()}`;
 }
 
 declare global {
