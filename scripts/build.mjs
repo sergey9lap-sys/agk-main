@@ -102,7 +102,8 @@ for (const [slug, site] of Object.entries(registry)) {
   });
   const landingPath = resolve(output, slug, 'index.html');
   let landing = withLoader(analytics(await readFile(landingPath, 'utf8')),slug);
-  if(webinar && config.short)landing=withAnalytics(withPremiumConsent(landing,edition,{slug,webinar:true}),edition,{includeMetaPixel:true,consentCookie:`agk_cookie_consent_${slug}`});
+  if(webinar)landing=withAnalytics(withPremiumConsent(landing,edition,{slug,webinar:true}),edition,{includeMetaPixel:true,consentCookie:`agk_cookie_consent_${slug}`});
+  if(slug==='consultation')landing=withAnalytics(withPremiumConsent(landing,edition,{slug,webinar:true,theme:'consultation'}),edition,{includeMetaPixel:true,consentCookie:`agk_cookie_consent_${slug}`});
   if (slug === 'november' || site.source === 'november') {
     const source = await readFile(resolve(siteRoot, 'index.html'), 'utf8');
     const contract = source.match(/<!-- THESIS:[\s\S]*?-->/)?.[0];
@@ -111,7 +112,7 @@ for (const [slug, site] of Object.entries(registry)) {
   }
   await writeFile(landingPath, landing);
   if(webinar){
-    for(const end of ['thanks','spasibo']){const folder=resolve(output,slug,end);await mkdir(folder,{recursive:true});let html=withRussianTypography(thanksPage(config,slug));if(config.short)html=withAnalytics(withPremiumConsent(html,edition,{slug,webinar:true}),edition,{includeMetaPixel:true,consentCookie:`agk_cookie_consent_${slug}`});await writeFile(resolve(folder,'index.html'),html);}
+    for(const end of ['thanks','spasibo']){const folder=resolve(output,slug,end);await mkdir(folder,{recursive:true});let html=withRussianTypography(thanksPage(config,slug));html=withAnalytics(withPremiumConsent(html,edition,{slug,webinar:true}),edition,{includeMetaPixel:true,consentCookie:`agk_cookie_consent_${slug}`});await writeFile(resolve(folder,'index.html'),html);}
     await writeFile(resolve(output,slug,'404.html'),`<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="/${slug}/webinar.css"><title>Страница не найдена</title></head><body><main class="wrap error-page"><p class="error-code">404</p><h1>Здесь пока нет страницы</h1><p>Вернитесь к программе бесплатного вебинара.</p><a class="button" href="/${slug}/">На страницу вебинара</a></main></body></html>`);
     await writeFile(resolve(output,slug,'.htaccess'),`ErrorDocument 404 /${slug}/404.html\n`);
   }
@@ -135,18 +136,20 @@ for (const [slug, site] of Object.entries(registry)) {
     await writeFile(resolve(output,slug,'404.html'),errorPage(slug));
     await writeFile(resolve(output,slug,'.htaccess'),`ErrorDocument 404 /${slug}/404.html\n`);
   }
-  if (slug === 'archetype' && edition === 'ru') {
-    const notice = await readFile(resolve(siteRoot, 'src/cookie-notice.html'), 'utf8');
+  if (slug === 'archetype') {
+    let notice = await readFile(resolve(siteRoot, 'src/cookie-notice.html'), 'utf8');
+    if(edition==='com')notice=notice.replace('Яндекс Метрику','Яндекс Метрику и Meta Pixel');
     const html = withAnalytics(await readFile(landingPath, 'utf8'), edition, {
-      includeMetaPixel: false, consentCookie: 'agk_cookie_consent_archetype',
+      includeMetaPixel: edition==='com', consentCookie: 'agk_cookie_consent_archetype',
     }).replace('</head>', '<link rel="stylesheet" href="/archetype/cookie-consent.css"></head>')
       .replace('</body>', `${notice}<script src="/archetype/cookie-consent.js" defer></script></body>`);
     await writeFile(landingPath, html);
   }
-  if (slug === 'mentor-consultation' && edition === 'ru') {
-    const notice = await readFile(resolve(siteRoot, 'src/cookie-notice.html'), 'utf8');
+  if (slug === 'mentor-consultation') {
+    let notice = await readFile(resolve(siteRoot, 'src/cookie-notice.html'), 'utf8');
+    if(edition==='com')notice=notice.replace('Яндекс Метрику','Яндекс Метрику и Meta Pixel');
     const html = withAnalytics(await readFile(landingPath, 'utf8'), edition, {
-      includeMetaPixel: false, consentCookie: 'agk_cookie_consent_mentor_consultation',
+      includeMetaPixel: edition==='com', consentCookie: 'agk_cookie_consent_mentor_consultation',
     }).replace('</head>', '<link rel="stylesheet" href="/mentor-consultation/cookie-consent.css"></head>')
       .replace('</nav></div></div><div class="wrap footer-bottom">', '<button class="cookie-settings" type="button" data-cookie-settings>Настройки cookie</button></nav></div></div><div class="wrap footer-bottom">')
       .replace('</body>', `${notice}<script src="/mentor-consultation/cookie-consent.js" defer></script></body>`);

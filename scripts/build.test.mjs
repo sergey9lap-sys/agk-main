@@ -249,15 +249,17 @@ test('analytics stays off without consent and loads once after accepting or with
   }
 });
 
-test('archetype uses the RU counter only and keeps COM free of tracking', async () => {
+test('archetype uses regional consent-gated counters and COM-only Meta Pixel', async () => {
   const ru = await readFile(resolve('dist/ru/archetype/index.html'), 'utf8');
   const com = await readFile(resolve('dist/com/archetype/index.html'), 'utf8');
   assert.equal(ru.split("ym(110484880,'init'").length - 1, 1);
   assert.ok(ru.includes('agk_cookie_consent_archetype=accepted'));
   assert.ok(ru.includes('data-cookie-notice'));
   assert.ok(!ru.includes('110484887'));
-  for (const html of [ru, com]) assert.ok(!html.includes('connect.facebook.net'));
-  assert.ok(!com.includes('mc.yandex.ru'));
-  assert.ok(!com.includes('data-cookie-notice'));
+  assert.ok(!ru.includes('connect.facebook.net'));
+  assert.equal(com.split("ym(110484887,'init'").length - 1, 1);
+  assert.ok(!com.includes('110484880'));
+  assert.equal(com.split("fbq('init', '1923709794923109')").length - 1, 1);
+  assert.ok(com.includes('data-cookie-notice'));
   for (const file of ['cookie-consent.js', 'cookie-consent.css']) await access(resolve('dist/ru/archetype', file));
 });
