@@ -12,7 +12,7 @@ commit=$(runuser -u agk-build -- git -C "$source_dir" rev-parse HEAD)
 release="$web_root/releases/$commit-ru"
 if [ ! -d "$release" ]; then
  runuser -u agk-build -- bash -c 'cd /opt/agk-main/source && npx --yes pnpm@11.19.0 install --frozen-lockfile && npm run build:ru'
- for route in index.html max/index.html psy/index.html clients/index.html sales/index.html sale2026/index.html premium-programs/index.html web121126/index.html web121126_r/index.html web121126_short/index.html web121126_r_short/index.html web121126/spasibo/index.html web121126_r/spasibo/index.html; do
+ for route in metodologiya/index.html mentoring/index.html method-club/index.html index.html max/index.html psy/index.html clients/index.html sales/index.html sale2026/index.html premium-programs/index.html web121126/index.html web121126_r/index.html web121126_short/index.html web121126_r_short/index.html web121126/spasibo/index.html web121126_r/spasibo/index.html; do
   test -s "$source_dir/dist/ru/$route"
  done
  test -z "$(find "$source_dir/dist/ru" -type l -print -quit)"

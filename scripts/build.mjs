@@ -11,6 +11,7 @@ import {webinarContent,thanksPage,variants,esc} from './web121126-content.mjs';
 import {preparePremiumSurfaces,shortWebinar,withPremiumConsent} from './premium-surfaces.mjs';
 import {campaignThanks} from './campaign-thanks.mjs';
 import {prepareWebinarRegistration} from './webinar-registration.mjs';
+import {importedProducts,prepareImportedProduct} from './imported-products.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const edition = process.argv[2];
@@ -72,6 +73,7 @@ for (const [slug, site] of Object.entries(registry)) {
     await staticFiles(exported);
     await cp(exported,resolve(output,slug),{recursive:true});
     if(slug==='premium-programs')await preparePremiumSurfaces(resolve(output,slug),edition);
+    if(importedProducts.includes(slug))await prepareImportedProduct(resolve(output,slug),edition,slug);
     continue;
   }
   const base = `/${slug}/`;

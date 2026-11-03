@@ -1,4 +1,7 @@
 {
+  "metodologiya": { "prebuilt": true, "editions": { "com": {}, "ru": {} } },
+  "mentoring": { "prebuilt": true, "editions": { "com": {}, "ru": {} } },
+  "method-club": { "prebuilt": true, "editions": { "com": {}, "ru": {} } },
   "web121126_short": { "source": "web121126", "editions": { "com": { "audience": "universal", "short": true, "registrationWidget": { "widgetId": "1677840", "scriptId": "dac33f0cbd5e6433f276272bb604e685c945b45f" } }, "ru": { "audience": "universal", "short": true, "registrationWidget": { "widgetId": "1677820", "scriptId": "4a1f5229d2ab402241fcfe95482b88dd665fc228" } } } },
   "web121126_r_short": { "source": "web121126", "editions": { "com": { "audience": "owners", "short": true, "registrationWidget": { "widgetId": "1677849", "scriptId": "7e7ae12364f298ec726886e7d550a1e687e76bd9" } }, "ru": { "audience": "owners", "short": true, "registrationWidget": { "widgetId": "1677842", "scriptId": "ae1da86b9dc444644795e9c171db0fe3abf45229" } } } },
   "premium-programs": { "prebuilt": true, "editions": { "com": {}, "ru": {} } },

@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /method-club/
+
+Host: https://agk-edu.ru/method-club
+Sitemap: https://agk-edu.ru/method-club/sitemap.xml

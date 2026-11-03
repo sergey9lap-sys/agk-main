@@ -1,0 +1,19 @@
+{
+  "media": [
+    {
+      "source": "alexandra-hero-cutout-v2.png",
+      "output": "optimized/176636fdd9d29a.webp",
+      "before": 973381,
+      "after": 618378,
+      "pixels": "lossless"
+    },
+    {
+      "source": "botagkclub-portrait-v2.png",
+      "output": "optimized/9c27c2a5170cfc.webp",
+      "before": 831449,
+      "after": 510442,
+      "pixels": "lossless"
+    }
+  ],
+  "saved": 676010
+}

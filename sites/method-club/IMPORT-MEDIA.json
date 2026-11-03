@@ -1,0 +1,54 @@
+{
+  "media": [
+    {
+      "source": "images/62.png",
+      "output": "optimized/5818e7bf1468b4.webp",
+      "before": 1361693,
+      "after": 908350,
+      "pixels": "lossless"
+    },
+    {
+      "source": "images/botagkclub-portrait.png",
+      "output": "optimized/6c7e644627113a.webp",
+      "before": 2154585,
+      "after": 1242738,
+      "pixels": "lossless"
+    },
+    {
+      "source": "images/Город 3 блок.png",
+      "output": "optimized/87ca968632aef7.webp",
+      "before": 1517680,
+      "after": 873348,
+      "pixels": "lossless"
+    },
+    {
+      "source": "images/Отзывы 11 слайд 2.png",
+      "output": "optimized/cad2c3efac843a.webp",
+      "before": 192768,
+      "after": 51190,
+      "pixels": "lossless"
+    },
+    {
+      "source": "images/Отзывы 11 слайд 3.png",
+      "output": "optimized/578fe6f09ce741.webp",
+      "before": 170615,
+      "after": 47224,
+      "pixels": "lossless"
+    },
+    {
+      "source": "images/Отзывы 11 слайд 4.png",
+      "output": "optimized/279f8618d1f01f.webp",
+      "before": 155156,
+      "after": 47712,
+      "pixels": "lossless"
+    },
+    {
+      "source": "images/Отзывы 11 слайд.png",
+      "output": "optimized/6a9cdfd1886292.webp",
+      "before": 118668,
+      "after": 32582,
+      "pixels": "lossless"
+    }
+  ],
+  "saved": 2468021
+}

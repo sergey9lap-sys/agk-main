@@ -61,17 +61,18 @@ for (const edition of ['com','ru']) {
         for (const [, url] of page.matchAll(/(?:src|href)=["'](\/(?!\/)[^"']+)["']/g)) {
           const path = url.split(/[?#]/)[0];
           assert.ok(path.startsWith(`/${slug}/`), `Unscoped asset: ${url}`);
-          await access(resolve(root, '.' + path));
+          await access(resolve(root, '.' + decodeURI(path)));
         }
       }
-      const cssDirectory = resolve(root, slug, site.prebuilt ? '_next/static/css' : 'assets');
-      const cssFiles = [...(await readdir(cssDirectory)).filter(f=>f.endsWith('.css')).map(f=>resolve(cssDirectory, f))];
+      const cssFiles = [...new Set([...html.matchAll(/href=["'](\/[^"']+\.css(?:\?[^"']*)?)["']/g)].map(m=>resolve(root,'.'+decodeURI(m[1].split('?')[0]))))];
+      assert.ok(cssFiles.length>0,`Missing stylesheet: ${slug}`);
       if ((site.confirmationAliases?.length ?? 0) > 0) cssFiles.unshift(resolve(root, slug, 'thank-you.css'));
       for (const file of cssFiles) {
         const css = await readFile(file, 'utf8');
-        for (const [, url] of css.matchAll(/url\(["']?(\/(?!\/)[^)'"\s]+)["']?\)/g)) {
+        for (const match of css.matchAll(/url\((?:"([^"]+)"|'([^']+)'|([^\s)]+))\)/g)) {
+          const url=match[1]??match[2]??match[3];if(!url.startsWith('/')||url.startsWith('//'))continue;
           assert.ok(url.startsWith(`/${slug}/`), `Unscoped CSS asset: ${url}`);
-          await access(resolve(root, '.' + url));
+          await access(resolve(root, '.' + decodeURI(url.split(/[?#]/)[0])));
         }
       }
     }
