@@ -1,0 +1,5 @@
+import {readFile,writeFile} from 'node:fs/promises';
+const source=new URL('./agk-main-http.conf',import.meta.url);
+const http=await readFile(source,'utf8');
+const tls=http.replace('listen 80;','listen 443 ssl;\n http2 on;\n ssl_certificate /etc/letsencrypt/live/agk-edu.ru/fullchain.pem;\n ssl_certificate_key /etc/letsencrypt/live/agk-edu.ru/privkey.pem;\n ssl_protocols TLSv1.2 TLSv1.3;\n ssl_session_cache shared:agkSSL:10m;\n ssl_session_timeout 1d;').replace('listen [::]:80;','listen [::]:443 ssl;').replace('server_name agk-edu.ru www.agk-edu.ru;','server_name agk-edu.ru;')+`\nserver { listen 80; listen [::]:80; server_name agk-edu.ru www.agk-edu.ru; location ^~ /.well-known/acme-challenge/ { root /var/www/acme; try_files $uri =404; } location / { return 301 https://agk-edu.ru$request_uri; } }\nserver { listen 443 ssl; listen [::]:443 ssl; server_name www.agk-edu.ru; ssl_certificate /etc/letsencrypt/live/agk-edu.ru/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/agk-edu.ru/privkey.pem; return 301 https://agk-edu.ru$request_uri; }\n`;
+await writeFile(new URL('./agk-main-https.conf',import.meta.url),tls);

@@ -1,0 +1,35 @@
+#!/bin/bash
+set -Eeuo pipefail
+source_dir=/opt/agk-main/source
+web_root=/var/www/agk-main
+test "$(id -u)" = 0
+exec 9>/run/lock/agk-main-update.lock
+flock -n 9 || { echo 'Another AGK release is running'; exit 1; }
+runuser -u agk-build -- git -C "$source_dir" fetch origin main
+test -z "$(runuser -u agk-build -- git -C "$source_dir" status --porcelain)"
+runuser -u agk-build -- git -C "$source_dir" checkout --detach origin/main
+commit=$(runuser -u agk-build -- git -C "$source_dir" rev-parse HEAD)
+release="$web_root/releases/$commit-ru"
+if [ ! -d "$release" ]; then
+ runuser -u agk-build -- bash -c 'cd /opt/agk-main/source && npx --yes pnpm@11.19.0 install --frozen-lockfile && npm run build:ru'
+ for route in index.html max/index.html psy/index.html clients/index.html sales/index.html sale2026/index.html premium-programs/index.html web121126/index.html web121126_r/index.html web121126_short/index.html web121126_r_short/index.html web121126/spasibo/index.html web121126_r/spasibo/index.html; do
+  test -s "$source_dir/dist/ru/$route"
+ done
+ test -z "$(find "$source_dir/dist/ru" -type l -print -quit)"
+ install -d -m 755 "$release"
+ cp -a "$source_dir/dist/ru/." "$release/"
+ chown -R root:root "$release"
+ find "$release" -type d -exec chmod 755 {} +
+ find "$release" -type f -exec chmod 644 {} +
+ printf '%s\n' "$commit" > "$release/release-id.txt"
+fi
+old=$(readlink "$web_root/current" || true)
+ln -s "$release" "$web_root/current.new"
+mv -Tf "$web_root/current.new" "$web_root/current"
+if command -v nginx >/dev/null && [ -e /etc/nginx/sites-enabled/agk-main ]; then
+ if ! nginx -t || ! curl -fsSL --resolve agk-edu.ru:443:127.0.0.1 -H 'Host: agk-edu.ru' http://127.0.0.1/release-id.txt | grep -qx "$commit"; then
+  if [ -n "$old" ]; then ln -s "$old" "$web_root/current.rollback"; mv -Tf "$web_root/current.rollback" "$web_root/current"; fi
+  echo 'Release health check failed'; exit 1
+ fi
+fi
+printf 'AGK_RELEASE_READY %s\n' "$commit"
