@@ -10,6 +10,7 @@ import {optimizeCampaign} from './optimize-campaign.mjs';
 import {webinarContent,thanksPage,variants,esc} from './web121126-content.mjs';
 import {preparePremiumSurfaces,shortWebinar,withPremiumConsent} from './premium-surfaces.mjs';
 import {campaignThanks} from './campaign-thanks.mjs';
+import {prepareWebinarRegistration} from './webinar-registration.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const edition = process.argv[2];
@@ -115,6 +116,7 @@ for (const [slug, site] of Object.entries(registry)) {
   }
   await writeFile(landingPath, landing);
   if(webinar){
+    await prepareWebinarRegistration({output,root,slug,config,edition});
     for(const end of ['thanks','spasibo']){const folder=resolve(output,slug,end);await mkdir(folder,{recursive:true});let html=withRussianTypography(thanksPage(config,slug));html=withAnalytics(withPremiumConsent(html,edition,{slug,webinar:true}),edition,{includeMetaPixel:true,consentCookie:`agk_cookie_consent_${slug}`});await writeFile(resolve(folder,'index.html'),html);}
     await writeFile(resolve(output,slug,'404.html'),`<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="/${slug}/webinar.css"><title>Страница не найдена</title></head><body><main class="wrap error-page"><p class="error-code">404</p><h1>Здесь пока нет страницы</h1><p>Вернитесь к программе бесплатного вебинара.</p><a class="button" href="/${slug}/">На страницу вебинара</a></main></body></html>`);
     await writeFile(resolve(output,slug,'.htaccess'),`ErrorDocument 404 /${slug}/404.html\n`);
