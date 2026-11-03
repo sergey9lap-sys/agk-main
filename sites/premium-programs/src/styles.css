@@ -3398,7 +3398,7 @@ h1 {
   .dossier-card {
     min-height: auto;
     transform: none;
-    opacity: 0;
+    opacity: 1;
     margin-top: -18px;
     border-radius: 22px;
     padding: 32px 12px 12px;

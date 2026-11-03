@@ -1,5 +1,7 @@
 # AGENTS.md — Sergey Lapin Website Agent Rules
 
+03.11.2026: исправлен невидимый мобильный блок досье. Базовый CSS карточек должен иметь opacity:1; проверять все шесть изображений после скролла с обычным движением, reduced-motion и без JavaScript. Проверка только hero не подтверждает видимость следующих секций. Подробности: MOBILE-DOSSIERS-20261103.md.
+
 Use this file as mandatory project instructions for Codex or any coding agent that creates websites for Sergey Lapin.
 
 ## Core Role
