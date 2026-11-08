@@ -24,6 +24,27 @@ export function withPremiumConsent(html,edition,{slug='premium_programs',webinar
  const bootstrap=`<script>(()=>{let started=false;function start(){if(started)return;started=true;const style=document.createElement('style');style.textContent=${JSON.stringify(css)};document.head.append(style);const holder=document.createElement('div');holder.innerHTML=${JSON.stringify(panel)};document.body.append(holder.firstElementChild);${logic}}${webinar?"document.addEventListener('DOMContentLoaded',start,{once:true})":"window.addEventListener('premium:ready',start,{once:true});document.addEventListener('DOMContentLoaded',()=>{if(!document.querySelector('script[src*=\"/_next/\"]'))start()},{once:true})"}})();</script>`;
  return html.replace('</head>',bootstrap+'</head>');
 }
+export function withWebinarAnalytics(html,edition,slug){
+ const family=slug.replace(/_short$/,'');
+ const key=`agk_cookie_consent_${family}`;
+ const legacyKey=`${key}_short`;
+ // Both variants return to the same confirmation page. Preserve an older
+ // choice and give refusal priority if the two old preferences disagree.
+ const migration=`<script>(() => {
+  const key=${JSON.stringify(key)}, legacyKey=${JSON.stringify(legacyKey)};
+  const read=name=>document.cookie.split('; ').find(item=>item.startsWith(name+'='))?.slice(name.length+1);
+  const legacy=read(legacyKey);
+  if(legacy!=='accepted'&&legacy!=='rejected')return;
+  const current=read(key);
+  const choice=current==='rejected'||legacy==='rejected'?'rejected':'accepted';
+  const scope='; Path=/; SameSite=Lax'+(location.protocol==='https:'?'; Secure':'');
+  if(current!==choice)document.cookie=key+'='+choice+'; Max-Age=31536000'+scope;
+  document.cookie=legacyKey+'=; Max-Age=0'+scope;
+ })();</script>`;
+ const migrated=html.replace('</head>',migration+'</head>');
+ return withAnalytics(withPremiumConsent(migrated,edition,{slug:family,webinar:true}),edition,{consentCookie:key});
+}
+
 export async function preparePremiumSurfaces(directory,edition){
  await writeFile(resolve(directory,'surface.css'),premiumSurfaceCSS);
  for(const alias of ['thanks','spasibo']){await mkdir(resolve(directory,alias),{recursive:true});await writeFile(resolve(directory,alias,'index.html'),premiumPage('thanks'))}
