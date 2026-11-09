@@ -14,7 +14,7 @@ function form(config,slot){
  const widget=config.registrationWidget;
  if(widget){
   const directUrl=`https://agkedu.getcourse.ru/pl/lite/widget/widget?id=${encodeURIComponent(widget.widgetId)}`;
-  return `<div class="registration-widget" data-widget><p class="widget-recovery"><a href="${directUrl}" target="_blank" rel="noopener"><u>Открыть форму в GetCourse</u></a></p><p class="widget-status" role="status">Загружаем форму…</p><iframe title="Регистрация на вебинар 12 ноября" src="registration/" height="620" loading="${slot==='hero'?'eager':'lazy'}"></iframe></div>`;
+  return `<div class="registration-widget" data-widget><p class="widget-recovery"><a href="${directUrl}" target="_blank" rel="noopener"><u>Открыть форму в GetCourse</u></a></p><p class="widget-status" role="status">Загружаем форму…</p><iframe title="Регистрация на вебинар 12 ноября" data-src="registration/" height="620" loading="lazy"></iframe></div>`;
  }
  return `<form class="registration-placeholder" data-placeholder><p class="form-status" role="status">Запись пока не открыта. Форма регистрации скоро появится здесь.</p><fieldset disabled><label for="${slot}-name">Имя<input id="${slot}-name" autocomplete="given-name" placeholder="Ваше имя"></label><label for="${slot}-email">E-mail<input id="${slot}-email" type="email" autocomplete="email" placeholder="name@example.ru"></label><label for="${slot}-phone">Телефон<input id="${slot}-phone" type="tel" autocomplete="tel" placeholder="+7"></label><button class="button" type="submit" disabled>Зарегистрироваться${arrow}</button></fieldset><p class="form-privacy">Нажимая на кнопку, вы соглашаетесь с <a href="https://agkedu.getcourse.ru/personaldata" target="_blank" rel="noopener">политикой конфиденциальности</a>.</p></form>`;}
 

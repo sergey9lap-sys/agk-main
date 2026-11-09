@@ -16,7 +16,8 @@ addEventListener('message', event => {
 for (const host of widgetHosts) {
   // The embedded wrapper already reads the parent campaign before loading GetCourse.
   // Preserve the same campaign and placement on the independent GetCourse link.
-  const placement = new URL(host.querySelector('iframe').src);
+  const frame = host.querySelector('iframe');
+  const placement = new URL(frame.dataset.src, location.href);
   placement.search = location.search;
   const link = host.querySelector('.widget-recovery a');
   const direct = new URL(link.href);
@@ -27,9 +28,15 @@ for (const host of widgetHosts) {
   direct.searchParams.set('loc', placement.href);
   link.href = direct.href;
 
-  setTimeout(() => {
-    if (!host.dataset.ready) {
-      host.querySelector('.widget-status').textContent = 'Если форма не появилась, откройте её по ссылке выше.';
-    }
-  }, 18000);
+  // The third-party form must not hold the landing page's load event open.
+  const loadWidget = () => {
+    frame.src = placement.href;
+    setTimeout(() => {
+      if (!host.dataset.ready) {
+        host.querySelector('.widget-status').textContent = 'Если форма не появилась, откройте её по ссылке выше.';
+      }
+    }, 18000);
+  };
+  if (document.readyState === 'complete') loadWidget();
+  else window.addEventListener('load', loadWidget, {once: true});
 }
