@@ -9,6 +9,7 @@
 @media(max-width:760px){.section{min-height:0;padding-block:48px}.hero-grid{min-height:0;padding-block:20px}.hero-copy{padding-block:10px}.audience-heading{margin-bottom:28px}.section>.wrap{width:calc(100% - 44px)}.program-list li{padding-block:18px}}
 /* V15: stronger first-screen hierarchy, same palette and composition. */
 .hero-mobile-register.button{display:none}
+.footer-support{margin-bottom:10px;font-size:14px;line-height:1.5}
 .speaker-grid>div{min-width:0}
 @media(max-width:360px){.speaker h2{font-size:26px}}
 @media(max-width:760px){.hero-mobile-register.button{display:flex;margin:22px auto 20px}}
