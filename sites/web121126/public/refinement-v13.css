@@ -11,7 +11,7 @@
 .hero-mobile-register.button{display:none}
 .speaker-grid>div{min-width:0}
 @media(max-width:360px){.speaker h2{font-size:26px}}
-@media(max-width:760px){.hero-mobile-register.button{display:flex;margin:22px 0 20px}}
+@media(max-width:760px){.hero-mobile-register.button{display:flex;margin:22px auto 20px}}
 [data-short-webinar] .program-action{display:flex;flex-direction:column;align-items:center;gap:24px}
 [data-short-webinar] .program-action .section-action{width:100%;justify-content:center;margin:0}
 .hero h1{font-size:clamp(48px,4.5vw,64px);line-height:1.08}.hero h1>span{font-size:28px;line-height:1.35}.hero-description{font-size:20px;line-height:1.55}.hero .gift-preview{width:100%;max-width:700px;grid-template-columns:92px minmax(0,1fr);padding:18px;gap:20px}.hero .gift-preview .gift-line{font-size:17px;line-height:1.5}.nowrap{white-space:nowrap}
