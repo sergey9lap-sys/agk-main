@@ -1,4 +1,5 @@
 {
+  "method-fest": { "prebuilt": true, "editions": { "ru": {} } },
   "metodologiya": { "prebuilt": true, "editions": { "com": {}, "ru": {} } },
   "mentoring": { "prebuilt": true, "editions": { "com": {}, "ru": {} } },
   "method-club": { "prebuilt": true, "editions": { "com": {}, "ru": {} } },
