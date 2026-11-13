@@ -12,6 +12,7 @@ import {preparePremiumSurfaces,shortWebinar,withPremiumConsent,withWebinarAnalyt
 import {campaignThanks} from './campaign-thanks.mjs';
 import {prepareWebinarRegistration} from './webinar-registration.mjs';
 import {applyAutoweb} from './autoweb/autoweb-patch.mjs';
+import {applyShortAutoweb} from './autoweb/short-autoweb.mjs';
 import {importedProducts,prepareImportedProduct} from './imported-products.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -217,4 +218,5 @@ for (const file of importedFiles) {
 // COM still has no homepage. Preserve an imported 404 page if supplied later.
 if (!importedFiles.includes('404.html')) await writeFile(resolve(output, '404.html'), errorPage());
 await applyAutoweb(output);
+await applyShortAutoweb(output);
 console.log(`AGK ${edition}: ${output}`);
