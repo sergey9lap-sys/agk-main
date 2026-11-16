@@ -10,7 +10,7 @@
  }
  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest('script,style,textarea,input,code,pre,[contenteditable]')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
  const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
- nodes.forEach(n=>n.nodeValue=format(n.nodeValue));
+ nodes.forEach(n=>{n.nodeValue=format(n.nodeValue);if(location.pathname.includes('/thanks/'))n.nodeValue=n.nodeValue.replace(/(Александр[а-яё]*) +(?=Горев)/g,'$1'+nbsp);});
  const intro=document.querySelector('.hero .intro');
  if(intro&&intro.textContent.includes('Большой продуктовый хакатон')){
   intro.replaceChildren();
