@@ -14,8 +14,8 @@ backup=/var/backups/agk-main/method-fest-$stamp
 release=$base/releases/method-fest-$stamp
 mkdir -p "$backup"
 printf '%s\n' "$previous" > "$backup/previous-release.txt"
-curl --retry 3 --connect-timeout 15 -fsSL 'https://raw.githubusercontent.com/sergey9lap-sys/agk-main/cd3e7f43f325c5a6f5dc41a3eb9e522058e29d6e/deploy/method-fest-20261123/site.tar.gz' -o "$backup/site.tar.gz"
-printf '%s  %s\n' '591df362bf52c48e1a8869448387b5d710e568708c942bdba77dffb8c634c901' "$backup/site.tar.gz" | sha256sum -c -
+curl --retry 3 --connect-timeout 15 -fsSL 'https://raw.githubusercontent.com/sergey9lap-sys/agk-main/7d9074419c42b00761aa385e58f064f699c16097/deploy/method-fest-20261123/site.tar.gz' -o "$backup/site.tar.gz"
+printf '%s  %s\n' 'cdd85d8044d72ee65821f802c371422149d0bd06e6ac1d07227257f01761de81' "$backup/site.tar.gz" | sha256sum -c -
 python3 - "$previous" "$release" "$backup" <<'PY'
 import sys,os,tarfile,hashlib,json,shutil
 from pathlib import Path
