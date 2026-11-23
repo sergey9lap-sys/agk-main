@@ -105,3 +105,34 @@
 @media (min-width: 1040px) {
   #tickets .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+
+#honored-guests .guest-profile {
+  display: grid;
+  grid-template-columns: clamp(110px, 12vw, 172px) minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  gap: 8px clamp(14px, 2vw, 28px);
+  align-items: start;
+}
+#honored-guests .guest-photo {
+  grid-row: span 2;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 70%;
+  border-radius: var(--radius, 20px);
+}
+#honored-guests .guest-bio {
+  margin: 0;
+  font: 400 clamp(16px, 1.2vw, 19px)/1.5 var(--type-body);
+}
+@media (max-width: 760px) {
+  #honored-guests ul { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  #honored-guests .guest-profile { grid-template-columns: 100px 1fr; }
+  #honored-guests .guest-photo { grid-row: 1; }
+  #honored-guests .guest-name { align-self: center; }
+  #honored-guests .guest-bio { grid-column: 1 / -1; }
+}
