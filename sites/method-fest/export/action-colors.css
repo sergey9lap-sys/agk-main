@@ -1,0 +1,44 @@
+:root {
+  --action: #ff961e;
+  --action-text: #35150d;
+  --action-hover: #ffb054;
+}
+.controls button,
+dialog .close {
+  background: transparent;
+  border: 1px solid var(--action);
+  color: inherit;
+}
+dialog .close {
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  line-height: 1;
+}
+.controls button:is(:hover, :focus-visible),
+dialog .close:is(:hover, :focus-visible),
+html body .btn.sticky:not([hidden]):is(:hover, :focus-visible) {
+  background: var(--action-hover);
+  color: var(--action-text);
+  border-color: var(--action-hover);
+}
+:is(.btn, .button, .return, .controls button, dialog .close):focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--action-hover);
+}
+html body .btn.sticky, dialog[id] .btn {
+  background: var(--action);
+  border-color: var(--action);
+  color: var(--action-text);
+}
+dialog[id] .btn:is(:hover, :focus-visible) {
+  background: var(--action-hover);
+  border-color: var(--action-hover);
+}
+body .section[id] .btn:is(:hover, :focus-visible),
+body .section[id] .actions .btn:not(:first-child):is(:hover, :focus-visible) {
+  background: var(--action-hover);
+  border-color: var(--action-hover);
+  color: var(--action-text);
+}

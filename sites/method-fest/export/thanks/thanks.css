@@ -12,3 +12,16 @@ footer.wrap{border-top:1px solid #f6dfab35;padding:24px 0 28px;font-size:13px;co
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important}}
 /* Keep the mobile photo a single scene rather than repeating behind the title. */
 @media(max-width:700px){body:before{background-repeat:no-repeat}}
+body{background:#28101c;color:#fff0d8}
+body:before{background:linear-gradient(0deg,#28101c,transparent 24%),linear-gradient(90deg,#340d21 10%,#340d21ca 38%,transparent 68%),url(../assets/winter-gallery.webp) right center/cover no-repeat;height:740px}
+.care{background:linear-gradient(115deg,#781537,#420c23);color:#fff0d8}
+.care .eyebrow{color:#e2c9a2}
+.button,.return{border:2px solid var(--action)}.button{background:var(--action);color:var(--action-text)}.secondary,.return{background:transparent;color:#fff0d8}
+.return:is(:hover,:focus-visible),.button:is(:hover,:focus-visible){border-color:var(--action-hover);background:var(--action-hover);color:var(--action-text)}
+@media(max-width:700px){
+ body:before{display:none}
+ .thanks-copy{position:relative;isolation:isolate}
+ .thanks-copy:before{content:'';position:absolute;inset:0 -12px auto auto;width:44%;height:clamp(205px,58vw,320px);z-index:-1;background:url(../assets/hero-mobile.webp) center/contain no-repeat;mask-image:linear-gradient(90deg,transparent,#000 14%),linear-gradient(0deg,transparent,#000 15%,#000 87%,transparent);mask-composite:intersect}
+ h1{max-width:61%;font-size:clamp(25px,6.5vw,45px)}
+ .lead{margin-top:30px}
+}

@@ -1,0 +1,19 @@
+:root {
+  --festival-foil: linear-gradient(353deg,#cc9b59 0%,#e2c9a2 45.1645%,#ffecd0 66.5%,#e2c9a2 82.5%,#e0af68 100%);
+  --festival-bronze: linear-gradient(353deg,#4c2e12,#6b421d 45%,#745023 66.5%,#5d3919 83%,#492d14);
+}
+:is(.manifest,#audience,#speakers,#tickets,#faq,#about article,.dress,dialog) { --heading-foil:var(--festival-bronze); }
+:is(#speakers .speaker,#tickets .tariff) { --heading-foil:var(--festival-foil); }
+@supports (background-clip:text) or (-webkit-background-clip:text) {
+  html body :is(h1,h2,h3,h4),html body #s4 .exhibits h3 {
+    background-image:var(--heading-foil,var(--festival-foil));
+    background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+}
+html body #home h1 {letter-spacing:-.008em}
+#home h1 .brand-colon {padding-inline:.055em}
+@media(forced-colors:active) {
+  html body :is(h1,h2,h3,h4),html body #s4 .exhibits h3 {background:none;-webkit-text-fill-color:CanvasText}
+}
