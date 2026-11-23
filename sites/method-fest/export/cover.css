@@ -92,3 +92,16 @@
   #visits .poster-band { grid-template-columns: minmax(0, 1fr) 56px; }
   #visits .poster-copy h2 { font-size: clamp(24px, 6.4vw, 34px); }
 }
+
+
+#tickets .grid { grid-template-columns: minmax(0, 1fr); }
+#tickets .tariff { min-width: 0; padding: clamp(18px, 2vw, 30px); }
+#tickets .cost { grid-template-columns: minmax(0, 1fr); justify-items: center; padding-top: 16px; }
+#tickets .cost del { color: #e4c6b5; font-size: 1rem; }
+#tickets .cost strong { margin-top: 4px; }
+#tickets .cost .btn { width: min(100%, var(--action-w)); min-width: 0; max-width: 100%; }
+#tickets .tariff aside { margin: 0 0 18px; }
+#tickets .tariff aside h4, #tickets .tariff aside p { margin-block: 6px; }
+@media (min-width: 1040px) {
+  #tickets .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
