@@ -25,3 +25,4 @@ body:before{background:linear-gradient(0deg,#28101c,transparent 24%),linear-grad
  h1{max-width:61%;font-size:clamp(25px,6.5vw,45px)}
  .lead{margin-top:30px}
 }
+h1 .thanks-mark { display:inline-block; width:min(4.1em,100%); height:auto; vertical-align:-.06em; }

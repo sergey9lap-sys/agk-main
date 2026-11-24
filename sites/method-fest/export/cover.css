@@ -158,3 +158,41 @@
   }
 }
 #speakers .speaker > div { min-width: 0; overflow-wrap: anywhere; }
+
+/* Approved horizontal signature from page 3 of the festival brand book. */
+.section h2 .fest-wordmark {
+  display: inline-block;
+  width: min(4.1em, 100%);
+  height: auto;
+  vertical-align: -.06em;
+}
+header .brand img, .fest-footer .brand img { height: auto; }
+#partners .partner-invite {
+  max-width: none;
+  margin: 1.4em auto;
+  text-align: center;
+  text-wrap: balance;
+}
+#visits .visit { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(18px, 4vw, 60px); align-items: center; }
+#visits .visit-brands { padding: clamp(16px, 2vw, 32px); border-left: 1px solid #b18360; }
+#visits .visit-marks { display: flex; align-items: center; gap: clamp(18px, 3vw, 40px); margin: 20px 0; }
+#visits .visit-marks img { display: block; width: min(46%, 138px); height: 68px; object-fit: contain; object-position: left center; }
+#visits .visit-brands p { margin: 0; }
+#tickets .premium-labels { display:flex; align-items:center; flex-wrap:wrap; gap:8px 14px; justify-content:space-between; }
+#tickets .premium-labels span { color:#ffe4ac; border:1px solid #d1ab76; border-radius:999px; padding:4px 10px; font:600 13px/1.2 var(--type-body); }
+#tickets #premium { border-color:#d3a862; }
+#deck .deck-contacts { display:grid; justify-items:center; gap:12px; }
+#deck .deck-contacts .btn { width:min(100%,var(--action-w)); margin:0; }
+#deck .secondary { background:transparent; border:2px solid var(--action); color:#32191b; }
+#deck .secondary:is(:hover,:focus-visible) { background:var(--action-hover); }
+@media (min-width: 901px) {
+  #tickets .wrap > h2 { max-width:78%; width:max-content; font-size:clamp(36px,4.7vw,78px); }
+}
+@media (max-width: 900px) {
+  header .bar nav { display:flex; flex-basis:100%; order:3; justify-content:center; gap:6px clamp(8px,2vw,18px); font-size:clamp(12px,2.8vw,15px); }
+}
+@media (max-width: 640px) {
+  #visits .visit { grid-template-columns:minmax(0,1fr); }
+  #visits .visit-brands { border:0; border-top:1px solid #b18360; padding:16px 0 0; }
+  #visits .visit-marks img { height:50px; }
+}
