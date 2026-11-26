@@ -1,0 +1,6 @@
+#host .portrait {padding:0;border:0}
+@media (min-width:851px) {
+  #host .portrait {align-self:stretch;position:relative;width:100%;max-width:none;margin:0}
+  #host .portrait img {position:absolute;inset:0;width:100%;height:100%;max-height:none;object-fit:cover;object-position:50% 28%}
+}
+#history img[src$="alexandra-history-white.webp"] {filter:none}
