@@ -9,4 +9,4 @@
   #host .portrait img {width:auto;max-width:100%;height:auto;margin-inline:auto}
 }
 #history img[src$="alexandra-history-white.webp"] {filter:none}
-#speakers .speaker:not(:last-child)>img[src$="alexandra-headliner-coral-full.webp"] {object-fit:contain;object-position:center;background:none;padding:0;aspect-ratio:auto;height:auto;min-height:0;max-height:none;border-radius:var(--radius,20px)}
+#speakers .speaker:not(:last-child)>img[src$="alexandra-headliner-coral-full.webp"] {object-position:50% 22%}
