@@ -2,7 +2,7 @@
 @media (min-width:851px) {
   #host .portrait {align-self:stretch;position:relative;width:100%;max-width:none;margin:0}
   #host .portrait {background:#77716e;isolation:isolate}
-  #host .portrait::before {content:"";position:absolute;inset:-12%;z-index:0;background:url("assets/alexandra-headliner.webp") center/cover;filter:blur(36px);opacity:.46}
-  #host .portrait img {position:absolute;inset:auto 0 0;width:100%;height:auto;max-height:100%;object-fit:contain;object-position:center bottom;border-radius:0;mask-image:linear-gradient(to bottom,transparent,#000 6%)}
+  #host .portrait::before {content:"";position:absolute;inset:-12%;z-index:0;background:url("assets/alexandra-headliner-red.webp") center/cover;filter:blur(36px);opacity:.46}
+  #host .portrait img {position:absolute;inset:0;width:100%;height:100%;max-height:none;object-fit:contain;object-position:center bottom;border-radius:0}
 }
 #history img[src$="alexandra-history-white.webp"] {filter:none}
